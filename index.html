@@ -6,11 +6,8 @@
   <title>KIULY – Unterricht per KI</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    :root{
-      --brand:#6d28d9;
-    }
-    .brand{color:var(--brand);}
-    .brand-bg{background-color:var(--brand);}  
+    :root{--brand:#6d28d9;}
+    .brand{color:var(--brand);} .brand-bg{background-color:var(--brand);}  
   </style>
 </head>
 <body class="bg-white text-gray-800 font-sans antialiased selection:bg-purple-200 selection:text-purple-900">
@@ -24,9 +21,8 @@
     </p>
     <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544"
        class="inline-block mt-8 brand-bg text-white px-6 py-3 rounded-full text-base md:text-lg font-semibold shadow-xl hover:bg-purple-700 focus:ring-4 focus:ring-purple-300 transition">
-      🚀 Jetzt kostenlos im App Store testen
+      🚀 Jetzt kostenlos im App Store testen
     </a>
-    <!-- Decorative blurred circle -->
     <div class="absolute -z-10 inset-0 overflow-hidden pointer-events-none">
       <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[120vw] h-[120vw] bg-purple-200 rounded-full blur-3xl opacity-30"></div>
     </div>
@@ -52,27 +48,30 @@
     <section id="about">
       <h2 class="text-2xl font-semibold brand mb-4">Was ist KIULY?</h2>
       <p class="text-gray-700 text-sm leading-relaxed">
-        KIULY ist dein persönlicher KI‑Assistent für die Unterrichtsplanung. Wähle Schulform, Fach, Klasse & Thema – KIULY generiert einen strukturierten, kompetenzorientierten Entwurf in wenigen Sekunden. Ergänze optional Differenzierung, Methodik oder Barrierefrei‑Optionen.
+        KIULY ist dein persönlicher KI-Assistent für die Unterrichtsplanung. Wähle Schulform, Fach, Klasse & Thema – KIULY generiert einen strukturierten, kompetenzorientierten Entwurf in wenigen Sekunden. Ergänze optional Differenzierung, Methodik oder Barrierefrei-Optionen.
       </p>
     </section>
 
     <!-- Feature List -->
     <section id="features">
       <h2 class="text-xl font-semibold brand mb-3">Funktionen</h2>
-      <ul class="text-sm text-gray-700 space-y-2 list-disc list-inside">
-        <li><strong>8 kostenlose Ideen/Monat</strong> – ideal zum Kennenlernen</li>
-        <li><strong>Premium</strong> für 4,99 €/Monat: unbegrenzt + priorisierte KI‑Antworten</li>
-        <li>Mehrsprachigkeit & umfassende Barrierefreiheit</li>
-        <li>Export (Copy/Paste) & automatischer Verlauf</li>
-        <li>Community zum anonymen Teilen & Kommentieren</li>
-        <li>Zero‑Tracking, keine Werbung, keine Anmeldung nötig</li>
+      <ul class="text-sm text-gray-700 space-y-3 list-none">
+        <li class="flex gap-2"><span>⏩</span><div><strong>Schnell & intuitiv</strong><br>In wenigen Klicks zum fertigen Unterrichtsentwurf – ohne Anmeldung.</div></li>
+        <li class="flex gap-2"><span>✍️</span><div><strong>Anpassbar</strong><br>Freitextfelder, Differenzierung, Methoden & Zielgruppenanpassung.</div></li>
+        <li class="flex gap-2"><span>🌐</span><div><strong>Barrierefrei</strong><br>DaZ, ADHS, Seh‑ & Hörbeeinträchtigungen berücksichtigt.</div></li>
+        <li class="flex gap-2"><span>📂</span><div><strong>Export & Verlauf</strong><br>Verlauf speichern, kopieren oder direkt in Textverarbeitung exportieren.</div></li>
+        <li class="flex gap-2"><span>💬</span><div><strong>Community</strong><br>Teile anonym, kommentiere und profitiere vom Austausch mit Kolleg:innen.</div></li>
+        <li class="flex gap-2"><span>📱</span><div><strong>Mobilfreundlich</strong><br>Optimiert für iPhone & iPad – immer griffbereit.</div></li>
       </ul>
     </section>
 
-    <!-- Screenshot (optional placeholder) -->
-    <section id="screenshot" class="text-center">
-      <h2 class="text-xl font-semibold brand mb-4">App‑Vorschau</h2>
-      <img src="assets/screenshot1.png" alt="KIULY App Screenshot" class="mx-auto w-full max-w-xs rounded-lg shadow">
+    <!-- Screenshots 2 items -->
+    <section id="screenshots" class="text-center">
+      <h2 class="text-xl font-semibold brand mb-4">App-Vorschau</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        <img src="assets/screenshot1.png" alt="KIULY Generator-Ansicht" class="mx-auto w-full max-w-xs rounded-lg shadow">
+        <img src="assets/screenshot2.png" alt="KIULY Ergebnis-Ansicht" class="mx-auto w-full max-w-xs rounded-lg shadow">
+      </div>
     </section>
 
     <!-- Pricing Summary -->
@@ -82,7 +81,7 @@
         <!-- Free -->
         <div class="border rounded-xl p-6">
           <h3 class="font-semibold mb-1">Kostenlos</h3>
-          <p class="text-2xl font-extrabold brand mb-1">0 €</p>
+          <p class="text-2xl font-extrabold brand mb-1">0 €</p>
           <p class="text-xs text-gray-500 mb-3">8 Generierungen pro Monat</p>
           <ul class="text-sm list-disc list-inside space-y-1">
             <li>Alle Kernfunktionen</li>
@@ -92,11 +91,10 @@
         <!-- Premium -->
         <div class="border-2 border-purple-400 rounded-xl p-6">
           <h3 class="font-semibold mb-1">Premium</h3>
-          <p class="text-2xl font-extrabold brand mb-1">4,99 €</p>
+          <p class="text-2xl font-extrabold brand mb-1">4,99 €</p>
           <p class="text-xs text-gray-500 mb-3">monatlich · jederzeit kündbar</p>
           <ul class="text-sm list-disc list-inside space-y-1">
             <li>Unbegrenzte Generierungen</li>
-            <li>Schnellerer KI‑Zugriff</li>
           </ul>
         </div>
       </div>
@@ -104,9 +102,8 @@
 
     <!-- CTA -->
     <section class="text-center">
-      <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544"
-         class="inline-block brand-bg text-white px-8 py-3 rounded-full text-base font-semibold shadow-lg hover:bg-purple-700 focus:ring-4 focus:ring-purple-400 transition">
-        🚀 Jetzt im App Store öffnen
+      <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="inline-block brand-bg text-white px-8 py-3 rounded-full text-base font-semibold shadow-lg hover:bg-purple-700 focus:ring-4 focus:ring-purple-400 transition">
+        🚀 Jetzt im App Store öffnen
       </a>
     </section>
   </main>
