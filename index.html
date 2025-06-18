@@ -1,96 +1,229 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    :root { --brand: #6d28d9; }
-    .brand { color: var(--brand); }
-    .brand-bg { background-color: var(--brand); }
-  </style>
-</head>
-<body class="bg-white text-gray-800">
-  <!-- HEADER -->
-  <header class="py-6 text-center">
-    <img src="kiuly-logo.png" alt="KIULY Logo" class="mx-auto w-32" />
-    <h1 class="text-3xl font-bold mt-4 brand">KIULY – Unterricht per KI</h1>
-    <p class="text-lg mt-2">Dein smarter Unterrichtsassistent – weniger Vorbereitung, mehr Zeit mit deiner Klasse.</p>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KIULY – Unterricht per KI</title>
 
-  <main class="px-6 max-w-4xl mx-auto">
-    <!-- WARUM KIULY -->
-    <section class="my-10">
-      <h2 class="text-2xl font-semibold mb-4">Warum KIULY?</h2>
-      <p class="mb-4">Egal ob Grundschule, Sek I oder Sek II – KIULY hilft Lehrkräften aller Schulformen, ihren Unterricht schnell, individuell und DSGVO‑konform zu planen.</p>
-      <ul class="list-disc ml-6 space-y-2">
-        <li><strong>💡 Enorme Zeitersparnis:</strong> Bis zu 50 % weniger Vorbereitungsaufwand<sup>1</sup>.</li>
-        <li><strong>🎯 Passgenaue Entwürfe:</strong> Fach‑, Klassen‑ und KLP‑genau – inkl. Differenzierung.</li>
-        <li><strong>🌍 Barrierefreiheit:</strong> DaZ, ADHS, Seh‑/Hörbeeinträchtigungen u. v. m.</li>
-        <li><strong>📂 Export & Verlauf:</strong> Copy‑Paste, PDF‑Export, automatische Speicherung.</li>
-        <li><strong>💬 Community:</strong> Anonym teilen, Feedback erhalten, voneinander lernen.</li>
-        <li><strong>📱 Mobilfreundlich:</strong> Optimiert für iPhone, iPad & Desktop.</li>
-        <li><strong>🛡️ Sicher & Transparent:</strong> Kein Tracking, keine Werbung, DSGVO‑konform.</li>
-      </ul>
-    </section>
+    <!-- Tailwind CDN (production build) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
 
-    <!-- STUDIENBLOCK -->
-    <section class="my-10 bg-gray-50 p-6 rounded shadow space-y-6">
-      <h2 class="text-2xl font-semibold text-center mb-4">🔬 Wissenschaftlich belegt</h2>
-      <!-- Studie 1 -->
-      <blockquote class="italic text-gray-700 border-l-4 border-purple-500 pl-4">
-        Lehrkräfte, die KI‑Tools für die Unterrichtsplanung einsetzen, sparen bis zu 50 % Zeit – und gewinnen Freiraum für Teamarbeit, Differenzierung und persönliche Betreuung.
-        <span class="block mt-2 text-sm text-gray-500">
-          1 | Karpouzis, K., Pantazatos, D., Taouki, J., & Meli, K. (2024). <em>Tailoring Education with GenAI: A New Horizon in Lesson Planning.</em> arXiv. <a href="https://doi.org/10.48550/arXiv.2403.12071" target="_blank" class="underline">https://doi.org/10.48550/arXiv.2403.12071</a>
-        </span>
-      </blockquote>
-      <!-- Studie 2 -->
-      <blockquote class="italic text-gray-700 border-l-4 border-purple-500 pl-4">
-        Mit KI‑Assistenz steigt die Tagging‑Geschwindigkeit um 52 %, wodurch Lehrkräfte Routinetätigkeiten nahezu halbieren können.
-        <span class="block mt-2 text-sm text-gray-500">
-          2 | Ren, C., Pardos, Z., & Li, Z. (2024). <em>Human‑AI Collaboration Increases Skill Tagging Speed but Degrades Accuracy.</em> arXiv. <a href="https://doi.org/10.48550/arXiv.2403.02259" target="_blank" class="underline">https://doi.org/10.48550/arXiv.2403.02259</a>
-        </span>
-      </blockquote>
-    </section>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- TESTIMONIAL -->
-    <section class="my-10">
-      <h2 class="text-2xl font-semibold mb-4">Was Lehrkräfte sagen</h2>
-      <blockquote class="border-l-4 border-purple-500 pl-4 italic">
-        <p>„Superapp!!! 5 Sterne – Sehr gut, dass ich meine Unterrichtsinhalte speichern kann, so behalte ich den Überblick.“</p>
-        <footer class="mt-2 text-sm text-gray-500">– aaana124</footer>
-      </blockquote>
-    </section>
+    <!-- Custom Styles -->
+    <style>
+      :root {
+        /* Corporate CI */
+        --brand: #6d28d9;
+        --brand-light: #a78bfa;
+        --brand-dark: #4c1d95;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .brand-bg {
+        background-color: var(--brand);
+      }
+      .brand {
+        color: var(--brand);
+      }
+      /* Simple glass-card effect */
+      .glass {
+        backdrop-filter: blur(14px) saturate(180%);
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800 antialiased">
+    <!-- HERO ================================================== -->
+    <header
+      class="relative overflow-hidden pb-28 sm:pb-40 text-center text-white"
+    >
+      <!-- Gradient BG -->
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-purple-500 via-indigo-600 to-brand-dark"
+      ></div>
+      <!-- Decorative blobs -->
+      <div
+        class="absolute -top-20 -left-24 w-[450px] h-[450px] bg-purple-300 rounded-full blur-3xl opacity-30 rotate-12"
+      ></div>
+      <div
+        class="absolute -bottom-24 -right-32 w-[380px] h-[380px] bg-indigo-300 rounded-full blur-3xl opacity-25"
+      ></div>
 
-    <!-- SCREENSHOT (nur Generator) -->
-    <section class="my-10">
-      <h2 class="text-2xl font-semibold mb-4">Screenshot</h2>
-      <div class="flex justify-center">
-        <img src="IMG_8098.PNG" alt="Screenshot – Generator" class="rounded shadow max-w-xs">
+      <div class="relative z-10 max-w-4xl mx-auto px-6 pt-16">
+        <img
+          src="kiuly-logo.png"
+          alt="KIULY Logo"
+          class="mx-auto w-32 md:w-40 drop-shadow-md"
+        />
+        <h1
+          class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight leading-tight"
+        >
+          Unterrichtsplanung in Sekunden
+        </h1>
+        <p class="mt-4 text-lg max-w-xl mx-auto opacity-90">
+          KIULY erstellt <span class="font-semibold">lehrplan-passgenaue</span>
+          Unterrichtsentwürfe & Vorhaben – inkl. Differenzierung,
+          Barrierefreiheit & Export.
+        </p>
+        <a
+          href="#download"
+          class="inline-block mt-8 px-8 py-4 bg-white text-brand font-semibold rounded-full shadow-lg hover:bg-gray-100 transition"
+          >🚀 Kostenlos ausprobieren</a
+        >
       </div>
-      <p class="text-center text-purple-700 font-medium mt-4">
-        Die Ergebnisse bleiben unser Geheimnis – hol dir die App und sieh selbst. 🔒📱
+
+      <!-- Wave -->
+      <svg
+        class="absolute bottom-0 w-full text-gray-50"
+        viewBox="0 0 1440 110"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill="currentColor"
+          d="M0 90l60-10c60-10 180-30 300-27 120 4 240 30 360 32 120 1 240-21 360-33 120-12 240-14 300-15l60-1v65H0z"
+        />
+      </svg>
+    </header>
+
+    <!-- WHY ================================================== -->
+    <section class="max-w-5xl mx-auto px-6 mt-20" id="why">
+      <h2 class="text-3xl font-bold text-center brand">Warum KIULY?</h2>
+
+      <div
+        class="grid md:grid-cols-2 gap-6 mt-10 text-gray-700 text-base leading-relaxed"
+      >
+        <!-- list 1 -->
+        <ul class="space-y-3">
+          <li>
+            <strong>💡 Zeitersparnis:</strong> Bis zu <span class="font-semibold"
+              >50 %</span
+            > weniger Vorbereitung (Karpouzis et al., 2024).
+          </li>
+          <li>
+            <strong>🎯 Passgenau:</strong> Entwürfe exakt für Fach, Klasse &
+            Bundesland.
+          </li>
+          <li>
+            <strong>🌍 Barrierefrei:</strong> Berücksichtigt DaZ, ADHS,
+            Seh-/Hörbeeinträchtigungen.
+          </li>
+        </ul>
+        <!-- list 2 -->
+        <ul class="space-y-3">
+          <li><strong>📂 Export:</strong> Copy / Paste, PDF, automatischer Verlauf.</li>
+          <li>
+            <strong>💬 Community:</strong> Anonym teilen, Feedback erhalten – von
+            echten Kolleg:innen.
+          </li>
+          <li>
+            <strong>🛡️ Sicher:</strong> DSGVO-konform, keine Werbung, kein
+            Tracking.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- STUDIES ================================================== -->
+    <section class="mt-20 px-6" id="studien">
+      <div class="max-w-3xl mx-auto glass p-8 rounded-xl shadow-xl">
+        <h2 class="text-2xl font-semibold text-center mb-6 brand">
+          🔬 Wissenschaftlich belegt
+        </h2>
+        <blockquote class="italic text-gray-800">
+          Lehrkräfte, die KI-Tools zur Unterrichtsplanung einsetzen,
+          sparen bis zu <strong>50 %</strong> Zeit – und gewinnen Freiraum für
+          Teamarbeit, Differenzierung und persönliche Betreuung.
+        </blockquote>
+        <p class="mt-4 text-sm text-gray-600">
+          Karpouzis, K. et al. (2024).
+          <em>Tailoring Education with GenAI: A New Horizon in Lesson
+            Planning</em>. arXiv.
+          <a
+            href="https://doi.org/10.48550/arXiv.2403.12071"
+            target="_blank"
+            class="underline text-brand"
+            >https://doi.org/10.48550/arXiv.2403.12071</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL ================================================== -->
+    <section class="mt-20 px-6">
+      <div class="max-w-xl mx-auto text-center">
+        <h2 class="text-2xl font-semibold brand mb-4">Stimmen aus der Praxis</h2>
+        <div class="glass p-6 rounded-xl shadow">
+          <p class="text-lg font-medium">
+            „Superapp!!! 5 Sterne – Sehr gut, dass ich meine
+            Unterrichtsinhalte speichern kann, so behalte ich den Überblick.“
+          </p>
+          <span class="block mt-3 text-sm text-gray-600">– aaana124</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENSHOT ================================================== -->
+    <section class="mt-20 px-6" id="screenshot">
+      <h2 class="text-2xl font-semibold text-center brand mb-6">Einblick</h2>
+      <div class="flex justify-center">
+        <img
+          src="IMG_8098.PNG"
+          alt="Screenshot – Generator"
+          class="rounded-3xl shadow-2xl ring-4 ring-white max-w-[320px]"
+        />
+      </div>
+      <p class="text-center mt-6 text-brand font-medium">
+        Die Ergebnisse bleiben unser Geheimnis – lade die App & sieh selbst. 🔒
       </p>
     </section>
 
-    <!-- CTA -->
-    <section class="my-10 text-center">
-      <a href="https://apps.apple.com/de/app/kiuly/id6476990647" class="inline-block px-8 py-4 bg-purple-700 text-white rounded text-lg font-semibold hover:bg-purple-800 transition">
-        🚀 Jetzt KIULY kostenlos testen
+    <!-- CTA ================================================== -->
+    <section class="mt-24 text-center" id="download">
+      <a
+        href="https://apps.apple.com/de/app/kiuly/id6476990647"
+        class="inline-block px-10 py-4 brand-bg text-white text-lg font-semibold rounded-full shadow-lg hover:bg-brand-dark transition"
+      >
+        🚀 Jetzt kostenlos herunterladen
       </a>
-      <p class="mt-3 text-sm text-gray-600">Sicher dir jetzt dein digitales Unterrichts‑Upgrade!</p>
+      <p class="mt-3 text-sm text-gray-600">
+        Dein digitales Unterrichts-Upgrade wartet.
+      </p>
     </section>
-  </main>
 
-  <!-- FOOTER -->
-  <footer class="mt-20 py-6 text-center text-sm bg-gray-100">
-    <p>Made with ❤️ in Essen</p>
-    <nav class="space-x-4 mt-2">
-      <a href="https://impressum-kiuly.carrd.co/" class="underline text-blue-600">Impressum</a>
-      <a href="https://datenschutzerklaerung-kiuly.carrd.co/" class="underline text-blue-600">Datenschutzerklärung</a>
-      <a href="https://nutzungsbedingungen-kiuly.carrd.co/" class="underline text-blue-600">Nutzungsbedingungen</a>
-      <span class="text-gray-600">DSGVO‑konform</span>
-    </nav>
-  </footer>
-</body>
+    <!-- FOOTER ================================================== -->
+    <footer class="mt-32 py-10 bg-gray-100 text-center text-sm">
+      <p>Made with ❤️ in Essen</p>
+      <nav class="space-x-4 mt-2">
+        <a href="https://impressum-kiuly.carrd.co/" class="underline text-blue-600"
+          >Impressum</a
+        >
+        <a
+          href="https://datenschutzerklaerung-kiuly.carrd.co/"
+          class="underline text-blue-600"
+          >Datenschutz</a
+        >
+        <a
+          href="https://nutzungsbedingungen-kiuly.carrd.co/"
+          class="underline text-blue-600"
+          >Nutzungsbedingungen</a
+        >
+        <span class="text-gray-600">DSGVO-konform</span>
+      </nav>
+    </footer>
+  </body>
 </html>
