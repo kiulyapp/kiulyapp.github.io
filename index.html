@@ -3,116 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> Unterricht per KI</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>KIULY – Unterricht per KI</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>
-    :root{--brand:#6d28d9;}
-    .brand{color:var(--brand);} .brand-bg{background-color:var(--brand);}  
+    :root { --brand: #6d28d9; }
+    .brand { color: var(--brand); }
+    .brand-bg { background-color: var(--brand); }
   </style>
 </head>
-<body class="bg-white text-gray-800 font-sans antialiased selection:bg-purple-200 selection:text-purple-900">
-
-  <!-- Hero / Header -->
-  <header class="bg-gradient-to-b from-purple-100 via-white to-white py-14 px-4 text-center relative isolate overflow-hidden">
-    <img src="assets/kiuly-logo.png" alt="KIULY Logo" class="mx-auto w-32 h-32 md:w-40 md:h-40 drop-shadow-lg mb-5 md:mb-6">
-    <h1 class="text-4xl md:text-5xl font-extrabold brand tracking-tight">KIULY</h1>
-    <p class="text-base md:text-lg text-gray-600 mt-3 max-w-md mx-auto leading-relaxed">
-      Unterrichtsentwürfe & Vorhaben in Sekunden. Lehrplanbasiert, differenziert, mobilfreundlich.
-    </p>
-    <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544"
-       class="inline-block mt-8 brand-bg text-white px-6 py-3 rounded-full text-base md:text-lg font-semibold shadow-xl hover:bg-purple-700 focus:ring-4 focus:ring-purple-300 transition">
-      🚀 Jetzt kostenlos im App Store testen
-    </a>
-    <div class="absolute -z-10 inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[120vw] h-[120vw] bg-purple-200 rounded-full blur-3xl opacity-30"></div>
-    </div>
+<body class="bg-white text-gray-800 font-sans">
+  <!-- Header -->
+  <header class="text-center py-6">
+    <img src="kiuly-logo.png" alt="KIULY Logo" class="mx-auto w-32 h-auto mb-4" />
+    <h1 class="text-3xl font-bold brand">KIULY</h1>
+    <p class="text-lg text-gray-600">Unterrichtsvorschläge per KI – ohne Anmeldung.</p>
   </header>
 
-  <!-- Kundenstimme -->
-  <section id="testimonial" class="bg-white py-10 px-4 text-center">
-    <div class="max-w-md mx-auto">
-      <p class="text-3xl mb-2 brand">★★★★★</p>
-      <p class="italic text-gray-700 mb-3">“Superapp!!! Sehr gut, dass ich meine Unterrichtsinhalte speichern kann, so behalte ich den Überblick.”</p>
-      <p class="text-xs text-gray-500">– aaana124, App Store</p>
+  <!-- Funktionen -->
+  <section class="py-10 px-4 max-w-4xl mx-auto">
+    <h2 class="text-2xl md:text-3xl font-semibold text-center mb-6">Funktionen</h2>
+    <ul class="grid md:grid-cols-2 gap-4 text-base">
+      <li>✅ 8 kostenlose Ideen/Monat – ideal zum Kennenlernen</li>
+      <li>💎 Premium für 4,99 €/Monat: unbegrenzte Nutzung</li>
+      <li>🌐 Mehrsprachigkeit & umfassende Barrierefreiheit</li>
+      <li>📂 Export (Copy/Paste) & automatischer Verlauf</li>
+      <li>💬 Community zum anonymen Teilen & Kommentieren</li>
+      <li>🔒 Zero‑Tracking, keine Werbung, keine Anmeldung nötig</li>
+    </ul>
+  </section>
+
+  <!-- Bewertung -->
+  <section class="bg-gray-50 py-8 px-4 text-center">
+    <p class="text-xl font-semibold mb-2">„Superapp!!! 5 Sterne“</p>
+    <p class="text-gray-600">Sehr gut, dass ich meine Unterrichtsinhalte speichern kann, so behalte ich den Überblick. – <strong>aaana124</strong></p>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="py-12 px-4 bg-white">
+    <h2 class="text-2xl md:text-3xl font-semibold text-center mb-8 brand">Einblicke in die App</h2>
+    <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+      <img src="IMG_8098.PNG" alt="Screenshot 1" class="rounded-xl shadow-md max-w-xs w-full">
+      <img src="IMG_8099.PNG" alt="Screenshot 2" class="rounded-xl shadow-md max-w-xs w-full">
+      <img src="IMG_8100.PNG" alt="Screenshot 3" class="rounded-xl shadow-md max-w-xs w-full">
     </div>
   </section>
 
-  <main class="px-4 py-12 space-y-16 max-w-xl mx-auto">
-
-    <!-- What is KIULY -->
-    <section id="about">
-      <h2 class="text-2xl font-semibold brand mb-4">Was ist KIULY?</h2>
-      <p class="text-gray-700 text-sm leading-relaxed">
-        KIULY ist dein persönlicher KI-Assistent für die Unterrichtsplanung. Wähle Schulform, Fach, Klasse & Thema – KIULY generiert einen strukturierten, kompetenzorientierten Entwurf in wenigen Sekunden. Ergänze optional Differenzierung, Methodik oder Barrierefrei-Optionen.
-      </p>
-    </section>
-
-    <!-- Feature List -->
-    <section id="features">
-      <h2 class="text-xl font-semibold brand mb-3">Funktionen</h2>
-      <ul class="text-sm text-gray-700 space-y-3 list-none">
-        <li class="flex gap-2"><span>⏩</span><div><strong>Schnell & intuitiv</strong><br>In wenigen Klicks zum fertigen Unterrichtsentwurf – ohne Anmeldung.</div></li>
-        <li class="flex gap-2"><span>✍️</span><div><strong>Anpassbar</strong><br>Freitextfelder, Differenzierung, Methoden & Zielgruppenanpassung.</div></li>
-        <li class="flex gap-2"><span>🌐</span><div><strong>Barrierefrei</strong><br>DaZ, ADHS, Seh‑ & Hörbeeinträchtigungen berücksichtigt.</div></li>
-        <li class="flex gap-2"><span>📂</span><div><strong>Export & Verlauf</strong><br>Verlauf speichern, kopieren oder direkt in Textverarbeitung exportieren.</div></li>
-        <li class="flex gap-2"><span>💬</span><div><strong>Community</strong><br>Teile anonym, kommentiere und profitiere vom Austausch mit Kolleg:innen.</div></li>
-        <li class="flex gap-2"><span>📱</span><div><strong>Mobilfreundlich</strong><br>Optimiert für iPhone & iPad – immer griffbereit.</div></li>
-      </ul>
-    </section>
-
-    <!-- Screenshots 2 items -->
-    <section id="screenshots" class="text-center">
-      <h2 class="text-xl font-semibold brand mb-4">App-Vorschau</h2>
-      <div class="grid gap-6 md:grid-cols-2">
-        <img src="assets/screenshot1.png" alt="KIULY Generator-Ansicht" class="mx-auto w-full max-w-xs rounded-lg shadow">
-        <img src="assets/screenshot2.png" alt="KIULY Ergebnis-Ansicht" class="mx-auto w-full max-w-xs rounded-lg shadow">
-      </div>
-    </section>
-
-    <!-- Pricing Summary -->
-    <section id="pricing">
-      <h2 class="text-xl font-semibold brand mb-4">Preismodell</h2>
-      <div class="space-y-6">
-        <!-- Free -->
-        <div class="border rounded-xl p-6">
-          <h3 class="font-semibold mb-1">Kostenlos</h3>
-          <p class="text-2xl font-extrabold brand mb-1">0 €</p>
-          <p class="text-xs text-gray-500 mb-3">8 Generierungen pro Monat</p>
-          <ul class="text-sm list-disc list-inside space-y-1">
-            <li>Alle Kernfunktionen</li>
-            <li>Community & Export</li>
-          </ul>
-        </div>
-        <!-- Premium -->
-        <div class="border-2 border-purple-400 rounded-xl p-6">
-          <h3 class="font-semibold mb-1">Premium</h3>
-          <p class="text-2xl font-extrabold brand mb-1">4,99 €</p>
-          <p class="text-xs text-gray-500 mb-3">monatlich · jederzeit kündbar</p>
-          <ul class="text-sm list-disc list-inside space-y-1">
-            <li>Unbegrenzte Generierungen</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="text-center">
-      <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="inline-block brand-bg text-white px-8 py-3 rounded-full text-base font-semibold shadow-lg hover:bg-purple-700 focus:ring-4 focus:ring-purple-400 transition">
-        🚀 Jetzt im App Store öffnen
-      </a>
-    </section>
-  </main>
-
   <!-- Footer -->
-  <footer class="bg-gray-50 text-center text-xs text-gray-500 py-8 px-4 space-y-2">
-    <p>KIULY Labs – Pascal Obermeit · Essen, Deutschland</p>
+  <footer class="text-sm text-center text-gray-500 mt-12 py-6 border-t">
+    <p>Made with ❤️ in Essen</p>
     <p>
-      <a href="https://nutzungsbedingungen-kiuly.carrd.co/" class="brand hover:underline">Nutzungsbedingungen</a> ·
-      <a href="https://datenschutzerklaerung-kiuly.carrd.co/" class="brand hover:underline">Datenschutzerklärung</a> ·
-      <a href="https://impressum-kiuly.carrd.co/" class="brand hover:underline">Impressum</a>
+      <a href="https://impressum-kiuly.carrd.co" class="underline mx-1">Impressum</a>
+      <a href="https://datenschutzerklaerung-kiuly.carrd.co" class="underline mx-1">Datenschutzerklärung</a>
+      <a href="https://nutzungsbedingungen-kiuly.carrd.co" class="underline mx-1">Nutzungsbedingungen</a><br>
+      <span class="text-blue-600 font-medium">DSGVO-konform</span>
     </p>
-    <p>© 2025 KIULY</p>
   </footer>
-
 </body>
 </html>
