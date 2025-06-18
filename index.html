@@ -6,12 +6,18 @@
     <title>KIULY – Unterricht per KI</title>
 
     <!-- Tailwind CDN (production build) -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Custom Styles -->
     <style>
@@ -43,29 +49,54 @@
   </head>
   <body class="bg-gray-50 text-gray-800 antialiased">
     <!-- HERO ================================================== -->
-    <header class="relative overflow-hidden pb-28 sm:pb-40 text-center text-white">
+    <header
+      class="relative overflow-hidden pb-28 sm:pb-40 text-center text-white"
+    >
       <!-- Gradient BG -->
-      <div class="absolute inset-0 bg-gradient-to-br from-purple-500 via-indigo-600 to-brand-dark"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-purple-500 via-indigo-600 to-brand-dark"
+      ></div>
       <!-- Decorative blobs -->
-      <div class="absolute -top-20 -left-24 w-[450px] h-[450px] bg-purple-300 rounded-full blur-3xl opacity-30 rotate-12"></div>
-      <div class="absolute -bottom-24 -right-32 w-[380px] h-[380px] bg-indigo-300 rounded-full blur-3xl opacity-25"></div>
+      <div
+        class="absolute -top-20 -left-24 w-[450px] h-[450px] bg-purple-300 rounded-full blur-3xl opacity-30 rotate-12"
+      ></div>
+      <div
+        class="absolute -bottom-24 -right-32 w-[380px] h-[380px] bg-indigo-300 rounded-full blur-3xl opacity-25"
+      ></div>
 
       <div class="relative z-10 max-w-4xl mx-auto px-6 pt-16">
-        <img src="kiuly-logo.png" alt="KIULY Logo" class="mx-auto w-32 md:w-40 drop-shadow-md" />
-        <!-- App Store Badge -->
-        <a href="https://apps.apple.com/de/app/kiuly/id6476990647" target="_blank" rel="noopener" class="block mt-4 mx-auto w-36 md:w-44">
-          <img src="https://linkmaker.itunes.apple.com/assets/shared/badges/de-de/appstore-lrg.svg" alt="Im App Store herunterladen" class="w-full" />
-        </a>
-        <h1 class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Unterrichtsplanung in Sekunden</h1>
+        <img
+          src="kiuly-logo.png"
+          alt="KIULY Logo"
+          class="mx-auto w-32 md:w-40 drop-shadow-md"
+        />
+        <h1
+          class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight leading-tight"
+        >
+          Unterrichtsplanung in Sekunden
+        </h1>
         <p class="mt-4 text-lg max-w-xl mx-auto opacity-90">
-          KIULY erstellt <span class="font-semibold">lehrplan-passgenaue</span> Unterrichtsentwürfe & Vorhaben – inkl. Differenzierung, Barrierefreiheit & Export.
+          KIULY erstellt <span class="font-semibold">lehrplan-passgenaue</span>
+          Unterrichtsentwürfe & Vorhaben – inkl. Differenzierung,
+          Barrierefreiheit & Export.
         </p>
-        <a href="#download" class="inline-block mt-8 px-8 py-4 bg-white text-brand font-semibold rounded-full shadow-lg hover:bg-gray-100 transition">🚀 Kostenlos ausprobieren</a>
+        <a
+          href="#download"
+          class="inline-block mt-8 px-8 py-4 bg-white text-brand font-semibold rounded-full shadow-lg hover:bg-gray-100 transition"
+          >🚀 Kostenlos ausprobieren</a
+        >
       </div>
 
       <!-- Wave -->
-      <svg class="absolute bottom-0 w-full text-gray-50" viewBox="0 0 1440 110" xmlns="http://www.w3.org/2000/svg">
-        <path fill="currentColor" d="M0 90l60-10c60-10 180-30 300-27 120 4 240 30 360 32 120 1 240-21 360-33 120-12 240-14 300-15l60-1v65H0z" />
+      <svg
+        class="absolute bottom-0 w-full text-gray-50"
+        viewBox="0 0 1440 110"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill="currentColor"
+          d="M0 90l60-10c60-10 180-30 300-27 120 4 240 30 360 32 120 1 240-21 360-33 120-12 240-14 300-15l60-1v65H0z"
+        />
       </svg>
     </header>
 
@@ -73,18 +104,36 @@
     <section class="max-w-5xl mx-auto px-6 mt-20" id="why">
       <h2 class="text-3xl font-bold text-center brand">Warum KIULY?</h2>
 
-      <div class="grid md:grid-cols-2 gap-6 mt-10 text-gray-700 text-base leading-relaxed">
+      <div
+        class="grid md:grid-cols-2 gap-6 mt-10 text-gray-700 text-base leading-relaxed"
+      >
         <!-- list 1 -->
         <ul class="space-y-3">
-          <li><strong>💡 Zeitersparnis:</strong> Bis zu <span class="font-semibold">50 %</span> weniger Vorbereitung (Karpouzis et al., 2024).</li>
-          <li><strong>🎯 Passgenau:</strong> Entwürfe exakt für Fach, Klasse & Bundesland.</li>
-          <li><strong>🌍 Barrierefrei:</strong> Berücksichtigt DaZ, ADHS, Seh-/Hörbeeinträchtigungen.</li>
+          <li>
+            <strong>💡 Zeitersparnis:</strong> Bis zu <span class="font-semibold"
+              >50 %</span
+            > weniger Vorbereitung (Karpouzis et al., 2024).
+          </li>
+          <li>
+            <strong>🎯 Passgenau:</strong> Entwürfe exakt für Fach, Klasse &
+            Bundesland.
+          </li>
+          <li>
+            <strong>🌍 Barrierefrei:</strong> Berücksichtigt DaZ, ADHS,
+            Seh-/Hörbeeinträchtigungen.
+          </li>
         </ul>
         <!-- list 2 -->
         <ul class="space-y-3">
           <li><strong>📂 Export:</strong> Copy / Paste, PDF, automatischer Verlauf.</li>
-          <li><strong>💬 Community:</strong> Anonym teilen, Feedback erhalten – von echten Kolleg:innen.</li>
-          <li><strong>🛡️ Sicher:</strong> DSGVO-konform, keine Werbung, kein Tracking.</li>
+          <li>
+            <strong>💬 Community:</strong> Anonym teilen, Feedback erhalten – von
+            echten Kolleg:innen.
+          </li>
+          <li>
+            <strong>🛡️ Sicher:</strong> DSGVO-konform, keine Werbung, kein
+            Tracking.
+          </li>
         </ul>
       </div>
     </section>
@@ -92,9 +141,25 @@
     <!-- STUDIES ================================================== -->
     <section class="mt-20 px-6" id="studien">
       <div class="max-w-3xl mx-auto glass p-8 rounded-xl shadow-xl">
-        <h2 class="text-2xl font-semibold text-center mb-6 brand">🔬 Wissenschaftlich belegt</h2>
-        <blockquote class="italic text-gray-800">Lehrkräfte, die KI-Tools zur Unterrichtsplanung einsetzen, sparen bis zu <strong>50 %</strong> Zeit – und gewinnen Freiraum für Teamarbeit, Differenzierung und persönliche Betreuung.</blockquote>
-        <p class="mt-4 text-sm text-gray-600">Karpouzis, K. et al. (2024). <em>Tailoring Education with GenAI: A New Horizon in Lesson Planning</em>. arXiv. <a href="https://doi.org/10.48550/arXiv.2403.12071" target="_blank" class="underline text-brand">https://doi.org/10.48550/arXiv.2403.12071</a></p>
+        <h2 class="text-2xl font-semibold text-center mb-6 brand">
+          🔬 Wissenschaftlich belegt
+        </h2>
+        <blockquote class="italic text-gray-800">
+          Lehrkräfte, die KI-Tools zur Unterrichtsplanung einsetzen,
+          sparen bis zu <strong>50 %</strong> Zeit – und gewinnen Freiraum für
+          Teamarbeit, Differenzierung und persönliche Betreuung.
+        </blockquote>
+        <p class="mt-4 text-sm text-gray-600">
+          Karpouzis, K. et al. (2024).
+          <em>Tailoring Education with GenAI: A New Horizon in Lesson
+            Planning</em>. arXiv.
+          <a
+            href="https://doi.org/10.48550/arXiv.2403.12071"
+            target="_blank"
+            class="underline text-brand"
+            >https://doi.org/10.48550/arXiv.2403.12071</a
+          >
+        </p>
       </div>
     </section>
 
@@ -103,7 +168,10 @@
       <div class="max-w-xl mx-auto text-center">
         <h2 class="text-2xl font-semibold brand mb-4">Stimmen aus der Praxis</h2>
         <div class="glass p-6 rounded-xl shadow">
-          <p class="text-lg font-medium">„Superapp!!! 5 Sterne – Sehr gut, dass ich meine Unterrichtsinhalte speichern kann, so behalte ich den Überblick.“</p>
+          <p class="text-lg font-medium">
+            „Superapp!!! 5 Sterne – Sehr gut, dass ich meine
+            Unterrichtsinhalte speichern kann, so behalte ich den Überblick.“
+          </p>
           <span class="block mt-3 text-sm text-gray-600">– aaana124</span>
         </div>
       </div>
@@ -113,20 +181,49 @@
     <section class="mt-20 px-6" id="screenshot">
       <h2 class="text-2xl font-semibold text-center brand mb-6">Einblick</h2>
       <div class="flex justify-center">
-        <img src="IMG_8098.PNG" alt="Screenshot – Generator" class="rounded-3xl shadow-2xl ring-4 ring-white max-w-[320px]" />
+        <img
+          src="IMG_8098.PNG"
+          alt="Screenshot – Generator"
+          class="rounded-3xl shadow-2xl ring-4 ring-white max-w-[320px]"
+        />
       </div>
-      <p class="text-center mt-6 text-brand font-medium">Die Ergebnisse bleiben unser Geheimnis – lade die App & sieh selbst. 🔒</p>
+      <p class="text-center mt-6 text-brand font-medium">
+        Die Ergebnisse bleiben unser Geheimnis – lade die App & sieh selbst. 🔒
+      </p>
     </section>
 
     <!-- CTA ================================================== -->
     <section class="mt-24 text-center" id="download">
-      <a href="https://apps.apple.com/de/app/kiuly/id6476990647" class="inline-block px-10 py-4 brand-bg text-white text-lg font-semibold rounded-full shadow-lg hover:bg-brand-dark transition">🚀 Jetzt kostenlos herunterladen</a>
-      <p class="mt-3 text-sm text-gray-600">Dein digitales Unterrichts-Upgrade wartet.</p>
+      <a
+        href="https://apps.apple.com/de/app/kiuly/id6476990647"
+        class="inline-block px-10 py-4 brand-bg text-white text-lg font-semibold rounded-full shadow-lg hover:bg-brand-dark transition"
+      >
+        🚀 Jetzt kostenlos herunterladen
+      </a>
+      <p class="mt-3 text-sm text-gray-600">
+        Dein digitales Unterrichts-Upgrade wartet.
+      </p>
     </section>
 
     <!-- FOOTER ================================================== -->
     <footer class="mt-32 py-10 bg-gray-100 text-center text-sm">
       <p>Made with ❤️ in Essen</p>
       <nav class="space-x-4 mt-2">
-        <a href="https://impressum-kiuly.carrd.co/" class="underline text-blue-600">Impressum</a>
-        <a href="https://datenschutzerklaerung-kiuly.carr
+        <a href="https://impressum-kiuly.carrd.co/" class="underline text-blue-600"
+          >Impressum</a
+        >
+        <a
+          href="https://datenschutzerklaerung-kiuly.carrd.co/"
+          class="underline text-blue-600"
+          >Datenschutz</a
+        >
+        <a
+          href="https://nutzungsbedingungen-kiuly.carrd.co/"
+          class="underline text-blue-600"
+          >Nutzungsbedingungen</a
+        >
+        <span class="text-gray-600">DSGVO-konform</span>
+      </nav>
+    </footer>
+  </body>
+</html> baue das app store logo oben ein
