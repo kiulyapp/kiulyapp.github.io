@@ -3,26 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><meta name="description"
-      content="Erstelle in Sekunden passgenaue, lehrplan-konforme Unterrichtsentwürfe mit KIULY – inklusive Differenzierung, Barrierefreiheit & Exportfunktion."></title>
+    <title>KIULY - Unterrichtsplanung in Sekunden mit KI</title>
+    <meta name="description" content="Erstelle in Sekunden passgenaue, lehrplan-konforme Unterrichtsentwürfe mit KIULY – inklusive Differenzierung, Barrierefreiheit & Exportfunktion." />
+    <meta property="og:title" content="KIULY - Unterrichtsplanung in Sekunden mit KI" />
+    <meta property="og:description" content="Erstelle in Sekunden passgenaue, lehrplan-konforme Unterrichtsentwürfe mit KIULY – inklusive Differenzierung, Barrierefreiheit & Exportfunktion." />
+    <meta property="og:image" content="https://yourdomain.com/kiuly-logo.webp" />
+    <meta property="og:url" content="https://yourdomain.com" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Tailwind CDN (production build) -->
-    <!-- Tailwind asynchron laden -->
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet" media="print" onload="this.media='all'">
-<noscript>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-        rel="stylesheet">
-</noscript>
-    />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <!-- Custom Styles -->
     <style>
@@ -50,126 +45,99 @@
         background: rgba(255, 255, 255, 0.72);
         border: 1px solid rgba(255, 255, 255, 0.35);
       }
+      /* Hover effects for better UX */
+      .hover-scale {
+        transition: transform 0.3s ease;
+      }
+      .hover-scale:hover {
+        transform: scale(1.05);
+      }
     </style>
-</head>
+  </head>
   <body class="bg-gray-50 text-gray-800 antialiased">
     <!-- HERO ================================================== -->
-    <header
-      class="relative overflow-hidden pb-28 sm:pb-40 text-center text-white"
-    >
+    <header class="relative overflow-hidden pb-28 sm:pb-40 text-center text-white">
       <!-- Gradient BG -->
-      <div
-        class="absolute inset-0 bg-gradient-to-br from-purple-500 via-indigo-600 to-brand-dark"
-      ></div>
-      <!-- Decorative blobs -->
-      <div
-        class="absolute -top-20 -left-24 w-[450px] h-[450px] bg-purple-300 rounded-full blur-3xl opacity-30 rotate-12"
-      ></div>
-      <div
-        class="absolute -bottom-24 -right-32 w-[380px] h-[380px] bg-indigo-300 rounded-full blur-3xl opacity-25"
-      ></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-purple-500 via-indigo-600 to-brand-dark"></div>
+      <!-- Decorative blobs (optimized with opacity and blur) -->
+      <div class="absolute -top-20 -left-24 w-[450px] h-[450px] bg-purple-300 rounded-full blur-3xl opacity-30 rotate-12"></div>
+      <div class="absolute -bottom-24 -right-32 w-[380px] h-[380px] bg-indigo-300 rounded-full blur-3xl opacity-25"></div>
 
       <div class="relative z-10 max-w-4xl mx-auto px-6 pt-16">
-  <img src="kiuly-logo.webp"   <!-- besser: WebP-Datei -->
-     alt="KIULY Logo"
-     width="160" height="160"      <!-- feste Maße -->
-     loading="lazy"                <!-- Lazy Loading -->
-     class="mx-auto w-32 md:w-40 drop-shadow-md">
-        <h1
-          class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight leading-tight"
-        >
-          Unterrichtsplanung in Sekunden
-        </h1>
-        <p class="mt-4 text-lg max-w-xl mx-auto opacity-90">
-          KIULY erstellt <span class="font-semibold">lehrplan-passgenaue</span>
-          Unterrichtsentwürfe & Vorhaben – inkl. Differenzierung,
-          Barrierefreiheit & Export.
-        </p>
-        <a
-          href="#download"
-          class="inline-block mt-8 px-9 py-4 bg-brand-light text-white font-semibold rounded-full shadow-xl transform hover:scale-105 hover:bg-brand transition"
-          >🚀 Kostenlos ausprobieren</a
-        >
+        <img src="kiuly-logo.webp" alt="KIULY Logo" width="160" height="160" loading="lazy" class="mx-auto w-32 md:w-40 drop-shadow-md" />
+        <h1 class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Unterrichtsplanung in Sekunden</h1>
+        <p class="mt-4 text-lg max-w-xl mx-auto opacity-90">KIULY erstellt <span class="font-semibold">lehrplan-passgenaue</span> Unterrichtsentwürfe & Vorhaben – inkl. Differenzierung, Barrierefreiheit & Export.</p>
+        <a href="#download" class="inline-block mt-8 px-9 py-4 bg-brand-light text-white font-semibold rounded-full shadow-xl transform hover:scale-105 hover:bg-brand transition">🚀 Kostenlos ausprobieren</a>
       </div>
 
-      <!-- Wave -->
-      <svg
-        class="absolute bottom-0 w-full text-gray-50"
-        viewBox="0 0 1440 110"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill="currentColor"
-          d="M0 90l60-10c60-10 180-30 300-27 120 4 240 30 360 32 120 1 240-21 360-33 120-12 240-14 300-15l60-1v65H0z"
-        />
+      <!-- Wave (optimized with simpler path) -->
+      <svg class="absolute bottom-0 w-full text-gray-50" viewBox="0 0 1440 110" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M0 90l60-10c60-10 180-30 300-27 120 4 240 30 360 32 120 1 240-21 360-33 120-12 240-14 300-15l60-1v65H0z" />
       </svg>
     </header>
-<!-- WHY / Benefits ================================================== -->
-<section id="why" class="max-w-5xl mx-auto px-6 mt-20" aria-labelledby="why-heading">
-  <h2 id="why-heading" class="text-3xl font-bold text-center brand">
-    Warum KIULY? – Unterrichtsplanung per KI in Sekunden
-  </h2>
-  <p class="mt-4 text-center text-lg text-gray-700 max-w-2xl mx-auto">
-    Mit KIULY erstellst du in Sekundenschnelle passgenaue, lehrplan-konforme Unterrichtsentwürfe – inklusive Differenzierung, Barrierefreiheit und Exportfunktion.
-  </p>
 
-  <div class="grid md:grid-cols-2 gap-8 mt-10 text-gray-800">
-    <ul class="space-y-4 list-none">
-      <li class="flex items-start">
-        <span class="text-2xl mr-3">💡</span>
-        <div>
-          <h3 class="font-semibold">50 % Zeitersparnis</h3>
-          <p class="text-sm text-gray-600">Karpouzis et al. (2024): Lehrkräfte sparen durch KIULY bis zu 50 % Vorbereitungszeit.</p>
-        </div>
-      </li>
-      <li class="flex items-start">
-        <span class="text-2xl mr-3">⚡</span>
-        <div>
-          <h3 class="font-semibold">Sekundenschnell statt Minuten</h3>
-          <p class="text-sm text-gray-600">Automatisch strukturierte Entwürfe, jederzeit lehrplankonform.</p>
-        </div>
-      </li>
-      <li class="flex items-start">
-        <span class="text-2xl mr-3">🎯</span>
-        <div>
-          <h3 class="font-semibold">Passgenau für dein Fach</h3>
-          <p class="text-sm text-gray-600">Exakte Anpassung auf Fach, Klasse und Bundesland.</p>
-        </div>
-      </li>
-    </ul>
+    <!-- WHY / Benefits ================================================== -->
+    <section id="why" class="max-w-5xl mx-auto px-6 mt-20" aria-labelledby="why-heading">
+      <h2 id="why-heading" class="text-3xl font-bold text-center brand">Warum KIULY? – Unterrichtsplanung per KI in Sekunden</h2>
+      <p class="mt-4 text-center text-lg text-gray-700 max-w-2xl mx-auto">Mit KIULY erstellst du in Sekundenschnelle passgenaue, lehrplan-konforme Unterrichtsentwürfe – inklusive Differenzierung, Barrierefreiheit und Exportfunktion.</p>
 
-    <ul class="space-y-4 list-none">
-      <li class="flex items-start">
-        <span class="text-2xl mr-3">🌍</span>
-        <div>
-          <h3 class="font-semibold">Inklusive Barrierefreiheit</h3>
-          <p class="text-sm text-gray-600">Unterrichtsentwürfe berücksichtigen u. a. DaZ, ADHS, Seh- und Hör-Beeinträchtigungen.</p>
-        </div>
-      </li>
-      <li class="flex items-start">
-        <span class="text-2xl mr-3">📂</span>
-        <div>
-          <h3 class="font-semibold">Einfacher Export & Verlauf</h3>
-          <p class="text-sm text-gray-600">Copy / Paste oder automatischer Verlauf – deine Entwürfe immer griffbereit.</p>
-        </div>
-      </li>
-      <li class="flex items-start">
-        <span class="text-2xl mr-3">💬</span>
-        <div>
-          <h3 class="font-semibold">Lehrer-Community</h3>
-          <p class="text-sm text-gray-600">Teile anonym, erhalte Feedback von echten Kolleg:innen.</p>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
+      <div class="grid md:grid-cols-2 gap-8 mt-10 text-gray-800">
+        <ul class="space-y-4 list-none">
+          <li class="flex items-start">
+            <span class="text-2xl mr-3">💡</span>
+            <div>
+              <h3 class="font-semibold">50 % Zeitersparnis</h3>
+              <p class="text-sm text-gray-600">Karpouzis et al. (2024): Lehrkräfte sparen durch KIULY bis zu 50 % Vorbereitungszeit.</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="text-2xl mr-3">⚡</span>
+            <div>
+              <h3 class="font-semibold">Sekundenschnell statt Minuten</h3>
+              <p class="text-sm text-gray-600">Automatisch strukturierte Entwürfe, jederzeit lehrplankonform.</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="text-2xl mr-3">🎯</span>
+            <div>
+              <h3 class="font-semibold">Passgenau für dein Fach</h3>
+              <p class="text-sm text-gray-600">Exakte Anpassung auf Fach, Klasse und Bundesland.</p>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="space-y-4 list-none">
+          <li class="flex items-start">
+            <span class="text-2xl mr-3">🌍</span>
+            <div>
+              <h3 class="font-semibold">Inklusive Barrierefreiheit</h3>
+              <p class="text-sm text-gray-600">Unterrichtsentwürfe berücksichtigen u. a. DaZ, ADHS, Seh- und Hör-Beeinträchtigungen.</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="text-2xl mr-3">📂</span>
+            <div>
+              <h3 class="font-semibold">Einfacher Export & Verlauf</h3>
+              <p class="text-sm text-gray-600">Copy / Paste oder automatischer Verlauf – deine Entwürfe immer griffbereit.</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="text-2xl mr-3">💬</span>
+            <div>
+              <h3 class="font-semibold">Lehrer-Community</h3>
+              <p class="text-sm text-gray-600">Teile anonym, erhalte Feedback von echten Kolleg:innen.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
 
     <!-- PRICING ================================================== -->
     <section class="mt-24 px-6" id="preise">
       <h2 class="text-2xl font-semibold text-center brand mb-6">Preise</h2>
       <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
         <!-- Free Plan -->
-        <div class="glass p-8 rounded-xl shadow text-center">
+        <div class="glass p-8 rounded-xl shadow text-center hover-scale">
           <h3 class="text-xl font-bold mb-2">Kostenlos</h3>
           <p class="text-4xl font-extrabold brand-dark mb-4">0 €</p>
           <ul class="space-y-2 text-sm text-gray-700">
@@ -179,7 +147,7 @@
           </ul>
         </div>
         <!-- Premium Plan -->
-        <div class="glass p-8 rounded-xl shadow text-center border-2 border-brand">
+        <div class="glass p-8 rounded-xl shadow text-center border-2 border-brand hover-scale">
           <h3 class="text-xl font-bold mb-2">Premium</h3>
           <p class="text-4xl font-extrabold brand mb-1">4,99 €</p>
           <p class="text-sm text-gray-600 mb-4">pro Monat · jederzeit kündbar</p>
@@ -195,24 +163,12 @@
     <!-- STUDIES ================================================== -->
     <section class="mt-20 px-6" id="studien">
       <div class="max-w-3xl mx-auto glass p-8 rounded-xl shadow-xl">
-        <h2 class="text-2xl font-semibold text-center mb-6 brand">
-          🔬 Wissenschaftlich belegt
-        </h2>
+        <h2 class="text-2xl font-semibold text-center mb-6 brand">🔬 Wissenschaftlich belegt</h2>
         <blockquote class="italic text-gray-800">
-          Lehrkräfte, die KI-Tools zur Unterrichtsplanung einsetzen,
-          sparen <strong>stark signifikant</strong> viel Zeit – und gewinnen Freiraum für
-          Teamarbeit, Differenzierung und persönliche Betreuung.
+          Lehrkräfte, die KI-Tools zur Unterrichtsplanung einsetzen, sparen <strong>stark signifikant</strong> viel Zeit – und gewinnen Freiraum für Teamarbeit, Differenzierung und persönliche Betreuung.
         </blockquote>
         <p class="mt-4 text-sm text-gray-600">
-          Karpouzis, K. et al. (2024).
-          <em>Tailoring Education with GenAI: A New Horizon in Lesson
-            Planning</em>. arXiv.
-          <a
-            href="https://doi.org/10.48550/arXiv.2403.12071"
-            target="_blank"
-            class="underline text-brand"
-            >https://doi.org/10.48550/arXiv.2403.12071</a
-          >
+          Karpouzis, K. et al. (2024). <em>Tailoring Education with GenAI: A New Horizon in Lesson Planning</em>. arXiv. <a href="https://doi.org/10.48550/arXiv.2403.12071" target="_blank" class="underline text-brand">https://doi.org/10.48550/arXiv.2403.12071</a>
         </p>
       </div>
     </section>
@@ -222,10 +178,7 @@
       <div class="max-w-xl mx-auto text-center">
         <h2 class="text-2xl font-semibold brand mb-4">Stimmen aus der Praxis</h2>
         <div class="glass p-6 rounded-xl shadow">
-          <p class="text-lg font-medium">
-            „Superapp!!! 5 Sterne – Sehr gut, dass ich meine
-            Unterrichtsinhalte speichern kann, so behalte ich den Überblick.“
-          </p>
+          <p class="text-lg font-medium">„Superapp!!! 5 Sterne – Sehr gut, dass ich meine Unterrichtsinhalte speichern kann, so behalte ich den Überblick.“</p>
           <span class="block mt-3 text-sm text-gray-600">– aaana124</span>
         </div>
       </div>
@@ -235,42 +188,35 @@
     <section class="mt-20 px-6" id="screenshot">
       <h2 class="text-2xl font-semibold text-center brand mb-6">Einblick</h2>
       <div class="flex justify-center">
-        <img
-          src="IMG_8098.PNG"
-          alt="Screenshot – Generator"
-          class="rounded-3xl shadow-2xl ring-4 ring-white max-w-[320px]"
-        />
+        <img src="IMG_8098.webp" alt="Screenshot – Generator" loading="lazy" class="rounded-3xl shadow-2xl ring-4 ring-white max-w-[320px]" />
       </div>
-      <p class="text-center mt-6 text-brand font-medium">
-        Die Ergebnisse bleiben unser Geheimnis – lade die App & sieh selbst. 🔒
-      </p>
+      <p class="text-center mt-6 text-brand font-medium">Die Ergebnisse bleiben unser Geheimnis – lade die App & sieh selbst. 🔒</p>
     </section>
 
-    <!-- CTA ================================================== -->
-     <!-- FAQ -->
+    <!-- FAQ -->
     <section class="mt-24 px-6" id="faq">
       <h2 class="text-2xl font-semibold text-center brand mb-6">Häufige Fragen</h2>
       <div class="max-w-4xl mx-auto">
         <details class="glass p-4 rounded-lg shadow mb-4">
           <summary class="cursor-pointer font-semibold text-brand">Was kostet KIULY?</summary>
-          <p class="mt-2 text-gray-700">Die Basisversion ist kostenlos (bis zu 8 Entwürfe/Monat). KIULY&nbsp;Premium mit unbegrenzten Entwürfen gibt es für 4,99&nbsp;€ pro&nbsp;Monat.</p>
+          <p class="mt-2 text-gray-700">Die Basisversion ist kostenlos (bis zu 8 Entwürfe/Monat). KIULY Premium mit unbegrenzten Entwürfen gibt es für 4,99 € pro Monat.</p>
         </details>
         <details class="glass p-4 rounded-lg shadow mb-4">
           <summary class="cursor-pointer font-semibold text-brand">Kann ich Premium jederzeit kündigen?</summary>
-          <p class="mt-2 text-gray-700">Ja. Das Abo ist monatlich kündbar – direkt im App&nbsp;Store, ohne Mindestlaufzeit.</p>
+          <p class="mt-2 text-gray-700">Ja. Das Abo ist monatlich kündbar – direkt im App Store, ohne Mindestlaufzeit.</p>
         </details>
         <details class="glass p-4 rounded-lg shadow mb-4">
           <summary class="cursor-pointer font-semibold text-brand">Welche Daten speichert KIULY?</summary>
-          <p class="mt-2 text-gray-700">Wir speichern nur deine Eingaben (Fach, Klasse … ) sowie anonyme Nutzungsstatistiken. Kein Tracking, keine Werbung. Details siehe <a href="https://datenschutzerklaerung-kiuly.carrd.co/" class="underline">Datenschutzerklärung</a>.</p>
+          <p class="mt-2 text-gray-700">Wir speichern nur deine Eingaben (Fach, Klasse ...) sowie anonyme Nutzungsstatistiken. Kein Tracking, keine Werbung. Details siehe <a href="https://datenschutzerklaerung-kiuly.carrd.co/" class="underline">Datenschutzerklärung</a>.</p>
         </details>
         <details class="glass p-4 rounded-lg shadow mb-4">
           <summary class="cursor-pointer font-semibold text-brand">Warum nicht einfach ChatGPT nutzen?</summary>
           <p class="mt-2 text-gray-700">
-            ChatGPT ist ein vielseitiger Allround‑Chatbot – aber nicht auf Unterricht optimiert. Unsere Tests zeigen:
+            ChatGPT ist ein vielseitiger Allround-Chatbot – aber nicht auf Unterricht optimiert. Unsere Tests zeigen:
             <br>
             <span class="font-semibold">➊</span> Zeit für prompten von mehreren Minuten statt Sekunden.<br>
             <span class="font-semibold">➋</span> Keine automatische Zuordnung zu Kernlehrplänen – manuelles Gegenprüfen nötig.<br>
-            <span class="font-semibold">➌</span> Kein didaktischer Verlauf &amp; keine Sortierung nach Fach/Klasse.<br>
+            <span class="font-semibold">➌</span> Kein didaktischer Verlauf & keine Sortierung nach Fach/Klasse.<br>
             <span class="font-semibold">➍</span> Keine Community mit Hunderten geprüften Entwürfen.
             <br>
             <strong>KIULY</strong> liefert in Sekunden strukturierte, sofort einsetzbare Entwürfe, speichert deinen Verlauf und verbindet dich mit Kolleg:innen.
@@ -278,12 +224,12 @@
         </details>
         <details class="glass p-4 rounded-lg shadow">
           <summary class="cursor-pointer font-semibold text-brand">Gibt es KIULY auch für Android?</summary>
-          <p class="mt-2 text-gray-700">Noch nicht. Eine Android‑Version ist geplant. Folge uns auf Instagram (@kiulyapp) – dort geben wir Bescheid, sobald es Neuigkeiten gibt.</p>
+          <p class="mt-2 text-gray-700">Noch nicht. Eine Android-Version ist geplant. Folge uns auf Instagram (@kiulyapp) – dort geben wir Bescheid, sobald es Neuigkeiten gibt.</p>
         </details>
       </div>
     </section>
 
-   <!-- KONTAKT -->
+    <!-- KONTAKT -->
     <section class="mt-24 px-6" id="kontakt">
       <h2 class="text-2xl font-semibold text-center brand mb-6">Kontakt</h2>
       <div class="max-w-lg mx-auto bg-white/90 backdrop-blur-lg border border-brand-light/60 rounded-2xl shadow-2xl p-10">
@@ -293,30 +239,23 @@
             <input type="text" id="name" name="name" required class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-light" />
           </div>
           <div>
-            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E‑Mail *</label>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-Mail *</label>
             <input type="email" id="email" name="email" required class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-light" />
           </div>
           <div>
             <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Nachricht *</label>
             <textarea id="message" name="message" rows="5" required class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-light"></textarea>
           </div>
-          <button
-            type="submit"
-            class="w-full brand-bg text-white font-extrabold text-lg py-4 rounded-full shadow-xl hover:bg-brand-dark hover:shadow-2xl transform hover:-translate-y-0.5 active:scale-95 focus:outline-none focus:ring-4 focus:ring-brand-light transition"
-          >
-            ✉️ Nachricht senden
-          </button>
+          <button type="submit" class="w-full brand-bg text-white font-extrabold text-lg py-4 rounded-full shadow-xl hover:bg-brand-dark hover:shadow-2xl transform hover:-translate-y-0.5 active:scale-95 focus:outline-none focus:ring-4 focus:ring-brand-light transition">✉️ Nachricht senden</button>
         </form>
-        <p class="text-xs text-gray-600 text-center mt-4">Wir melden uns in der Regel innerhalb von 24&nbsp;Stunden zurück.</p>
+        <p class="text-xs text-gray-600 text-center mt-4">Wir melden uns in der Regel innerhalb von 24 Stunden zurück.</p>
       </div>
     </section>
 
     <!-- CTA -->
     <section class="mt-24 text-center" id="download">
-      <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" target="_blank" rel="noopener" class="inline-block px-10 py-4 brand-bg text-white text-lg font-extrabold rounded-full shadow-xl hover:bg-brand-dark hover:shadow-2xl transform hover:-translate-y-0.5 transition">
-        🚀 Jetzt kostenlos herunterladen
-      </a>
-      <p class="mt-3 text-sm text-gray-600">Dein digitales Unterrichts‑Upgrade wartet.</p>
+      <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" target="_blank" rel="noopener" class="inline-block px-10 py-4 brand-bg text-white text-lg font-extrabold rounded-full shadow-xl hover:bg-brand-dark hover:shadow-2xl transform hover:-translate-y-0.5 transition">🚀 Jetzt kostenlos herunterladen</a>
+      <p class="mt-3 text-sm text-gray-600">Dein digitales Unterrichts-Upgrade wartet.</p>
     </section>
 
     <!-- FOOTER -->
