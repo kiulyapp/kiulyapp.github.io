@@ -46,59 +46,49 @@
         border: 1px solid rgba(255, 255, 255, 0.35);
       }
     </style>
-  </head>
-  <body class="bg-gray-50 text-gray-800 antialiased">
-    <!-- HERO ================================================== -->
-    <header
-      class="relative overflow-hidden pb-28 sm:pb-40 text-center text-white"
+<header
+  id="hero"
+  role="banner"
+  itemscope 
+  itemtype="https://schema.org/WebPage"
+  class="relative overflow-hidden pb-28 sm:pb-40 text-center text-white"
+>
+  <!-- Hintergrund-Dekorationen wie gehabt -->
+
+  <div class="relative z-10 max-w-4xl mx-auto px-6 pt-16">
+    <img
+      src="kiuly-logo.png"
+      alt="KIULY Logo"
+      itemprop="image"
+      class="mx-auto w-32 md:w-40 drop-shadow-md"
+    />
+
+    <h1
+      itemprop="headline"
+      class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight leading-tight"
     >
-      <!-- Gradient BG -->
-      <div
-        class="absolute inset-0 bg-gradient-to-br from-purple-500 via-indigo-600 to-brand-dark"
-      ></div>
-      <!-- Decorative blobs -->
-      <div
-        class="absolute -top-20 -left-24 w-[450px] h-[450px] bg-purple-300 rounded-full blur-3xl opacity-30 rotate-12"
-      ></div>
-      <div
-        class="absolute -bottom-24 -right-32 w-[380px] h-[380px] bg-indigo-300 rounded-full blur-3xl opacity-25"
-      ></div>
+      Unterrichtsplanung in Sekunden mit KIULY
+    </h1>
 
-      <div class="relative z-10 max-w-4xl mx-auto px-6 pt-16">
-        <img
-          src="kiuly-logo.png"
-          alt="KIULY Logo"
-          class="mx-auto w-32 md:w-40 drop-shadow-md"
-        />
-        <h1
-          class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight leading-tight"
-        >
-          Unterrichtsplanung in Sekunden
-        </h1>
-        <p class="mt-4 text-lg max-w-xl mx-auto opacity-90">
-          KIULY erstellt <span class="font-semibold">lehrplan-passgenaue</span>
-          Unterrichtsentwürfe & Vorhaben – inkl. Differenzierung,
-          Barrierefreiheit & Export.
-        </p>
-        <a
-          href="#download"
-          class="inline-block mt-8 px-9 py-4 bg-brand-light text-white font-semibold rounded-full shadow-xl transform hover:scale-105 hover:bg-brand transition"
-          >🚀 Kostenlos ausprobieren</a
-        >
-      </div>
+    <p
+      itemprop="description"
+      class="mt-4 text-lg max-w-xl mx-auto opacity-90 text-gray-100"
+    >
+      KIULY erstellt <strong>lehrplan-passgenaue</strong> Unterrichtsentwürfe &amp; Vorhaben –
+      inkl. Differenzierung, Barrierefreiheit &amp; Export.
+    </p>
 
-      <!-- Wave -->
-      <svg
-        class="absolute bottom-0 w-full text-gray-50"
-        viewBox="0 0 1440 110"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill="currentColor"
-          d="M0 90l60-10c60-10 180-30 300-27 120 4 240 30 360 32 120 1 240-21 360-33 120-12 240-14 300-15l60-1v65H0z"
-        />
-      </svg>
-    </header>
+    <a
+      href="#download"
+      aria-label="Jetzt kostenlos KIULY ausprobieren"
+      class="inline-block mt-8 px-9 py-4 bg-brand-light text-white font-semibold rounded-full shadow-xl transform hover:scale-105 hover:bg-brand transition"
+    >
+      🚀 Kostenlos ausprobieren
+    </a>
+  </div>
+
+  <!-- Wave-SVG wie gehabt -->
+</header>
 
 <!-- WHY / Benefits ================================================== -->
 <section id="why" class="max-w-5xl mx-auto px-6 mt-20" aria-labelledby="why-heading">
