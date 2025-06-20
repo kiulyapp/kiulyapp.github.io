@@ -1,9 +1,77 @@
+Hier ist ein optimierter `<head>`-Block für deine index.html. Er enthält:
+
+1. **Title-Tag** mit Haupt-Keyword und Brand.
+2. **Meta-Description** für hohe Klickrate.
+3. **Canonical-Link**.
+4. **Open Graph- & Twitter-Cards**.
+5. **Structured Data** (FAQ-Schema für deine FAQ-Sektion).
+6. **Preconnect & Preload** für Fonts.
+7. **Sitemap- und Robots-Verweis**.
+
+```html
 <!DOCTYPE html>
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KIULY – Unterricht per KI</title>
+
+    <!-- Title & Meta for SEO -->
+    <title>Unterrichtsplanung per KI | Kostenlos & Lehrplan-konform mit KIULY</title>
+    <meta name="description" content="Erstelle in Sekunden lehrplan-konforme Unterrichtsentwürfe inkl. Differenzierung & Barrierefreiheit. Jetzt bei KIULY kostenlos testen!" />
+    <link rel="canonical" href="https://kiuly.de/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="KIULY – Unterricht per KI in Sekunden" />
+    <meta property="og:description" content="Erstelle passgenaue, barrierefreie Unterrichtsentwürfe direkt im Browser. Ohne Vorbereitung, inklusive Export & Community." />
+    <meta property="og:url" content="https://kiuly.de/" />
+    <meta property="og:image" content="https://kiuly.de/kiuly-social-preview.png" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@kiulyapp" />
+    <meta name="twitter:title" content="KIULY – Unterricht per KI in Sekunden" />
+    <meta name="twitter:description" content="Erstelle passgenaue, barrierefreie Unterrichtsentwürfe direkt im Browser. Ohne Vorbereitung, inklusive Export & Community." />
+    <meta name="twitter:image" content="https://kiuly.de/kiuly-social-preview.png" />
+
+    <!-- Structured Data: FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was kostet KIULY?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "KIULY ist bis zu 8 Entwürfe/Monat kostenfrei. Premium 4,99 € pro Monat, jederzeit kündbar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich Premium jederzeit kündigen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, das Abo ist monatlich kündbar – direkt im App Store, ohne Mindestlaufzeit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Daten speichert KIULY?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wir speichern nur deine Eingaben und anonyme Nutzungsstatistiken. Kein Tracking, keine Werbung."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Preconnect & Preload for Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
 
     <!-- Tailwind CDN (production build) -->
     <link
@@ -12,34 +80,27 @@
     />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
+    <!-- Sitemap & Robots -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="/rss.xml" />
+    <meta name="robots" content="index,follow" />
+
     <!-- Custom Styles -->
     <style>
       :root {
-        /* Corporate CI */
         --brand: #6d28d9;
         --brand-light: #a78bfa;
         --brand-dark: #4c1d95;
       }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: "Inter", sans-serif;
-      }
-      .brand-bg {
-        background-color: var(--brand);
-      }
-      .brand {
-        color: var(--brand);
-      }
-      /* Simple glass-card effect */
+      html { scroll-behavior: smooth; }
+      body { font-family: 'Inter', sans-serif; }
+      .brand-bg { background-color: var(--brand); }
+      .brand { color: var(--brand); }
       .glass {
         backdrop-filter: blur(14px) saturate(180%);
         background: rgba(255, 255, 255, 0.72);
