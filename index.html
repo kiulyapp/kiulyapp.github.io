@@ -1,51 +1,74 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KIULY – Unterrichtsmaterial & Stundenentwürfe in Sekunden | Lehrer-KI</title>
-    <meta name="description" content="Mit KIULY erstellst du in Sekundenschnelle lehrplankonforme Unterrichtsentwürfe – inklusive Arbeitsmaterialien, Differenzierung, Inklusion, Barrierefreiheit und Exportfunktion." />
-    <meta name="keywords" content="Unterrichtsmaterial, Arbeitsblätter, Differenzierung, Inklusion, DaZ, Vertretungsstunde, KI Unterricht, eduki Alternative, meinUnterricht Alternative, Lehrmaterial, Stundenentwurf, Grundschule, Sek I, Sek II, iPad Unterricht, digitale Unterrichtsplanung, KI Lehrerhilfe">
-    <meta property="og:title" content="KIULY - Unterrichtsplanung in Sekunden mit KI" />
-    <meta property="og:description" content="Erstelle in Sekunden passgenaue, lehrplan-konforme Unterrichtsentwürfe mit KIULY – inklusive Differenzierung, Barrierefreiheit & Exportfunktion." />
-    <meta property="og:image" content="https://kiuly.de/kiuly-logo.png" />
-    <meta property="og:url" content="https://kiuly.de" />
-    <meta name="twitter:card" content="summary_large_image" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KIULY – Unterrichtsmaterial & Stundenentwürfe in Sekunden | Lehrer-KI</title>
 
-    <!-- Tailwind CDN (production build) -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- 🔍 SEO -->
+  <meta name="description" content="Mit KIULY erstellst du in Sekundenschnelle lehrplankonforme Unterrichtsentwürfe – inklusive Arbeitsmaterialien, Differenzierung, Inklusion, Barrierefreiheit und Exportfunktion." />
+  <meta name="keywords" content="Unterrichtsmaterial, Arbeitsblätter, Differenzierung, Inklusion, DaZ, Vertretungsstunde, KI Unterricht, eduki Alternative, meinUnterricht Alternative, Lehrmaterial, Stundenentwurf, Grundschule, Sek I, Sek II, iPad Unterricht, digitale Unterrichtsplanung, KI Lehrerhilfe" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- 🔗 Social Sharing -->
+  <meta property="og:title" content="KIULY - Unterrichtsplanung in Sekunden mit KI" />
+  <meta property="og:description" content="Erstelle in Sekunden passgenaue, lehrplan-konforme Unterrichtsentwürfe mit KIULY – inklusive Differenzierung, Barrierefreiheit & Exportfunktion." />
+  <meta property="og:image" content="https://kiuly.de/kiuly-logo.png" />
+  <meta property="og:url" content="https://kiuly.de" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Custom Styles -->
-    <style>
-      :root {
-        --brand: #6d28d9;
-        --brand-light: #a78bfa;
-        --brand-dark: #4c1d95;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: "Inter", sans-serif;
-      }
-      .brand-bg {
-        background-color: var(--brand);
-      }
-      .brand {
-        color: var(--brand);
-      }
-      .glass {
-        backdrop-filter: blur(14px) saturate(180%);
-        background: rgba(255, 255, 255, 0.72);
-        border: 1px solid rgba(255, 255, 255, 0.35);
-      }
-    </style>
-  </head>
+  <!-- 📱 PWA / iOS Support -->
+  <meta name="theme-color" content="#6d28d9" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- 🚀 Performance -->
+  <link rel="preload" as="image" href="https://kiuly.de/kiuly-logo.png" />
+
+  <!-- 🎨 Tailwind (production build) -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- ✍️ Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- 💅 Custom Styles -->
+  <style>
+    :root {
+      --brand: #6d28d9;
+      --brand-light: #a78bfa;
+      --brand-dark: #4c1d95;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: "Inter", sans-serif;
+    }
+    .brand-bg {
+      background-color: var(--brand);
+    }
+    .brand {
+      color: var(--brand);
+    }
+    .glass {
+      backdrop-filter: blur(20px) saturate(180%);
+      background-color: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+      border-radius: 1rem;
+    }
+    .button-glow {
+      transition: all 0.3s ease;
+      box-shadow: 0 0 0 transparent;
+    }
+    .button-glow:hover {
+      box-shadow: 0 0 20px var(--brand-light);
+    }
+  </style>
+</head>
+
   <body class="bg-gray-50 text-gray-800 antialiased">
     <!-- HERO -->
     <header class="relative overflow-hidden pb-28 sm:pb-40 text-center text-white">
