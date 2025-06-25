@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datenschutz - KIULY</title>
+    <meta name="description" content="Datenschutzerklärung von KIULY Labs" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --brand: #6d28d9;
+            --brand-light: #a78bfa;
+            --brand-dark: #4c1d95;
+        }
+        body {
+            font-family: "Inter", sans-serif;
+        }
+        .glass {
+            backdrop-filter: blur(20px) saturate(180%);
+            background-color: rgba(255, 255, 255, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            border-radius: 1rem;
+        }
+        .brand {
+            color: var(--brand);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+    <main class="max-w-4xl mx-auto px-6 py-10">
+        <a href="index.html" class="text-brand underline mb-4 inline-block">← Zurück zur Startseite</a>
+        <div class="glass p-8 rounded-xl shadow">
+            <h1 class="text-3xl font-bold mb-4">Datenschutzerklärung</h1>
+            <p class="mb-4">Stand: Juni 2025</p>
+            <h2 class="text-2xl font-semibold mt-6 mb-2">1. Verantwortlicher & Kontakt</h2>
+            <p>KIULY Labs – Pascal Obermeit<br>
+            Gregorstraße 12, 45131 Essen, Deutschland<br>
+            E-Mail: kiulyapp@icloud.com</p>
+            <h2 class="text-2xl font-semibold mt-6 mb-2">2. Geltungsbereich</h2>
+            <p>Diese Erklärung gilt für alle Datenverarbeitungen</p>
+            <ul class="list-disc ml-6">
+                <li>in der mobilen App “KIULY” (iOS/Android)</li>
+                <li>im zugehörigen Backend</li>
+                <li>auf der zugehörigen Landingpage</li>
+            </ul>
+            <h2 class="text-2xl font-semibold mt-6 mb-2">3. Verarbeitete Datenkategorien</h2>
+            <ul class="list-disc ml-6">
+                <li>Anonyme Inhalte: Unterrichtsentwürfe, Vorhaben, Community-Beiträge, Kommentare</li>
+                <li>Technische Log-Daten: App-Version, Betriebssystem, Zeitstempel, Fehlerberichte</li>
+                <li>In-App-Käufe: Transaktions-ID, Produkt-ID</li>
+                <li>Metadaten: kurzfristige Server-Logs, IP-Anonymisierung</li>
+            </ul>
+            <p class="mt-2">Hinweis: Es werden keine personenbezogenen Daten (Name, Adresse, E-Mail) dauerhaft gespeichert.</p>
+            <h2 class="text-2xl font-semibold mt-6 mb-2">4. Rechtsgrundlagen</h2>
+            <ul class="list-disc ml-6">
+                <li>Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung)</li>
+                <li>Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)</li>
+                <li>Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)</li>
+            </ul>
+            <h2 class="text-2xl font-semibold mt-6 mb-2">5. Externe Dienstleister & Hosting</h2>
+            <h3 class="text-xl font-medium mt-4 mb-2">5.1 Backend-Hosting (API) auf Render</h3>
+            <p>Anbieter: Render Inc. (Palo Alto, CA, USA)<br>
+            Serverstandort: Frankfurt am Main, Deutschland<br>
+            Auftragsverarbeiter (§ 28 DSGVO): Render stellt die Ausführungsumgebung für API-Code bereit.<br>
+            Render nutzt EU-Standardvertragsklauseln und betreibt Rechenzentren in Frankfurt, um DSGVO-Konformität zu gewährleisten.</p>
+            <h3 class="text-xl font-medium mt-4 mb-2">5.2 Datenbank-Hosting auf Supabase</h3>
+            <p>Anbieter: Supabase Inc. (San Francisco, USA)<br>
+            Serverstandort: Frankfurt am Main, Deutschland<br>
+            Leistung: PostgreSQL-Service für anonyme Inhalte<br>
+            Supabase speichert ausschließlich anonymisierte Daten und ist DSGVO-konform.</p>
+            <h3 class="text-xl font-medium mt-4 mb-2">5.3 OpenAI API</h3>
+            <p>Zweck: KI-Generierung von Unterrichtsentwürfen<br>
+            Übertragung: Anonymisierte Texteingaben<br>
+            Datenschutzrichtlinie: <a href="https://openai.com/policies/privacy-policy" class="underline text-brand">https://openai.com/policies/privacy-policy</a></p>
+            <h3 class="text-xl font-medium mt-4 mb-2">5.4 App-Store-Anbieter</h3>
+            <p>Apple & Google: Abwicklung von In-App-Käufen<br>
+            Es gelten die Datenschutzrichtlinien der jeweiligen Anbieter.</p>
+            <h2 class="text-2xl font-semibold mt-6 mb-2">6. Speicherdauer & Löschung</h2>
+            <ul class="list-disc ml-6">
+                <li>Anonyme Inhalte: bis zur Deinstallation oder automatische Löschung nach 90 Tagen</li>
+                <li>Technische Logs: Rotation und Löschung nach 30 Tagen</li>
+                <li>In-App-Käufe: Speicherung gemäß App-Store-Richtlinien</li>
+            </ul>
+            <h2 class="text-2xl font-semibold mt-6 mb-2">7. Sicherheit</h2>
+            <ul class="list-disc ml-6">
+                <li>TLS/HTTPS für alle Verbindungen</li>
+                <li>Verschlüsselte Datenbankverbindungen</li>
+                <li>Zugangskontrollen für Admin-Oberflächen</li>
+                <li>Regelmäßige Backups und Incident-Response-Verfahren</li>
+            </ul>
+            <h2 class="text-2xl font-semibold mt-6 mb-2">8. Betroffenenrechte</h2>
+            <p>Nutzer:innen haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Da keine personenbezogenen Daten gespeichert werden, sind diese Rechte nicht anwendbar.</p>
+            <h2 class="text-2xl font-semibold mt-6 mb-2">9. Änderungen dieser Erklärung</h2>
+            <p>Wir behalten uns vor, diese Datenschutzerklärung jederzeit zu aktualisieren. Die jeweils gültige Version ist hier veröffentlicht.</p>
+        </div>
+    </main>
+</body>
+</html>
