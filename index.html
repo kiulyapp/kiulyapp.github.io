@@ -13,6 +13,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#d7c5ff" />
   <meta name="color-scheme" content="light dark" />
+  <meta name="robots" content="index, follow" />
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preload" as="image" href="https://kiuly.de/kiuly-logo.png" />
@@ -23,6 +24,7 @@
       --brand: #d7c5ff;
       --brand-light: #ede4ff;
       --brand-dark: #a790d9;
+      --gray-hero: #f7f5ff;
     }
     html { scroll-behavior: smooth; }
     body { font-family: "Inter", sans-serif; }
@@ -116,6 +118,7 @@
   </style>
 </head>
 <body class="bg-[#ede4ff] text-gray-900 antialiased">
+<main>
   <!-- HERO -->
   <header class="relative overflow-hidden pb-32 sm:pb-40 text-center text-gray-900 hero-bg">
     <div class="absolute inset-0"></div>
@@ -145,11 +148,124 @@
     </div>
     <svg class="absolute bottom-0 w-full text-[#ede4ff]" viewBox="0 0 1440 110" aria-hidden="true"><path fill="currentColor" d="M0 90l60-10c60-10 180-30 300-27 120 4 240 30 360 32 120 1 240-21 360-33 120-12 240-14 300-15l60-1v65H0z" /></svg>
   </header>
-  
-  <!-- BENEFITS (dein Content, z.B. Section wie oben, ... kannst du gerne übernehmen) -->
-  <!-- ... -->
 
-  <!-- CTA Download Button am Seitenende -->
+  <!-- WHY / Benefits -->
+  <section id="why" class="max-w-5xl mx-auto px-6 mt-20" aria-labelledby="why-heading">
+    <h2 id="why-heading" class="text-3xl font-bold text-center brand mb-2">Warum KIULY?</h2>
+    <p class="mt-2 text-center text-lg text-gray-700 max-w-2xl mx-auto">
+      In Sekunden lehrplankonforme Unterrichtsentwürfe & Material – differenziert, barrierefrei und sofort einsetzbar. 100% kostenlos.
+    </p>
+    <div class="grid md:grid-cols-2 gap-8 mt-12 text-gray-900">
+      <ul class="space-y-6 list-none">
+        <li class="flex items-start glass feature-card p-5">
+          <span class="text-2xl mr-5">💡</span>
+          <div>
+            <h3 class="font-semibold">Maximale Zeitersparnis</h3>
+            <p class="text-sm text-gray-600">Bis zu 50 % weniger Vorbereitungszeit durch KI-Unterstützung.</p>
+          </div>
+        </li>
+        <li class="flex items-start glass feature-card p-5">
+          <span class="text-2xl mr-5">⚡</span>
+          <div>
+            <h3 class="font-semibold">Sofort startklar</h3>
+            <p class="text-sm text-gray-600">Strukturierte Entwürfe, sofort passend zu Fach, Klasse & Lehrplan.</p>
+          </div>
+        </li>
+        <li class="flex items-start glass feature-card p-5">
+          <span class="text-2xl mr-5">🎯</span>
+          <div>
+            <h3 class="font-semibold">Für alle Fächer & Klassen</h3>
+            <p class="text-sm text-gray-600">Mit Anpassung an Niveau, Bundesland, Inklusion & Differenzierung.</p>
+          </div>
+        </li>
+      </ul>
+      <ul class="space-y-6 list-none">
+        <li class="flex items-start glass feature-card p-5">
+          <span class="text-2xl mr-5">🌍</span>
+          <div>
+            <h3 class="font-semibold">Barrierefrei & inklusiv</h3>
+            <p class="text-sm text-gray-600">Unterstützt DaZ, ADHS sowie Seh- und Hör-Beeinträchtigungen.</p>
+          </div>
+        </li>
+        <li class="flex items-start glass feature-card p-5">
+          <span class="text-2xl mr-5">📂</span>
+          <div>
+            <h3 class="font-semibold">Export & Verlauf</h3>
+            <p class="text-sm text-gray-600">Entwürfe speichern, kopieren und jederzeit abrufen.</p>
+          </div>
+        </li>
+        <li class="flex items-start glass feature-card p-5">
+          <span class="text-2xl mr-5">💬</span>
+          <div>
+            <h3 class="font-semibold">Austausch mit Lehrkräften</h3>
+            <p class="text-sm text-gray-600">Teile anonym, erhalte Feedback von echten Kolleg:innen.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MATERIALIEN -->
+  <section class="mt-24 px-6" id="materialien">
+    <h2 class="text-2xl font-semibold text-center brand mb-6">Alle Materialien inklusive – sofort & kostenlos</h2>
+    <div class="max-w-4xl mx-auto text-gray-900 text-center">
+      <p class="mb-6 text-lg">
+        KIULY liefert zu jedem Entwurf das passende Unterrichtsmaterial – automatisch, differenziert und inklusiv.
+      </p>
+      <ul class="grid md:grid-cols-2 gap-6 text-left text-base text-gray-700">
+        <li>📄 Arbeitsblätter für Einstieg, Vertiefung & Transfer</li>
+        <li>🧠 Differenzierung für jedes Lernniveau</li>
+        <li>🗂️ Bewertungsbögen & Kompetenzraster</li>
+        <li>🎨 Kreative Impulse & Bildmaterial (optional)</li>
+        <li>📚 Materialien für DaZ / Inklusion</li>
+        <li>⚙️ iPad-optimierte Varianten für digitalen Unterricht</li>
+      </ul>
+      <p class="mt-6 text-gray-500 text-sm">
+        Du musst nichts mehr zusammensuchen – KIULY erstellt alles sofort passend zu Thema, Fach & Klasse.
+      </p>
+    </div>
+  </section>
+
+  <!-- STUDIEN-BELEG -->
+  <section class="mt-20 px-6" id="studien">
+    <div class="max-w-3xl mx-auto glass p-8 rounded-3xl shadow-xl">
+      <h2 class="text-2xl font-semibold text-center mb-6 brand">🔬 Wissenschaftlich belegt</h2>
+      <blockquote class="italic text-gray-800">
+        Lehrkräfte, die KI-Tools zur Unterrichtsplanung nutzen, sparen <strong>signifikant</strong> Zeit – und gewinnen Freiraum für Teamarbeit und persönliche Betreuung.
+      </blockquote>
+      <p class="mt-4 text-sm text-gray-600">
+        Karpouzis, K. et al. (2024): <em>Tailoring Education with GenAI: A New Horizon in Lesson Planning</em>. <a href="https://doi.org/10.48550/arXiv.2403.12071" target="_blank" class="underline brand">Studie lesen</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="mt-20 px-6">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-2xl font-semibold brand mb-4">Stimmen aus der Praxis</h2>
+      <div class="glass p-6 rounded-2xl shadow mb-6">
+        <div class="flex items-center justify-center mb-2 text-[#a790d9] text-lg">★★★★★</div>
+        <p class="text-lg font-medium">„Superapp! Sehr gut, dass ich meine Unterrichtsinhalte speichern kann – so behalte ich den Überblick.“</p>
+        <span class="block mt-3 text-sm text-gray-600">– aaana124</span>
+      </div>
+      <div class="glass p-6 rounded-2xl shadow">
+        <div class="flex items-center justify-center mb-2 text-[#a790d9] text-lg">★★★★★</div>
+        <p class="text-lg font-medium">„Sehr hilfreich, gerade für junge Lehrer:innen und Aushilfslehrkräfte.“</p>
+        <span class="block mt-3 text-sm text-gray-600">– Kritikthomas</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOT -->
+  <section class="mt-20 px-6" id="screenshot">
+    <h2 class="text-2xl font-semibold text-center brand mb-6">Einblick</h2>
+    <div class="flex justify-center">
+      <img src="img_8101.webp" alt="Screenshot – Generator" width="320" height="568" loading="lazy" class="rounded-3xl shadow-2xl ring-4 ring-white max-w-[320px]" />
+    </div>
+    <p class="text-center mt-6 brand font-medium">Was du generierst, bleibt dein Geheimnis – einfach ausprobieren! 🔒</p>
+  </section>
+
+  <!-- CTA Download Button unten -->
   <section class="mt-24 text-center" id="download">
     <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544"
        class="appstore-btn mx-auto focus:outline-none focus:ring-4 focus:ring-[#d7c5ff]/70"
@@ -164,18 +280,23 @@
     </a>
     <p class="mt-3 text-sm text-gray-600">Dein digitales Unterrichts-Upgrade wartet.</p>
   </section>
+</main>
 
-  <footer class="mt-32 py-10 bg-[#ede4ff] text-center text-sm">
-    <p>Made with ❤️ in Essen</p>
-    <nav class="space-x-4 mt-2">
-      <a href="impressum.html" class="underline text-[#a790d9]">Impressum</a>
-      <a href="datenschutz.html" class="underline text-[#a790d9]">Datenschutz</a>
-      <a href="nutzungsbedingungen.html" class="underline text-[#a790d9]">Nutzungsbedingungen</a>
-      <span class="text-gray-600">DSGVO-konform</span>
-    </nav>
-  </footer>
-  <p class="hidden">
-    KIULY bietet dir hochwertige Unterrichtsmaterialien: automatisch generierte Arbeitsblätter, differenzierte Vorschläge, Kompetenzraster, DaZ-Materialien, Bewertungsbögen und digitale Varianten – alles mit einem Klick, direkt passend zu deinem Entwurf, 100% kostenlos.
-  </p>
+<footer class="mt-32 py-10 bg-[#ede4ff] text-center text-sm">
+  <p>Made with ❤️ in Essen · <span id="year"></span> KIULY</p>
+  <nav class="space-x-4 mt-2">
+    <a href="impressum.html" class="underline text-[#a790d9]">Impressum</a>
+    <a href="datenschutz.html" class="underline text-[#a790d9]">Datenschutz</a>
+    <a href="nutzungsbedingungen.html" class="underline text-[#a790d9]">Nutzungsbedingungen</a>
+    <span class="text-gray-600">DSGVO-konform</span>
+  </nav>
+</footer>
+<p class="hidden">
+  KIULY bietet dir hochwertige Unterrichtsmaterialien: automatisch generierte Arbeitsblätter, differenzierte Vorschläge, Kompetenzraster, DaZ-Materialien, Bewertungsbögen und digitale Varianten – alles mit einem Klick, direkt passend zu deinem Entwurf, 100% kostenlos.
+</p>
+<script>
+  // Jahr dynamisch einfügen
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
