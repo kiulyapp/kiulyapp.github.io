@@ -61,9 +61,10 @@
       border-radius: 1.5rem;
     }
     .appstore-btn {
-      display: inline-flex;
-      align-items: center;
+      display: flex;
       justify-content: center;
+      margin: 1rem auto;
+      align-items: center;
       border-radius: 1.1rem;
       box-shadow: 0 5px 24px 0 #a790d988, 0 1.5px 8px #d7c5ff88;
       background: #fff;
@@ -232,37 +233,6 @@
       }
     }
 
-    /* Floating gradient blobs in hero */
-    .hero-bg::before,
-    .hero-bg::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.6;
-      animation: floatBlob 12s ease-in-out infinite;
-      z-index: 1;
-      pointer-events: none;
-    }
-    .hero-bg::before {
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, #d7c5ff, #a790d9);
-      top: -100px;
-      left: -150px;
-      animation-delay: 0s;
-    }
-    .hero-bg::after {
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, #ede4ff, #d7c5ff);
-      bottom: -100px;
-      right: -100px;
-      animation-delay: 6s;
-    }
-    @keyframes floatBlob {
-      0%,100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-30px) scale(1.1); }
-    }
 
     /* 3D tilt effect on feature and testimonial cards */
     .feature-card, .testimonial-card {
@@ -273,39 +243,13 @@
       transform: rotateY(5deg) rotateX(5deg) scale(1.02);
     }
 
-    /* Back to Top Button */
-    #back-to-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 3rem;
-      height: 3rem;
-      background: var(--brand-dark);
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s, visibility 0.3s;
-      z-index: 9999;
-    }
-    #back-to-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-    #back-to-top:hover {
-      background: var(--brand);
-    }
-
     /* Typewriter effect for subtitle */
     .typewriter-text {
       display: inline-block;
       overflow: hidden;
       white-space: nowrap;
       border-right: 4px solid var(--brand-dark);
-      animation: typing 6s steps(80, end), blinkCursor 0.7s step-end infinite;
+      animation: typing 3s steps(30, end), blinkCursor 0.7s step-end infinite;
       width: 0;
     }
     @keyframes typing {
@@ -498,14 +442,10 @@
 <body class="bg-[#ede4ff] text-gray-900 antialiased">
 <!-- Scroll Progress Bar -->
 <div id="progress-bar"></div>
-<!-- Back to Top Button -->
-<button id="back-to-top" aria-label="Nach oben">↑</button>
 <main>
   <!-- HERO -->
   <header class="relative overflow-hidden pb-32 sm:pb-40 text-center hero-bg" style="min-height:90vh;">
     <div class="absolute inset-0"></div>
-    <div class="absolute -top-32 -left-32 w-[520px] h-[520px] bg-[#ede4ff] rounded-full blur-3xl opacity-35 rotate-12"></div>
-    <div class="absolute -bottom-32 -right-32 w-[420px] h-[420px] bg-[#d7c5ff] rounded-full blur-3xl opacity-25"></div>
     <div class="relative z-10 max-w-4xl mx-auto px-6 pt-20">
       <canvas id="particle-canvas" class="absolute inset-0 w-full h-full"></canvas>
       <div class="swipe-hint">↓</div>
@@ -514,7 +454,7 @@
         Unterrichtsplanung in Sekunden –<br> <span style="color:#4c1d95;">100% kostenlos mit KIULY</span>
       </h1>
       <p class="mt-6 text-xl max-w-2xl mx-auto text-[#18122b] font-medium opacity-100">
-        <span class="typewriter-text">Lade <span class="font-bold brand-dark">KIULY</span> im App Store und erstelle <span class="font-bold" style="color:#4c1d95;">lehrplan-passgenaue</span> Unterrichtsentwürfe samt Material – differenziert, inklusiv & gratis.</span>
+        <span class="typewriter-text">Jetzt kostenlos im App Store laden!</span>
       </p>
       <!-- App Store Button -->
       <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544"
@@ -730,21 +670,7 @@
 <p class="hidden">
   KIULY bietet dir hochwertige Unterrichtsmaterialien: automatisch generierte Arbeitsblätter, differenzierte Vorschläge, Kompetenzraster, DaZ-Materialien, Bewertungsbögen und digitale Varianten – alles mit einem Klick, direkt passend zu deinem Entwurf, 100% kostenlos.
 </p>
-    </script>
-    <script>
-      // Back to Top Button
-      const backToTop = document.getElementById('back-to-top');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-          backToTop.classList.add('visible');
-        } else {
-          backToTop.classList.remove('visible');
-        }
-      });
-      backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    </script>
+</script>
 <script>
   // Jahr dynamisch einfügen
   document.getElementById('year').textContent = new Date().getFullYear();
