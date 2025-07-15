@@ -395,12 +395,21 @@
       [style*="color:#4c1d95"] {
         color: #e3d1ff !important;
       }
+      /* Ensure contact email and link text is light in dark mode */
+      .text-\[\#a790d9\],
+      .brand {
+        color: #e0e0e0 !important;
+      }
       /* Ensure button text is light in dark mode */
       .appstore-btn {
         color: #ffffff !important;
       }
       .appstore-btn svg path {
         stroke: #ffffff !important;
+      }
+      /* Lighten footer meta text in dark mode */
+      footer > p:first-child {
+        color: #e0e0e0 !important;
       }
     }
 </style>
