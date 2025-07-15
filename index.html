@@ -124,6 +124,39 @@
       background-color: #f4f0fa;
       transform: translateY(-2px) scale(1.011);
     }
+    /* New testimonial styling */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .testimonial-card {
+      background: #fff;
+      border: 1px solid #e6e1f7;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 16px rgba(167,144,217,0.1), 0 2px 8px rgba(215,197,255,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(167,144,217,0.2), 0 4px 12px rgba(215,197,255,0.2);
+    }
+    .testimonial-rating {
+      font-size: 1.25rem;
+      color: #4c1d95;
+      margin-bottom: 0.5rem;
+    }
+    .testimonial-meta {
+      font-size: 0.85rem;
+      color: #909090;
+      margin-bottom: 0.75rem;
+    }
+    .testimonial-text {
+      font-size: 1rem;
+      color: #21143d;
+      line-height: 1.5;
+    }
     @media (prefers-color-scheme: dark) {
       body {
         background-color: #121212;
@@ -193,8 +226,41 @@
       ::-webkit-scrollbar-thumb {
         background: #6a3aa8;
       }
+
+      /* Dark-mode header adjustments */
+      .hero-bg {
+        background: radial-gradient(ellipse at 65% 60%, #1a001f 10%, #2a004b 68%, #3b006d 110%);
+      }
+      .hero-bg h1 {
+        color: #ffffff !important;
+      }
+      .hero-bg p {
+        color: #d1d1d1 !important;
+      }
+      .hero-bg .appstore-btn {
+        background: #2a2a2a;
+        border-color: #d7c5ff;
+      }
+      .hero-bg .appstore-btn img {
+        filter: drop-shadow(0 2px 7px #4c1d95aa);
+      }
+      .hero-bg .appstore-btn:hover {
+        background: linear-gradient(90deg, #3b0055 60%, #4c1d95 100%);
+      }
+      .hero-bg .badge-free {
+        background: #4c1d95;
+      }
     }
-  </style>
+</style>
+  <!-- Google Ads Conversion Tracking -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17253344028"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17253344028');
+  </script>
 </head>
 <body class="bg-[#ede4ff] text-gray-900 antialiased">
 <main>
@@ -321,15 +387,26 @@
   <section class="mt-20 px-6">
     <div class="max-w-xl mx-auto text-center">
       <h2 class="text-2xl font-semibold mb-4" style="color:#4c1d95;">Stimmen aus der Praxis</h2>
-      <div class="glass p-6 rounded-2xl shadow mb-6">
-        <div class="flex items-center justify-center mb-2 text-[#4c1d95] text-lg">★★★★★</div>
-        <p class="text-lg font-medium text-[#21143d]">„Superapp! Sehr gut, dass ich meine Unterrichtsinhalte speichern kann – so behalte ich den Überblick.“</p>
-        <span class="block mt-3 text-sm text-gray-500">– aaana124</span>
-      </div>
-      <div class="glass p-6 rounded-2xl shadow">
-        <div class="flex items-center justify-center mb-2 text-[#4c1d95] text-lg">★★★★★</div>
-        <p class="text-lg font-medium text-[#21143d]">„Sehr hilfreich, gerade für junge Lehrer:innen und Aushilfslehrkräfte.“</p>
-        <span class="block mt-3 text-sm text-gray-500">– Kritikthomas</span>
+      <div class="testimonial-grid max-w-4xl mx-auto">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <div class="testimonial-text">„Superapp! Sehr gut, dass ich meine Unterrichtsinhalte speichern kann – so behalte ich den Überblick.“</div>
+          <div class="testimonial-meta">– aaana124</div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <div class="testimonial-text">„Sehr hilfreich, gerade für junge Lehrer:innen und Aushilfslehrkräfte.“</div>
+          <div class="testimonial-meta">– Kritikthomas</div>
+        </div>
+        <!-- Neues Testimonial -->
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <div class="testimonial-meta">iOS | Version 8 | Deutschland | vor 5 Tagen</div>
+          <div class="testimonial-text">„Hilfreiche App – Super App, um erste Ideen zu sammeln und sich zu strukturieren.“</div>
+          <div class="testimonial-meta">– Rezpn</div>
+        </div>
       </div>
     </div>
   </section>
