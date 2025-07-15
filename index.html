@@ -29,6 +29,18 @@
       --text-black: #14111d;
       --gray-hero: #f7f5ff;
     }
+    /* Alternating section backgrounds */
+    section:nth-of-type(odd) {
+      background-color: transparent;
+    }
+    section:nth-of-type(even) {
+      background-color: var(--brand-light);
+    }
+    /* Ensure section padding for consistent spacing */
+    section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
     /* Animated gradient background for hero */
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
@@ -259,28 +271,6 @@
     @keyframes blinkCursor {
       from { border-right-color: var(--brand-dark); }
       to { border-right-color: transparent; }
-    }
-    /* Enhanced section backgrounds */
-    section {
-      position: relative;
-      background: radial-gradient(circle at top center, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 70%);
-      overflow: hidden;
-    }
-    section::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: 50%;
-      width: 200%;
-      height: 200%;
-      transform: translateX(-50%) rotate(30deg);
-      background: radial-gradient(circle at center, var(--brand-light) 0%, transparent 80%);
-      opacity: 0.3;
-      pointer-events: none;
-    }
-    section > div, section > h2, section > p, section > ul {
-      position: relative;
-      z-index: 1;
     }
 
     /* Scroll Progress Bar */
