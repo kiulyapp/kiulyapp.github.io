@@ -266,7 +266,7 @@
       overflow: hidden;
       white-space: pre-wrap;
       border-right: 4px solid var(--brand-dark);
-      animation: typing 8s steps(100, end) forwards, blinkCursor 0.7s step-end infinite;
+      animation: typing 2s steps(40, end) forwards, blinkCursor 0.7s step-end infinite;
       width: 0;
     }
     @keyframes typing {
@@ -278,6 +278,25 @@
       to { border-right-color: transparent; }
     }
     @media (prefers-color-scheme: dark) {
+    /* Scroll progress indicator */
+    #scroll-indicator {
+      position: fixed;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 4px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 2px;
+      overflow: hidden;
+      z-index: 9999;
+    }
+    #scroll-indicator .fill {
+      width: 0%;
+      height: 100%;
+      background: var(--brand-dark);
+      transition: width 0.1s ease-out;
+    }
       body {
         background-color: #121212;
       }
@@ -376,6 +395,13 @@
       [style*="color:#4c1d95"] {
         color: #e3d1ff !important;
       }
+      /* Ensure button text is light in dark mode */
+      .appstore-btn {
+        color: #ffffff !important;
+      }
+      .appstore-btn svg path {
+        stroke: #ffffff !important;
+      }
     }
 </style>
   <!-- Google Ads Conversion Tracking -->
@@ -397,6 +423,8 @@
   </script>
 </head>
 <body class="bg-[#ede4ff] text-gray-900 antialiased">
+  <!-- Scroll Indicator -->
+  <div id="scroll-indicator"><div class="fill"></div></div>
 <main>
   <!-- HERO -->
   <header class="relative overflow-hidden pb-32 sm:pb-40 text-center hero-bg" style="min-height:90vh;">
@@ -644,6 +672,15 @@
         observer.observe(el);
       });
     });
-</script>
+  </script>
+  <script>
+    // Scroll Indicator Update
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const pct = (scrollTop / scrollHeight) * 100;
+      document.querySelector('#scroll-indicator .fill').style.width = pct + '%';
+    });
+  </script>
 </body>
 </html>
