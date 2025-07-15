@@ -29,6 +29,24 @@
       --text-black: #14111d;
       --gray-hero: #f7f5ff;
     }
+    /* Animated gradient background for hero */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Subtle glowing for headline */
+    @keyframes textGlow {
+      0%,100% { text-shadow: 0 0 10px rgba(255,255,255,0.4); }
+      50% { text-shadow: 0 0 20px rgba(255,255,255,0.8); }
+    }
+
+    /* Fade-in for testimonial cards */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     html { scroll-behavior: smooth; }
     body { font-family: "Inter", sans-serif; }
     .brand-bg { background-color: var(--brand); }
@@ -112,8 +130,31 @@
     ::selection { background: var(--brand-light);}
     ::-webkit-scrollbar-thumb { background: var(--brand-dark); border-radius: 10px;}
     .hero-bg {
-      background: radial-gradient(ellipse at 65% 60%, #ede4ff 10%, #d7c5ff 68%, #a790d9 110%);
+      background: linear-gradient(270deg, #ede4ff, #d7c5ff, #a790d9, #ede4ff);
+      background-size: 800% 800%;
+      animation: gradientBG 20s ease infinite;
     }
+
+    .hero-bg h1 {
+      animation: textGlow 3s ease-in-out infinite;
+    }
+
+    .appstore-btn {
+      background: linear-gradient(90deg, #fff 50%, #ede4ff 100%);
+      background-size: 200% 100%;
+      transition: background-position 0.5s ease;
+    }
+    .appstore-btn:hover {
+      background-position: 100% 0;
+    }
+
+    .testimonial-card {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .testimonial-card:nth-child(1) { animation-delay: 0.2s; }
+    .testimonial-card:nth-child(2) { animation-delay: 0.4s; }
+    .testimonial-card:nth-child(3) { animation-delay: 0.6s; }
     .feature-card {
       border: 1.2px solid #e6e1f7;
       background: #fff;
@@ -171,7 +212,7 @@
         color: #c0c0c0;
       }
       .text-\[\#4c1d95\] {
-        color: #d7c5ff;
+        color: #e3d1ff;
       }
       .text-\[\#3b3657\] {
         color: #a0a0a0;
@@ -186,7 +227,7 @@
         background-color: #121212;
       }
       .hero-bg {
-        background: radial-gradient(ellipse at 65% 60%, #2a0e5a 10%, #4c1d95 68%, #6a3aa8 110%);
+        background: radial-gradient(ellipse at 65% 60%, #2a004b 10%, #4c1d95 60%, #6a3aa8 110%);
       }
       .glass {
         background: rgba(30, 30, 30, 0.92);
@@ -239,7 +280,7 @@
       }
       .hero-bg .appstore-btn {
         background: #2a2a2a;
-        border-color: #d7c5ff;
+        border-color: #e3d1ff;
       }
       .hero-bg .appstore-btn img {
         filter: drop-shadow(0 2px 7px #4c1d95aa);
@@ -248,7 +289,13 @@
         background: linear-gradient(90deg, #3b0055 60%, #4c1d95 100%);
       }
       .hero-bg .badge-free {
-        background: #4c1d95;
+        background: #6a3aa8;
+      }
+      /* Override hardcoded violet text for better contrast */
+      .brand-dark,
+      .text-\[\#4c1d95\],
+      [style*="color:#4c1d95"] {
+        color: #e3d1ff !important;
       }
     }
 </style>
@@ -260,6 +307,14 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'AW-17253344028');
+  </script>
+  <!-- Event snippet for Seitenaufruf conversion page -->
+  <script>
+    gtag('event', 'conversion', {
+        'send_to': 'AW-17253344028/wCt4CMmOleYaEJzGhKNA',
+        'value': 1.0,
+        'currency': 'EUR'
+    });
   </script>
 </head>
 <body class="bg-[#ede4ff] text-gray-900 antialiased">
