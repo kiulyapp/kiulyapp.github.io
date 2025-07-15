@@ -166,6 +166,29 @@
       transform: translateY(-2px) scale(1.011);
     }
     /* New testimonial styling */
+    /* Slide-in animations */
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    /* Mobile bounce animation for CTA */
+    @keyframes bounceMobile {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .slide-in-left, .slide-in-right {
+      opacity: 0;
+    }
+    .slide-in-left.visible {
+      animation: slideInLeft 0.8s ease-out forwards;
+    }
+    .slide-in-right.visible {
+      animation: slideInRight 0.8s ease-out forwards;
+    }
     .testimonial-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -197,6 +220,66 @@
       font-size: 1rem;
       color: #21143d;
       line-height: 1.5;
+    }
+    /* Apply bounce on mobile to App Store button */
+    @media (max-width: 768px) {
+      .appstore-btn {
+        animation: bounceMobile 2s ease-in-out infinite;
+      }
+    }
+
+    /* Floating gradient blobs in hero */
+    .hero-bg::before,
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: floatBlob 12s ease-in-out infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-bg::before {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #d7c5ff, #a790d9);
+      top: -100px;
+      left: -150px;
+      animation-delay: 0s;
+    }
+    .hero-bg::after {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #ede4ff, #d7c5ff);
+      bottom: -100px;
+      right: -100px;
+      animation-delay: 6s;
+    }
+    @keyframes floatBlob {
+      0%,100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-30px) scale(1.1); }
+    }
+
+    /* Typewriter effect for subtitle */
+    .hero-bg p {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 4px solid var(--brand-dark);
+      animation: typing 4s steps(40, end), blinkCursor 0.7s step-end infinite;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .typewriter-text {
+      display: inline;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blinkCursor {
+      from { border-right-color: var(--brand-dark); }
+      to { border-right-color: transparent; }
     }
     @media (prefers-color-scheme: dark) {
       body {
@@ -329,8 +412,8 @@
       <h1 class="mt-8 text-4xl md:text-5xl font-extrabold tracking-tight leading-tight drop-shadow-xl" style="color:#21143d;">
         Unterrichtsplanung in Sekunden –<br> <span style="color:#4c1d95;">100% kostenlos mit KIULY</span>
       </h1>
-      <p class="mt-6 text-xl max-w-2xl mx-auto text-[#18122b] font-medium opacity-100" style="font-weight:500;">
-        Lade <span class="font-bold brand-dark">KIULY</span> im App Store und erstelle <span class="font-bold" style="color:#4c1d95;">lehrplan-passgenaue</span> Unterrichtsentwürfe samt Material – differenziert, inklusiv & gratis.
+      <p class="mt-6 text-xl max-w-2xl mx-auto text-[#18122b] font-medium opacity-100">
+        <span class="typewriter-text">Lade <span class="font-bold brand-dark">KIULY</span> im App Store und erstelle <span class="font-bold" style="color:#4c1d95;">lehrplan-passgenaue</span> Unterrichtsentwürfe samt Material – differenziert, inklusiv & gratis.</span>
       </p>
       <!-- App Store Button -->
       <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544"
@@ -351,27 +434,27 @@
 
   <!-- WHY / Benefits -->
   <section id="why" class="max-w-5xl mx-auto px-6 mt-20" aria-labelledby="why-heading">
-    <h2 id="why-heading" class="text-3xl font-bold text-center" style="color:#4c1d95;">Warum KIULY?</h2>
+    <h2 id="why-heading" class="text-3xl font-bold text-center slide-in-left" style="color:#4c1d95;">Warum KIULY?</h2>
     <p class="mt-2 text-center text-lg text-[#18122b] max-w-2xl mx-auto font-semibold">
       In Sekunden lehrplankonforme Unterrichtsentwürfe & Material – differenziert, barrierefrei und sofort einsetzbar. 100% kostenlos.
     </p>
     <div class="grid md:grid-cols-2 gap-8 mt-12 text-[#14111d]">
       <ul class="space-y-6 list-none">
-        <li class="flex items-start glass feature-card p-5">
+        <li class="flex items-start glass feature-card p-5 slide-in-right">
           <span class="text-2xl mr-5">💡</span>
           <div>
             <h3 class="font-semibold text-[#4c1d95]">Maximale Zeitersparnis</h3>
             <p class="text-sm text-[#22223a]">Bis zu 50 % weniger Vorbereitungszeit durch KI-Unterstützung.</p>
           </div>
         </li>
-        <li class="flex items-start glass feature-card p-5">
+        <li class="flex items-start glass feature-card p-5 slide-in-right">
           <span class="text-2xl mr-5">⚡</span>
           <div>
             <h3 class="font-semibold text-[#4c1d95]">Sofort startklar</h3>
             <p class="text-sm text-[#22223a]">Strukturierte Entwürfe, sofort passend zu Fach, Klasse & Lehrplan.</p>
           </div>
         </li>
-        <li class="flex items-start glass feature-card p-5">
+        <li class="flex items-start glass feature-card p-5 slide-in-right">
           <span class="text-2xl mr-5">🎯</span>
           <div>
             <h3 class="font-semibold text-[#4c1d95]">Für alle Fächer & Klassen</h3>
@@ -380,21 +463,21 @@
         </li>
       </ul>
       <ul class="space-y-6 list-none">
-        <li class="flex items-start glass feature-card p-5">
+        <li class="flex items-start glass feature-card p-5 slide-in-right">
           <span class="text-2xl mr-5">🌍</span>
           <div>
             <h3 class="font-semibold text-[#4c1d95]">Barrierefrei & inklusiv</h3>
             <p class="text-sm text-[#22223a]">Unterstützt DaZ, ADHS sowie Seh- und Hör-Beeinträchtigungen.</p>
           </div>
         </li>
-        <li class="flex items-start glass feature-card p-5">
+        <li class="flex items-start glass feature-card p-5 slide-in-right">
           <span class="text-2xl mr-5">📂</span>
           <div>
             <h3 class="font-semibold text-[#4c1d95]">Export & Verlauf</h3>
             <p class="text-sm text-[#22223a]">Entwürfe speichern, kopieren und jederzeit abrufen.</p>
           </div>
         </li>
-        <li class="flex items-start glass feature-card p-5">
+        <li class="flex items-start glass feature-card p-5 slide-in-right">
           <span class="text-2xl mr-5">💬</span>
           <div>
             <h3 class="font-semibold text-[#4c1d95]">Austausch mit Lehrkräften</h3>
@@ -407,7 +490,7 @@
 
   <!-- MATERIALIEN -->
  <section class="mt-24 px-6" id="materialien">
-  <h2 class="text-2xl font-semibold text-center" style="color:#4c1d95;">Alle Materialien inklusive – sofort & kostenlos</h2>
+  <h2 class="text-2xl font-semibold text-center slide-in-left" style="color:#4c1d95;">Alle Materialien inklusive – sofort & kostenlos</h2>
   <div class="max-w-4xl mx-auto text-[#18122b] text-center">
     <p class="mb-6 text-lg font-semibold">
       KIULY liefert zu jedem Entwurf das passende Unterrichtsmaterial – automatisch, differenziert und inklusiv.
@@ -427,7 +510,7 @@
   <!-- STUDIEN-BELEG -->
   <section class="mt-20 px-6" id="studien">
     <div class="max-w-3xl mx-auto glass p-8 rounded-3xl shadow-xl">
-      <h2 class="text-2xl font-semibold text-center mb-6" style="color:#4c1d95;">🔬 Wissenschaftlich belegt</h2>
+      <h2 class="text-2xl font-semibold text-center mb-6 slide-in-left" style="color:#4c1d95;">🔬 Wissenschaftlich belegt</h2>
       <blockquote class="italic text-[#3b3657] font-semibold">
         Lehrkräfte, die KI-Tools zur Unterrichtsplanung nutzen, sparen <strong style="color:#4c1d95;">signifikant</strong> Zeit – und gewinnen Freiraum für Teamarbeit und persönliche Betreuung.
       </blockquote>
@@ -441,7 +524,7 @@
   <!-- TESTIMONIALS -->
   <section class="mt-20 px-6">
     <div class="max-w-xl mx-auto text-center">
-      <h2 class="text-2xl font-semibold mb-4" style="color:#4c1d95;">Stimmen aus der Praxis</h2>
+      <h2 class="text-2xl font-semibold mb-4 slide-in-left" style="color:#4c1d95;">Stimmen aus der Praxis</h2>
       <div class="testimonial-grid max-w-4xl mx-auto">
         <!-- Testimonial 1 -->
         <div class="testimonial-card">
@@ -468,7 +551,7 @@
 
   <!-- SCREENSHOT -->
   <section class="mt-20 px-6" id="screenshot">
-    <h2 class="text-2xl font-semibold text-center mb-6" style="color:#4c1d95;">Einblick</h2>
+    <h2 class="text-2xl font-semibold text-center mb-6 slide-in-left" style="color:#4c1d95;">Einblick</h2>
     <div class="flex justify-center">
       <img src="img_8101.webp" alt="Screenshot – Generator" width="320" height="568" loading="lazy" class="rounded-3xl shadow-2xl ring-4 ring-white max-w-[320px]" />
     </div>
@@ -477,6 +560,7 @@
 
   <!-- CTA Download Button am Seitenende -->
   <section class="mt-24 text-center" id="download">
+    <h2 class="text-2xl font-semibold text-center slide-in-left sr-only" style="color:#4c1d95;">Download</h2>
     <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544"
        class="appstore-btn mx-auto focus:outline-none focus:ring-4 focus:ring-[#a790d9]/70"
        target="_blank" rel="noopener"
@@ -493,7 +577,7 @@
 </main>
 <!-- KONTAKT -->
 <section id="kontakt" class="mt-28 max-w-lg mx-auto px-6">
-  <h2 class="text-2xl font-semibold brand mb-4 text-center">Kontakt</h2>
+  <h2 class="text-2xl font-semibold brand mb-4 text-center slide-in-left">Kontakt</h2>
   <form 
     class="glass p-6 rounded-2xl shadow-xl flex flex-col gap-4"
     action="mailto:kiulyapp@icloud.com" 
@@ -545,9 +629,25 @@
 <p class="hidden">
   KIULY bietet dir hochwertige Unterrichtsmaterialien: automatisch generierte Arbeitsblätter, differenzierte Vorschläge, Kompetenzraster, DaZ-Materialien, Bewertungsbögen und digitale Varianten – alles mit einem Klick, direkt passend zu deinem Entwurf, 100% kostenlos.
 </p>
+</script>
 <script>
   // Jahr dynamisch einfügen
   document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.slide-in-left, .slide-in-right').forEach(el => {
+        observer.observe(el);
+      });
+    });
 </script>
 </body>
 </html>
