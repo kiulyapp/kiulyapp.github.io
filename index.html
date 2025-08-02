@@ -437,31 +437,41 @@
 <main>
   <!-- HERO -->
   <header class="relative overflow-hidden pb-32 sm:pb-40 text-center hero-bg" style="min-height:90vh;">
-    <div class="absolute inset-0"></div>
-    <div class="absolute -top-32 -left-32 w-[520px] h-[520px] bg-[#ede4ff] rounded-full blur-3xl opacity-35 rotate-12"></div>
-    <div class="absolute -bottom-32 -right-32 w-[420px] h-[420px] bg-[#d7c5ff] rounded-full blur-3xl opacity-25"></div>
-    <div class="relative z-10 max-w-4xl mx-auto px-6 pt-20">
-      <img src="kiuly-logo.png" alt="KIULY App Logo" width="180" height="180" class="mx-auto w-36 md:w-44 drop-shadow-2xl rounded-3xl ring-8 ring-white/70 ring-offset-2" />
-      <h1 class="mt-8 text-4xl md:text-5xl font-extrabold tracking-tight leading-tight drop-shadow-xl" style="color:#21143d;">
-        Unterrichtsplanung in Sekunden –<br> <span style="color:#4c1d95;">100% kostenlos mit KIULY</span>
-      </h1>
-      <p class="mt-6 text-xl max-w-2xl mx-auto text-[#18122b] font-medium opacity-100">
-        <span class="typewriter-text">Lade KIULY im App Store<br>und erstelle lehrplan-passgenaue Unterrichtsentwürfe.</span>
-      </p>
-      <!-- App Store Button -->
-      <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544"
-         class="appstore-btn mx-auto mt-10 mb-2 focus:outline-none focus:ring-4 focus:ring-[#a790d9]/60 shadow-2xl"
-         target="_blank" rel="noopener"
-         aria-label="KIULY im App Store herunterladen">
-        <img src="app-store-logo.png" alt="Download on the App Store" />
-        <span class="txt">
-          <span>Jetzt laden</span>
-          <span>App Store</span>
-        </span>
-        <span class="badge-free">Gratis</span>
-      </a>
-      <div class="mt-2 text-xs text-[#4c1d95] font-medium tracking-wide">Für iPad & iPhone</div>
-    </div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 pt-20 flex flex-col-reverse md:flex-row items-center justify-center gap-10">
+  <!-- Text & Logo -->
+  <div class="md:w-1/2 text-center md:text-left">
+    <img src="kiuly-logo.png" alt="KIULY App Logo" width="180" height="180"
+         class="mx-auto md:mx-0 w-36 md:w-44 drop-shadow-2xl rounded-3xl ring-8 ring-white/70 ring-offset-2" />
+    <h1 class="mt-8 text-4xl md:text-5xl font-extrabold tracking-tight leading-tight drop-shadow-xl" style="color:#21143d;">
+      Unterrichtsplanung in Sekunden –<br>
+      <span style="color:#4c1d95;">100% kostenlos mit KIULY</span>
+    </h1>
+    <p class="mt-6 text-xl max-w-md font-medium text-[#18122b] mx-auto md:mx-0">
+      <span class="typewriter-text">Lade KIULY im App Store<br>und erstelle lehrplankonforme Unterrichtsentwürfe.</span>
+    </p>
+    <!-- App Store Button -->
+    <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544"
+       class="appstore-btn mt-8 focus:outline-none focus:ring-4 focus:ring-[#a790d9]/60 shadow-2xl"
+       target="_blank" rel="noopener" aria-label="KIULY im App Store herunterladen">
+      <img src="app-store-logo.png" alt="Download on the App Store" />
+      <span class="txt">
+        <span>Jetzt laden</span>
+        <span>App Store</span>
+      </span>
+      <span class="badge-free">Gratis</span>
+    </a>
+    <div class="mt-2 text-xs text-[#4c1d95] font-medium tracking-wide">Für iPad & iPhone</div>
+  </div>
+
+  <!-- Lottie Animation -->
+  <div class="md:w-1/2 flex justify-center">
+    <dotlottie-wc 
+      src="https://lottie.host/5b449ef9-cc23-4ed7-a954-665461db2455/e4TcUEdwcF.lottie" 
+      style="width: 300px; height: 300px;" 
+      speed="1" autoplay loop>
+    </dotlottie-wc>
+  </div>
+</div>
     <svg class="absolute bottom-0 w-full text-[#ede4ff]" viewBox="0 0 1440 110" aria-hidden="true"><path fill="currentColor" d="M0 90l60-10c60-10 180-30 300-27 120 4 240 30 360 32 120 1 240-21 360-33 120-12 240-14 300-15l60-1v65H0z" /></svg>
   </header>
 
