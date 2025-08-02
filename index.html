@@ -1,170 +1,695 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <title>KIULY – Unterricht in Sekunden | Kostenlose Lehrer-KI</title>
-
-  <!-- SEO / OpenGraph -->
-  <meta name="description" content="Mit KIULY erstellst du lehrplankonforme Unterrichtsentwürfe & Arbeitsmaterial in Sekunden – 100 % kostenlos, inkl. Differenzierung, Inklusion & DSGVO-Konformität.">
-  <meta name="keywords" content="Unterrichtsplanung,Künstliche Intelligenz,Lehrplan,Arbeitsblätter,KI App Lehrer,Unterrichtsmaterial,Digitale Schule,Differenzierung,DaZ,Inklusion,Vertretungsstunde,App Store">  
-  <meta property="og:title" content="KIULY – Unterricht in Sekunden">  
-  <meta property="og:description" content="Lehrplangerechte Unterrichtsentwürfe & Material sofort generieren – gratis auf iPhone & iPad.">  
-  <meta property="og:image" content="https://kiuly.de/icon.png">  
-  <meta property="og:url" content="https://kiuly.de">  
-  <meta name="twitter:card" content="summary_large_image">  
-  <meta name="theme-color" content="#d7c5ff">
-
-  <!-- Icons & Preloads -->
-  <link rel="icon" href="/favicon.ico">  
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">  
-  <link rel="preload" as="image" href="icon.png">  
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
-
-  <!-- Tailwind & Font -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">  
-
-  <!-- Lottie Web-Component -->
-  <script type="module" src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" defer></script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KIULY – Unterrichtsmaterial & Stundenentwürfe in Sekunden | Lehrer-KI im App Store</title>
+  <meta name="description" content="Mit KIULY erstellst du lehrplankonforme Unterrichtsentwürfe & Material in Sekunden – 100% kostenlos, mit Differenzierung, Inklusion & Export. Jetzt downloaden!" />
+  <meta name="keywords" content="Unterrichtsmaterial, Arbeitsblätter, Differenzierung, Inklusion, DaZ, Vertretungsstunde, KI Unterricht, Lehrmaterial, Stundenentwurf, Grundschule, Sek I, Sek II, iPad Unterricht, digitale Unterrichtsplanung, KI Lehrerhilfe, App Store" />
+  <meta property="og:title" content="KIULY – Unterrichtsplanung mit KI, 100% kostenlos" />
+  <meta property="og:description" content="In Sekunden Unterrichtsentwürfe & Material – kostenlos, lehrplankonform, inklusiv. Lade KIULY jetzt gratis im App Store." />
+  <meta property="og:image" content="https://kiuly.de/icon.png" />
+  <meta property="og:url" content="https://kiuly.de" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#d7c5ff" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preload" as="image" href="https://kiuly.de/icon.png" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root{--brand:#d7c5ff;--brand-dark:#4c1d95;--bg:#ede4ff;--text:#1f1f33}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:"Inter",sans-serif;background:var(--bg);color:var(--text);scroll-behavior:smooth}
-    a{color:inherit;text-decoration:none}
-    .app-btn{display:inline-flex;align-items:center;gap:.6rem;min-width:205px;border:2.5px solid var(--brand-dark);padding:.36rem .8rem;border-radius:1.1rem;background:linear-gradient(90deg,#fff 50%,#ede4ff);transition:.3s;box-shadow:0 5px 24px rgba(167,144,217,.3)}
-    .app-btn:hover{background-position:100% 0;transform:translateY(-2px) scale(1.03);box-shadow:0 12px 40px rgba(215,197,255,.7);border-color:var(--brand)}
-    .badge{background:var(--brand-dark);color:#fff;font-size:.8rem;font-weight:700;border-radius:.7rem;padding:.2rem .7rem}
-    .glass{backdrop-filter:blur(20px);background:rgba(255,255,255,.9);border:1px solid rgba(215,197,255,.25);border-radius:1.5rem;box-shadow:0 6px 24px rgba(0,0,0,.06)}
-    /* Scroll indicator */
-    #scroll-indicator{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);width:80%;height:4px;background:rgba(255,255,255,.3);border-radius:2px;overflow:hidden;z-index:50}
-    #scroll-indicator .fill{height:100%;width:0;background:var(--brand-dark);transition-width .1s}
-  </style>
+    :root {
+      --brand: #d7c5ff;
+      --brand-light: #ede4ff;
+      --brand-dark: #4c1d95;
+      --text-dark: #21143d;
+      --text-mid: #4c1d95;
+      --text-black: #14111d;
+      --gray-hero: #f7f5ff;
+    }
+    /* Animated gradient background for hero */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Subtle glowing for headline */
+    @keyframes textGlow {
+      0%,100% { text-shadow: 0 0 10px rgba(255,255,255,0.4); }
+      50% { text-shadow: 0 0 20px rgba(255,255,255,0.8); }
+    }
+
+    /* Fade-in for testimonial cards */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Inter", sans-serif; }
+    .brand-bg { background-color: var(--brand); }
+    .brand { color: var(--brand); }
+    .brand-dark { color: var(--brand-dark); }
+    .brand-light-bg { background-color: var(--brand-light); }
+    .glass {
+      backdrop-filter: blur(24px) saturate(160%);
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(215,197,255,0.13);
+      box-shadow: 0 6px 32px rgba(167,144,217,0.13), 0 1.5px 8px rgba(215,197,255,0.12);
+      border-radius: 1.5rem;
+    }
+    .appstore-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1.1rem;
+      box-shadow: 0 5px 24px 0 #a790d988, 0 1.5px 8px #d7c5ff88;
+      background: #fff;
+      padding: 0.36rem 0.8rem 0.36rem 0.38rem;
+      transition: transform 0.14s cubic-bezier(.4,0,.2,1), box-shadow 0.15s, border 0.14s;
+      border: 2.5px solid #4c1d95;
+      gap: 0.6rem;
+      min-width: 205px;
+    }
+    .appstore-btn:hover,
+    .appstore-btn:focus {
+      transform: translateY(-2px) scale(1.048);
+      box-shadow: 0 12px 40px 0 #d7c5ffcc, 0 0px 10px #4c1d95a6;
+      border-color: #d7c5ff;
+      background: linear-gradient(90deg, #fff 60%, #ede4ff 100%);
+    }
+    .appstore-btn img {
+      display: block;
+      height: 2.75rem;
+      width: auto;
+      margin: 0;
+      border-radius: 0.7rem;
+      filter: drop-shadow(0 2px 7px #d7c5ff66);
+      background: transparent;
+    }
+    .appstore-btn .txt {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 0.99rem;
+      line-height: 1.15;
+      margin-left: 0.1em;
+    }
+    .appstore-btn .txt span:first-child {
+      color: var(--brand-dark);
+      font-size: 0.87em;
+      letter-spacing: .01em;
+      font-weight: 600;
+      opacity: 0.96;
+    }
+    .appstore-btn .txt span:last-child {
+      color: #18122b;
+      font-size: 1.14em;
+      font-weight: 800;
+      margin-top: 0.01em;
+      letter-spacing: 0.005em;
+    }
+    .badge-free {
+      background: var(--brand-dark);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.89em;
+      border-radius: 0.7em;
+      padding: 0.22em 0.70em;
+      margin-left: 0.6em;
+      letter-spacing: 0.02em;
+      box-shadow: 0 0px 9px #d7c5ff54;
+      vertical-align: middle;
+      position: relative;
+      top: -2px;
+      border: 1.5px solid #fff;
+      font-family: inherit;
+    }
+    ::selection { background: var(--brand-light);}
+    ::-webkit-scrollbar-thumb { background: var(--brand-dark); border-radius: 10px;}
+    .hero-bg {
+      background: linear-gradient(270deg, #ede4ff, #d7c5ff, #a790d9, #ede4ff);
+      background-size: 800% 800%;
+      animation: gradientBG 20s ease infinite;
+    }
+
+    .hero-bg h1 {
+      animation: textGlow 3s ease-in-out infinite;
+    }
+
+    .appstore-btn {
+      background: linear-gradient(90deg, #fff 50%, #ede4ff 100%);
+      background-size: 200% 100%;
+      transition: background-position 0.5s ease;
+    }
+    .appstore-btn:hover {
+      background-position: 100% 0;
+    }
+
+    .testimonial-card {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .testimonial-card:nth-child(1) { animation-delay: 0.2s; }
+    .testimonial-card:nth-child(2) { animation-delay: 0.4s; }
+    .testimonial-card:nth-child(3) { animation-delay: 0.6s; }
+    .feature-card {
+      border: 1.2px solid #e6e1f7;
+      background: #fff;
+      transition: box-shadow 0.14s, background 0.14s, transform 0.14s;
+    }
+    .feature-card:hover {
+      box-shadow: 0 2px 24px #d7c5ff60;
+      background-color: #f4f0fa;
+      transform: translateY(-2px) scale(1.011);
+    }
+    /* New testimonial styling */
+    /* Slide-in animations */
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    /* Mobile bounce animation for CTA */
+    @keyframes bounceMobile {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .slide-in-left, .slide-in-right {
+      opacity: 0;
+    }
+    .slide-in-left.visible {
+      animation: slideInLeft 0.8s ease-out forwards;
+    }
+    .slide-in-right.visible {
+      animation: slideInRight 0.8s ease-out forwards;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .testimonial-card {
+      background: #fff;
+      border: 1px solid #e6e1f7;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 16px rgba(167,144,217,0.1), 0 2px 8px rgba(215,197,255,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(167,144,217,0.2), 0 4px 12px rgba(215,197,255,0.2);
+    }
+    .testimonial-rating {
+      font-size: 1.25rem;
+      color: #4c1d95;
+      margin-bottom: 0.5rem;
+    }
+    .testimonial-meta {
+      font-size: 0.85rem;
+      color: #909090;
+      margin-bottom: 0.75rem;
+    }
+    .testimonial-text {
+      font-size: 1rem;
+      color: #21143d;
+      line-height: 1.5;
+    }
+    /* Apply bounce on mobile to App Store button */
+    @media (max-width: 768px) {
+      .appstore-btn {
+        animation: bounceMobile 2s ease-in-out infinite;
+      }
+    }
+
+    /* Floating gradient blobs in hero */
+    .hero-bg::before,
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: floatBlob 12s ease-in-out infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-bg::before {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #d7c5ff, #a790d9);
+      top: -100px;
+      left: -150px;
+      animation-delay: 0s;
+    }
+    .hero-bg::after {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #ede4ff, #d7c5ff);
+      bottom: -100px;
+      right: -100px;
+      animation-delay: 6s;
+    }
+    @keyframes floatBlob {
+      0%,100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-30px) scale(1.1); }
+    }
+
+    /* Typewriter effect for subtitle */
+    .typewriter-text {
+      display: inline-block;
+      overflow: hidden;
+      white-space: pre-wrap;
+      border-right: 4px solid var(--brand-dark);
+      animation: typing 2s steps(40, end) forwards, blinkCursor 0.7s step-end infinite;
+      width: 0;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blinkCursor {
+      from { border-right-color: var(--brand-dark); }
+      to { border-right-color: transparent; }
+    }
+    @media (prefers-color-scheme: dark) {
+    /* Scroll progress indicator */
+    #scroll-indicator {
+      position: fixed;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 4px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 2px;
+      overflow: hidden;
+      z-index: 9999;
+    }
+    #scroll-indicator .fill {
+      width: 0%;
+      height: 100%;
+      background: var(--brand-dark);
+      transition: width 0.1s ease-out;
+    }
+      body {
+        background-color: #121212;
+      }
+      .text-\[\#14111d\] {
+        color: #e0e0e0;
+      }
+      .text-\[\#21143d\] {
+        color: #ffffff;
+      }
+      .text-\[\#18122b\] {
+        color: #c0c0c0;
+      }
+      .text-\[\#4c1d95\] {
+        color: #e3d1ff;
+      }
+      .text-\[\#3b3657\] {
+        color: #a0a0a0;
+      }
+      .text-gray-500 {
+        color: #a0a0a0;
+      }
+      .text-gray-600 {
+        color: #909090;
+      }
+      .bg-\[\#ede4ff\] {
+        background-color: #121212;
+      }
+      .hero-bg {
+        background: radial-gradient(ellipse at 65% 60%, #2a004b 10%, #4c1d95 60%, #6a3aa8 110%);
+      }
+      .glass {
+        background: rgba(30, 30, 30, 0.92);
+        border-color: rgba(100, 100, 100, 0.2);
+        box-shadow: 0 6px 32px rgba(0, 0, 0, 0.2), 0 1.5px 8px rgba(100, 100, 100, 0.1);
+      }
+      .feature-card {
+        background: #222;
+        border-color: #444;
+      }
+      .appstore-btn {
+        background: #333;
+        border-color: #6a3aa8;
+      }
+      .appstore-btn .txt span:first-child {
+        color: #e0e0e0;
+      }
+      .appstore-btn .txt span:last-child {
+        color: #ffffff;
+      }
+      .badge-free {
+        background: #6a3aa8;
+        color: #fff;
+      }
+      input, textarea {
+        background-color: #333;
+        color: #e0e0e0;
+        border-color: #555;
+      }
+      footer {
+        background-color: #1a1a1a;
+      }
+      ::selection {
+        background: #4c1d95;
+        color: #fff;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #6a3aa8;
+      }
+
+      /* Dark-mode header adjustments */
+      .hero-bg {
+        background: radial-gradient(ellipse at 65% 60%, #1a001f 10%, #2a004b 68%, #3b006d 110%);
+      }
+      .hero-bg h1 {
+        color: #ffffff !important;
+      }
+      .hero-bg p {
+        color: #d1d1d1 !important;
+      }
+      .hero-bg .appstore-btn {
+        background: #2a2a2a;
+        border-color: #e3d1ff;
+      }
+      .hero-bg .appstore-btn img {
+        filter: drop-shadow(0 2px 7px #4c1d95aa);
+      }
+      .hero-bg .appstore-btn:hover {
+        background: linear-gradient(90deg, #3b0055 60%, #4c1d95 100%);
+      }
+      .hero-bg .badge-free {
+        background: #6a3aa8;
+      }
+      /* Override hardcoded violet text for better contrast */
+      .brand-dark,
+      .text-\[\#4c1d95\],
+      [style*="color:#4c1d95"] {
+        color: #e3d1ff !important;
+      }
+      /* Ensure contact email and link text is light in dark mode */
+      .text-\[\#a790d9\],
+      .brand {
+        color: #e0e0e0 !important;
+      }
+      /* Ensure button text is light in dark mode */
+      .appstore-btn {
+        color: #ffffff !important;
+      }
+      .appstore-btn svg path {
+        stroke: #ffffff !important;
+      }
+      /* Lighten footer meta text in dark mode */
+      footer > p:first-child {
+        color: #e0e0e0 !important;
+      }
+    }
+</style>
+  <!-- Google Ads Conversion Tracking -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17253344028"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17253344028');
+  </script>
+  <!-- Event snippet for Seitenaufruf conversion page -->
+  <script>
+    gtag('event', 'conversion', {
+        'send_to': 'AW-17253344028/wCt4CMmOleYaEJzGhKNA',
+        'value': 1.0,
+        'currency': 'EUR'
+    });
+  </script>
 </head>
-<body>
-<!-- Scroll Progress -------------------------------------------------->
-<div id="scroll-indicator"><div class="fill"></div></div>
-
+<body class="bg-[#ede4ff] text-gray-900 antialiased">
+  <!-- Scroll Indicator -->
+  <div id="scroll-indicator"><div class="fill"></div></div>
 <main>
-
-  <!-- HERO ----------------------------------------------------------->
-  <header class="relative overflow-hidden pb-32 sm:pb-40" style="min-height:90vh;">
-    <video autoplay loop muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover pointer-events-none" aria-hidden="true">
-      <source src="wave loop.webm" type="video/webm">
-    </video>
-    <div class="absolute inset-0 bg-black/30"></div>
-
-    <div class="relative z-10 max-w-6xl mx-auto px-6 pt-24 flex flex-col-reverse md:flex-row items-center justify-center gap-10">
-      <!-- Text -->
-      <div class="md:w-1/2 text-center md:text-left">
-        <img src="icon.png" alt="KIULY Logo" width="180" height="180" loading="eager" class="mx-auto md:mx-0 w-36 md:w-44 rounded-3xl ring-8 ring-white/60">
-        <h1 class="mt-8 text-4xl md:text-5xl font-extrabold leading-tight text-white drop-shadow-lg">Unterrichtsplanung in Sekunden –<br><span style="color:var(--brand);">100 % kostenlos</span></h1>
-        <p class="mt-4 text-xl font-medium text-gray-200">Lehrplangerecht • Differenziert • DSGVO-konform</p>
-        <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="app-btn mt-8" target="_blank" rel="noopener" aria-label="Im App Store herunterladen">
-          <img src="app-store-logo.png" alt="App Store" class="h-10" loading="lazy">
-          <span class="flex flex-col items-start"><span class="text-sm font-semibold text-gray-700">Jetzt laden</span><span class="text-lg font-extrabold text-gray-900">App Store</span></span>
-          <span class="badge">Gratis</span>
-        </a>
-        <div class="mt-2 text-xs font-medium text-gray-200">Für iPad & iPhone</div>
-      </div>
-
-      <!-- Animation -->
-      <div class="md:w-1/2 flex justify-center">
-        <dotlottie-wc src="https://lottie.host/5b449ef9-cc23-4ed7-a954-665461db2455/e4TcUEdwcF.lottie" style="width:300px;height:300px" speed="1" autoplay loop></dotlottie-wc>
-      </div>
+  <!-- HERO -->
+  <header class="relative overflow-hidden pb-32 sm:pb-40 text-center hero-bg" style="min-height:90vh;">
+    <div class="absolute inset-0"></div>
+    <div class="absolute -top-32 -left-32 w-[520px] h-[520px] bg-[#ede4ff] rounded-full blur-3xl opacity-35 rotate-12"></div>
+    <div class="absolute -bottom-32 -right-32 w-[420px] h-[420px] bg-[#d7c5ff] rounded-full blur-3xl opacity-25"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 pt-20">
+      <img src="kiuly-logo.png" alt="KIULY App Logo" width="180" height="180" class="mx-auto w-36 md:w-44 drop-shadow-2xl rounded-3xl ring-8 ring-white/70 ring-offset-2" />
+      <h1 class="mt-8 text-4xl md:text-5xl font-extrabold tracking-tight leading-tight drop-shadow-xl" style="color:#21143d;">
+        Unterrichtsplanung in Sekunden –<br> <span style="color:#4c1d95;">100% kostenlos mit KIULY</span>
+      </h1>
+      <p class="mt-6 text-xl max-w-2xl mx-auto text-[#18122b] font-medium opacity-100">
+        <span class="typewriter-text">Lade KIULY im App Store<br>und erstelle lehrplan-passgenaue Unterrichtsentwürfe.</span>
+      </p>
+      <!-- App Store Button -->
+      <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544"
+         class="appstore-btn mx-auto mt-10 mb-2 focus:outline-none focus:ring-4 focus:ring-[#a790d9]/60 shadow-2xl"
+         target="_blank" rel="noopener"
+         aria-label="KIULY im App Store herunterladen">
+        <img src="app-store-logo.png" alt="Download on the App Store" />
+        <span class="txt">
+          <span>Jetzt laden</span>
+          <span>App Store</span>
+        </span>
+        <span class="badge-free">Gratis</span>
+      </a>
+      <div class="mt-2 text-xs text-[#4c1d95] font-medium tracking-wide">Für iPad & iPhone</div>
     </div>
-
-    <svg class="absolute bottom-0 w-full text-[var(--bg)]" viewBox="0 0 1440 110" aria-hidden="true">
-      <path fill="currentColor" d="M0 90l60-10c60-10 180-30 300-27 120 4 240 30 360 32 120 1 240-21 360-33 120-12 240-14 300-15l60-1v65H0z"/>
-    </svg>
+    <svg class="absolute bottom-0 w-full text-[#ede4ff]" viewBox="0 0 1440 110" aria-hidden="true"><path fill="currentColor" d="M0 90l60-10c60-10 180-30 300-27 120 4 240 30 360 32 120 1 240-21 360-33 120-12 240-14 300-15l60-1v65H0z" /></svg>
   </header>
 
-  <!-- WHY ------------------------------------------------------------>
-  <section class="max-w-5xl mx-auto px-6 mt-20 text-center">
-    <h2 class="text-3xl font-bold" style="color:var(--brand-dark);">Warum KIULY?</h2>
-    <p class="mt-2 text-lg font-semibold">Unterrichtsentwürfe & Material in Sekunden – differenziert, barrierefrei, sofort einsetzbar.</p>
+  <!-- WHY / Benefits -->
+  <section id="why" class="max-w-5xl mx-auto px-6 mt-20" aria-labelledby="why-heading">
+    <h2 id="why-heading" class="text-3xl font-bold text-center slide-in-left" style="color:#4c1d95;">Warum KIULY?</h2>
+    <p class="mt-2 text-center text-lg text-[#18122b] max-w-2xl mx-auto font-semibold">
+      In Sekunden lehrplankonforme Unterrichtsentwürfe & Material – differenziert, barrierefrei und sofort einsetzbar. 100% kostenlos.
+    </p>
+    <div class="grid md:grid-cols-2 gap-8 mt-12 text-[#14111d]">
+      <ul class="space-y-6 list-none">
+        <li class="flex items-start glass feature-card p-5 slide-in-right">
+          <span class="text-2xl mr-5">💡</span>
+          <div>
+            <h3 class="font-semibold text-[#4c1d95]">Maximale Zeitersparnis</h3>
+            <p class="text-sm text-[#22223a]">Bis zu 50 % weniger Vorbereitungszeit durch KI-Unterstützung.</p>
+          </div>
+        </li>
+        <li class="flex items-start glass feature-card p-5 slide-in-right">
+          <span class="text-2xl mr-5">⚡</span>
+          <div>
+            <h3 class="font-semibold text-[#4c1d95]">Sofort startklar</h3>
+            <p class="text-sm text-[#22223a]">Strukturierte Entwürfe, sofort passend zu Fach, Klasse & Lehrplan.</p>
+          </div>
+        </li>
+        <li class="flex items-start glass feature-card p-5 slide-in-right">
+          <span class="text-2xl mr-5">🎯</span>
+          <div>
+            <h3 class="font-semibold text-[#4c1d95]">Für alle Fächer & Klassen</h3>
+            <p class="text-sm text-[#22223a]">Mit Anpassung an Niveau, Bundesland, Inklusion & Differenzierung.</p>
+          </div>
+        </li>
+      </ul>
+      <ul class="space-y-6 list-none">
+        <li class="flex items-start glass feature-card p-5 slide-in-right">
+          <span class="text-2xl mr-5">🌍</span>
+          <div>
+            <h3 class="font-semibold text-[#4c1d95]">Barrierefrei & inklusiv</h3>
+            <p class="text-sm text-[#22223a]">Unterstützt DaZ, ADHS sowie Seh- und Hör-Beeinträchtigungen.</p>
+          </div>
+        </li>
+        <li class="flex items-start glass feature-card p-5 slide-in-right">
+          <span class="text-2xl mr-5">📂</span>
+          <div>
+            <h3 class="font-semibold text-[#4c1d95]">Export & Verlauf</h3>
+            <p class="text-sm text-[#22223a]">Entwürfe speichern, kopieren und jederzeit abrufen.</p>
+          </div>
+        </li>
+        <li class="flex items-start glass feature-card p-5 slide-in-right">
+          <span class="text-2xl mr-5">💬</span>
+          <div>
+            <h3 class="font-semibold text-[#4c1d95]">Austausch mit Lehrkräften</h3>
+            <p class="text-sm text-[#22223a]">Teile anonym, erhalte Feedback von echten Kolleg:innen.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-    <div class="grid md:grid-cols-2 gap-8 mt-12 text-left">
-      <div class="space-y-4">
-        <div class="p-5 glass">💡 <strong style="color:var(--brand-dark);">Zeitersparnis</strong><br><span class="text-sm">Bis zu 50 % weniger Vorbereitung.</span></div>
-        <div class="p-5 glass">⚡ <strong style="color:var(--brand-dark);">Sofort startklar</strong><br><span class="text-sm">Strukturierte Entwürfe passend zu Fach & Klasse.</span></div>
-        <div class="p-5 glass">🎯 <strong style="color:var(--brand-dark);">Für alle Fächer</strong><br><span class="text-sm">Inklusive Differenzierung & DaZ.</span></div>
-      </div>
-      <div class="space-y-4">
-        <div class="p-5 glass">🌍 <strong style="color:var(--brand-dark);">Barrierefrei</strong><br><span class="text-sm">DaZ, ADHS, Seh- & Hör-Unterstützung.</span></div>
-        <div class="p-5 glass">📂 <strong style="color:var(--brand-dark);">Export & Verlauf</strong><br><span class="text-sm">Entwürfe speichern, kopieren, teilen.</span></div>
-        <div class="p-5 glass">💬 <strong style="color:var(--brand-dark);">Feedback</strong><br><span class="text-sm">Austausch mit Kolleg:innen.</span></div>
+  <!-- MATERIALIEN -->
+ <section class="mt-24 px-6" id="materialien">
+  <h2 class="text-2xl font-semibold text-center slide-in-left" style="color:#4c1d95;">Alle Materialien inklusive – sofort & kostenlos</h2>
+  <div class="max-w-4xl mx-auto text-[#18122b] text-center">
+    <p class="mb-6 text-lg font-semibold">
+      KIULY liefert zu jedem Entwurf das passende Unterrichtsmaterial – automatisch, differenziert und inklusiv.
+    </p>
+    <ul class="grid md:grid-cols-2 gap-6 text-left text-base text-[#3b3657] font-medium">
+      <li>📄 Arbeitsblätter für Einstieg, Vertiefung & Transfer</li>
+      <li>🧠 Differenzierung für jedes Lernniveau</li>
+      <li>📚 Materialien für DaZ / Inklusion</li>
+      <li>⚙️ iPad-optimierte Varianten für digitalen Unterricht</li>
+    </ul>
+    <p class="mt-6 text-[#4c1d95] text-sm font-semibold">
+      Du musst nichts mehr zusammensuchen – KIULY erstellt alles sofort passend zu Thema, Fach & Klasse.
+    </p>
+  </div>
+</section>
+
+  <!-- STUDIEN-BELEG -->
+  <section class="mt-20 px-6" id="studien">
+    <div class="max-w-3xl mx-auto glass p-8 rounded-3xl shadow-xl">
+      <h2 class="text-2xl font-semibold text-center mb-6 slide-in-left" style="color:#4c1d95;">🔬 Wissenschaftlich belegt</h2>
+      <blockquote class="italic text-[#3b3657] font-semibold">
+        Lehrkräfte, die KI-Tools zur Unterrichtsplanung nutzen, sparen <strong style="color:#4c1d95;">signifikant</strong> Zeit – und gewinnen Freiraum für Teamarbeit und persönliche Betreuung.
+      </blockquote>
+      <p class="mt-4 text-sm text-[#4c1d95]">
+        Karpouzis, K. et al. (2024): <em>Tailoring Education with GenAI: A New Horizon in Lesson Planning</em>.
+        <a href="https://doi.org/10.48550/arXiv.2403.12071" target="_blank" class="underline font-bold">Studie lesen</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="mt-20 px-6">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-2xl font-semibold mb-4 slide-in-left" style="color:#4c1d95;">Stimmen aus der Praxis</h2>
+      <div class="testimonial-grid max-w-4xl mx-auto">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <div class="testimonial-text">„Superapp! Sehr gut, dass ich meine Unterrichtsinhalte speichern kann – so behalte ich den Überblick.“</div>
+          <div class="testimonial-meta">– aaana124</div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <div class="testimonial-text">„Sehr hilfreich, gerade für junge Lehrer:innen und Aushilfslehrkräfte.“</div>
+          <div class="testimonial-meta">– Kritikthomas</div>
+        </div>
+        <!-- Neues Testimonial -->
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <div class="testimonial-meta">iOS | Version 8 | Deutschland | vor 5 Tagen</div>
+          <div class="testimonial-text">„Hilfreiche App – Super App, um erste Ideen zu sammeln und sich zu strukturieren.“</div>
+          <div class="testimonial-meta">– Rezpn</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA ------------------------------------------------------------>
-  <section class="mt-24 text-center px-6">
-    <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="app-btn" target="_blank" rel="noopener">
-      <img src="app-store-logo.png" alt="App Store" class="h-10" loading="lazy">
-      <span class="flex flex-col items-start"><span class="text-sm font-semibold text-gray-700">Jetzt laden</span><span class="text-lg font-extrabold text-gray-900">App Store</span></span>
-      <span class="badge">Gratis</span>
+  <!-- SCREENSHOT -->
+  <section class="mt-20 px-6" id="screenshot">
+    <h2 class="text-2xl font-semibold text-center mb-6 slide-in-left" style="color:#4c1d95;">Einblick</h2>
+    <div class="flex justify-center">
+      <img src="img_8101.webp" alt="Screenshot – Generator" width="320" height="568" loading="lazy" class="rounded-3xl shadow-2xl ring-4 ring-white max-w-[320px]" />
+    </div>
+    <p class="text-center mt-6 font-semibold" style="color:#4c1d95;">Was du generierst, bleibt dein Geheimnis – einfach ausprobieren! 🔒</p>
+  </section>
+
+  <!-- CTA Download Button am Seitenende -->
+  <section class="mt-24 text-center" id="download">
+    <h2 class="text-2xl font-semibold text-center slide-in-left sr-only" style="color:#4c1d95;">Download</h2>
+    <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544"
+       class="appstore-btn mx-auto focus:outline-none focus:ring-4 focus:ring-[#a790d9]/70"
+       target="_blank" rel="noopener"
+       aria-label="KIULY im App Store herunterladen">
+      <img src="app-store-logo.png" alt="Download on the App Store" />
+      <span class="txt">
+        <span>Jetzt laden</span>
+        <span>App Store</span>
+      </span>
+      <span class="badge-free">Gratis</span>
     </a>
     <p class="mt-3 text-sm text-gray-600">Dein digitales Unterrichts-Upgrade wartet.</p>
   </section>
-
-  <!-- KONTAKT -------------------------------------------------------->
-  <section id="kontakt" class="mt-32 max-w-lg mx-auto px-6">
-    <h2 class="text-2xl font-semibold text-center" style="color:var(--brand-dark);">Kontakt</h2>
-    <form id="contact-form" class="glass p-6 flex flex-col gap-4" novalidate>
-      <!-- Honeypot -->
-      <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" style="display:none">
-
-      <label class="font-semibold" style="color:var(--brand-dark);" for="name">Name (optional)</label>
-      <input id="name" name="name" type="text" autocomplete="name" class="w-full rounded-xl border border-[var(--brand)] py-2 px-3" placeholder="Jana Müller">
-
-      <label class="font-semibold" style="color:var(--brand-dark);" for="email">E-Mail *</label>
-      <input id="email" name="email" type="email" required autocomplete="email" class="w-full rounded-xl border border-[var(--brand)] py-2 px-3" placeholder="du@example.com">
-
-      <label class="font-semibold" style="color:var(--brand-dark);" for="msg">Nachricht *</label>
-      <textarea id="msg" name="msg" required rows="5" class="w-full rounded-xl border border-[var(--brand)] py-2 px-3 resize-vertical" placeholder="Worum geht es?"></textarea>
-
-      <div class="text-xs text-gray-500">Mit Absenden erklärst du dich einverstanden, dass deine Angaben zur Beantwortung deiner Anfrage verwendet werden. <a href="datenschutz.html" target="_blank" class="underline">Datenschutz</a></div>
-      <div id="form-feedback" class="text-red-600 text-sm hidden"></div>
-
-      <button type="submit" class="app-btn justify-center"><svg width="20" height="20" fill="none"><path d="M2 10.5L7 15L18 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Nachricht senden</button>
-      <p class="text-xs text-center mt-2">Oder direkt mailen an <a href="mailto:kiulyapp@icloud.com" class="underline" style="color:var(--brand-dark);">kiulyapp@icloud.com</a></p>
-    </form>
-  </section>
-
 </main>
+<!-- KONTAKT -->
+<section id="kontakt" class="mt-28 max-w-lg mx-auto px-6">
+  <h2 class="text-2xl font-semibold brand mb-4 text-center slide-in-left">Kontakt</h2>
+  <form 
+    class="glass p-6 rounded-2xl shadow-xl flex flex-col gap-4"
+    action="mailto:kiulyapp@icloud.com" 
+    method="POST" 
+    enctype="text/plain"
+  >
+    <div>
+      <label for="name" class="font-semibold text-[#4c1d95]">Name (optional)</label>
+      <input type="text" id="name" name="Name" autocomplete="name"
+        class="mt-1 block w-full rounded-xl border border-[#a790d9] bg-[#fff] py-2 px-3 text-gray-900 focus:ring-2 focus:ring-[#d7c5ff] outline-none transition"
+      >
+    </div>
+    <div>
+      <label for="email" class="font-semibold text-[#4c1d95]">E-Mail *</label>
+      <input type="email" id="email" name="E-Mail" required autocomplete="email"
+        class="mt-1 block w-full rounded-xl border border-[#a790d9] bg-[#fff] py-2 px-3 text-gray-900 focus:ring-2 focus:ring-[#d7c5ff] outline-none transition"
+      >
+    </div>
+    <div>
+      <label for="nachricht" class="font-semibold text-[#4c1d95]">Nachricht *</label>
+      <textarea id="nachricht" name="Nachricht" required rows="4"
+        class="mt-1 block w-full rounded-xl border border-[#a790d9] bg-[#fff] py-2 px-3 text-gray-900 focus:ring-2 focus:ring-[#d7c5ff] outline-none transition resize-vertical"
+      ></textarea>
+    </div>
+    <div class="text-xs text-gray-500 leading-tight">
+      Mit Absenden erklärst du dich einverstanden, dass deine Angaben zur Beantwortung deiner Anfrage verwendet werden. <br>
+      <a href="datenschutz.html" class="underline brand" target="_blank" rel="noopener">Datenschutz</a>
+    </div>
+    <button 
+      type="submit"
+      class="mt-2 appstore-btn font-bold text-base flex items-center justify-center gap-2"
+    >
+      <svg width="20" height="20" fill="none"><path d="M2 10.5L7 15L18 5.5" stroke="#4c1d95" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Nachricht senden
+    </button>
+  </form>
+  <p class="text-xs text-center mt-4 text-[#a790d9]">Oder direkt per E-Mail: <a href="mailto:kiulyapp@icloud.com" class="underline brand">kiulyapp@icloud.com</a></p>
+</section>
 
-<!-- FOOTER ---------------------------------------------------------->
-<footer class="mt-32 py-10 text-center text-sm bg-[var(--bg)]">
+<footer class="mt-32 py-10 bg-[#ede4ff] text-center text-sm">
   <p>Made with ❤️ in Essen · <span id="year"></span> KIULY</p>
-  <nav class="space-x-4 mt-2 text-[var(--brand-dark)]"><a href="impressum.html" class="underline">Impressum</a><a href="datenschutz.html" class="underline">Datenschutz</a><a href="nutzungsbedingungen.html" class="underline">Nutzungsbedingungen</a></nav>
+  <nav class="space-x-4 mt-2">
+    <a href="impressum.html" class="underline text-[#4c1d95]">Impressum</a>
+    <a href="datenschutz.html" class="underline text-[#4c1d95]">Datenschutz</a>
+    <a href="nutzungsbedingungen.html" class="underline text-[#4c1d95]">Nutzungsbedingungen</a>
+    <span class="text-gray-600">DSGVO-konform</span>
+  </nav>
 </footer>
-
-<!-- JavaScript ------------------------------------------------------>
-<script>
-  /* Jahr */
-  document.getElementById('year').textContent = new Date().getFullYear();
-  /* Scroll-Indicator */
-  window.addEventListener('scroll', () => {
-    const st = document.documentElement.scrollTop || document.body.scrollTop;
-    const sh = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    document.querySelector('#scroll-indicator .fill').style.width = (st / sh * 100) + '%';
-  });
-  /* Kontakt */
-  document.getElementById('contact-form').addEventListener('submit', e => {
-    e.preventDefault();
-    if(document.getElementById('website').value) return; // Bot-Trap
-    const email = document.getElementById('email');
-    const msg   = document.getElementById('msg');
-    const fb    = document.getElementById('form-feedback');
-    fb.classList.add('hidden');
-    if(!email.value || !msg.value){ fb.textContent='Bitte E-Mail & Nachricht ausfüllen.'; fb.classList.remove('hidden'); return; }
-    const body = encodeURIComponent(msg.value + '\n\n–––\nGesendet von: ' + (document.getElementById('name').value||'Anonym'));
-    window.location.href = `mailto:kiulyapp@icloud.com?subject=Anfrage%20über%20KIULY.de&body=${body}`;
-  });
+<p class="hidden">
+  KIULY bietet dir hochwertige Unterrichtsmaterialien: automatisch generierte Arbeitsblätter, differenzierte Vorschläge, Kompetenzraster, DaZ-Materialien, Bewertungsbögen und digitale Varianten – alles mit einem Klick, direkt passend zu deinem Entwurf, 100% kostenlos.
+</p>
 </script>
+<script>
+  // Jahr dynamisch einfügen
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.slide-in-left, .slide-in-right').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+  <script>
+    // Scroll Indicator Update
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const pct = (scrollTop / scrollHeight) * 100;
+      document.querySelector('#scroll-indicator .fill').style.width = pct + '%';
+    });
+  </script>
 </body>
 </html>
