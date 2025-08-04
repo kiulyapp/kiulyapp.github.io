@@ -1,27 +1,80 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <!-- ─────────────────────────────────────────────────────────────
+       BASIS-META
+  ───────────────────────────────────────────────────────────── -->
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KIULY – Unterrichtsentwürfe & Material in Sekunden</title>
 
-  <!-- SEO & Open Graph -->
-  <meta name="description" content="KIULY generiert in Sekunden lehrplankonforme Unterrichtsentwürfe & Material – differenziert, inklusiv, DSGVO-konform." />
-  <meta property="og:title"       content="KIULY – Unterrichtsentwürfe & Material in Sekunden" />
-  <meta property="og:description" content="Generiere in Sekunden komplette Unterrichtsplanung mit KI. Jetzt kostenlos laden!" />
-  <meta property="og:image"       content="icon.png" />
+  <title>
+    KIULY – Unterrichtsentwürfe, Arbeitsblätter & Material in Sekunden
+    (Unterrichtsplanung • Lehrplan NRW • Differenzierte Aufgaben)
+  </title>
+
+  <!-- SEO BASIC -->
+  <meta name="description"
+        content="KIULY erstellt in Sekunden lehrplankonforme Unterrichtsentwürfe, Vorhaben & Unterrichtsmaterial – differenziert, inklusiv & DSGVO-konform. Spare Vorbereitungszeit und fokussiere dich aufs Unterrichten." />
+  <meta name="keywords"
+        content="Unterrichtsentwurf, Unterrichtsplanung, Stundenentwurf, Lehrplan, Lehrer KI, Lehrkräfte App, AI Lesson Plan Generator, Differenzierung, Inklusion, DaZ, DaF, iPad Klasse, digitale Schule, Arbeitsblatt Generator, Gymnasium, Grundschule, Sekundarstufe, KIULY, One-Click Material, KIULY SNAP, Unterrichtsmaterial erstellen, KI Tools Lehrer, KI Unterricht, Schulmaterial, Klassenarbeit Generator" />
+  <meta name="robots"
+        content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://deine-domain.de/" />
+
+  <!-- Open Graph -->
   <meta property="og:type"        content="website" />
+  <meta property="og:locale"      content="de_DE" />
+  <meta property="og:site_name"   content="KIULY" />
+  <meta property="og:title"       content="KIULY – Unterrichtsentwürfe & Material in Sekunden" />
+  <meta property="og:description" content="Generiere komplette Unterrichts­planung in Sekunden. Kostenlos laden – KIULY Lehrer-KI." />
   <meta property="og:url"         content="https://deine-domain.de/" />
+  <meta property="og:image"       content="icon.png" />
+  <meta property="og:image:alt"   content="KIULY App Logo" />
+  <meta property="og:image:type"  content="image/png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height"content="512" />
 
-  <!-- Assets -->
-  <link rel="icon" type="image/png" href="icon.png" />
+  <!-- Twitter Cards -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@kiuly_app" />
+  <meta name="twitter:creator"     content="@kiuly_app" />
+  <meta name="twitter:title"       content="KIULY – Unterrichtsentwürfe & Material in Sekunden" />
+  <meta name="twitter:description" content="Differenzierte, lehrplankonforme Unterrichtsentwürfe & Material – sofort einsatzbereit." />
+  <meta name="twitter:image"       content="icon.png" />
+  <meta name="twitter:image:alt"   content="KIULY App Logo" />
+
+  <!-- iOS Smart-Banner -->
+  <meta name="apple-itunes-app"
+        content="app-id=6747030544, app-argument=https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"MobileApplication",
+    "name":"KIULY – Unterrichts-KI",
+    "operatingSystem":"iOS",
+    "applicationCategory":"EducationApplication",
+    "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","ratingCount":"6"},
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},
+    "downloadUrl":"https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544",
+    "screenshot":"IMG_8101.webp",
+    "logo":"icon.png",
+    "featureList":["Unterrichtsentwurf","Arbeitsblatt Generator","Differenzierung","Inklusion","DaZ","iPad Klasse"]
+  }
+  </script>
+
+  <!-- Favicons & Fonts -->
+  <link rel="icon" href="icon.png" sizes="512x512" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Animation-Libs -->
+  <!-- Tailwind & Animation Libs -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
 
+  <!-- Styles -->
   <style>
     body{font-family:'Inter',sans-serif;}
 
@@ -32,7 +85,7 @@
       animation:bgLoop 18s ease-in-out infinite}
     @keyframes bgLoop{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 
-    /* Glass effect */
+    /* Glass-Card */
     .glass{
       background:rgba(255,255,255,.15);
       backdrop-filter:blur(18px) saturate(1.2);
@@ -40,37 +93,40 @@
       border-radius:1.8rem;
       box-shadow:0 8px 36px #a78bfa55}
 
-    /* Gradient button */
+    /* Gradient-Button */
     .btn{
       background:linear-gradient(90deg,#a5b4fc,#f472b6,#c084fc,#7c3aed);
       background-size:280% 100%;
       animation:btnLoop 6s linear infinite;
       color:#fff;font-weight:800;letter-spacing:.3px;
-      padding:.9em 2.3em;border-radius:1.7em;
+      padding:.9em 2.4em;border-radius:1.7em;
       box-shadow:0 0 25px #c084fc80,0 2px 12px #7c3aed66;
-      transition:transform .14s}
+      transition:transform .15s}
     .btn:hover{transform:scale(1.07)}
     @keyframes btnLoop{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 
-    section{scroll-margin-top:90px}
+    section{scroll-margin-top:100px}
+
+    /* Hidden keyword cloud (SEO boost, no design impact) */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
   </style>
 </head>
 
 <body class="bg-anim overflow-x-hidden text-white">
 
-<!-- HEADER -->
-<header class="fixed inset-x-0 top-0 z-40 glass flex items-center justify-between px-6 py-3 mx-auto max-w-7xl">
-  <img src="icon.png" alt="KIULY" class="h-11 rounded-xl" />
-  <nav class="hidden lg:flex gap-10 text-[15px] font-semibold">
+<!-- ────────── HEADER ────────── -->
+<header class="fixed inset-x-0 top-0 z-40 glass flex items-center justify-between px-6 py-3 mx-auto max-w-7xl" role="banner">
+  <a href="#hero"><img src="icon.png" alt="KIULY Logo" class="h-11 rounded-xl" /></a>
+  <nav class="hidden lg:flex gap-10 text-sm font-semibold" aria-label="Hauptnavigation">
     <a href="#features" class="hover:text-fuchsia-300">Features</a>
-    <a href="#snap"     class="hover:text-fuchsia-300">KIULY SNAP</a>
+    <a href="#snap"     class="hover:text-fuchsia-300">KIULY&nbsp;SNAP</a>
     <a href="#research" class="hover:text-fuchsia-300">Studie</a>
     <a href="#kontakt"  class="hover:text-fuchsia-300">Kontakt</a>
   </nav>
   <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="btn text-sm">App laden</a>
 </header>
 
-<!-- HERO -->
+<!-- ────────── HERO ────────── -->
 <section id="hero" class="pt-36 pb-24 text-center">
   <div class="max-w-3xl mx-auto" data-aos="fade-up">
     <h1 class="text-4xl md:text-6xl font-black leading-tight drop-shadow-xl">
@@ -80,9 +136,9 @@
       Lehrplankonforme Entwürfe & Materialien – differenziert, inklusiv, DSGVO-konform.
     </p>
 
-    <!-- App-Store-Badge -->
+    <!-- App Store Badge -->
     <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="inline-block mt-10" aria-label="Im App Store laden">
-      <img src="Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="" class="h-10 md:h-12" />
+      <img src="Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Laden im App Store" class="h-10 md:h-12" />
     </a>
 
     <!-- Rating & Downloads -->
@@ -96,61 +152,62 @@
       <div><span class="text-4xl font-extrabold">100+</span>&nbsp;Downloads</div>
     </div>
 
+    <!-- Lottie Animation -->
     <div class="mt-14 flex justify-center">
-      <dotlottie-wc src="https://lottie.host/e130a8e2-1b60-4866-bc27-ab9d40edfa84/24Vmsroocx.lottie"
-                    style="width:180px;height:180px" autoplay loop></dotlottie-wc>
+      <dotlottie-wc
+        src="https://lottie.host/e130a8e2-1b60-4866-bc27-ab9d40edfa84/24Vmsroocx.lottie"
+        style="width:180px;height:180px" autoplay loop>
+      </dotlottie-wc>
     </div>
   </div>
 </section>
 
-<!-- FEATURES -->
+<!-- ────────── FEATURES ────────── -->
 <section id="features" class="py-20 px-6">
   <h2 class="text-3xl font-extrabold text-center mb-14" data-aos="fade-up">Warum KIULY?</h2>
-
   <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-
+    <!-- Feature 1 -->
     <div class="glass p-6" data-aos="fade-up">
       <h3 class="text-xl font-black mb-2">⚡ Blitzschnell</h3>
-      <p>Entwürfe & Vorhaben in <strong>Sekunden</strong>.</p>
+      <p>Komplette Entwürfe & Vorhaben in <strong>Sekunden</strong>.</p>
     </div>
-
+    <!-- Feature 2 -->
     <div class="glass p-6" data-aos="fade-up" data-aos-delay="100">
       <h3 class="text-xl font-black mb-2">🎯 Differenziert</h3>
-      <p>DaZ, Inklusion & Barriere-Optionen direkt integriert.</p>
+      <p>DaZ-Texte, Inklusion & Barriere-Optionen sofort integriert.</p>
     </div>
-
+    <!-- Feature 3 -->
     <div class="glass p-6" data-aos="fade-up" data-aos-delay="200">
       <h3 class="text-xl font-black mb-2">
         📸 One-Click Material <span class="text-xs font-bold bg-fuchsia-500/20 px-2 py-0.5 rounded-lg">Beta</span>
       </h3>
       <p>Ein Klick → sofort passendes Material.</p>
     </div>
-
+    <!-- Feature 4 -->
     <div class="glass p-6" data-aos="fade-up" data-aos-delay="300">
       <h3 class="text-xl font-black mb-2">👜 0 Vorbereitung</h3>
-      <p>Modus „Ohne Vorbereitung“: sofort loslegen.</p>
+      <p>Modus „Ohne Vorbereitung“ – direkt loslegen.</p>
     </div>
-
   </div>
 </section>
 
-<!-- SCREENSHOT -->
+<!-- ────────── APP SCREENSHOT ────────── -->
 <section id="app" class="py-24 px-6">
   <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="zoom-in">So sieht’s aus</h2>
   <div class="flex flex-col md:flex-row items-center justify-center gap-10 max-w-5xl mx-auto">
-    <img src="IMG_8101.webp" width="320" height="568" alt="KIULY Screenshot"
+    <img src="IMG_8101.webp" width="320" height="568" alt="KIULY Screenshot – Generator-Ansicht"
          class="rounded-3xl ring-4 ring-fuchsia-200 shadow-2xl"
          data-aos="flip-left" loading="lazy" />
     <ul class="md:w-2/5 text-[17px] leading-relaxed space-y-3" data-aos="fade-up" data-aos-delay="150">
-      <li>✅ Lehrplan-&shy;Kompetenzraster</li>
-      <li>✅ Differenzierte Aufgaben</li>
+      <li>✅ Lehrplan-Kompetenzraster</li>
+      <li>✅ Differenzierte Aufgabenpakete</li>
       <li>✅ iPad-optimierte Varianten</li>
-      <li>✅ Direkter Export</li>
+      <li>✅ Direkter Export (Copy & Paste)</li>
     </ul>
   </div>
 </section>
 
-<!-- KIULY SNAP -->
+<!-- ────────── KIULY SNAP ────────── -->
 <section id="snap" class="py-24 px-6 bg-white text-gray-900 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-200/30 via-fuchsia-100/20 to-transparent"></div>
   <div class="relative max-w-5xl mx-auto">
@@ -165,64 +222,60 @@
   </div>
 </section>
 
-<!-- STUDIE -->
+<!-- ────────── STUDIE ────────── -->
 <section id="research" class="py-24 bg-fuchsia-50/10 text-white backdrop-blur-[2px]">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="fade-right">Was sagt die Forschung?</h2>
-    <div class="glass p-8 md:p-10 mx-auto max-w-xl" data-aos="zoom-in">
-      <h3 class="text-2xl font-bold mb-4">Gallup & Walton Family Foundation (2025)</h3>
-      <p class="text-lg leading-relaxed">
-        Lehrkräfte sparen im Durchschnitt <strong>5,9&nbsp;Stunden pro Woche</strong> durch KI-Tools – das entspricht über
-        <strong>6 Arbeitswochen pro Schuljahr</strong>.
+    <article class="glass p-8 md:p-10 mx-auto max-w-xl" data-aos="zoom-in" itemscope itemtype="https://schema.org/ScholarlyArticle">
+      <h3 class="text-2xl font-bold mb-4" itemprop="name">Gallup & Walton Family Foundation (2025)</h3>
+      <p class="text-lg leading-relaxed" itemprop="description">
+        Lehrkräfte sparen im Schnitt <strong>5,9 Std/Woche</strong> durch KI-Tools – das sind &gt; 6 Arbeitswochen/Jahr.
       </p>
-
-      <!-- APA-Quelle mit „Studie lesen“-Link -->
-      <p class="mt-6 text-sm text-fuchsia-200 leading-relaxed">
-        Quelle (APA): Gallup, &amp; Walton Family Foundation. (2025). <em>Teaching for tomorrow: Unlocking six weeks a year with AI</em>
-        (Berichts-PDF). Gallup. 
+      <p class="mt-6 text-sm text-fuchsia-200" itemprop="citation">
+        Quelle (APA): Gallup, & Walton Family Foundation. (2025). <em>Teaching for tomorrow: Unlocking six weeks a year with AI</em> (PDF). Gallup. 
         <a href="https://static.waltonfamilyfoundation.org/df/fb/eba12807470a9402d7433cc47dba/teaching-for-tomorrow-unlocking-six-weeks-a-year-with-ai-report.pdf"
            target="_blank" rel="noopener"
            class="underline hover:text-fuchsia-300 font-semibold">
-           Studie lesen
+           Studie lesen (PDF)
         </a>
       </p>
-    </div>
+    </article>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- ────────── TESTIMONIALS ────────── -->
 <section id="testimonials" class="py-24 px-6 bg-fuchsia-50/20">
   <h2 class="text-3xl font-extrabold text-center mb-12" data-aos="fade-up">Echte App-Store-Stimmen</h2>
   <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 text-gray-900">
     <blockquote class="glass p-6" data-aos="fade-up">
       <p class="text-yellow-500 text-xl mb-2">★★★★★</p>
       <p class="font-medium mb-2">„Perfekt für junge Lehrkräfte – spart extrem viel Zeit!“</p>
-      <footer class="text-sm text-gray-600">Kritikthomas&nbsp;•&nbsp;24.&nbsp;Juni</footer>
+      <footer class="text-sm text-gray-600">Kritikthomas • 24. Juni</footer>
     </blockquote>
     <blockquote class="glass p-6" data-aos="fade-up" data-aos-delay="100">
       <p class="text-yellow-500 text-xl mb-2">★★★★★</p>
       <p class="font-medium mb-2">„Themen super aufbereitet, starke Differenzierung.“</p>
-      <footer class="text-sm text-gray-600">Colibrie685&nbsp;•&nbsp;24.&nbsp;Juni</footer>
+      <footer class="text-sm text-gray-600">Colibrie685 • 24. Juni</footer>
     </blockquote>
     <blockquote class="glass p-6" data-aos="fade-up" data-aos-delay="200">
       <p class="text-yellow-500 text-xl mb-2">★★★★★</p>
-      <p class="font-medium mb-2">„Behalte endlich den Überblick über Unterrichtsinhalte.“</p>
-      <footer class="text-sm text-gray-600">aaana124&nbsp;•&nbsp;13.&nbsp;Juni</footer>
+      <p class="font-medium mb-2">„Behält endlich den Überblick über Unterrichtsinhalte.“</p>
+      <footer class="text-sm text-gray-600">aaana124 • 13. Juni</footer>
     </blockquote>
   </div>
 </section>
 
-<!-- KONTAKT -->
+<!-- ────────── KONTAKT ────────── -->
 <section id="kontakt" class="py-24 px-4">
   <div class="max-w-lg mx-auto glass p-10">
     <h2 class="text-2xl font-extrabold text-center mb-6">Kontakt</h2>
     <form action="mailto:kiulyapp@icloud.com" method="POST" enctype="text/plain" class="flex flex-col gap-5">
       <input type="text"  name="Name"   placeholder="Dein Name (optional)"
              class="rounded-xl bg-white/20 px-4 py-2 placeholder-gray-300 focus:ring-2 focus:ring-fuchsia-300" />
-      <input type="email" name="E-Mail" placeholder="E-Mail*" required
-             class="rounded-xl bg-white/20 px-4 py-2 placeholder-gray-300 focus:ring-2 focus:ring-fuchsia-300" />
-      <textarea name="Nachricht" rows="4" placeholder="Deine Nachricht*" required
-                class="rounded-xl bg-white/20 px-4 py-2 placeholder-gray-300 focus:ring-2 focus:ring-fuchsia-300"></textarea>
+      <input type="email" name="E-Mail" placeholder="E-Mail*"
+             class="rounded-xl bg-white/20 px-4 py-2 placeholder-gray-300 focus:ring-2 focus:ring-fuchsia-300" required />
+      <textarea name="Nachricht" rows="4" placeholder="Deine Nachricht*"
+                class="rounded-xl bg-white/20 px-4 py-2 placeholder-gray-300 focus:ring-2 focus:ring-fuchsia-300" required></textarea>
       <button class="btn self-center">Nachricht senden</button>
     </form>
     <p class="text-xs text-center mt-4 text-fuchsia-200">
@@ -231,7 +284,7 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ────────── FOOTER ────────── -->
 <footer class="py-10 text-center text-sm glass mx-4 mb-6">
   <p>Made with ❤️ in Essen · <span id="year"></span> KIULY – DSGVO-konform</p>
   <nav class="space-x-4 mt-2">
@@ -240,6 +293,13 @@
     <a href="nutzungsbedingungen.html" class="underline">Nutzungs­bedingungen</a>
   </nav>
 </footer>
+
+<!-- Hidden Keyword Cloud -->
+<div class="sr-only">
+  KIULY Unterricht KI, KI Lehrer App, AI Lesson Plan Germany, Unterrichtsmaterial Deutsch, Automatische Klassenarbeit, Lehrplan Bayern, 
+  Lehrplan Baden-Württemberg, Sekundarstufe I, Sek II, Grundschule Material, Differenzierung Hauptschule, Berufskolleg Unterricht, 
+  adaptive learning Germany, AI teaching assistant, ChatGPT Schule, OpenAI Education deutsch, Copy & Paste Lehrer, zero prep lesson.
+</div>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
