@@ -2,248 +2,223 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KIULY – Unterrichtsmaterial & Stundenentwürfe in Sekunden | Lehrer-KI im App Store</title>
-  <meta name="description" content="Mit KIULY erstellst du lehrplankonforme Unterrichtsentwürfe & Material in Sekunden – 100% kostenlos, mit Differenzierung, Inklusion & Export. Jetzt downloaden!" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KIULY – Unterrichtsplanung Next Level 🚀</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Orbitron:wght@900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
+    body { font-family: 'Inter', 'Orbitron', sans-serif; background: #222 !important;}
+    .glass {
+      background: rgba(255,255,255,0.13);
+      backdrop-filter: blur(22px);
+      box-shadow: 0 4px 32px 2px #c084fc66, 0 4px 60px 0 #6a28fa33;
+      border-radius: 2rem;
+      border: 1.5px solid rgba(255,255,255,0.18);
     }
-    .gradient-text {
-      background: linear-gradient(90deg,#7c3aed,#a5b4fc,#f472b6,#c084fc,#7c3aed);
-      background-size: 200% 200%;
-      animation: gradMove 6s ease-in-out infinite;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .neon-btn {
+      box-shadow: 0 0 22px #c084fc77, 0 1px 8px #7c3aed88;
+      background: linear-gradient(90deg, #a5b4fc, #f472b6, #c084fc, #7c3aed);
+      background-size: 300% 100%;
+      animation: neonmove 6s linear infinite;
+      color: white;
+      border: none;
+      border-radius: 1.6em;
+      font-weight: bold;
+      font-size: 1.25rem;
+      padding: 0.85em 2em;
+      transition: box-shadow 0.22s, transform 0.13s;
     }
-    @keyframes gradMove {
-      0%,100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+    .neon-btn:hover {
+      box-shadow: 0 0 40px #c084fcbb, 0 4px 36px #f472b666;
+      transform: scale(1.07);
     }
-    .glow-btn {
-      box-shadow: 0 0 32px 0 #c084fc88, 0 2px 10px 0 #7c3aed55;
-      transition: box-shadow 0.25s, transform 0.13s;
+    @keyframes neonmove {
+      0%,100% { background-position: 0% 50%;}
+      50% { background-position: 100% 50%;}
     }
-    .glow-btn:hover {
-      box-shadow: 0 0 55px #f472b666, 0 6px 32px #c084fc;
-      transform: scale(1.05);
-    }
-    .fade-in {
-      opacity: 0;
-      animation: fadeInUp 1s 0.2s forwards;
-    }
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(24px);}
-      100% { opacity: 1; transform: translateY(0);}
-    }
-    .section-bg {
-      background: linear-gradient(120deg,#fff1f8 0%, #e0e7ff 50%, #f3e8ff 100%);
-      background-size: 200% 200%;
-      animation: gradMove 16s linear infinite;
-    }
-    .section-bg-alt {
-      background: linear-gradient(110deg, #e0e7ff 0%, #fffde1 50%, #e0fffa 100%);
-      background-size: 200% 200%;
-      animation: gradMove 14s ease-in-out infinite;
-    }
-    .gradient-card {
-      border: 2.5px solid transparent;
-      background-clip: padding-box;
-      border-radius: 1.5rem;
+    .glitch {
       position: relative;
-      z-index: 1;
-      overflow: hidden;
+      color: #fff;
+      font-family: 'Orbitron', 'Inter', sans-serif;
+      font-size: 3rem;
+      letter-spacing: .06em;
+      font-weight: 900;
+      text-shadow: 0 0 10px #c084fc, 0 0 30px #f472b6;
+      animation: glitch 1.6s infinite alternate-reverse;
+      line-height: 1.07;
     }
-    .gradient-card:before {
-      content: '';
+    .glitch::before, .glitch::after {
+      content: attr(data-glitch);
       position: absolute;
-      z-index: -1;
-      inset: -2px;
-      border-radius: inherit;
-      background: linear-gradient(100deg, #a5b4fc, #f472b6, #fbbf24);
-      background-size: 180% 180%;
-      animation: gradMove 8s linear infinite;
+      left: 0; width: 100%;
+      top: 0; opacity: .7;
+      pointer-events: none;
     }
-    .appstore-badge {
-      filter: drop-shadow(0 3px 18px #c084fc90);
-      border-radius: 0.85rem;
-      transition: filter 0.15s;
-      background: white;
+    .glitch::before { color: #8cf2ff; z-index: 2; left: 2px; text-shadow: 2px 0 #0ff; animation: glitchB 1.6s infinite alternate-reverse;}
+    .glitch::after  { color: #fa93f4; z-index: 1; left: -2px; text-shadow: -2px 0 #f0f; animation: glitchA 1.6s infinite alternate-reverse;}
+    @keyframes glitch {0%,100%{transform:translate(0,0);} 20%{transform:translate(-2px,2px);} 40%{transform:translate(-2px,-2px);} 60%{transform:translate(2px,2px);} 80%{transform:translate(2px,-2px);}}
+    @keyframes glitchA {0%,100%{top:0;} 15%{top:2px;} 60%{top:-2px;}}
+    @keyframes glitchB {0%,100%{top:0;} 30%{top:-1.5px;} 80%{top:2px;}}
+    .gradient-anim-bg {
+      background: linear-gradient(110deg, #2b2b36 0%, #6c5dd3 40%, #fa93f4 70%, #fff1f8 100%);
+      background-size: 220% 220%;
+      animation: gradbg 12s ease-in-out infinite;
     }
-    .appstore-badge:hover { filter: drop-shadow(0 3px 28px #c084fcff); }
-    .animate-bounce2 {
-      animation: bounce2 1.4s infinite alternate cubic-bezier(.7,.05,.4,.95);
+    @keyframes gradbg {
+      0%,100% {background-position:0% 30%;}
+      60% {background-position:100% 70%;}
     }
-    @keyframes bounce2 {
-      from { transform: translateY(0);}
-      to { transform: translateY(-15px);}
+    .floating {
+      animation: float 6s ease-in-out infinite;
     }
-    /* Kontaktfeld Animationen und Fokus */
-    .contact-card input:focus,
-    .contact-card textarea:focus {
-      border-color: #c084fc;
-      box-shadow: 0 0 0 3px #c084fc55;
-      outline: none;
+    @keyframes float {
+      0%,100% {transform:translateY(0);}
+      45% {transform:translateY(-30px);}
+      70% {transform:translateY(15px);}
     }
+    .glow {
+      filter: drop-shadow(0 0 60px #c084fc) drop-shadow(0 0 30px #a5b4fc);
+    }
+    /* Scroll fade effect */
+    .fadeInOnScroll { opacity:0; transform: translateY(32px); transition: all 0.9s cubic-bezier(.8,.2,.3,.99);}
+    .fadeInOnScroll.visible { opacity:1; transform: translateY(0);}
   </style>
 </head>
-<body class="bg-gradient-to-br from-purple-100 via-pink-50 to-violet-100 min-h-screen flex flex-col">
-  <!-- HERO -->
-  <header class="flex flex-col justify-center items-center text-center px-6 py-16 min-h-[80vh]">
-    <img src="kiuly-logo.png" alt="KIULY App Logo" class="w-32 mb-8 rounded-3xl shadow-xl animate-bounce2" />
-    <h1 class="text-4xl md:text-6xl font-extrabold gradient-text mb-4 leading-tight drop-shadow-lg">
-      Unterrichtsplanung<br>in Sekunden
-    </h1>
-    <div class="text-xl md:text-2xl text-purple-900 font-semibold mb-8">100% kostenlos • differenziert • digital</div>
-<a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" 
-   target="_blank" rel="noopener"
-   style="display:inline-block;">
-  <img 
-    src="Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg"
-    alt="Laden im App Store"
-    style="width:200px;max-width:80vw;height:auto;display:block;"/>
-</a>
-    <div class="text-xs text-violet-700 font-bold tracking-wider mt-2">Für iPad & iPhone</div>
+<body class="gradient-anim-bg min-h-screen flex flex-col relative overflow-x-hidden">
+  <!-- HEADER -->
+  <header class="glass fixed top-0 left-0 w-[98vw] mx-[1vw] max-w-[1800px] z-40 flex justify-between items-center px-8 py-3 mt-2">
+    <img src="logo.png" alt="KIULY Logo" class="h-14 w-14 rounded-xl floating" />
+    <nav class="flex gap-8 items-center text-lg text-white font-semibold">
+      <a href="#features" class="hover:text-fuchsia-300 transition">Features</a>
+      <a href="#material" class="hover:text-fuchsia-300 transition">Material</a>
+      <a href="#stimmen" class="hover:text-fuchsia-300 transition">Stimmen</a>
+      <a href="#kontakt" class="neon-btn ml-2">Kontakt</a>
+    </nav>
   </header>
-<!-- ANIMATED BUBBLE EFFECT SECTION -->
-<div class="flex justify-center items-center py-10 fade-in">
-  <dotlottie-wc 
-    src="https://lottie.host/e130a8e2-1b60-4866-bc27-ab9d40edfa84/24Vmsroocx.lottie" 
-    style="width: 160px; height: 160px" 
-    speed="1" autoplay loop>
-  </dotlottie-wc>
-</div>
-  <!-- BENEFITS / Warum KIULY? -->
-  <section class="section-bg py-16 px-6 fade-in">
-    <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-10">Warum KIULY?</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <div class="gradient-card p-7 bg-white/80 shadow-xl">
-        <h3 class="font-semibold text-violet-800 text-xl mb-2">⚡ Maximal schnell</h3>
-        <p class="text-gray-800">Lehrplankonforme Entwürfe in Sekunden. Sofort startklar für jedes Fach & Niveau.</p>
-      </div>
-      <div class="gradient-card p-7 bg-white/80 shadow-xl">
-        <h3 class="font-semibold text-violet-800 text-xl mb-2">🎯 Differenziert & inklusiv</h3>
-        <p class="text-gray-800">Mit DaZ, Inklusion, ADHS, sowie Seh-/Hörbeeinträchtigung automatisch integriert.</p>
-      </div>
-      <div class="gradient-card p-7 bg-white/80 shadow-xl">
-        <h3 class="font-semibold text-violet-800 text-xl mb-2">📚 Material sofort dabei</h3>
-        <p class="text-gray-800">Arbeitsblätter, digitale Varianten & Bewertungsbögen werden automatisch erstellt.</p>
+
+  <!-- BLUR/FLOATS -->
+  <div class="fixed -top-24 -left-20 w-[330px] h-[320px] rounded-full bg-fuchsia-400/40 blur-3xl z-0"></div>
+  <div class="fixed top-16 right-0 w-[230px] h-[180px] rounded-full bg-blue-400/30 blur-2xl z-0"></div>
+
+  <!-- HERO -->
+  <section class="pt-36 pb-12 flex flex-col items-center relative z-10">
+    <div class="glass px-9 py-12 flex flex-col items-center max-w-2xl w-full mx-auto shadow-2xl">
+      <div class="glitch mb-4" data-glitch="Unterrichtsplanung NEXT LEVEL">Unterrichtsplanung NEXT LEVEL</div>
+      <h2 class="text-xl sm:text-2xl font-bold text-white/90 mb-7 text-center">KIULY: Deine KI für Unterrichtsideen, Material & mehr.<br><span class="text-fuchsia-300">Kostenlos, inklusiv, ready to teach!</span></h2>
+      <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" target="_blank" rel="noopener" class="neon-btn mt-3 glow flex items-center gap-3">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" class="h-7"/>
+        Für iPhone & iPad laden
+      </a>
+      <!-- Lottie effect -->
+      <div class="mt-8 flex justify-center">
+        <dotlottie-wc src="https://lottie.host/e130a8e2-1b60-4866-bc27-ab9d40edfa84/24Vmsroocx.lottie" style="width: 140px; height: 140px"></dotlottie-wc>
       </div>
     </div>
   </section>
 
-  <!-- MATERIALIEN -->
-  <section class="section-bg-alt py-14 px-6 fade-in">
-    <h2 class="text-2xl md:text-3xl font-bold gradient-text mb-7">Alle Materialien inklusive</h2>
-    <div class="max-w-4xl mx-auto text-lg text-gray-800 text-center font-semibold mb-6">
-      KIULY liefert zu jedem Entwurf automatisch passende Unterrichtsmaterialien – differenziert & inklusiv.
+  <!-- Features -->
+  <section id="features" class="py-16 px-4 fadeInOnScroll">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+      <div class="glass p-7 flex flex-col items-center shadow-xl hover:scale-105 transition">
+        <div class="text-fuchsia-400 text-3xl mb-2">⚡</div>
+        <h3 class="font-extrabold text-xl text-white mb-2">Schneller als je zuvor</h3>
+        <p class="text-white/90 text-base text-center">Lehrplankonforme Entwürfe in Sekunden, für jedes Fach & Niveau.</p>
+      </div>
+      <div class="glass p-7 flex flex-col items-center shadow-xl hover:scale-105 transition">
+        <div class="text-blue-400 text-3xl mb-2">🎯</div>
+        <h3 class="font-extrabold text-xl text-white mb-2">Inklusiv & differenziert</h3>
+        <p class="text-white/90 text-base text-center">Mit DaZ, ADHS, Inklusion & Förderbedarf automatisch am Start.</p>
+      </div>
+      <div class="glass p-7 flex flex-col items-center shadow-xl hover:scale-105 transition">
+        <div class="text-yellow-300 text-3xl mb-2">📚</div>
+        <h3 class="font-extrabold text-xl text-white mb-2">Material sofort dabei</h3>
+        <p class="text-white/90 text-base text-center">Arbeitsblätter & digitale Varianten generiert KIULY automatisch für dich.</p>
+      </div>
     </div>
-    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-5 text-left text-base font-medium max-w-3xl mx-auto">
-      <li class="p-4 rounded-xl bg-white/70 shadow gradient-card mb-1">📄 Arbeitsblätter für Einstieg, Vertiefung & Transfer</li>
-      <li class="p-4 rounded-xl bg-white/70 shadow gradient-card mb-1">🧠 Differenzierung für jedes Lernniveau</li>
-      <li class="p-4 rounded-xl bg-white/70 shadow gradient-card mb-1">📚 Materialien für DaZ & Inklusion</li>
-      <li class="p-4 rounded-xl bg-white/70 shadow gradient-card mb-1">⚙️ iPad-optimierte Varianten für digitalen Unterricht</li>
-    </ul>
-    <div class="mt-7 text-violet-700 text-base font-semibold">Alles automatisch – du musst nichts mehr zusammensuchen!</div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="py-14 px-6 section-bg fade-in">
-    <h2 class="text-2xl md:text-3xl font-bold gradient-text mb-7">Echte Stimmen aus der Praxis</h2>
-    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-7">
-      <div class="p-6 bg-white/80 rounded-2xl shadow-lg gradient-card flex flex-col items-center">
-        <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
-        <div class="text-gray-900 italic">„Superapp! Sehr gut, dass ich meine Unterrichtsinhalte speichern kann – so behalte ich den Überblick.“</div>
-        <div class="mt-2 text-sm text-gray-500">– aaana124</div>
-      </div>
-      <div class="p-6 bg-white/80 rounded-2xl shadow-lg gradient-card flex flex-col items-center">
-        <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
-        <div class="text-gray-900 italic">„Sehr hilfreich, gerade für junge Lehrer:innen und Aushilfslehrkräfte.“</div>
-        <div class="mt-2 text-sm text-gray-500">– Kritikthomas</div>
-      </div>
-      <div class="p-6 bg-white/80 rounded-2xl shadow-lg gradient-card flex flex-col items-center">
-        <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
-        <div class="text-gray-900 italic">„Hilfreiche App – Super App, um erste Ideen zu sammeln und sich zu strukturieren.“</div>
-        <div class="mt-2 text-sm text-gray-500">– Rezpn</div>
-      </div>
+  <!-- MATERIAL -->
+  <section id="material" class="py-14 fadeInOnScroll">
+    <div class="max-w-4xl mx-auto glass px-6 py-12">
+      <h2 class="glitch text-2xl mb-6" data-glitch="Alle Materialien inklusive">Alle Materialien inklusive</h2>
+      <div class="text-lg text-white text-center font-semibold mb-5">KIULY liefert für jeden Entwurf automatisch differenziertes Material – sofort einsetzbar!</div>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
+        <li class="bg-white/10 glass p-4 rounded-xl mb-1 text-white font-bold shadow">📄 Arbeitsblätter für Einstieg, Vertiefung & Transfer</li>
+        <li class="bg-white/10 glass p-4 rounded-xl mb-1 text-white font-bold shadow">🧠 Differenzierung für jedes Lernniveau</li>
+        <li class="bg-white/10 glass p-4 rounded-xl mb-1 text-white font-bold shadow">🌈 Materialien für DaZ & Inklusion</li>
+        <li class="bg-white/10 glass p-4 rounded-xl mb-1 text-white font-bold shadow">⚙️ iPad-optimierte digitale Varianten</li>
+      </ul>
+      <div class="mt-7 text-fuchsia-300 text-center font-semibold">Alles automatisch – du musst nichts mehr zusammensuchen!</div>
     </div>
   </section>
 
   <!-- SCREENSHOT DEMO -->
-  <section class="section-bg-alt py-14 px-6 fade-in">
-    <h2 class="text-2xl md:text-3xl font-bold gradient-text mb-7">So sieht’s aus</h2>
-    <div class="flex justify-center mb-4">
-      <img src="img_8101.webp" alt="Screenshot – Generator" width="320" height="568" loading="lazy" class="rounded-3xl shadow-2xl ring-4 ring-violet-200 max-w-[320px] border-4 border-white/70 bg-white/80" />
-    </div>
-    <div class="text-center text-violet-700 font-semibold">Was du generierst, bleibt dein Geheimnis – einfach ausprobieren! 🔒</div>
+  <section class="py-14 px-4 flex flex-col items-center fadeInOnScroll">
+    <h2 class="text-2xl font-bold gradient-text mb-7 text-center">So sieht's aus</h2>
+    <img src="screenshot.png" alt="Screenshot" width="310" class="rounded-3xl shadow-2xl ring-4 ring-fuchsia-200 max-w-[320px] border-4 border-white/30 glass floating"/>
+    <div class="text-center text-fuchsia-400 font-bold mt-5">Was du generierst, bleibt dein Geheimnis 🔒</div>
   </section>
 
-  <!-- KONTAKT -->
-  <section class="py-14 px-4 section-bg fade-in" id="kontakt">
-    <h2 class="text-2xl md:text-3xl font-bold gradient-text mb-5 text-center">Kontakt</h2>
-    <div class="max-w-lg mx-auto bg-white/90 rounded-2xl shadow-2xl gradient-card p-8 contact-card">
+  <!-- TESTIMONIALS -->
+  <section id="stimmen" class="py-16 fadeInOnScroll">
+    <h2 class="glitch text-2xl mb-8 text-center" data-glitch="Echte Stimmen aus der Praxis">Echte Stimmen aus der Praxis</h2>
+    <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-7">
+      <div class="glass p-6 rounded-2xl shadow-xl flex flex-col items-center">
+        <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
+        <div class="text-white italic text-center">„Superapp! Sehr gut, dass ich meine Unterrichtsinhalte speichern kann – so behalte ich den Überblick.“</div>
+        <div class="mt-2 text-sm text-white/70">– aaana124</div>
+      </div>
+      <div class="glass p-6 rounded-2xl shadow-xl flex flex-col items-center">
+        <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
+        <div class="text-white italic text-center">„Sehr hilfreich, gerade für junge Lehrer:innen und Aushilfslehrkräfte.“</div>
+        <div class="mt-2 text-sm text-white/70">– Kritikthomas</div>
+      </div>
+      <div class="glass p-6 rounded-2xl shadow-xl flex flex-col items-center">
+        <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
+        <div class="text-white italic text-center">„Hilfreiche App – Super App, um erste Ideen zu sammeln und sich zu strukturieren.“</div>
+        <div class="mt-2 text-sm text-white/70">– Rezpn</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt" class="py-16 fadeInOnScroll">
+    <div class="max-w-lg mx-auto glass rounded-2xl shadow-2xl p-9">
+      <h2 class="text-2xl font-bold gradient-text mb-4 text-center">Kontakt</h2>
       <form action="mailto:kiulyapp@icloud.com" method="POST" enctype="text/plain" class="flex flex-col gap-5">
-        <div>
-          <label for="name" class="block font-semibold text-violet-700 mb-1">Name (optional)</label>
-          <input type="text" id="name" name="Name" autocomplete="name"
-            class="w-full rounded-xl border border-violet-300 py-2 px-3 bg-white/70 focus:ring-2 focus:ring-violet-300 outline-none transition shadow" />
-        </div>
-        <div>
-          <label for="email" class="block font-semibold text-violet-700 mb-1">E-Mail *</label>
-          <input type="email" id="email" name="E-Mail" required autocomplete="email"
-            class="w-full rounded-xl border border-violet-300 py-2 px-3 bg-white/70 focus:ring-2 focus:ring-violet-300 outline-none transition shadow" />
-        </div>
-        <div>
-          <label for="nachricht" class="block font-semibold text-violet-700 mb-1">Nachricht *</label>
-          <textarea id="nachricht" name="Nachricht" required rows="4"
-            class="w-full rounded-xl border border-violet-300 py-2 px-3 bg-white/70 focus:ring-2 focus:ring-violet-300 outline-none transition shadow resize-vertical"></textarea>
-        </div>
-        <div class="text-xs text-gray-500 leading-tight mb-2">
-          Mit Absenden erklärst du dich einverstanden, dass deine Angaben zur Beantwortung deiner Anfrage verwendet werden. <br>
-          <a href="datenschutz.html" class="underline text-violet-700" target="_blank" rel="noopener">Datenschutz</a>
-        </div>
-        <button type="submit"
-          class="mt-1 glow-btn font-bold text-base flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-violet-500 via-fuchsia-400 to-pink-400 text-white shadow-lg hover:scale-105 transition-all">
-          <svg width="22" height="22" fill="none"><path d="M2 11.5L8.5 18L20 6.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Nachricht senden
-        </button>
+        <input type="text" name="Name" placeholder="Dein Name (optional)" class="rounded-xl border border-violet-200 py-2 px-3 bg-white/30 text-white font-semibold focus:ring-2 focus:ring-fuchsia-300 outline-none transition shadow"/>
+        <input type="email" name="E-Mail" placeholder="E-Mail *" required class="rounded-xl border border-violet-200 py-2 px-3 bg-white/30 text-white font-semibold focus:ring-2 focus:ring-fuchsia-300 outline-none transition shadow"/>
+        <textarea name="Nachricht" placeholder="Deine Nachricht *" required rows="4" class="rounded-xl border border-violet-200 py-2 px-3 bg-white/30 text-white font-semibold focus:ring-2 focus:ring-fuchsia-300 outline-none transition shadow resize-vertical"></textarea>
+        <button type="submit" class="neon-btn glow mt-1 flex items-center justify-center gap-2">Absenden</button>
       </form>
-      <p class="text-xs text-center mt-4 text-violet-600">Oder direkt per Mail: <a href="mailto:kiulyapp@icloud.com" class="underline">kiulyapp@icloud.com</a></p>
+      <p class="text-xs text-center mt-4 text-fuchsia-400">Oder direkt per Mail: <a href="mailto:kiulyapp@icloud.com" class="underline">kiulyapp@icloud.com</a></p>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="py-10 px-6 section-bg text-center text-sm text-gray-700 mt-auto">
-    <p class="mb-2">Made with ❤️ in Essen · <span id="year"></span> KIULY</p>
-    <nav class="space-x-4">
-      <a href="impressum.html" class="underline text-violet-700">Impressum</a>
-      <a href="datenschutz.html" class="underline text-violet-700">Datenschutz</a>
-      <a href="nutzungsbedingungen.html" class="underline text-violet-700">Nutzungsbedingungen</a>
-      <span class="text-gray-500">DSGVO-konform</span>
+  <footer class="pt-9 pb-6 text-center glass max-w-4xl mx-auto mt-10 mb-6 text-sm text-white/70">
+    <div>Made with <span class="text-fuchsia-400">❤️</span> in Essen · <span id="year"></span> KIULY</div>
+    <nav class="space-x-5 mt-2">
+      <a href="impressum.html" class="underline text-fuchsia-400">Impressum</a>
+      <a href="datenschutz.html" class="underline text-fuchsia-400">Datenschutz</a>
+      <a href="nutzungsbedingungen.html" class="underline text-fuchsia-400">Nutzungsbedingungen</a>
+      <span class="text-white/40">DSGVO-konform</span>
     </nav>
   </footer>
 
   <script>
-    // Jahr dynamisch einfügen
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Fade-in für Sektionen beim Scrollen
-    document.querySelectorAll('.fade-in').forEach(el => {
-      el.style.opacity = 0;
-      el.style.transition = "opacity 0.8s cubic-bezier(.7,.2,.4,.9)";
-    });
-    function revealOnScroll() {
-      document.querySelectorAll('.fade-in').forEach(el => {
+    // Fade-in Animation on scroll
+    const fadeEls = document.querySelectorAll('.fadeInOnScroll');
+    function checkFadeIn() {
+      fadeEls.forEach(el => {
         const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          el.style.opacity = 1;
-        }
+        if (rect.top < window.innerHeight - 60) el.classList.add('visible');
       });
     }
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('DOMContentLoaded', revealOnScroll);
+    window.addEventListener('scroll', checkFadeIn);
+    window.addEventListener('DOMContentLoaded', checkFadeIn);
   </script>
-  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
 </body>
 </html>
