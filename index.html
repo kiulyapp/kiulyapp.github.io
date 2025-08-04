@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KIULY – Unterrichtsentwürfe & Material in Sekunden</title>
 
-  <!-- SEO / OG -->
-  <meta name="description" content="KIULY erstellt in Sekunden lehrplankonforme Unterrichtsentwürfe & Material – differenziert, inklusiv, DSGVO-konform." />
+  <!-- SEO & Open Graph -->
+  <meta name="description" content="KIULY generiert in Sekunden lehrplankonforme Unterrichtsentwürfe & Material – differenziert, inklusiv, DSGVO-konform." />
   <meta property="og:title"       content="KIULY – Unterrichtsentwürfe & Material in Sekunden" />
   <meta property="og:description" content="Generiere in Sekunden komplette Unterrichtsplanung mit KI. Jetzt kostenlos laden!" />
   <meta property="og:image"       content="icon.png" />
@@ -18,36 +18,50 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Animation libs -->
+  <!-- Animation-Libs -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
 
   <style>
     body{font-family:'Inter',sans-serif;}
-    .bg-anim{background:linear-gradient(130deg,#15161e 0%,#6145e1 30%,#d35ef5 70%,#fbe9ff 100%);
-             background-size:300% 300%;animation:bgLoop 18s ease-in-out infinite}
+
+    /* Background animation */
+    .bg-anim{
+      background:linear-gradient(130deg,#15161e 0%,#6145e1 30%,#d35ef5 70%,#fbe9ff 100%);
+      background-size:300% 300%;
+      animation:bgLoop 18s ease-in-out infinite}
     @keyframes bgLoop{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-    .glass{background:rgba(255,255,255,.14);backdrop-filter:blur(18px) saturate(1.2);
-           border:1px solid rgba(255,255,255,.18);border-radius:1.8rem;
-           box-shadow:0 8px 36px #a78bfa55}
-    .btn{background:linear-gradient(90deg,#a5b4fc,#f472b6,#c084fc,#7c3aed);
-         background-size:280% 100%;animation:btnLoop 6s linear infinite;
-         color:#fff;font-weight:800;letter-spacing:.3px;
-         padding:.9em 2.3em;border-radius:1.7em;
-         box-shadow:0 0 25px #c084fc80,0 2px 12px #7c3aed66;
-         transition:transform .14s}
+
+    /* Glass effect */
+    .glass{
+      background:rgba(255,255,255,.15);
+      backdrop-filter:blur(18px) saturate(1.2);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:1.8rem;
+      box-shadow:0 8px 36px #a78bfa55}
+
+    /* Gradient button */
+    .btn{
+      background:linear-gradient(90deg,#a5b4fc,#f472b6,#c084fc,#7c3aed);
+      background-size:280% 100%;
+      animation:btnLoop 6s linear infinite;
+      color:#fff;font-weight:800;letter-spacing:.3px;
+      padding:.9em 2.3em;border-radius:1.7em;
+      box-shadow:0 0 25px #c084fc80,0 2px 12px #7c3aed66;
+      transition:transform .14s}
     .btn:hover{transform:scale(1.07)}
     @keyframes btnLoop{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
     section{scroll-margin-top:90px}
   </style>
 </head>
 
 <body class="bg-anim overflow-x-hidden text-white">
 
-<!-- -------- HEADER -------- -->
+<!-- HEADER -->
 <header class="fixed inset-x-0 top-0 z-40 glass flex items-center justify-between px-6 py-3 mx-auto max-w-7xl">
   <img src="icon.png" alt="KIULY" class="h-11 rounded-xl" />
-  <nav class="hidden lg:flex gap-10 text-[15px] font-semibold tracking-wide">
+  <nav class="hidden lg:flex gap-10 text-[15px] font-semibold">
     <a href="#features" class="hover:text-fuchsia-300">Features</a>
     <a href="#snap"     class="hover:text-fuchsia-300">KIULY SNAP</a>
     <a href="#research" class="hover:text-fuchsia-300">Studie</a>
@@ -56,20 +70,22 @@
   <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="btn text-sm">App laden</a>
 </header>
 
-<!-- -------- HERO -------- -->
+<!-- HERO -->
 <section id="hero" class="pt-36 pb-24 text-center">
   <div class="max-w-3xl mx-auto" data-aos="fade-up">
     <h1 class="text-4xl md:text-6xl font-black leading-tight drop-shadow-xl">
-      Unterrichtsplanung<br /><span class="text-fuchsia-300 inline-block animate-pulse">in Sekunden</span>
+      Unterrichtsplanung<br /><span class="text-fuchsia-300 animate-pulse">in Sekunden</span>
     </h1>
     <p class="mt-6 text-lg md:text-2xl text-fuchsia-50/90">
       Lehrplankonforme Entwürfe & Materialien – differenziert, inklusiv, DSGVO-konform.
     </p>
 
+    <!-- App-Store-Badge -->
     <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="inline-block mt-10" aria-label="Im App Store laden">
       <img src="Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="" class="h-10 md:h-12" />
     </a>
 
+    <!-- Rating & Downloads -->
     <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-lg font-semibold">
       <div class="flex items-center gap-2">
         <span class="text-4xl font-extrabold">5,0</span>
@@ -87,7 +103,7 @@
   </div>
 </section>
 
-<!-- -------- FEATURES -------- -->
+<!-- FEATURES -->
 <section id="features" class="py-20 px-6">
   <h2 class="text-3xl font-extrabold text-center mb-14" data-aos="fade-up">Warum KIULY?</h2>
 
@@ -100,41 +116,41 @@
 
     <div class="glass p-6" data-aos="fade-up" data-aos-delay="100">
       <h3 class="text-xl font-black mb-2">🎯 Differenziert</h3>
-      <p>DaZ, Inklusion & Barriere-Optionen sind direkt integriert.</p>
+      <p>DaZ, Inklusion & Barriere-Optionen direkt integriert.</p>
     </div>
 
     <div class="glass p-6" data-aos="fade-up" data-aos-delay="200">
       <h3 class="text-xl font-black mb-2">
         📸 One-Click Material <span class="text-xs font-bold bg-fuchsia-500/20 px-2 py-0.5 rounded-lg">Beta</span>
       </h3>
-      <p>Ein Klick → sofort passendes Material zum Entwurf.</p>
+      <p>Ein Klick → sofort passendes Material.</p>
     </div>
 
     <div class="glass p-6" data-aos="fade-up" data-aos-delay="300">
-      <h3 class="text-xl font-black mb-2">👜 0-Vorbereitung</h3>
+      <h3 class="text-xl font-black mb-2">👜 0 Vorbereitung</h3>
       <p>Modus „Ohne Vorbereitung“: sofort loslegen.</p>
     </div>
 
   </div>
 </section>
 
-<!-- -------- APP-SCREENSHOT -------- -->
+<!-- SCREENSHOT -->
 <section id="app" class="py-24 px-6">
   <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="zoom-in">So sieht’s aus</h2>
   <div class="flex flex-col md:flex-row items-center justify-center gap-10 max-w-5xl mx-auto">
     <img src="IMG_8101.webp" width="320" height="568" alt="KIULY Screenshot"
          class="rounded-3xl ring-4 ring-fuchsia-200 shadow-2xl"
-         data-aos="flip-left" data-aos-delay="50" loading="lazy" />
+         data-aos="flip-left" loading="lazy" />
     <ul class="md:w-2/5 text-[17px] leading-relaxed space-y-3" data-aos="fade-up" data-aos-delay="150">
-      <li>✅ Lehrplan + Kompetenzraster</li>
-      <li>✅ Differenzierte Aufgaben </li>
+      <li>✅ Lehrplan-&shy;Kompetenzraster</li>
+      <li>✅ Differenzierte Aufgaben</li>
       <li>✅ iPad-optimierte Varianten</li>
       <li>✅ Direkter Export</li>
     </ul>
   </div>
 </section>
 
-<!-- -------- KIULY SNAP -------- -->
+<!-- KIULY SNAP -->
 <section id="snap" class="py-24 px-6 bg-white text-gray-900 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-200/30 via-fuchsia-100/20 to-transparent"></div>
   <div class="relative max-w-5xl mx-auto">
@@ -149,51 +165,54 @@
   </div>
 </section>
 
-<!-- -------- STUDIE -------- -->
+<!-- STUDIE -->
 <section id="research" class="py-24 bg-fuchsia-50/10 text-white backdrop-blur-[2px]">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="fade-right">Was sagt die Forschung?</h2>
     <div class="glass p-8 md:p-10 mx-auto max-w-xl" data-aos="zoom-in">
       <h3 class="text-2xl font-bold mb-4">Gallup & Walton Family Foundation (2025)</h3>
       <p class="text-lg leading-relaxed">
-        Lehrkräfte sparen im Durchschnitt <strong>5,9 h pro Woche</strong> durch KI-Tools – das entspricht über <strong>6 Arbeitswochen pro Schuljahr</strong>.
+        Lehrkräfte sparen im Durchschnitt <strong>5,9&nbsp;Stunden pro Woche</strong> durch KI-Tools – das entspricht über
+        <strong>6 Arbeitswochen pro Schuljahr</strong>.
       </p>
-      <!-- APA-Quellenangabe -->
-      <p class="mt-6 text-sm text-fuchsia-200">
-        Quelle (APA):&nbsp;Gallup, &amp; Walton Family Foundation. (2025). <em>Teachers and AI: How emerging tools save planning time</em>. Gallup. 
-        <a href="https://news.gallup.com/teachers-ai-report" target="_blank" rel="noopener" class="underline hover:text-fuchsia-300">https://news.gallup.com/teachers-ai-report</a>
+
+      <!-- APA-Quelle mit „Studie lesen“-Link -->
+      <p class="mt-6 text-sm text-fuchsia-200 leading-relaxed">
+        Quelle (APA): Gallup, &amp; Walton Family Foundation. (2025). <em>Teaching for tomorrow: Unlocking six weeks a year with AI</em>
+        (Berichts-PDF). Gallup. 
+        <a href="https://static.waltonfamilyfoundation.org/df/fb/eba12807470a9402d7433cc47dba/teaching-for-tomorrow-unlocking-six-weeks-a-year-with-ai-report.pdf"
+           target="_blank" rel="noopener"
+           class="underline hover:text-fuchsia-300 font-semibold">
+           Studie lesen
+        </a>
       </p>
     </div>
   </div>
 </section>
 
-<!-- -------- TESTIMONIALS -------- -->
+<!-- TESTIMONIALS -->
 <section id="testimonials" class="py-24 px-6 bg-fuchsia-50/20">
   <h2 class="text-3xl font-extrabold text-center mb-12" data-aos="fade-up">Echte App-Store-Stimmen</h2>
   <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 text-gray-900">
-
     <blockquote class="glass p-6" data-aos="fade-up">
       <p class="text-yellow-500 text-xl mb-2">★★★★★</p>
       <p class="font-medium mb-2">„Perfekt für junge Lehrkräfte – spart extrem viel Zeit!“</p>
-      <footer class="text-sm text-gray-600">Kritikthomas • 24. Juni</footer>
+      <footer class="text-sm text-gray-600">Kritikthomas&nbsp;•&nbsp;24.&nbsp;Juni</footer>
     </blockquote>
-
     <blockquote class="glass p-6" data-aos="fade-up" data-aos-delay="100">
       <p class="text-yellow-500 text-xl mb-2">★★★★★</p>
       <p class="font-medium mb-2">„Themen super aufbereitet, starke Differenzierung.“</p>
-      <footer class="text-sm text-gray-600">Colibrie685 • 24. Juni</footer>
+      <footer class="text-sm text-gray-600">Colibrie685&nbsp;•&nbsp;24.&nbsp;Juni</footer>
     </blockquote>
-
     <blockquote class="glass p-6" data-aos="fade-up" data-aos-delay="200">
       <p class="text-yellow-500 text-xl mb-2">★★★★★</p>
-      <p class="font-medium mb-2">„Behalte endlich Überblick über Unterrichtsinhalte.“</p>
-      <footer class="text-sm text-gray-600">aaana124 • 13. Juni</footer>
+      <p class="font-medium mb-2">„Behalte endlich den Überblick über Unterrichtsinhalte.“</p>
+      <footer class="text-sm text-gray-600">aaana124&nbsp;•&nbsp;13.&nbsp;Juni</footer>
     </blockquote>
-
   </div>
 </section>
 
-<!-- -------- KONTAKT -------- -->
+<!-- KONTAKT -->
 <section id="kontakt" class="py-24 px-4">
   <div class="max-w-lg mx-auto glass p-10">
     <h2 class="text-2xl font-extrabold text-center mb-6">Kontakt</h2>
@@ -212,7 +231,7 @@
   </div>
 </section>
 
-<!-- -------- FOOTER -------- -->
+<!-- FOOTER -->
 <footer class="py-10 text-center text-sm glass mx-4 mb-6">
   <p>Made with ❤️ in Essen · <span id="year"></span> KIULY – DSGVO-konform</p>
   <nav class="space-x-4 mt-2">
