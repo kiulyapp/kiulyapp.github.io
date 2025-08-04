@@ -17,24 +17,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Animation-Libs -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
 
   <style>
     body{font-family:'Inter',sans-serif;}
     .bg-anim{background:linear-gradient(130deg,#1c1c28 0%,#6c5dd3 35%,#db7af2 70%,#ffeef4 100%);
-             background-size:220% 220%;animation:bgMove 14s ease-in-out infinite}
+             background-size:220% 220%;animation:bgMove 14s ease-in-out infinite;}
     @keyframes bgMove{0%,100%{background-position:0% 30%}60%{background-position:100% 70%}}
     .glass{background:rgba(255,255,255,.12);backdrop-filter:blur(20px);
            border:1.3px solid rgba(255,255,255,.18);border-radius:1.8rem;
-           box-shadow:0 4px 28px #a78bfa55}
+           box-shadow:0 4px 28px #a78bfa55;}
     .btn{background:linear-gradient(90deg,#a5b4fc,#f472b6,#c084fc,#7c3aed);
          background-size:300% 100%;animation:btnMove 8s linear infinite;
          color:#fff;font-weight:700;padding:.8em 2em;border-radius:1.5em;
-         box-shadow:0 0 24px #c084fc80,0 2px 10px #7c3aed66;transition:transform .15s}
-    .btn:hover{transform:scale(1.06)}
+         box-shadow:0 0 24px #c084fc80,0 2px 10px #7c3aed66;transition:transform .15s;}
+    .btn:hover{transform:scale(1.06);}
     @keyframes btnMove{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-    section{scroll-margin-top:90px}
+    section{scroll-margin-top:90px;}
   </style>
 </head>
 
@@ -90,7 +91,6 @@
 <section id="features" class="py-20 px-6">
   <h2 class="text-3xl font-bold text-center mb-12" data-aos="zoom-in">Warum KIULY?</h2>
 
-  <!-- 5-Kachel Grid -->
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
     <!-- Blitzschnell -->
@@ -102,7 +102,7 @@
     <!-- Inklusiv -->
     <div class="glass p-6" data-aos="fade-up" data-aos-delay="100">
       <h3 class="text-xl font-extrabold mb-2">🎯 Differenziert & inklusiv</h3>
-      <p>Barriere-Optionen (ADHS, Autismus, Seh-/Hör­beeinträchtigung …) automatisch integriert.</p>
+      <p>Barriere-Optionen (ADHS, Autismus, Seh-/Hörbeeinträchtigung …) automatisch integriert.</p>
     </div>
 
     <!-- One-Click Material (BETA) -->
@@ -110,7 +110,7 @@
       <h3 class="text-xl font-extrabold mb-2">
         📸 One-Click Material <span class="text-xs font-bold bg-fuchsia-500/20 px-2 py-0.5 rounded-lg">BETA</span>
       </h3>
-      <p>Ein Klick → KIULY liefert sofort Material passend zu deinem Entwurf.</p>
+      <p>Ein Klick → sofort passendes Unterrichtsmaterial.</p>
     </div>
 
     <!-- KIULY SNAP Coming Soon -->
@@ -118,11 +118,10 @@
       <h3 class="text-xl font-extrabold mb-2">
         🚀 KIULY SNAP <span class="text-xs font-bold bg-amber-400/30 px-2 py-0.5 rounded-lg">Coming Soon</span>
       </h3>
-      <p>Ein Foto – alles erledigt.<br />
-         Buchseite · Arbeitsblatt · Notizen → KIULY SNAP analysiert & erstellt Aufgaben, Differenzierung und digitale Varianten – komplett automatisch.</p>
+      <p>Ein Foto – alles erledigt.<br />Buchseite abfotografieren → komplette Stunde wird automatisch aufgebaut.</p>
     </div>
 
-    <!-- 0-Vorbereitung -->
+    <!-- Null Vorbereitung -->
     <div class="glass p-6" data-aos="fade-up" data-aos-delay="400">
       <h3 class="text-xl font-extrabold mb-2">👜 0-Vorbereitung</h3>
       <p>Schalte „Ohne Vorbereitung“ ein – und starte sofort in die Stunde.</p>
@@ -138,10 +137,10 @@
     <div class="glass bg-fuchsia-50/60 text-gray-800 p-8 mx-auto max-w-xl" data-aos="zoom-in">
       <h3 class="text-2xl font-bold mb-3">Gallup × Walton Foundation (2025)</h3>
       <p class="text-lg leading-relaxed">
-        Lehrkräfte sparen <strong>ø 5,9 Stunden / Woche</strong> mit KI-Tools – das sind >6 Arbeitswochen pro Schuljahr.
+        Lehrkräfte sparen <strong>ø 5,9 Stunden / Woche</strong> mit KI-Tools – das sind über <strong>6 Arbeitswochen pro Schuljahr</strong>.
       </p>
     </div>
-    <p class="mt-10 text-center text-sm text-gray-600">Quelle: Gallup Survey 2025 · n = 1 322 Lehrkräfte</p>
+    <p class="mt-10 text-center text-sm text-gray-600">Quelle: Gallup Survey 2025 &nbsp;·&nbsp; n = 1 322 Lehrkräfte</p>
   </div>
 </section>
 
@@ -199,7 +198,7 @@
   <nav class="space-x-4 mt-2">
     <a href="impressum.html"           class="underline">Impressum</a>
     <a href="datenschutz.html"         class="underline">Datenschutz</a>
-    <a href="nutzungsbedingungen.html" class="underline">Nutzungsbedingungen</a>
+    <a href="nutzungsbedingungen.html" class="underline">Nutzungs­bedingungen</a>
   </nav>
 </footer>
 
