@@ -5,15 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KIULY – Unterrichtsplanung mit künstlicher Intelligenz</title>
   <meta name="description" content="Mit KIULY erstellst du in wenigen Sekunden lehrplankonforme Unterrichtsentwürfe und passendes Material – kostenlos, differenziert, inklusiv und DSGVO-konform für Lehrerinnen und Lehrer."/>
-  <!-- Google Fonts für schöne und moderne Schriftarten -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Orbitron:wght@900&display=swap" rel="stylesheet">
-  <!-- TailwindCSS für modernes Styling (wird automatisch geladen) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lottie Web Component für animierte Vektorgrafiken -->
   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
   <style>
-    /* Grundlegende Styles für Glassmorphism und Hintergrundanimationen */
-    body { font-family: 'Inter', 'Orbitron', sans-serif; background: #222; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(110deg, #2b2b36 0%, #6c5dd3 40%, #fa93f4 70%, #fff1f8 100%);
+      background-size: 220% 220%;
+      animation: gradbg 12s ease-in-out infinite;
+    }
+    @keyframes gradbg {
+      0%,100% {background-position:0% 30%;}
+      60% {background-position:100% 70%;}
+    }
     .glass {
       background: rgba(255,255,255,0.13);
       backdrop-filter: blur(22px);
@@ -30,49 +35,13 @@
       border: none;
       border-radius: 1.6em;
       font-weight: bold;
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       padding: 0.85em 2em;
       transition: box-shadow 0.22s, transform 0.13s;
     }
     .neon-button:hover {
       box-shadow: 0 0 40px #c084fcbb, 0 4px 36px #f472b666;
       transform: scale(1.07);
-    }
-    @keyframes neonmove {
-      0%,100% { background-position: 0% 50%;}
-      50% { background-position: 100% 50%;}
-    }
-    .glitch {
-      position: relative;
-      color: #fff;
-      font-family: 'Orbitron', 'Inter', sans-serif;
-      font-size: 3rem;
-      letter-spacing: .06em;
-      font-weight: 900;
-      text-shadow: 0 0 10px #c084fc, 0 0 30px #f472b6;
-      animation: glitch 1.6s infinite alternate-reverse;
-      line-height: 1.07;
-    }
-    .glitch::before, .glitch::after {
-      content: attr(data-glitch);
-      position: absolute;
-      left: 0; width: 100%;
-      top: 0; opacity: .7;
-      pointer-events: none;
-    }
-    .glitch::before { color: #8cf2ff; z-index: 2; left: 2px; text-shadow: 2px 0 #0ff; animation: glitchB 1.6s infinite alternate-reverse;}
-    .glitch::after  { color: #fa93f4; z-index: 1; left: -2px; text-shadow: -2px 0 #f0f; animation: glitchA 1.6s infinite alternate-reverse;}
-    @keyframes glitch {0%,100%{transform:translate(0,0);} 20%{transform:translate(-2px,2px);} 40%{transform:translate(-2px,-2px);} 60%{transform:translate(2px,2px);} 80%{transform:translate(2px,-2px);}}
-    @keyframes glitchA {0%,100%{top:0;} 15%{top:2px;} 60%{top:-2px;}}
-    @keyframes glitchB {0%,100%{top:0;} 30%{top:-1.5px;} 80%{top:2px;}}
-    .gradient-anim-bg {
-      background: linear-gradient(110deg, #2b2b36 0%, #6c5dd3 40%, #fa93f4 70%, #fff1f8 100%);
-      background-size: 220% 220%;
-      animation: gradbg 12s ease-in-out infinite;
-    }
-    @keyframes gradbg {
-      0%,100% {background-position:0% 30%;}
-      60% {background-position:100% 70%;}
     }
     .floating {
       animation: float 6s ease-in-out infinite;
@@ -82,19 +51,16 @@
       45% {transform:translateY(-30px);}
       70% {transform:translateY(15px);}
     }
-    /* Responsive Optimierung */
     @media (max-width: 640px) {
-      .glitch { font-size: 2rem; }
+      h1 { font-size: 1.6rem; }
       .glass { padding: 1rem !important; }
     }
   </style>
 </head>
-<body class="gradient-anim-bg min-h-screen flex flex-col relative overflow-x-hidden">
-  <!-- Navigationsleiste (Header) -->
+<body class="min-h-screen flex flex-col relative overflow-x-hidden">
+  <!-- Header / Navigation -->
   <header class="glass fixed top-0 left-0 w-[98vw] mx-[1vw] max-w-[1800px] z-40 flex justify-between items-center px-8 py-3 mt-2">
-    <!-- Logo deiner Anwendung -->
     <img src="kiuly-logo.png" alt="KIULY Logo" class="h-14 w-14 rounded-xl floating" />
-    <!-- Navigation zu den einzelnen Bereichen der Website -->
     <nav class="flex gap-8 items-center text-lg text-white font-semibold">
       <a href="#features" class="hover:text-fuchsia-300 transition">Features</a>
       <a href="#material" class="hover:text-fuchsia-300 transition">Material</a>
@@ -103,25 +69,23 @@
     </nav>
   </header>
 
-  <!-- Farbige Hintergrund-Blobs für den modernen Look -->
+  <!-- Hintergrund-Deko -->
   <div class="fixed -top-24 -left-20 w-[330px] h-[320px] rounded-full bg-fuchsia-400/40 blur-3xl z-0"></div>
   <div class="fixed top-16 right-0 w-[230px] h-[180px] rounded-full bg-blue-400/30 blur-2xl z-0"></div>
 
-  <!-- Hauptbereich (Hero) -->
+  <!-- HERO SECTION -->
   <section class="pt-36 pb-12 flex flex-col items-center relative z-10">
     <div class="glass px-9 py-12 flex flex-col items-center max-w-2xl w-full mx-auto shadow-2xl">
-      <!-- Auffällige Überschrift mit Glitch-Effekt -->
-      <div class="glitch mb-4" data-glitch="Unterrichtsplanung NEXT LEVEL">Unterrichtsplanung NEXT LEVEL</div>
+      <h1 class="mb-4 text-4xl sm:text-5xl font-extrabold text-white text-center leading-tight drop-shadow-2xl">
+        Unterrichtsplanung in Sekunden – mit KIULY
+      </h1>
       <h2 class="text-xl sm:text-2xl font-bold text-white/90 mb-7 text-center">
-        KIULY: Deine künstliche Intelligenz für Unterrichtsideen, passendes Material und mehr.<br>
-        <span class="text-fuchsia-300">Kostenlos, inklusiv, bereit für deinen Unterricht!</span>
+        Deine KI für Unterrichtsideen und Materialien – sofort, differenziert, kostenlos und inklusiv.
       </h2>
-      <!-- App Store Download Button -->
       <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" target="_blank" rel="noopener" class="neon-button mt-3 flex items-center gap-3">
         <img src="Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Jetzt im App Store herunterladen" class="h-7"/>
-        Für iPhone und iPad laden
+        Für iPhone & iPad laden
       </a>
-      <!-- Animierte Lottie-Datei (bewegte Animation) -->
       <div class="mt-8 flex justify-center">
         <dotlottie-wc 
           src="https://lottie.host/e130a8e2-1b60-4866-bc27-ab9d40edfa84/24Vmsroocx.lottie"
@@ -135,49 +99,49 @@
     </div>
   </section>
 
-  <!-- Funktionsübersicht / Features -->
+  <!-- Features -->
   <section id="features" class="py-16 px-4">
     <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
       <div class="glass p-7 flex flex-col items-center shadow-xl hover:scale-105 transition">
         <div class="text-fuchsia-400 text-3xl mb-2">⚡</div>
-        <h3 class="font-extrabold text-xl text-white mb-2">Schneller als je zuvor</h3>
+        <h3 class="font-extrabold text-xl text-white mb-2">Extrem schnell</h3>
         <p class="text-white/90 text-base text-center">
-          Lehrplankonforme Entwürfe in wenigen Sekunden, für jedes Fach und jedes Niveau.
+          Lehrplankonforme Entwürfe in Sekunden, für jedes Fach & Niveau.
         </p>
       </div>
       <div class="glass p-7 flex flex-col items-center shadow-xl hover:scale-105 transition">
         <div class="text-blue-400 text-3xl mb-2">🎯</div>
-        <h3 class="font-extrabold text-xl text-white mb-2">Inklusiv und differenziert</h3>
+        <h3 class="font-extrabold text-xl text-white mb-2">Inklusiv & differenziert</h3>
         <p class="text-white/90 text-base text-center">
-          Mit Deutsch als Zweitsprache, ADHS, Inklusion und Förderbedarf automatisch integriert.
+          Mit DaZ, ADHS, Inklusion & Förderbedarf direkt integriert.
         </p>
       </div>
       <div class="glass p-7 flex flex-col items-center shadow-xl hover:scale-105 transition">
         <div class="text-yellow-300 text-3xl mb-2">📚</div>
         <h3 class="font-extrabold text-xl text-white mb-2">Material direkt dabei</h3>
         <p class="text-white/90 text-base text-center">
-          Arbeitsblätter und digitale Varianten generiert KIULY automatisch für dich.
+          Arbeitsblätter & digitale Varianten werden automatisch generiert.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Bereich für Materialübersicht -->
+  <!-- Materialien -->
   <section id="material" class="py-14">
     <div class="max-w-4xl mx-auto glass px-6 py-12">
-      <h2 class="glitch text-2xl mb-6" data-glitch="Alle Materialien inklusive">Alle Materialien inklusive</h2>
+      <h2 class="text-2xl font-bold text-white mb-6 text-center">Alle Materialien inklusive</h2>
       <div class="text-lg text-white text-center font-semibold mb-5">
-        KIULY liefert für jeden Entwurf automatisch differenziertes Material – sofort einsetzbar!
+        KIULY liefert zu jedem Entwurf automatisch differenziertes Material – sofort einsetzbar!
       </div>
       <ul class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
         <li class="bg-white/10 glass p-4 rounded-xl mb-1 text-white font-bold shadow">
-          📄 Arbeitsblätter für Einstieg, Vertiefung und Transfer
+          📄 Arbeitsblätter für Einstieg, Vertiefung & Transfer
         </li>
         <li class="bg-white/10 glass p-4 rounded-xl mb-1 text-white font-bold shadow">
           🧠 Differenzierung für jedes Lernniveau
         </li>
         <li class="bg-white/10 glass p-4 rounded-xl mb-1 text-white font-bold shadow">
-          🌈 Materialien für Deutsch als Zweitsprache und Inklusion
+          🌈 Materialien für DaZ & Inklusion
         </li>
         <li class="bg-white/10 glass p-4 rounded-xl mb-1 text-white font-bold shadow">
           ⚙️ iPad-optimierte digitale Varianten
@@ -189,7 +153,7 @@
     </div>
   </section>
 
-  <!-- Screenshot-Ansicht (Beispiel für dein Produkt) -->
+  <!-- Screenshot / Demo -->
   <section class="py-14 px-4 flex flex-col items-center">
     <h2 class="text-2xl font-bold text-white mb-7 text-center">So sieht's aus</h2>
     <img src="IMG_8101.webp" alt="Screenshot der KIULY App" width="310" class="rounded-3xl shadow-2xl ring-4 ring-fuchsia-200 max-w-[320px] border-4 border-white/30 glass floating"/>
@@ -198,9 +162,9 @@
     </div>
   </section>
 
-  <!-- Bereich mit echten Nutzerstimmen -->
+  <!-- Nutzerstimmen -->
   <section id="stimmen" class="py-16">
-    <h2 class="glitch text-2xl mb-8 text-center" data-glitch="Echte Stimmen aus der Praxis">Echte Stimmen aus der Praxis</h2>
+    <h2 class="text-2xl font-bold text-white mb-8 text-center">Echte Stimmen aus der Praxis</h2>
     <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-7">
       <div class="glass p-6 rounded-2xl shadow-xl flex flex-col items-center">
         <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
@@ -212,21 +176,21 @@
       <div class="glass p-6 rounded-2xl shadow-xl flex flex-col items-center">
         <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
         <div class="text-white italic text-center">
-          „Sehr hilfreich, gerade für junge Lehrerinnen und Lehrer sowie Vertretungskräfte.“
+          „Sehr hilfreich, gerade für junge Lehrer:innen und Aushilfslehrkräfte.“
         </div>
         <div class="mt-2 text-sm text-white/70">– Kritikthomas</div>
       </div>
       <div class="glass p-6 rounded-2xl shadow-xl flex flex-col items-center">
         <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
         <div class="text-white italic text-center">
-          „Hilfreiche App – super, um erste Ideen zu sammeln und sich zu strukturieren.“
+          „Hilfreiche App – Super App, um erste Ideen zu sammeln und sich zu strukturieren.“
         </div>
         <div class="mt-2 text-sm text-white/70">– Rezpn</div>
       </div>
     </div>
   </section>
 
-  <!-- Kontaktformular Bereich -->
+  <!-- Kontakt -->
   <section id="kontakt" class="py-16">
     <div class="max-w-lg mx-auto glass rounded-2xl shadow-2xl p-9">
       <h2 class="text-2xl font-bold text-white mb-4 text-center">Kontakt</h2>
@@ -242,7 +206,7 @@
     </div>
   </section>
 
-  <!-- Footer (unterer Bereich der Seite) -->
+  <!-- Footer -->
   <footer class="pt-9 pb-6 text-center glass max-w-4xl mx-auto mt-10 mb-6 text-sm text-white/70">
     <div>
       Made with <span class="text-fuchsia-400">❤️</span> in Essen · <span id="jahr"></span> KIULY
@@ -255,7 +219,6 @@
     </nav>
   </footer>
 
-  <!-- JavaScript, um das Jahr im Footer automatisch zu aktualisieren -->
   <script>
     document.getElementById('jahr').textContent = new Date().getFullYear();
   </script>
