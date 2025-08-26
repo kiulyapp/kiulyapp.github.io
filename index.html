@@ -618,24 +618,51 @@
 
     function setCaption(){ caption.textContent = shots[idx].dataset.caption || ''; }
     function setActive(i){ shots.forEach(s=>s.classList.remove('is-active')); shots[i].classList.add('is-active'); }
-    function resetBars(){ bars.forEach(b=>b.style.width='0%'); }
+
+    function updateBars(){
+      bars.forEach((b,bi)=>{
+        if(bi < idx) b.style.width = '100%';
+        else if(bi === idx) b.style.width = '0%';
+        else b.style.width = '0%';
+      });
+    }
     function fillBar(i){ if(reduceMotion) return; let start=performance.now(); cancelAnimationFrame(animTimer);
       const tick=(t)=>{ const p=Math.min(1,(t-start)/D); bars[i].style.width=(p*100)+'%'; if(p<1) animTimer=requestAnimationFrame(tick); };
       animTimer=requestAnimationFrame(tick);
     }
 
-    function go(i){ idx=(i+shots.length)%shots.length; setActive(idx); setCaption(); resetBars(); fillBar(idx); }
-    function next(){ go(idx+1); }
-    function prev(){ go(idx-1); }
+    function go(i){
+      // clamp between first and last
+      const next = Math.max(0, Math.min(i, shots.length-1));
+      idx = next;
+      setActive(idx); setCaption(); updateBars(); fillBar(idx);
+    }
+    function next(){
+      if(idx >= shots.length-1){ stopAutoplay(); return; }
+      go(idx+1);
+    }
+    function prev(){
+      if(idx <= 0){ return; }
+      go(idx-1);
+    }
 
-    wrap.querySelector('.next')?.addEventListener('click',()=>{clearInterval(timer); next(); autoplay();});
-    wrap.querySelector('.prev')?.addEventListener('click',()=>{clearInterval(timer); prev(); autoplay();});
+    function stopAutoplay(){ clearInterval(timer); timer = null; }
+
+    wrap.querySelector('.next')?.addEventListener('click',()=>{ stopAutoplay(); next(); if(idx < shots.length-1) autoplay(); });
+    wrap.querySelector('.prev')?.addEventListener('click',()=>{ stopAutoplay(); prev(); if(idx < shots.length-1) autoplay(); });
 
     // swipe
     let x0=null; stage.addEventListener('pointerdown',e=>{x0=e.clientX; clearInterval(timer);});
     stage.addEventListener('pointerup',e=>{ if(x0==null) return; const dx=e.clientX-x0; if(Math.abs(dx)>30){ dx<0?next():prev(); } x0=null; autoplay(); });
 
-    function autoplay(){ clearInterval(timer); if(reduceMotion) return; timer=setInterval(next, D+400); }
+    function autoplay(){
+      stopAutoplay();
+      if(reduceMotion || idx >= shots.length-1) return;
+      timer = setInterval(()=>{
+        if(idx >= shots.length-1){ stopAutoplay(); return; }
+        next();
+      }, D+400);
+    }
 
     // init
     go(0); autoplay();
