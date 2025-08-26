@@ -109,6 +109,8 @@
   <link rel="icon" href="icon.png" sizes="512x512" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link rel="preload" as="image" href="3.png" imagesrcset="3.png 1x" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" />
 
   <!-- Tailwind & Animation Libs -->
@@ -207,7 +209,7 @@
     /* Story Showcase (images like a story) */
     .storyshow{position:relative;overflow:hidden;border-radius:1.6rem}
     .storyshow-stage{position:relative;height:clamp(340px,55vw,620px)}
-    .storyshow .shot{position:absolute;inset:0;opacity:0;transform:scale(.985);transition:opacity .45s ease, transform .45s ease}
+    .storyshow .shot{position:absolute;inset:0;opacity:0;transform:scale(.985);transition:opacity .45s ease, transform .45s ease;will-change: opacity, transform;}
     .storyshow .shot.is-active{opacity:1;transform:scale(1)}
     .storyshow .shot img{width:100%;height:100%;object-fit:contain}
     .storyshow .caption{position:absolute;left:0;right:0;bottom:.6rem;display:flex;justify-content:center}
@@ -254,9 +256,10 @@
       .storyshow-stage{ height: clamp(300px, 68vh, 520px); }
       .storyshow .caption span{ font-size:.85rem; padding:.3rem .55rem }
       section{ scroll-margin-top: calc(env(safe-area-inset-top) + 70px); }
+      .glass{ backdrop-filter: blur(8px) saturate(1.05); }
     }
     /* Progressive perf: only paint when near viewport */
-    section.cv{ content-visibility:auto; contain-intrinsic-size: 600px 800px; }
+    section.cv{ content-visibility:visible; contain-intrinsic-size:auto; }
   </style>
 </head>
 
@@ -666,6 +669,17 @@
 
     // init
     go(0); autoplay();
+  })();
+
+  // Pause Lottie when offscreen (perf)
+  (function(){
+    const lottie = document.querySelector('dotlottie-wc');
+    if(!lottie || !('pause' in lottie)) return;
+    const io = new IntersectionObserver(([e])=>{
+      if(e && e.isIntersecting){ try{ lottie.play && lottie.play(); }catch(_){} }
+      else { try{ lottie.pause && lottie.pause(); }catch(_){} }
+    },{threshold:.15});
+    io.observe(lottie);
   })();
 </script>
 </body>
