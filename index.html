@@ -243,6 +243,20 @@
     /* Gradient ink text – subtle dynamic tone */
     .gradient-ink{background:linear-gradient(90deg,#fde68a,#f0abfc,#a78bfa,#f472b6);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:ink 10s ease-in-out infinite}
     @keyframes ink{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+    /* iPhone tweaks */
+    html{ -webkit-text-size-adjust:100%; }
+    header{ padding-top: calc(env(safe-area-inset-top) + .25rem); }
+    #hero{ padding-top: calc(env(safe-area-inset-top) + 64px); }
+    @media (max-width: 430px){
+      #hero h1{ font-size: clamp(28px, 7vw, 40px); line-height:1.12; }
+      .love .pill{ padding:.45rem .7rem; font-size:.9rem }
+      .storyshow-stage{ height: clamp(300px, 68vh, 520px); }
+      .storyshow .caption span{ font-size:.85rem; padding:.3rem .55rem }
+      section{ scroll-margin-top: calc(env(safe-area-inset-top) + 70px); }
+    }
+    /* Progressive perf: only paint when near viewport */
+    section.cv{ content-visibility:auto; contain-intrinsic-size: 600px 800px; }
   </style>
 </head>
 
@@ -299,7 +313,7 @@
  </section>
 
 <!-- ────────── SCHULFORMEN (Landing) ────────── -->
-<section id="schulformen" class="py-24 px-6 bg-fuchsia-50/10">
+<section id="schulformen" class="py-24 px-6 bg-fuchsia-50/10 cv">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="fade-up">Für alle Schulformen</h2>
     <div class="grid md:grid-cols-3 gap-8" data-aos="zoom-in">
@@ -317,7 +331,7 @@
 </section>
 
 <!-- ────────── FEATURES ────────── -->
-<section id="features" class="py-20 px-6">
+<section id="features" class="py-20 px-6 cv">
   <h2 class="text-3xl font-extrabold text-center mb-12" data-aos="fade-up">Warum KIULY?</h2>
   <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
     <div class="glass p-6" data-aos="fade-up">
@@ -335,7 +349,7 @@
   </div>
 </section>
 <!-- ────────── BELIEBT BEI LEHRKRÄFTEN ────────── -->
-<section id="beliebt" class="py-16 md:py-20 px-6 love">
+<section id="beliebt" class="py-16 md:py-20 px-6 love cv">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="fade-up">Warum Lehrkräfte KIULY lieben</h2>
     <div class="marquee glass p-3" data-aos="zoom-in">
@@ -363,7 +377,7 @@
 </section>
 
 <!-- ────────── BUNDESLÄNDER (Landing) ────────── -->
-<section id="laender" class="py-24 px-6 hidden" aria-hidden="true">
+<section id="laender" class="py-24 px-6 hidden cv" aria-hidden="true">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="fade-up">Lehrpläne aller Bundesländer</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -382,7 +396,7 @@
  </section>
 
 <!-- ────────── APP SCREENSHOTS (Planer + Kalender) ────────── -->
-<section id="app" class="py-16 md:py-20 px-6">
+<section id="app" class="py-16 md:py-20 px-6 cv">
   <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="zoom-in">So sieht’s aus</h2>
 
   <div class="mt-8" data-aos="fade-up" data-aos-delay="150">
@@ -421,7 +435,7 @@
 </section>
 
 <!-- ────────── KALENDER (Neuerung) ────────── -->
-<section id="calendar" class="py-24 px-6 bg-white text-gray-900 relative overflow-hidden">
+<section id="calendar" class="py-24 px-6 bg-white text-gray-900 relative overflow-hidden cv">
   <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-200/35 via-fuchsia-100/20 to-transparent"></div>
   <div class="relative max-w-6xl mx-auto">
     <div class="glass p-8 md:p-12 bg-white/60 text-gray-900" data-aos="zoom-in">
@@ -451,7 +465,7 @@
  </section>
 
 <!-- ────────── KIULY SNAP ────────── -->
-<section id="snap" class="py-24 px-6">
+<section id="snap" class="py-24 px-6 cv">
   <div class="max-w-5xl mx-auto">
     <div class="glass p-10 md:p-14" data-aos="zoom-in">
       <h2 class="text-3xl font-extrabold text-center mb-6">KIULY SNAP <span class="tag align-middle">Coming&nbsp;Soon</span></h2>
@@ -463,7 +477,7 @@
 </section>
 
 <!-- ────────── STUDIE ────────── -->
-<section id="research" class="py-24 bg-fuchsia-50/10 text-white backdrop-blur-[2px]">
+<section id="research" class="py-24 bg-fuchsia-50/10 text-white backdrop-blur-[2px] cv">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="fade-right">Was sagt die Forschung?</h2>
     <article class="glass p-8 md:p-10 mx-auto max-w-xl" data-aos="zoom-in" itemscope itemtype="https://schema.org/ScholarlyArticle">
@@ -483,7 +497,7 @@
 </section>
 
 <!-- ────────── TESTIMONIALS ────────── -->
-<section id="testimonials" class="py-24 px-6 bg-fuchsia-50/20">
+<section id="testimonials" class="py-24 px-6 bg-fuchsia-50/20 cv">
   <h2 class="text-3xl font-extrabold text-center mb-12" data-aos="fade-up">Echte App-Store-Stimmen</h2>
   <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 text-gray-900">
     <blockquote class="glass p-6" data-aos="fade-up">
@@ -505,7 +519,7 @@
 </section>
 
 <!-- ────────── KONTAKT ────────── -->
-<section id="kontakt" class="py-24 px-4">
+<section id="kontakt" class="py-24 px-4 cv">
   <div class="max-w-lg mx-auto glass p-10">
     <h2 class="text-2xl font-extrabold text-center mb-6">Kontakt</h2>
     <form action="mailto:help@kiuly.de" method="POST" enctype="text/plain" class="flex flex-col gap-5">
@@ -588,7 +602,7 @@
 <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init({ once:true, duration:260, easing:'ease-out-cubic', offset:24 });
+  (function(){ const small = window.matchMedia('(max-width: 430px)').matches; AOS.init({ once:true, duration: small?220:260, easing:'ease-out-cubic', offset: small?16:24 }); })();
   document.getElementById('year').textContent = new Date().getFullYear();
 
   (function(){
@@ -600,7 +614,7 @@
     const bars = Array.from(wrap.querySelectorAll('.progress div>i'));
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    let idx = 0, timer = null, animTimer = null, D = isMobile ? 3200 : 2600;
+    let idx = 0, timer = null, animTimer = null, D = isMobile ? 2800 : 2600;
 
     function setCaption(){ caption.textContent = shots[idx].dataset.caption || ''; }
     function setActive(i){ shots.forEach(s=>s.classList.remove('is-active')); shots[i].classList.add('is-active'); }
