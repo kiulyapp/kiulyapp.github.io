@@ -204,6 +204,28 @@
     .story-step:before{content:"";position:absolute;left:-.1rem;top:1rem;width:.75rem;height:.75rem;border-radius:999px;background:#fff;box-shadow:0 0 0 4px rgba(167,139,250,.35)}
     .story-step .step-title{font-weight:900;margin-bottom:.15rem}
 
+    /* Story Showcase (images like a story) */
+    .storyshow{position:relative;overflow:hidden;border-radius:1.6rem}
+    .storyshow-stage{position:relative;height:clamp(340px,55vw,620px)}
+    .storyshow .shot{position:absolute;inset:0;opacity:0;transform:scale(.985);transition:opacity .6s ease, transform .6s ease}
+    .storyshow .shot.is-active{opacity:1;transform:scale(1)}
+    .storyshow .shot img{width:100%;height:100%;object-fit:contain}
+    .storyshow .caption{position:absolute;left:0;right:0;bottom:.6rem;display:flex;justify-content:center}
+    .storyshow .caption span{background:rgba(20,20,30,.55);backdrop-filter:saturate(1.2) blur(6px);border:1px solid rgba(255,255,255,.25);padding:.4rem .7rem;border-radius:.7rem;font-size:.9rem}
+    .storyshow .progress{position:absolute;left:.8rem;right:.8rem;top:.8rem;display:grid;grid-template-columns:repeat(var(--count),1fr);gap:.35rem}
+    .storyshow .progress div{height:3px;background:rgba(255,255,255,.35);overflow:hidden;border-radius:999px}
+    .storyshow .progress div>i{display:block;height:100%;width:0%;background:#fff}
+    .storyshow-ctrl{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:stretch}
+    .storyshow-ctrl button{flex:1;background:transparent;border:0}
+
+    /* Love Marquee (dynamic reasons) */
+    .love{position:relative}
+    .love .marquee{overflow:hidden;mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent)}
+    .love .track{display:flex;gap:.6rem;white-space:nowrap;animation:roll 28s linear infinite}
+    .love .pill{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem .8rem;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.25);font-weight:700}
+    .love .pill i{font-style:normal;opacity:.75}
+    @keyframes roll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
     /* Motion preferences & mobile tweaks */
     @media (prefers-reduced-motion: reduce){
       *{animation: none !important; transition: none !important;}
@@ -313,19 +335,30 @@
   </div>
 </section>
 <!-- ────────── BELIEBT BEI LEHRKRÄFTEN ────────── -->
-<section id="beliebt" class="py-24 px-6">
-  <div class="max-w-4xl mx-auto">
+<section id="beliebt" class="py-24 px-6 love">
+  <div class="max-w-6xl mx-auto">
     <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="fade-up">Warum Lehrkräfte KIULY lieben</h2>
-    <ol class="story" data-aos="fade-up">
-      <li class="story-step"><h3 class="step-title">Zeit</h3><p>Stunden & Material in Sekunden.</p></li>
-      <li class="story-step"><h3 class="step-title">Lehrplan</h3><p>Passend für alle Bundesländer.</p></li>
-      <li class="story-step"><h3 class="step-title">Einfach</h3><p>Fokus auf das Wesentliche.</p></li>
-      <li class="story-step"><h3 class="step-title">DSGVO</h3><p>Keine Schüler:innendaten.</p></li>
-      <li class="story-step"><h3 class="step-title">Direkt</h3><p>Arbeitsblätter & Hausaufgaben.</p></li>
-      <li class="story-step"><h3 class="step-title">Kalender</h3><p>Eintrag mit Erinnerungen.</p></li>
-      <li class="story-step"><h3 class="step-title">Preis</h3><p>Ab 0,99 € pro Monat.</p></li>
-      <li class="story-step"><h3 class="step-title">Bewährt</h3><p>5,0★ App‑Store‑Feedback.</p></li>
-    </ol>
+    <div class="marquee glass p-3" data-aos="zoom-in">
+      <div class="track">
+        <span class="pill">⏱️ <i>Zeit</i> Stunden & Material in Sekunden</span>
+        <span class="pill">📚 <i>Lehrplan</i> für alle Bundesländer</span>
+        <span class="pill">✨ <i>Einfach</i> Fokus aufs Wesentliche</span>
+        <span class="pill">🔒 <i>DSGVO</i> keine Schüler:innendaten</span>
+        <span class="pill">📝 <i>Direkt</i> Arbeitsblätter & Hausaufgaben</span>
+        <span class="pill">📆 <i>Kalender</i> Eintrag mit Erinnerungen</span>
+        <span class="pill">💶 <i>Preis</i> ab 0,99 € mtl.</span>
+        <span class="pill">⭐ <i>Bewährt</i> 5,0★ Feedback</span>
+        <!-- duplicate for seamless loop -->
+        <span class="pill">⏱️ <i>Zeit</i> Stunden & Material in Sekunden</span>
+        <span class="pill">📚 <i>Lehrplan</i> für alle Bundesländer</span>
+        <span class="pill">✨ <i>Einfach</i> Fokus aufs Wesentliche</span>
+        <span class="pill">🔒 <i>DSGVO</i> keine Schüler:innendaten</span>
+        <span class="pill">📝 <i>Direkt</i> Arbeitsblätter & Hausaufgaben</span>
+        <span class="pill">📆 <i>Kalender</i> Eintrag mit Erinnerungen</span>
+        <span class="pill">💶 <i>Preis</i> ab 0,99 € mtl.</span>
+        <span class="pill">⭐ <i>Bewährt</i> 5,0★ Feedback</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -353,18 +386,27 @@
   <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="zoom-in">So sieht’s aus</h2>
 
   <div class="mt-8" data-aos="fade-up" data-aos-delay="150">
-    <div class="showcase glass p-2">
-      <div class="showcase-stage" aria-live="polite">
-        <img src="3.png" alt="KIULY: Unterricht planen – Eingaben & Optionen" class="shot is-active" loading="lazy" decoding="async" />
-        <img src="4.png" alt="KIULY: Maßgeschneiderte Vorbereitung nach Bundesland, Fach & Klasse" class="shot" loading="lazy" decoding="async" />
-        <img src="5.png" alt="KIULY: Reihen & Materialien organisieren – sofort einsatzbereit" class="shot" loading="lazy" decoding="async" />
-        <img src="7.png" alt="KIULY: Export, Stundenplan & Kalender‑Integration" class="shot" loading="lazy" decoding="async" />
+    <div class="storyshow glass p-2">
+      <div class="storyshow-stage" aria-live="polite">
+        <figure class="shot is-active" data-caption="Planung: Eingaben & Optionen">
+          <img src="3.png" alt="Planung: Eingaben & Optionen" loading="lazy" decoding="async" />
+        </figure>
+        <figure class="shot" data-caption="Vorhaben nach Lehrplan, Fach & Klasse">
+          <img src="4.png" alt="Vorhaben nach Lehrplan, Fach & Klasse" loading="lazy" decoding="async" />
+        </figure>
+        <figure class="shot" data-caption="Reihen & Materialien organisieren">
+          <img src="5.png" alt="Reihen & Materialien organisieren" loading="lazy" decoding="async" />
+        </figure>
+        <figure class="shot" data-caption="Export & iOS‑Kalender‑Integration">
+          <img src="7.png" alt="Export & iOS‑Kalender‑Integration" loading="lazy" decoding="async" />
+        </figure>
       </div>
-      <div class="showcase-ctrl">
-        <button class="prev" aria-label="vorheriges Bild">‹</button>
-        <button class="next" aria-label="nächstes Bild">›</button>
+      <div class="progress" style="--count:4"><div><i></i></div><div><i></i></div><div><i></i></div><div><i></i></div></div>
+      <div class="caption"><span></span></div>
+      <div class="storyshow-ctrl" aria-hidden="true">
+        <button class="prev" aria-label="vorheriges Bild"></button>
+        <button class="next" aria-label="nächstes Bild"></button>
       </div>
-      <div class="showcase-dots" aria-hidden="true"></div>
     </div>
   </div>
 
@@ -550,46 +592,39 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   (function(){
-    const stage = document.querySelector('.showcase-stage');
-    if(!stage) return;
+    const wrap = document.querySelector('.storyshow');
+    if(!wrap) return;
+    const stage = wrap.querySelector('.storyshow-stage');
     const shots = Array.from(stage.querySelectorAll('.shot'));
-    const dotsWrap = document.querySelector('.showcase-dots');
+    const caption = wrap.querySelector('.caption span');
+    const bars = Array.from(wrap.querySelectorAll('.progress div>i'));
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    let idx = 0, timer = null;
+    let idx = 0, timer = null, animTimer = null, D = isMobile ? 5200 : 4200;
 
-    function updateDots(){
-      dotsWrap.innerHTML='';
-      shots.forEach((_,i)=>{const b=document.createElement('button'); if(i===idx) b.classList.add('is-active'); b.addEventListener('click',()=>go(i,'fx-slide')); dotsWrap.appendChild(b)});
+    function setCaption(){ caption.textContent = shots[idx].dataset.caption || ''; }
+    function setActive(i){ shots.forEach(s=>s.classList.remove('is-active')); shots[i].classList.add('is-active'); }
+    function resetBars(){ bars.forEach(b=>b.style.width='0%'); }
+    function fillBar(i){ if(reduceMotion) return; let start=performance.now(); cancelAnimationFrame(animTimer);
+      const tick=(t)=>{ const p=Math.min(1,(t-start)/D); bars[i].style.width=(p*100)+'%'; if(p<1) animTimer=requestAnimationFrame(tick); };
+      animTimer=requestAnimationFrame(tick);
     }
-    function clearFx(el){ el.classList.remove('enter','fx-zoom','fx-slide','fx-tilt'); }
-    function randomFx(){ return ['fx-zoom','fx-slide','fx-tilt'][Math.floor(Math.random()*3)]; }
 
-    function go(i,fx){
-      const next=(i+shots.length)%shots.length;
-      const cur=shots[idx];
-      const incoming=shots[next];
-      clearFx(cur); clearFx(incoming);
-      cur.classList.remove('is-active');
-      incoming.classList.add('is-active','enter', fx||randomFx());
-      idx=next; updateDots();
-    }
+    function go(i){ idx=(i+shots.length)%shots.length; setActive(idx); setCaption(); resetBars(); fillBar(idx); }
     function next(){ go(idx+1); }
     function prev(){ go(idx-1); }
 
-    document.querySelector('.showcase .next')?.addEventListener('click', next);
-    document.querySelector('.showcase .prev')?.addEventListener('click', prev);
+    wrap.querySelector('.next')?.addEventListener('click',()=>{clearInterval(timer); next(); autoplay();});
+    wrap.querySelector('.prev')?.addEventListener('click',()=>{clearInterval(timer); prev(); autoplay();});
 
-    updateDots();
-    function autoplay(){
-      clearInterval(timer);
-      if(reduceMotion) return;
-      const interval = isMobile ? 6200 : 5000;
-      timer=setInterval(next, interval);
-    }
-    autoplay();
-    stage.addEventListener('pointerdown', ()=>clearInterval(timer));
-    stage.addEventListener('pointerup', autoplay);
+    // swipe
+    let x0=null; stage.addEventListener('pointerdown',e=>{x0=e.clientX; clearInterval(timer);});
+    stage.addEventListener('pointerup',e=>{ if(x0==null) return; const dx=e.clientX-x0; if(Math.abs(dx)>30){ dx<0?next():prev(); } x0=null; autoplay(); });
+
+    function autoplay(){ clearInterval(timer); if(reduceMotion) return; timer=setInterval(next, D+400); }
+
+    // init
+    go(0); autoplay();
   })();
 </script>
 </body>
