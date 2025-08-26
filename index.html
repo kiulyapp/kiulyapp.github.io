@@ -7,6 +7,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#13141B" />
 
   <title>KIULY – Unterrichtsentwürfe & Arbeitsblätter ab 0,99 €/Monat (Grundschule • alle Bundesländer)</title>
 
@@ -128,8 +129,8 @@
     /* Background animation (subtle) */
     .bg-anim{
       background:linear-gradient(130deg,var(--brand-dark) 0%,#4c3ae0 35%,#cf58f1 70%,#fdeeff 100%);
-      background-size:300% 300%;
-      animation:bgLoop 22s ease-in-out infinite
+      background-size:220% 220%;
+      animation:bgLoop 26s ease-in-out infinite
     }
     @keyframes bgLoop{
       0%,100%{background-position:0% 50%}
@@ -178,6 +179,20 @@
     .carousel-dots button.is-active{background:#fff}
     .tilt{transform-style:preserve-3d;transition:transform .15s ease-out, box-shadow .2s}
     .tilt:hover{box-shadow:0 25px 60px #00000060}
+
+    /* Motion preferences & mobile tweaks */
+    @media (prefers-reduced-motion: reduce){
+      *{animation: none !important; transition: none !important;}
+      .bg-anim{animation: none !important}
+      .tilt{transform: none !important}
+    }
+    @media (max-width: 768px){
+      .tilt{transform:none !important}
+      .carousel-btn{padding:.4rem .55rem;font-size:1.4rem}
+    }
+    /* Subtle reveal (used by IntersectionObserver if needed) */
+    .reveal{opacity:0; transform:translateY(10px); transition:opacity .45s ease, transform .45s ease}
+    .reveal.in-view{opacity:1; transform:none}
   </style>
 </head>
 
@@ -333,17 +348,17 @@
       src="7.png"
       width="2048" height="582"
       alt="KIULY App – Übersicht: Unterricht planen, maßgeschneiderte Vorbereitung, Reihen, Stundenplan & Kalender"
-      class="rounded-3xl ring-4 ring-fuchsia-200/70 shadow-2xl w-full h-auto" loading="lazy" />
+      class="rounded-3xl ring-2 ring-fuchsia-200/60 shadow-xl w-full h-auto" loading="lazy" decoding="async" />
     <figcaption class="text-sm text-fuchsia-50/80 mt-3 px-1 text-center">Ein Blick in KIULY: vom Generator über Reihen bis zum Kalender – alles in einer App.</figcaption>
   </figure>
 
   <div class="mt-12" data-aos="fade-up" data-aos-delay="200">
     <div class="carousel glass p-2">
       <div class="carousel-track">
-        <img src="3.png" alt="KIULY: Unterricht planen – Eingaben & Optionen (Grundschule)" class="carousel-slide tilt" />
-        <img src="4.png" alt="KIULY: Maßgeschneiderte Vorbereitung nach Bundesland, Fach & Klasse" class="carousel-slide tilt" />
-        <img src="5.png" alt="KIULY: Reihen & Materialien organisieren – sofort einsatzbereit" class="carousel-slide tilt" />
-        <img src="7.png" alt="KIULY: Export, Stundenplan & Kalender‑Integration" class="carousel-slide tilt" />
+        <img src="3.png" alt="KIULY: Unterricht planen – Eingaben & Optionen (Grundschule)" class="carousel-slide tilt" loading="lazy" decoding="async" />
+        <img src="4.png" alt="KIULY: Maßgeschneiderte Vorbereitung nach Bundesland, Fach & Klasse" class="carousel-slide tilt" loading="lazy" decoding="async" />
+        <img src="5.png" alt="KIULY: Reihen & Materialien organisieren – sofort einsatzbereit" class="carousel-slide tilt" loading="lazy" decoding="async" />
+        <img src="7.png" alt="KIULY: Export, Stundenplan & Kalender‑Integration" class="carousel-slide tilt" loading="lazy" decoding="async" />
       </div>
       <button class="carousel-btn prev" aria-label="vorheriges Bild">‹</button>
       <button class="carousel-btn next" aria-label="nächstes Bild">›</button>
@@ -537,7 +552,7 @@
 <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init({ once:true });
+  AOS.init({ once:true, duration:500, easing:'ease-out-cubic', offset:40 });
   document.getElementById('year').textContent = new Date().getFullYear();
 
   (function(){
@@ -545,6 +560,8 @@
     if(!track) return;
     const slides = Array.from(track.querySelectorAll('.carousel-slide'));
     const dotsWrap = document.querySelector('.carousel-dots');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
     let idx = 0, timer = null;
 
     function go(i){ idx=(i+slides.length)%slides.length; track.style.transform = `translateX(-${idx*100}%)`; updateDots(); }
@@ -557,21 +574,29 @@
     document.querySelector('.carousel-btn.next')?.addEventListener('click', next);
     document.querySelector('.carousel-btn.prev')?.addEventListener('click', prev);
     updateDots();
-    function autoplay(){ clearInterval(timer); timer=setInterval(next, 4500); }
+
+    function autoplay(){
+      clearInterval(timer);
+      if(reduceMotion) return; // respect user motion preferences
+      const interval = isMobile ? 6000 : 4800;
+      timer = setInterval(next, interval);
+    }
     autoplay();
     track.addEventListener('pointerdown', ()=>clearInterval(timer));
     track.addEventListener('pointerup', autoplay);
 
-    // Subtle 3D tilt on pointer move
-    document.querySelectorAll('.tilt').forEach(el=>{
-      el.addEventListener('pointermove', (e)=>{
-        const r=el.getBoundingClientRect();
-        const px=(e.clientX - r.left)/r.width - .5;
-        const py=(e.clientY - r.top)/r.height - .5;
-        el.style.transform = `rotateY(${px*8}deg) rotateX(${ -py*8}deg)`;
+    // Subtle 3D tilt – desktop only and if motion allowed
+    if(!isMobile && !reduceMotion){
+      document.querySelectorAll('.tilt').forEach(el=>{
+        el.addEventListener('pointermove', (e)=>{
+          const r=el.getBoundingClientRect();
+          const px=(e.clientX - r.left)/r.width - .5;
+          const py=(e.clientY - r.top)/r.height - .5;
+          el.style.transform = `rotateY(${px*4}deg) rotateX(${ -py*4}deg)`; // softer
+        });
+        el.addEventListener('pointerleave', ()=>{ el.style.transform=''; });
       });
-      el.addEventListener('pointerleave', ()=>{ el.style.transform=''; });
-    });
+    }
   })();
 </script>
 </body>
