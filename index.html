@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#13141B" />
 
-  <title>KIULY – Unterrichtsentwürfe & Arbeitsblätter ab 0,99 €/Monat (alle Schulformen • alle Bundesländer)</title>
+  <title>KIULY – Unterrichtsvorhaben & Arbeitsblätter ab 0,99 €/Monat</title>
 
   <!-- SEO BASIC -->
   <meta name="description" content="KIULY erstellt in Sekunden lehrplankonforme Unterrichtsvorhaben & Arbeitsblätter – für alle Schulformen (Grundschule, Sek I/II). Entwürfe optional. Ab 0,99 €/Monat, monatlich kündbar. Eines der günstigsten KI‑Tools für Lehrkräfte – fokussiert auf das Wichtigste: Vorhaben, Material & Kalender‑Integration." />
@@ -130,7 +130,7 @@
     .bg-anim{
       background:linear-gradient(130deg,var(--brand-dark) 0%,#4c3ae0 35%,#cf58f1 70%,#fdeeff 100%);
       background-size:220% 220%;
-      animation:bgLoop 26s ease-in-out infinite
+      animation:bgLoop 18s ease-in-out infinite
     }
     @keyframes bgLoop{
       0%,100%{background-position:0% 50%}
@@ -221,7 +221,7 @@
     /* Love Marquee (dynamic reasons) */
     .love{position:relative}
     .love .marquee{overflow:hidden;mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent)}
-    .love .track{display:flex;gap:.6rem;white-space:nowrap;animation:roll 28s linear infinite}
+    .love .track{display:flex;gap:.6rem;white-space:nowrap;animation:roll 16s linear infinite}
     .love .pill{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem .8rem;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.25);font-weight:700}
     .love .pill i{font-style:normal;opacity:.75}
     @keyframes roll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
@@ -335,7 +335,7 @@
   </div>
 </section>
 <!-- ────────── BELIEBT BEI LEHRKRÄFTEN ────────── -->
-<section id="beliebt" class="py-24 px-6 love">
+<section id="beliebt" class="py-16 md:py-20 px-6 love">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="fade-up">Warum Lehrkräfte KIULY lieben</h2>
     <div class="marquee glass p-3" data-aos="zoom-in">
@@ -382,7 +382,7 @@
  </section>
 
 <!-- ────────── APP SCREENSHOTS (Planer + Kalender) ────────── -->
-<section id="app" class="py-24 px-6">
+<section id="app" class="py-16 md:py-20 px-6">
   <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="zoom-in">So sieht’s aus</h2>
 
   <div class="mt-8" data-aos="fade-up" data-aos-delay="150">
@@ -588,7 +588,7 @@
 <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init({ once:true, duration:500, easing:'ease-out-cubic', offset:40 });
+  AOS.init({ once:true, duration:380, easing:'ease-out-cubic', offset:32 });
   document.getElementById('year').textContent = new Date().getFullYear();
 
   (function(){
@@ -600,7 +600,7 @@
     const bars = Array.from(wrap.querySelectorAll('.progress div>i'));
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    let idx = 0, timer = null, animTimer = null, D = isMobile ? 5200 : 4200;
+    let idx = 0, timer = null, animTimer = null, D = isMobile ? 4200 : 3400;
 
     function setCaption(){ caption.textContent = shots[idx].dataset.caption || ''; }
     function setActive(i){ shots.forEach(s=>s.classList.remove('is-active')); shots[i].classList.add('is-active'); }
