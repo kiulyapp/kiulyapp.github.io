@@ -180,6 +180,30 @@
     .tilt{transform-style:preserve-3d;transition:transform .15s ease-out, box-shadow .2s}
     .tilt:hover{box-shadow:0 25px 60px #00000060}
 
+    /* Showcase (playful slider) */
+    .showcase{position:relative;overflow:hidden;border-radius:1.6rem}
+    .showcase-stage{position:relative;height:clamp(320px,52vw,560px)}
+    .showcase-stage .shot{position:absolute;inset:0;opacity:0;transform:scale(.985);transition:opacity .75s ease, transform .75s ease;object-fit:contain;width:100%;height:100%}
+    .showcase-stage .shot.is-active{opacity:1;transform:scale(1)}
+    .showcase-ctrl{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
+    .showcase-ctrl button{pointer-events:auto;margin:.5rem;background:rgba(20,20,30,.55);border:1px solid rgba(255,255,255,.25);padding:.45rem .7rem;border-radius:.75rem;font-size:1.8rem;line-height:1}
+    .showcase-dots{position:absolute;left:0;right:0;bottom:.6rem;display:flex;justify-content:center;gap:.35rem}
+    .showcase-dots button{width:.55rem;height:.55rem;border-radius:999px;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.3)}
+    .showcase-dots button.is-active{background:#fff}
+    .showcase-stage .shot.enter.fx-zoom{animation:kb 8s ease-in-out both}
+    @keyframes kb{0%{transform:scale(1)}100%{transform:scale(1.03)}}
+    .showcase-stage .shot.enter.fx-slide{animation:slideIn .75s cubic-bezier(.22,.61,.36,1) both}
+    @keyframes slideIn{0%{opacity:0;transform:translateY(14px) scale(.985)}100%{opacity:1;transform:translateY(0) scale(1)}}
+    .showcase-stage .shot.enter.fx-tilt{animation:tiltIn .85s cubic-bezier(.22,.61,.36,1) both}
+    @keyframes tiltIn{0%{opacity:0;transform:rotate(-2deg) translateX(14px) scale(.985)}100%{opacity:1;transform:rotate(0) translateX(0) scale(1)}}
+
+    /* Visual Story (Timeline) */
+    .story{position:relative;max-width:50rem;margin:0 auto;padding-left:1.5rem;display:grid;gap:1rem}
+    .story:before{content:"";position:absolute;left:.6rem;top:.25rem;bottom:.25rem;width:2px;background:linear-gradient(180deg,#a78bfa,#f0abfc)}
+    .story-step{position:relative;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:1rem;padding:.9rem 1rem .9rem 2rem}
+    .story-step:before{content:"";position:absolute;left:-.1rem;top:1rem;width:.75rem;height:.75rem;border-radius:999px;background:#fff;box-shadow:0 0 0 4px rgba(167,139,250,.35)}
+    .story-step .step-title{font-weight:900;margin-bottom:.15rem}
+
     /* Motion preferences & mobile tweaks */
     @media (prefers-reduced-motion: reduce){
       *{animation: none !important; transition: none !important;}
@@ -274,53 +298,38 @@
 
 <!-- ────────── FEATURES ────────── -->
 <section id="features" class="py-20 px-6">
-  <h2 class="text-3xl font-extrabold text-center mb-14" data-aos="fade-up">Warum KIULY?</h2>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-    <!-- Feature 1 -->
+  <h2 class="text-3xl font-extrabold text-center mb-12" data-aos="fade-up">Warum KIULY?</h2>
+  <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
     <div class="glass p-6" data-aos="fade-up">
-      <h3 class="text-xl font-black mb-2">Blitzschnell</h3>
-      <p>Komplette Entwürfe & Vorhaben in <strong>Sekunden</strong>.</p>
+      <h3 class="text-xl font-black mb-1">Planen</h3>
+      <p class="opacity-90">Entwürfe & Reihen in Sekunden.</p>
     </div>
-    <!-- Feature 2 -->
-    <div class="glass p-6" data-aos="fade-up" data-aos-delay="100">
-      <h3 class="text-xl font-black mb-2">Differenziert</h3>
-      <p>DaZ-Texte, Inklusion & Barriere-Optionen sofort integriert.</p>
+    <div class="glass p-6" data-aos="fade-up" data-aos-delay="80">
+      <h3 class="text-xl font-black mb-1">Material</h3>
+      <p class="opacity-90">Arbeitsblätter – differenziert.</p>
     </div>
-    <!-- Feature 3 -->
-    <div class="glass p-6" data-aos="fade-up" data-aos-delay="200">
-      <div class="flex items-center gap-3">
-        <h3 class="text-xl font-black">One-Click Material</h3>
-        <span class="tag">Beta</span>
-      </div>
-      <p>Ein Klick → passendes Material.</p>
-    </div>
-    <!-- Feature 4 -->
-    <div class="glass p-6" data-aos="fade-up" data-aos-delay="300">
-      <h3 class="text-xl font-black mb-2">0 Vorbereitung</h3>
-      <p>Modus „Ohne Vorbereitung“ – direkt loslegen.</p>
+    <div class="glass p-6" data-aos="fade-up" data-aos-delay="160">
+      <h3 class="text-xl font-black mb-1">Kalender</h3>
+      <p class="opacity-90">Stunden im iOS‑Kalender.</p>
     </div>
   </div>
- </section>
+</section>
 <!-- ────────── BELIEBT BEI LEHRKRÄFTEN ────────── -->
 <section id="beliebt" class="py-24 px-6">
-  <div class="max-w-6xl mx-auto">
+  <div class="max-w-4xl mx-auto">
     <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="fade-up">Warum Lehrkräfte KIULY lieben</h2>
-    <div class="grid md:grid-cols-2 gap-6 text-[17px] leading-relaxed">
-      <ul class="space-y-2" data-aos="fade-up">
-        <li><strong>Spart Zeit:</strong> Entwürfe & Arbeitsblätter in Sekunden statt Stunden.</li>
-        <li><strong>Lehrplankonform:</strong> Ausrichtung an Lehrplänen aller Bundesländer.</li>
-        <li><strong>Einfach & schnell:</strong> Fokus auf Kernfunktionen – keine Feature‑Überladung.</li>
-        <li><strong>DSGVO‑first:</strong> Datensparsam, keine Schüler:innendaten nötig.</li>
-      </ul>
-      <ul class="space-y-2" data-aos="fade-up" data-aos-delay="100">
-        <li><strong>Direkt einsetzbar:</strong> Differenzierte Arbeitsblätter, Hausaufgaben & Hinweise.</li>
-        <li><strong>Integration:</strong> Stunden als Termine im iOS‑Kalender sichern.</li>
-        <li><strong>Transparenter Preis:</strong> ab 0,99 €/Monat – monatlich kündbar.</li>
-        <li><strong>Bewährt:</strong> 5,0★ App‑Store‑Bewertungen & positives Lehrkräfte‑Feedback.</li>
-      </ul>
-    </div>
+    <ol class="story" data-aos="fade-up">
+      <li class="story-step"><h3 class="step-title">Zeit</h3><p>Stunden & Material in Sekunden.</p></li>
+      <li class="story-step"><h3 class="step-title">Lehrplan</h3><p>Passend für alle Bundesländer.</p></li>
+      <li class="story-step"><h3 class="step-title">Einfach</h3><p>Fokus auf das Wesentliche.</p></li>
+      <li class="story-step"><h3 class="step-title">DSGVO</h3><p>Keine Schüler:innendaten.</p></li>
+      <li class="story-step"><h3 class="step-title">Direkt</h3><p>Arbeitsblätter & Hausaufgaben.</p></li>
+      <li class="story-step"><h3 class="step-title">Kalender</h3><p>Eintrag mit Erinnerungen.</p></li>
+      <li class="story-step"><h3 class="step-title">Preis</h3><p>Ab 0,99 € pro Monat.</p></li>
+      <li class="story-step"><h3 class="step-title">Bewährt</h3><p>5,0★ App‑Store‑Feedback.</p></li>
+    </ol>
   </div>
- </section>
+</section>
 
 <!-- ────────── BUNDESLÄNDER (Landing) ────────── -->
 <section id="laender" class="py-24 px-6 hidden" aria-hidden="true">
@@ -345,37 +354,31 @@
 <section id="app" class="py-24 px-6">
   <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="zoom-in">So sieht’s aus</h2>
 
-
-  <div class="mt-12" data-aos="fade-up" data-aos-delay="200">
-    <div class="carousel glass p-2">
-      <div class="carousel-track">
-        <img src="3.png" alt="KIULY: Unterricht planen – Eingaben & Optionen (Grundschule)" class="carousel-slide tilt" loading="lazy" decoding="async" />
-        <img src="4.png" alt="KIULY: Maßgeschneiderte Vorbereitung nach Bundesland, Fach & Klasse" class="carousel-slide tilt" loading="lazy" decoding="async" />
-        <img src="5.png" alt="KIULY: Reihen & Materialien organisieren – sofort einsatzbereit" class="carousel-slide tilt" loading="lazy" decoding="async" />
-        <img src="7.png" alt="KIULY: Export, Stundenplan & Kalender‑Integration" class="carousel-slide tilt" loading="lazy" decoding="async" />
+  <div class="mt-8" data-aos="fade-up" data-aos-delay="150">
+    <div class="showcase glass p-2">
+      <div class="showcase-stage" aria-live="polite">
+        <img src="3.png" alt="KIULY: Unterricht planen – Eingaben & Optionen (Grundschule)" class="shot is-active" loading="lazy" decoding="async" />
+        <img src="4.png" alt="KIULY: Maßgeschneiderte Vorbereitung nach Bundesland, Fach & Klasse" class="shot" loading="lazy" decoding="async" />
+        <img src="5.png" alt="KIULY: Reihen & Materialien organisieren – sofort einsatzbereit" class="shot" loading="lazy" decoding="async" />
+        <img src="7.png" alt="KIULY: Export, Stundenplan & Kalender‑Integration" class="shot" loading="lazy" decoding="async" />
       </div>
-      <button class="carousel-btn prev" aria-label="vorheriges Bild">‹</button>
-      <button class="carousel-btn next" aria-label="nächstes Bild">›</button>
-      <div class="carousel-dots" aria-hidden="true"></div>
+      <div class="showcase-ctrl">
+        <button class="prev" aria-label="vorheriges Bild">‹</button>
+        <button class="next" aria-label="nächstes Bild">›</button>
+      </div>
+      <div class="showcase-dots" aria-hidden="true"></div>
     </div>
   </div>
 
-  <!-- Funktions-Highlights passend zum Screenshot -->
-  <div class="max-w-6xl mx-auto mt-12 grid md:grid-cols-2 gap-8 text-[17px] leading-relaxed">
-    <ul class="space-y-2" data-aos="fade-up" data-aos-delay="100">
-      <li><strong>Unterricht planen mit KIULY:</strong> Schnellstart mit klaren Eingaben.</li>
-      <li><strong>Maßgeschneiderte Vorbereitung:</strong> Bundesland, Schulform, Fach, Klasse & Hinweise.</li>
-      <li><strong>Organisieren:</strong> Digitale Übersicht für Reihen, Materialien & Feedback.</li>
-      <li><strong>Komplette Reihen erstellen:</strong> Ganze Wochen planen und als PDF exportieren.</li>
-    </ul>
-    <ul class="space-y-2" data-aos="fade-up" data-aos-delay="150">
-      <li><strong>Sofort einsatzbereit:</strong> Arbeitsblätter & Differenzierung „by the way“.</li>
-      <li><strong>Direkt in den KIULY Stundenplan:</strong> Alle Stunden in der App im Blick.</li>
-      <li><strong>Direkt einplanen:</strong> Ein Klick in den iOS‑Kalender – inkl. Erinnerungen.</li>
-      <li><strong>KIULY Copilot:</strong> Dein Begleiter für Planung, Materialien und Organisation.</li>
+  <div class="max-w-5xl mx-auto mt-10">
+    <ul class="grid sm:grid-cols-2 gap-4 text-[17px] leading-relaxed" data-aos="fade-up" data-aos-delay="120">
+      <li>Maßgeschneiderte Planung nach Bundesland & Klasse.</li>
+      <li>Arbeitsblätter sofort einsatzbereit.</li>
+      <li>Reihen & Wochenpläne exportieren.</li>
+      <li>Ein Klick in den iOS‑Kalender.</li>
     </ul>
   </div>
- </section>
+</section>
 
 <!-- ────────── KALENDER (Neuerung) ────────── -->
 <section id="calendar" class="py-24 px-6 bg-white text-gray-900 relative overflow-hidden">
@@ -549,47 +552,46 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   (function(){
-    const track = document.querySelector('.carousel-track');
-    if(!track) return;
-    const slides = Array.from(track.querySelectorAll('.carousel-slide'));
-    const dotsWrap = document.querySelector('.carousel-dots');
+    const stage = document.querySelector('.showcase-stage');
+    if(!stage) return;
+    const shots = Array.from(stage.querySelectorAll('.shot'));
+    const dotsWrap = document.querySelector('.showcase-dots');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     let idx = 0, timer = null;
 
-    function go(i){ idx=(i+slides.length)%slides.length; track.style.transform = `translateX(-${idx*100}%)`; updateDots(); }
-    function next(){ go(idx+1); }
-    function prev(){ go(idx-1); }
     function updateDots(){
       dotsWrap.innerHTML='';
-      slides.forEach((_,i)=>{ const b=document.createElement('button'); if(i===idx) b.classList.add('is-active'); b.addEventListener('click',()=>go(i)); dotsWrap.appendChild(b); });
+      shots.forEach((_,i)=>{const b=document.createElement('button'); if(i===idx) b.classList.add('is-active'); b.addEventListener('click',()=>go(i,'fx-slide')); dotsWrap.appendChild(b)});
     }
-    document.querySelector('.carousel-btn.next')?.addEventListener('click', next);
-    document.querySelector('.carousel-btn.prev')?.addEventListener('click', prev);
-    updateDots();
+    function clearFx(el){ el.classList.remove('enter','fx-zoom','fx-slide','fx-tilt'); }
+    function randomFx(){ return ['fx-zoom','fx-slide','fx-tilt'][Math.floor(Math.random()*3)]; }
 
+    function go(i,fx){
+      const next=(i+shots.length)%shots.length;
+      const cur=shots[idx];
+      const incoming=shots[next];
+      clearFx(cur); clearFx(incoming);
+      cur.classList.remove('is-active');
+      incoming.classList.add('is-active','enter', fx||randomFx());
+      idx=next; updateDots();
+    }
+    function next(){ go(idx+1); }
+    function prev(){ go(idx-1); }
+
+    document.querySelector('.showcase .next')?.addEventListener('click', next);
+    document.querySelector('.showcase .prev')?.addEventListener('click', prev);
+
+    updateDots();
     function autoplay(){
       clearInterval(timer);
-      if(reduceMotion) return; // respect user motion preferences
-      const interval = isMobile ? 6000 : 4800;
-      timer = setInterval(next, interval);
+      if(reduceMotion) return;
+      const interval = isMobile ? 6200 : 5000;
+      timer=setInterval(next, interval);
     }
     autoplay();
-    track.addEventListener('pointerdown', ()=>clearInterval(timer));
-    track.addEventListener('pointerup', autoplay);
-
-    // Subtle 3D tilt – desktop only and if motion allowed
-    if(!isMobile && !reduceMotion){
-      document.querySelectorAll('.tilt').forEach(el=>{
-        el.addEventListener('pointermove', (e)=>{
-          const r=el.getBoundingClientRect();
-          const px=(e.clientX - r.left)/r.width - .5;
-          const py=(e.clientY - r.top)/r.height - .5;
-          el.style.transform = `rotateY(${px*4}deg) rotateX(${ -py*4}deg)`; // softer
-        });
-        el.addEventListener('pointerleave', ()=>{ el.style.transform=''; });
-      });
-    }
+    stage.addEventListener('pointerdown', ()=>clearInterval(timer));
+    stage.addEventListener('pointerup', autoplay);
   })();
 </script>
 </body>
