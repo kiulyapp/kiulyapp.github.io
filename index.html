@@ -129,6 +129,19 @@
 
     /* Brand grid helpers */
     .tag{font-size:.72rem;font-weight:800;padding:.2rem .5rem;border-radius:.5rem;background:rgba(250,250,255,.16);border:1px solid rgba(255,255,255,.25)}
+
+    /* ── Carousel & Tilt (UX) ───────────────────────────────────────── */
+    .carousel{position:relative;overflow:hidden;border-radius:1.6rem}
+    .carousel-track{display:flex;transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform}
+    .carousel-slide{flex:0 0 100%;display:block;width:100%;height:auto}
+    .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(20,20,30,.55);border:1px solid rgba(255,255,255,.25);padding:.45rem .7rem;border-radius:.75rem;font-size:1.8rem;line-height:1}
+    .carousel-btn.prev{left:.5rem}
+    .carousel-btn.next{right:.5rem}
+    .carousel-dots{position:absolute;left:0;right:0;bottom:.5rem;display:flex;justify-content:center;gap:.35rem}
+    .carousel-dots button{width:.6rem;height:.6rem;border-radius:999px;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.3)}
+    .carousel-dots button.is-active{background:#fff}
+    .tilt{transform-style:preserve-3d;transition:transform .15s ease-out, box-shadow .2s}
+    .tilt:hover{box-shadow:0 25px 60px #00000060}
   </style>
 </head>
 
@@ -227,6 +240,20 @@
       class="rounded-3xl ring-4 ring-fuchsia-200/70 shadow-2xl w-full h-auto" loading="lazy" />
     <figcaption class="text-sm text-fuchsia-50/80 mt-3 px-1 text-center">Ein Blick in KIULY: vom Generator über Reihen bis zum Kalender – alles in einer App.</figcaption>
   </figure>
+
+  <div class="mt-12" data-aos="fade-up" data-aos-delay="200">
+    <div class="carousel glass p-2">
+      <div class="carousel-track">
+        <img src="3.png" alt="KIULY: Unterricht planen – Eingaben & Optionen (Grundschule)" class="carousel-slide tilt" />
+        <img src="4.png" alt="KIULY: Maßgeschneiderte Vorbereitung nach Bundesland, Fach & Klasse" class="carousel-slide tilt" />
+        <img src="5.png" alt="KIULY: Reihen & Materialien organisieren – sofort einsatzbereit" class="carousel-slide tilt" />
+        <img src="7.png" alt="KIULY: Export, Stundenplan & Kalender‑Integration" class="carousel-slide tilt" />
+      </div>
+      <button class="carousel-btn prev" aria-label="vorheriges Bild">‹</button>
+      <button class="carousel-btn next" aria-label="nächstes Bild">›</button>
+      <div class="carousel-dots" aria-hidden="true"></div>
+    </div>
+  </div>
 
   <!-- Funktions-Highlights passend zum Screenshot -->
   <div class="max-w-6xl mx-auto mt-12 grid md:grid-cols-2 gap-8 text-[17px] leading-relaxed">
@@ -406,6 +433,40 @@
 <script>
   AOS.init({ once:true });
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  (function(){
+    const track = document.querySelector('.carousel-track');
+    if(!track) return;
+    const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+    const dotsWrap = document.querySelector('.carousel-dots');
+    let idx = 0, timer = null;
+
+    function go(i){ idx=(i+slides.length)%slides.length; track.style.transform = `translateX(-${idx*100}%)`; updateDots(); }
+    function next(){ go(idx+1); }
+    function prev(){ go(idx-1); }
+    function updateDots(){
+      dotsWrap.innerHTML='';
+      slides.forEach((_,i)=>{ const b=document.createElement('button'); if(i===idx) b.classList.add('is-active'); b.addEventListener('click',()=>go(i)); dotsWrap.appendChild(b); });
+    }
+    document.querySelector('.carousel-btn.next')?.addEventListener('click', next);
+    document.querySelector('.carousel-btn.prev')?.addEventListener('click', prev);
+    updateDots();
+    function autoplay(){ clearInterval(timer); timer=setInterval(next, 4500); }
+    autoplay();
+    track.addEventListener('pointerdown', ()=>clearInterval(timer));
+    track.addEventListener('pointerup', autoplay);
+
+    // Subtle 3D tilt on pointer move
+    document.querySelectorAll('.tilt').forEach(el=>{
+      el.addEventListener('pointermove', (e)=>{
+        const r=el.getBoundingClientRect();
+        const px=(e.clientX - r.left)/r.width - .5;
+        const py=(e.clientY - r.top)/r.height - .5;
+        el.style.transform = `rotateY(${px*8}deg) rotateX(${ -py*8}deg)`;
+      });
+      el.addEventListener('pointerleave', ()=>{ el.style.transform=''; });
+    });
+  })();
 </script>
 </body>
 </html>
