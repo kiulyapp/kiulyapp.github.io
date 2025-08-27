@@ -13,7 +13,7 @@
 
   <!-- SEO BASIC -->
   <meta name="description" content="KIULY erstellt in Sekunden lehrplankonforme Unterrichtsplanung & Material – differenziert, inklusiv & DSGVO‑konform. Transparent: ab 0,99 €/Monat, monatlich kündbar. Spare Vorbereitungszeit und fokussiere dich aufs Unterrichten." />
-  <meta name="keywords" content="Unterrichtsentwurf, Unterrichtsplanung, Stundenentwurf, Lehrplan, Lehrer KI, Lehrkräfte App, AI Lesson Plan Generator, Differenzierung, Inklusion, DaZ, DaF, iPad Klasse, digitale Schule, Arbeitsblatt Generator, Gymnasium, Grundschule, Sekundarstufe, KIULY, One-Click Material, KIULY SNAP, Unterrichtsmaterial erstellen, KI Tools Lehrer, KI Unterricht, Schulmaterial, Klassenarbeit Generator" />
+  <meta name="keywords" content="Lehrerapp, Lehrer App, Unterrichtsvorbereitung App, Unterrichtsplanung App, Arbeitsblatt Generator App, Unterrichtsentwurf, Unterrichtsplanung, Stundenentwurf, Lehrplan, Lehrer KI, Lehrkräfte App, AI Lesson Plan Generator, Differenzierung, Inklusion, DaZ, DaF, iPad Klasse, digitale Schule, Arbeitsblatt Generator, Gymnasium, Grundschule, Sekundarstufe, KIULY, One-Click Material, KIULY SNAP, Unterrichtsmaterial erstellen, KI Tools Lehrer, KI Unterricht, Schulmaterial, Klassenarbeit Generator" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://kiuly.de/" />
 
@@ -50,7 +50,7 @@
     "name":"KIULY – Unterrichts-KI",
     "operatingSystem":"iOS",
     "applicationCategory":"EducationApplication",
-    "inLanguage":"de-DE", "alternateName":["KI Lehrer App","Lehrer‑KI","Unterrichts‑KI"],
+    "inLanguage":"de-DE", "alternateName":["Lehrerapp","Lehrer App","KI Lehrer App","Lehrer‑KI","Unterrichts‑KI","Unterrichtsvorbereitung App","Unterrichtsplanung App","Arbeitsblatt Generator App"],
     "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","ratingCount":"6"},
     "offers":{"@type":"Offer","price":"0.99","priceCurrency":"EUR"},
     "downloadUrl":"https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544",
@@ -66,7 +66,7 @@
     "name": "KIULY",
     "url": "https://kiuly.de/",
     "logo": "icon.png",
-    "inLanguage": "de-DE", "alternateName": ["KI Lehrer App","Lehrer‑KI","Unterrichts‑KI"],
+    "inLanguage": "de-DE", "alternateName": ["Lehrerapp","Lehrer App","KI Lehrer App","Lehrer‑KI","Unterrichts‑KI","Unterrichtsvorbereitung App","Unterrichtsplanung App","Arbeitsblatt Generator App"],
     "sameAs": ["https://x.com/kiuly_app","https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544"]
   }
   </script>
@@ -77,7 +77,7 @@
     "name":"KIULY – Unterrichts‑KI",
     "brand":{"@type":"Brand","name":"KIULY"},
     "category":"EducationApplication",
-    "inLanguage":"de-DE", "alternateName":["KI Lehrer App","Lehrer‑KI","Unterrichts‑KI"],
+    "inLanguage":"de-DE", "alternateName":["Lehrerapp","Lehrer App","KI Lehrer App","Lehrer‑KI","Unterrichts‑KI","Unterrichtsvorbereitung App","Unterrichtsplanung App","Arbeitsblatt Generator App"],
     "image":"icon.png",
     "url":"https://kiuly.de/",
     "offers":{
@@ -129,10 +129,37 @@
   <!-- Tailwind & Animation Libs -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <noscript><style>[data-aos]{opacity:1!important;transform:none!important}</style></noscript>
   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
 
   <!-- Styles -->
   <style>
+    /* ── Dynamic FX: scroll progress bar ───────────────────────── */
+    #scroll-progress{position:fixed;top:0;left:0;right:0;height:4px;z-index:60;background:linear-gradient(90deg,transparent,transparent)}
+    #scroll-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#a78bfa,#f472b6,#c084fc,#7c3aed);box-shadow:0 0 16px #c084fc66}
+
+    /* ── Parallax blobs in hero ───────────────────────────────── */
+    .fx-blobs{position:absolute;inset:0;pointer-events:none}
+    .fx-blobs .blob{position:absolute;filter:blur(32px);opacity:.26;border-radius:50%}
+    .fx-blobs .b1{width:220px;height:220px;background:#c084fc;left:-40px;top:-20px;animation:float1 12s ease-in-out infinite}
+    .fx-blobs .b2{width:260px;height:260px;background:#f472b6;right:-60px;top:20px;animation:float2 14s ease-in-out infinite}
+    .fx-blobs .b3{width:180px;height:180px;background:#a5b4fc;left:50%;bottom:-40px;transform:translateX(-50%);animation:float3 16s ease-in-out infinite}
+    @keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(22px)}}
+    @keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+    @keyframes float3{0%,100%{transform:translate(0)}50%{transform:translate(-6px,16px)}}
+
+    /* ── Tilt effect (subtle 3D on hover) ─────────────────────── */
+    .tilt{transform-style:preserve-3d;transition:transform .12s ease, box-shadow .2s ease}
+    .tilt:hover{box-shadow:0 12px 42px #00000055}
+
+    /* ── Magnetic buttons (btn + store badge) ─────────────────── */
+    .magnet-area{position:relative;display:inline-block}
+    .magnet-target{transition:transform .08s ease}
+
+    /* ── Animated gradient border helper ──────────────────────── */
+    .ag-border{position:relative}
+    .ag-border::before{content:"";position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:conic-gradient(from 0deg,#a78bfa,#f472b6,#c084fc,#7c3aed,#a78bfa);-webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 6s linear infinite}
+    @keyframes spin{to{transform:rotate(1turn)}}
     :root{
       --brand-dark:#13141B;
       --brand-primary:#7c3aed;
@@ -231,6 +258,7 @@
 
 <body class="bg-anim overflow-x-hidden text-white">
 <a href="#hero" class="skip-link">Zum Inhalt springen</a>
+<div id="scroll-progress" aria-hidden="true"><span></span></div>
 <!-- ────────── HEADER ────────── -->
 <header class="fixed inset-x-0 top-0 z-40 glass flex items-center justify-between px-6 py-3 mx-auto max-w-7xl" role="banner">
   <a href="#hero" class="flex items-center gap-2" aria-label="KIULY Start">
@@ -245,15 +273,22 @@
     <a href="#research" class="hover:text-fuchsia-300">Studie</a>
     <a href="#kontakt" class="hover:text-fuchsia-300">Kontakt</a>
   </nav>
-  <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="btn text-sm">App laden</a>
+  <span class="magnet-area"><a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="btn text-sm magnet-target">App laden</a></span>
 </header>
 
 <!-- ────────── HERO ────────── -->
 <section id="hero" class="pt-36 pb-24 text-center">
   <div class="max-w-3xl mx-auto" data-aos="fade-up">
-    <h1 class="text-4xl md:text-6xl font-black leading-tight drop-shadow-xl">
-      Unterrichtsplanung<br /><span class="text-fuchsia-200">in Sekunden</span>
-    </h1>
+    <div class="fx-blobs" aria-hidden="true">
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="blob b3"></div>
+    </div>
+    <div class="ag-border rounded-2xl inline-block px-3 py-2">
+      <h1 class="text-4xl md:text-6xl font-black leading-tight drop-shadow-xl">
+        Unterrichtsplanung<br /><span class="text-fuchsia-200">in Sekunden</span>
+      </h1>
+    </div>
     <p class="mt-6 text-lg md:text-2xl text-fuchsia-50/90">
       Lehrplankonforme Entwürfe & Materialien – differenziert, inklusiv, DSGVO-konform.
     </p>
@@ -270,9 +305,11 @@
     </nav>
 
     <!-- App Store Badge -->
-    <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="inline-block mt-10" aria-label="Im App Store laden" rel="noopener noreferrer">
-      <img src="Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Laden im App Store" class="h-10 md:h-12" />
-    </a>
+    <span class="magnet-area">
+      <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="inline-block mt-10 magnet-target" aria-label="Im App Store laden" rel="noopener noreferrer">
+        <img src="Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Laden im App Store" class="h-10 md:h-12" />
+      </a>
+    </span>
 
     <!-- Rating & Downloads -->
     <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-lg font-semibold">
@@ -295,22 +332,47 @@
   </div>
 </section>
 
+<!-- ────────── KURZANTWORTEN (für Suchen wie „Lehrerapp“, „Unterrichtsvorbereitung“) ────────── -->
+<section id="kurzantworten" class="py-10 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
+    <article class="glass p-6 tilt" data-aos="fade-up">
+      <h2 class="text-2xl font-extrabold mb-3">Lehrerapp für Unterrichtsvorbereitung (iOS)</h2>
+      <p class="text-fuchsia-50/90">KIULY – lehrplankonforme <strong>Unterrichtsplanung</strong> & <strong>Material</strong> in Sekunden, alle Schulformen, alle Bundesländer, <strong>ab 0,99 €/Monat</strong>.</p>
+    </article>
+    <article class="glass p-6 tilt" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="text-xl font-black mb-2">Unterrichtsplanung App</h3>
+      <ul class="list-disc pl-5 space-y-1 text-fuchsia-50/90">
+        <li>Entwürfe & Vorhaben in Sekunden</li>
+        <li>Differenzierte Arbeitsblätter (Arbeitsblatt Generator)</li>
+        <li>iPhone/iPad: Kalender‑Integration (Termin, Material‑Links, Erinnerung)</li>
+      </ul>
+    </article>
+    <article class="glass p-6 tilt" data-aos="fade-up">
+      <h3 class="text-xl font-black mb-2">Lehrer‑KI App (Deutschland)</h3>
+      <p class="text-fuchsia-50/90">Fokus: <strong>Unterrichtsvorhaben</strong>, DSGVO‑first, Copy‑&‑Paste‑Export. Ideal für <em>Unterrichtsvorbereitung</em> & schnelle Anpassung.</p>
+    </article>
+    <article class="glass p-6 tilt" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="text-xl font-black mb-2">Schnellstart</h3>
+      <p class="text-fuchsia-50/90">App laden → Fach, Klasse, Thema wählen → Entwurf & Material generieren → als Termin im Kalender sichern.</p>
+    </article>
+  </div>
+</section>
 <!-- ────────── FEATURES ────────── -->
 <section id="features" class="py-20 px-6">
   <h2 class="text-3xl font-extrabold text-center mb-14" data-aos="fade-up">Warum KIULY?</h2>
   <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
     <!-- Feature 1 -->
-    <div class="glass p-6" data-aos="fade-up">
+    <div class="glass p-6 tilt" data-aos="fade-up">
       <h3 class="text-xl font-black mb-2">Blitzschnell</h3>
       <p>Komplette Entwürfe & Vorhaben in <strong>Sekunden</strong>.</p>
     </div>
     <!-- Feature 2 -->
-    <div class="glass p-6" data-aos="fade-up" data-aos-delay="100">
+    <div class="glass p-6 tilt" data-aos="fade-up" data-aos-delay="100">
       <h3 class="text-xl font-black mb-2">Differenziert</h3>
       <p>DaZ-Texte, Inklusion & Barriere-Optionen sofort integriert.</p>
     </div>
     <!-- Feature 3 -->
-    <div class="glass p-6" data-aos="fade-up" data-aos-delay="200">
+    <div class="glass p-6 tilt" data-aos="fade-up" data-aos-delay="200">
       <div class="flex items-center gap-3">
         <h3 class="text-xl font-black">One-Click Material</h3>
         <span class="tag">Beta</span>
@@ -318,7 +380,7 @@
       <p>Ein Klick → passendes Material.</p>
     </div>
     <!-- Feature 4 -->
-    <div class="glass p-6" data-aos="fade-up" data-aos-delay="300">
+    <div class="glass p-6 tilt" data-aos="fade-up" data-aos-delay="300">
       <h3 class="text-xl font-black mb-2">0 Vorbereitung</h3>
       <p>Modus „Ohne Vorbereitung“ – direkt loslegen.</p>
     </div>
@@ -331,26 +393,26 @@
     <h2 class="text-3xl font-extrabold text-center mb-8" data-aos="fade-up">Preis – fair & transparent</h2>
     <div class="glass p-6 md:p-8" data-aos="zoom-in">
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-sm leading-relaxed">
-        <div class="rounded-2xl border border-white/20 p-4">
+        <div class="rounded-2xl border border-white/20 p-4 tilt">
           <h3 class="text-xl font-black mb-1">KIULY</h3>
           <p class="text-3xl font-extrabold">0,99 €/Monat</p>
           <p class="opacity-80">monatlich kündbar</p>
         </div>
-        <div class="rounded-2xl border border-white/20 p-4">
+        <div class="rounded-2xl border border-white/20 p-4 tilt">
           <h3 class="text-xl font-black mb-1">Teachino Pro</h3>
           <p>24 Monate: <strong>7,95 €/Monat</strong></p>
           <p>12 Monate: <strong>9,95 €/Monat</strong></p>
           <p>6 Monate: <strong>12,95 €/Monat</strong></p>
           <p class="mt-2 text-xs opacity-80"><a href="https://www.teachino.io/preise/" target="_blank" rel="noopener" class="underline">Quelle</a></p>
         </div>
-        <div class="rounded-2xl border border-white/20 p-4">
+        <div class="rounded-2xl border border-white/20 p-4 tilt">
           <h3 class="text-xl font-black mb-1">fobizz</h3>
           <p>Tools‑Flatrate: <strong>119 €/Jahr</strong> (~9,92 €/Monat)</p>
           <p>Kombi‑Flatrate: <strong>239 €/Jahr</strong> (~19,92 €/Monat)</p>
           <p>Fortbildungs‑Flatrate: <strong>179 €/Jahr</strong></p>
           <p class="mt-2 text-xs opacity-80"><a href="https://fobizz.com/de/preise/" target="_blank" rel="noopener" class="underline">Quelle</a></p>
         </div>
-        <div class="rounded-2xl border border-white/20 p-4">
+        <div class="rounded-2xl border border-white/20 p-4 tilt">
           <h3 class="text-xl font-black mb-1">to‑teach.ai</h3>
           <p>Starter: <strong>$5/Monat</strong> (jährlich abgerechnet)</p>
           <p>Pro: <strong>$10/Monat</strong> (jährlich abgerechnet)</p>
@@ -368,7 +430,7 @@
 
   <div class="max-w-6xl mx-auto grid md:grid-cols-1 gap-10 items-start">
     <!-- Planer Screenshot -->
-    <figure class="glass p-4" data-aos="fade-right">
+    <figure class="glass p-4 tilt" data-aos="fade-right">
       <img
         src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 18.41.29.png"
         width="834" height="1194"
@@ -380,9 +442,9 @@
   <!-- Weitere Screenshots (Scroll-Galerie) -->
   <div class="mt-12" data-aos="fade-up">
     <div class="shot-strip" role="region" aria-label="Screenshot-Galerie">
-      <figure class="shot-card"><img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 18.42.16.png" alt="Screenshot 18:42:16" loading="lazy" decoding="async"></figure>
-      <figure class="shot-card"><img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 19.10.42.png" alt="Screenshot 19:10:42" loading="lazy" decoding="async"></figure>
-      <figure class="shot-card"><img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 19.14.28.png" alt="Screenshot 19:14:28" loading="lazy" decoding="async"></figure>
+      <figure class="shot-card tilt"><img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 18.42.16.png" alt="Screenshot 18:42:16" loading="lazy" decoding="async"></figure>
+      <figure class="shot-card tilt"><img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 19.10.42.png" alt="Screenshot 19:10:42" loading="lazy" decoding="async"></figure>
+      <figure class="shot-card tilt"><img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 19.14.28.png" alt="Screenshot 19:14:28" loading="lazy" decoding="async"></figure>
     </div>
   </div>
 
@@ -400,15 +462,15 @@
       </p>
 
       <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <div class="rounded-2xl border border-purple-200 p-5">
+        <div class="rounded-2xl border border-purple-200 p-5 tilt">
           <h3 class="font-extrabold mb-2">Automatischer Eintrag</h3>
           <p class="text-gray-700">Termin wird direkt nach dem Erstellen des Entwurfs angelegt.</p>
         </div>
-        <div class="rounded-2xl border border-purple-200 p-5">
+        <div class="rounded-2xl border border-purple-200 p-5 tilt">
           <h3 class="font-extrabold mb-2">Material im Termin</h3>
           <p class="text-gray-700">Notizfeld enthält Aufgaben, Differenzierungsstufen & Links.</p>
         </div>
-        <div class="rounded-2xl border border-purple-200 p-5">
+        <div class="rounded-2xl border border-purple-200 p-5 tilt">
           <h3 class="font-extrabold mb-2">Erinnerungen</h3>
           <p class="text-gray-700">Benachrichtigung vor Stundenbeginn – konfigurierbar.</p>
         </div>
@@ -421,7 +483,7 @@
 <!-- ────────── KIULY SNAP ────────── -->
 <section id="snap" class="py-24 px-6">
   <div class="max-w-5xl mx-auto">
-    <div class="glass p-10 md:p-14" data-aos="zoom-in">
+    <div class="glass p-10 md:p-14 tilt" data-aos="zoom-in">
       <h2 class="text-3xl font-extrabold text-center mb-6">KIULY SNAP <span class="tag align-middle">Coming&nbsp;Soon</span></h2>
       <p class="text-lg md:text-xl text-center font-medium">
         Ein Foto genügt – KIULY baut deine komplette Stunde automatisch auf.
@@ -434,7 +496,7 @@
 <section id="research" class="py-24 bg-fuchsia-50/10 text-white backdrop-blur-[2px]">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="fade-right">Was sagt die Forschung?</h2>
-    <article class="glass p-8 md:p-10 mx-auto max-w-xl" data-aos="zoom-in" itemscope itemtype="https://schema.org/ScholarlyArticle">
+    <article class="glass p-8 md:p-10 tilt mx-auto max-w-xl" data-aos="zoom-in" itemscope itemtype="https://schema.org/ScholarlyArticle">
       <h3 class="text-2xl font-bold mb-4" itemprop="name">Gallup &amp; Walton Family Foundation (2025)</h3>
       <p class="text-lg leading-relaxed" itemprop="description">
         Lehrkräfte sparen im Schnitt <strong>5,9 Std/Woche</strong> durch KI-Tools – das sind &gt; 6 Arbeitswochen/Jahr.
@@ -454,11 +516,11 @@
 <section id="faq" class="py-20 px-6">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-3xl font-extrabold text-center mb-8" data-aos="fade-up">FAQ</h2>
-    <details class="glass p-4 mb-3"><summary class="font-bold">Was ist KIULY?</summary><div class="mt-2 text-fuchsia-50/90">KIULY ist eine <strong>Unterrichts‑KI‑App (iOS)</strong> für komplette <strong>Unterrichtsplanung</strong> & <strong>Material</strong> in Sekunden – lehrplankonform für alle Bundesländer.</div></details>
-    <details class="glass p-4 mb-3"><summary class="font-bold">Was kostet die App?</summary><div class="mt-2 text-fuchsia-50/90">Transparent: <strong>ab 0,99 €/Monat</strong>, monatlich kündbar.</div></details>
-    <details class="glass p-4 mb-3"><summary class="font-bold">Für wen ist KIULY?</summary><div class="mt-2 text-fuchsia-50/90">Für <strong>alle Schulformen</strong> (GS, Sek I/II, BK). Fokus auf <strong>Unterrichtsvorhaben</strong> & differenzierte Materialien.</div></details>
-    <details class="glass p-4 mb-3"><summary class="font-bold">iOS‑Kalender‑Integration?</summary><div class="mt-2 text-fuchsia-50/90">Ja, Stunden als Termin mit Thema, Zielen, Material‑Links & Erinnerung sichern.</div></details>
-    <details class="glass p-4"><summary class="font-bold">DSGVO?</summary><div class="mt-2 text-fuchsia-50/90">Datensparsam, keine dauerhafte Speicherung personenbezogener Schüler:innendaten.</div></details>
+    <details class="glass p-4 tilt mb-3"><summary class="font-bold">Was ist KIULY?</summary><div class="mt-2 text-fuchsia-50/90">KIULY ist eine <strong>Unterrichts‑KI‑App (iOS)</strong> für komplette <strong>Unterrichtsplanung</strong> & <strong>Material</strong> in Sekunden – lehrplankonform für alle Bundesländer.</div></details>
+    <details class="glass p-4 tilt mb-3"><summary class="font-bold">Was kostet die App?</summary><div class="mt-2 text-fuchsia-50/90">Transparent: <strong>ab 0,99 €/Monat</strong>, monatlich kündbar.</div></details>
+    <details class="glass p-4 tilt mb-3"><summary class="font-bold">Für wen ist KIULY?</summary><div class="mt-2 text-fuchsia-50/90">Für <strong>alle Schulformen</strong> (GS, Sek I/II, BK). Fokus auf <strong>Unterrichtsvorhaben</strong> & differenzierte Materialien.</div></details>
+    <details class="glass p-4 tilt mb-3"><summary class="font-bold">iOS‑Kalender‑Integration?</summary><div class="mt-2 text-fuchsia-50/90">Ja, Stunden als Termin mit Thema, Zielen, Material‑Links & Erinnerung sichern.</div></details>
+    <details class="glass p-4 tilt"><summary class="font-bold">DSGVO?</summary><div class="mt-2 text-fuchsia-50/90">Datensparsam, keine dauerhafte Speicherung personenbezogener Schüler:innendaten.</div></details>
   </div>
 </section>
 <script type="application/ld+json">
@@ -479,12 +541,12 @@
 <section id="testimonials" class="py-24 px-6 bg-fuchsia-50/20">
   <h2 class="text-3xl font-extrabold text-center mb-12" data-aos="fade-up">Echte App‑Store‑Stimmen & Rückmeldungen</h2>
   <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 text-gray-900">
-    <div class="glass p-6" data-aos="fade-up">
+    <div class="glass p-6 tilt" data-aos="fade-up">
       <p class="text-yellow-500 text-xl mb-2" aria-label="Durchschnittliche Bewertung">★★★★★</p>
       <p class="font-medium">5,0 · 6 Bewertungen im App Store</p>
       <p class="text-sm opacity-70 mt-2"><a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="underline" rel="noopener" target="_blank">Mehr im App Store</a></p>
     </div>
-    <blockquote class="glass p-6" data-aos="fade-up" data-aos-delay="100">
+    <blockquote class="glass p-6 tilt" data-aos="fade-up" data-aos-delay="100">
       <p class="font-medium mb-2">„Ich brauche keine 80 Tools – KIULY reicht.“</p>
       <footer class="text-sm text-gray-600">Ben</footer>
     </blockquote>
@@ -493,7 +555,7 @@
 
 <!-- ────────── KONTAKT ────────── -->
 <section id="kontakt" class="py-24 px-4">
-  <div class="max-w-lg mx-auto glass p-10">
+  <div class="max-w-lg mx-auto glass p-10 tilt">
     <h2 class="text-2xl font-extrabold text-center mb-6">Kontakt</h2>
     <form action="mailto:help@kiuly.de" method="POST" enctype="text/plain" class="flex flex-col gap-5">
       <input type="text"  name="Name"   placeholder="Dein Name (optional)"
@@ -545,7 +607,8 @@
   Suchphrasen, die Lehrkräfte verwenden:
   Unterrichtsentwurf Generator, Stundenverlaufsplan Vorlage, Reihenplanung Sek I/Sek II,
   Kompetenzraster Deutsch/Mathematik/Englisch, differenzierte Arbeitsblätter,
-  iPad-Klasse Materialien, One-Click Material, Unterricht ohne Vorbereitung.
+  iPad-Klasse Materialien, One-Click Material, Unterricht ohne Vorbereitung,
+  Lehrerapp, Lehrer App, Unterrichtsvorbereitung App, Unterrichtsplanung App, Arbeitsblatt Generator App.
 
   Prüfungen & Abschlüsse:
   Abitur (gymnasiale Oberstufe, EPA), Zentrale Prüfungen ZP 10 (NRW), MSA (mittlerer Schulabschluss),
@@ -587,10 +650,18 @@
     }catch(e){}
   })();
 
-  // init AOS (respect reduced motion)
+  // init AOS (robust; respect reduced motion)
   (function(){
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    AOS.init({ once:true, duration: prefersReduced? 0 : 260, offset: 24 });
+    const start = () => {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (window.AOS && typeof AOS.init === 'function') {
+        AOS.init({ once:true, duration: prefersReduced? 0 : 260, offset: 24 });
+      } else {
+        document.querySelectorAll('[data-aos]').forEach(el=>{ el.style.opacity='1'; el.style.transform='none'; });
+      }
+    };
+    if (document.readyState === 'complete') start();
+    else window.addEventListener('load', start);
   })();
 
   // Year
@@ -610,6 +681,74 @@
       fsBtn.setAttribute('aria-pressed', on? 'true':'false');
       try{ localStorage.setItem('kiuly_fs', on? '1':'0'); }catch(e){}
     }); }
+  })();
+
+  // Scroll progress bar
+  (function(){
+    const bar = document.querySelector('#scroll-progress span');
+    if(!bar) return;
+    const onScroll = () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop)/(h.scrollHeight - h.clientHeight);
+      bar.style.width = (scrolled*100).toFixed(2) + '%';
+    };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+
+  // Subtle tilt effect
+  (function(){
+    const MAX = 8; // degrees
+    const els = document.querySelectorAll('.tilt');
+    els.forEach(el=>{
+      el.addEventListener('mousemove', (e)=>{
+        const r = el.getBoundingClientRect();
+        const cx = r.left + r.width/2; const cy = r.top + r.height/2;
+        const dx = (e.clientX - cx)/r.width; const dy = (e.clientY - cy)/r.height;
+        el.style.transform = `rotateX(${(-dy*MAX).toFixed(2)}deg) rotateY(${(dx*MAX).toFixed(2)}deg)`;
+      });
+      el.addEventListener('mouseleave', ()=>{ el.style.transform = 'rotateX(0) rotateY(0)'; });
+    });
+  })();
+
+  // Magnetic hover for .magnet-target inside .magnet-area
+  (function(){
+    const areas = document.querySelectorAll('.magnet-area');
+    areas.forEach(area=>{
+      const target = area.querySelector('.magnet-target');
+      if(!target) return;
+      area.addEventListener('mousemove', (e)=>{
+        const r = area.getBoundingClientRect();
+        const x = (e.clientX - (r.left + r.width/2)) / (r.width/2);
+        const y = (e.clientY - (r.top + r.height/2)) / (r.height/2);
+        target.style.transform = `translate(${x*8}px, ${y*8}px)`;
+      });
+      area.addEventListener('mouseleave', ()=>{ target.style.transform = 'translate(0,0)'; });
+    });
+  })();
+
+  // Confetti on App Store click (lightweight)
+  (function(){
+    const storeLinks = document.querySelectorAll('a[href*="apps.apple.com"]');
+    const burst = (x,y)=>{
+      for(let i=0;i<18;i++){
+        const s=document.createElement('span');
+        s.textContent = ['✨','★','✦','✺','✳︎'][i%5];
+        s.style.position='fixed'; s.style.left=x+'px'; s.style.top=y+'px';
+        s.style.fontSize = (12+Math.random()*12)+'px'; s.style.pointerEvents='none'; s.style.zIndex=9999;
+        s.style.transform=`translate(${(Math.random()-0.5)*140}px, ${(Math.random()-0.5)*120}px)`;
+        s.style.opacity='1'; s.style.transition='transform .8s ease, opacity .9s ease';
+        document.body.appendChild(s);
+        requestAnimationFrame(()=>{ s.style.transform=`translate(${(Math.random()-0.5)*240}px, ${(Math.random()-0.5)*200}px)`; s.style.opacity='0'; });
+        setTimeout(()=>s.remove(), 950);
+      }
+    };
+    storeLinks.forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const x=e.clientX||window.innerWidth/2, y=e.clientY||window.innerHeight/2;
+        burst(x,y);
+      });
+    });
   })();
 </script>
 </body>
