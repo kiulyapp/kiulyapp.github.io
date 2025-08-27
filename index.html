@@ -134,7 +134,13 @@
   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
 
   <!-- Styles -->
-<style>
+  <style>
+    /* Ensure hero text remains visible on light backgrounds */
+    #hero{position:relative}
+    #hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(180deg,rgba(8,8,12,.88),rgba(8,8,12,.66) 42%,rgba(8,8,12,.22) 100%);
+      z-index:0}
+    header{backdrop-filter:saturate(1.1) blur(8px)}
     /* Center fixes for very narrow viewports */
     #hero .tag{display:inline-block}
     #hero .ag-border{display:inline-block}
@@ -312,7 +318,7 @@
 
 <!-- ────────── HERO ────────── -->
 <section id="hero" class="pt-36 pb-24 px-6 text-center">
-  <div class="max-w-3xl mx-auto flex flex-col items-center" data-aos="fade-up">
+  <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center" data-aos="fade-up">
     <div class="fx-blobs" aria-hidden="true">
       <div class="blob b1"></div>
       <div class="blob b2"></div>
