@@ -6,7 +6,7 @@
   ───────────────────────────────────────────────────────────── -->
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="dark light" />
 
   <title>KIULY – Unterrichtsplanung & Material · 0,99 €/Monat</title>
@@ -143,6 +143,7 @@
 
     /* ── Parallax blobs in hero ───────────────────────────────── */
     .fx-blobs{position:absolute;inset:0;pointer-events:none}
+    .fx-blobs{display:none}
     .fx-blobs .blob{position:absolute;filter:blur(32px);opacity:.26;border-radius:50%}
     .fx-blobs .b1{width:220px;height:220px;background:#c084fc;left:-40px;top:-20px;animation:float1 12s ease-in-out infinite}
     .fx-blobs .b2{width:260px;height:260px;background:#f472b6;right:-60px;top:20px;animation:float2 14s ease-in-out infinite}
@@ -174,11 +175,6 @@
     .bg-anim{
       background:linear-gradient(130deg,var(--brand-dark) 0%,#4c3ae0 35%,#cf58f1 70%,#fdeeff 100%);
       background-size:300% 300%;
-      animation:bgLoop 22s ease-in-out infinite
-    }
-    @keyframes bgLoop{
-      0%,100%{background-position:0% 50%}
-      50%{background-position:100% 50%}
     }
 
     /* Glass Card */
@@ -194,14 +190,12 @@
     .btn{
       background:linear-gradient(90deg,#a5b4fc,#f472b6,#c084fc,#7c3aed);
       background-size:280% 100%;
-      animation:btnLoop 6s linear infinite;
       color:#fff;font-weight:800;letter-spacing:.3px;
       padding:.9em 2.0em;border-radius:1.2em;
       box-shadow:0 0 22px #c084fc80,0 2px 12px #7c3aed66;
       transition:transform .15s, box-shadow .2s
     }
     .btn:hover{transform:translateY(-1px);box-shadow:0 0 28px #c084fc99,0 4px 16px #7c3aed80}
-    @keyframes btnLoop{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 
     section{scroll-margin-top:96px}
 
@@ -280,19 +274,15 @@
 
 <!-- ────────── HERO ────────── -->
 <section id="hero" class="pt-36 pb-24 px-6 text-center">
-  <div class="max-w-3xl mx-auto" data-aos="fade-up">
+  <div class="max-w-3xl mx-auto flex flex-col items-center" data-aos="fade-up">
     <div class="fx-blobs" aria-hidden="true">
       <div class="blob b1"></div>
       <div class="blob b2"></div>
       <div class="blob b3"></div>
     </div>
-    <div class="ag-border rounded-2xl inline-block mx-auto px-3 py-2">
-      <div class="max-w-[92vw] mx-auto">
-      <h1 class="text-4xl md:text-6xl font-black leading-tight drop-shadow-xl">
-        Unterrichtsplanung<br /><span class="text-fuchsia-200">in Sekunden</span>
-      </h1>
-      </div>
-    </div>
+    <h1 class="text-4xl md:text-6xl font-black leading-tight drop-shadow-xl max-w-[92vw] mx-auto">
+      Unterrichtsplanung<br /><span class="text-fuchsia-200">in Sekunden</span>
+    </h1>
     <p class="mt-6 text-lg md:text-2xl text-fuchsia-50/90">
       Lehrplankonforme Entwürfe & Materialien – differenziert, inklusiv, DSGVO-konform.
     </p>
