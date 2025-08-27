@@ -245,6 +245,11 @@
     /* Small helper for larger base font */
     body.fs-lg{font-size:18px}
 
+    /* Price highlight styles */
+    .price-highlight{position:relative;background:linear-gradient(180deg,rgba(124,58,237,.25),rgba(236,72,153,.18));border:2px solid rgba(255,255,255,.55);box-shadow:0 14px 42px #7c3aed55, 0 4px 14px #ec489966}
+    .price-highlight h3{letter-spacing:.2px}
+    .price-badge{position:absolute;top:-12px;right:12px;background:#16a34a;color:#fff;font-weight:900;font-size:.75rem;padding:.25rem .6rem;border-radius:.5rem;box-shadow:0 6px 18px #16a34a66}
+    .price-muted{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18)}
   </style>
 </head>
 
@@ -376,26 +381,27 @@
     <h2 class="text-3xl font-extrabold text-center mb-8" data-aos="fade-up">Preis</h2>
     <div class="glass p-6 md:p-8" data-aos="zoom-in">
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-sm leading-relaxed">
-        <div class="rounded-2xl border border-white/20 p-4 tilt">
+        <div id="price-kiuly" class="rounded-2xl p-4 tilt price-highlight" aria-label="KIULY – 0,99 €/Monat, monatlich kündbar">
+          <span class="price-badge">Beste Wahl</span>
           <h3 class="text-xl font-black mb-1">KIULY</h3>
           <p class="text-3xl font-extrabold">0,99 €/Monat</p>
           <p class="opacity-80">monatlich kündbar</p>
         </div>
-        <div class="rounded-2xl border border-white/20 p-4 tilt">
+        <div class="rounded-2xl p-4 tilt price-muted">
           <h3 class="text-xl font-black mb-1">Teachino Pro</h3>
           <p>24 Monate: <strong>7,95 €/Monat</strong></p>
           <p>12 Monate: <strong>9,95 €/Monat</strong></p>
           <p>6 Monate: <strong>12,95 €/Monat</strong></p>
           <p class="mt-2 text-xs opacity-80"><a href="https://www.teachino.io/preise/" target="_blank" rel="noopener" class="underline">Quelle</a></p>
         </div>
-        <div class="rounded-2xl border border-white/20 p-4 tilt">
+        <div class="rounded-2xl p-4 tilt price-muted">
           <h3 class="text-xl font-black mb-1">fobizz</h3>
           <p>Tools‑Flatrate: <strong>119 €/Jahr</strong> (~9,92 €/Monat)</p>
           <p>Kombi‑Flatrate: <strong>239 €/Jahr</strong> (~19,92 €/Monat)</p>
           <p>Fortbildungs‑Flatrate: <strong>179 €/Jahr</strong></p>
           <p class="mt-2 text-xs opacity-80"><a href="https://fobizz.com/de/preise/" target="_blank" rel="noopener" class="underline">Quelle</a></p>
         </div>
-        <div class="rounded-2xl border border-white/20 p-4 tilt">
+        <div class="rounded-2xl p-4 tilt price-muted">
           <h3 class="text-xl font-black mb-1">to‑teach.ai</h3>
           <p>Starter: <strong>$5/Monat</strong> (jährlich abgerechnet)</p>
           <p>Pro: <strong>$10/Monat</strong> (jährlich abgerechnet)</p>
