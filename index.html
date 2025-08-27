@@ -245,10 +245,6 @@
     /* Small helper for larger base font */
     body.fs-lg{font-size:18px}
 
-    /* A11y tools (floating) */
-    .a11y-tools{position:fixed;right:1rem;bottom:1rem;display:flex;gap:.5rem;z-index:9990}
-    .a11y-btn{background:#000;border:2px solid #fff;color:#fff;font-weight:800;padding:.4rem .6rem;border-radius:.6rem}
-    .a11y-btn:focus-visible{outline-offset:4px}
   </style>
 </head>
 
@@ -622,10 +618,6 @@
   AI lesson plan generator, standards-aligned unit plan, worksheet generator,
   differentiation & inclusion, teacher planning app, calendar integration.
 </div>
-<div class="a11y-tools" role="region" aria-label="Barrierefreiheit">
-  <button id="toggle-contrast" class="a11y-btn" type="button" aria-pressed="false" aria-label="Kontrast erhöhen">Kontrast +</button>
-  <button id="toggle-font" class="a11y-btn" type="button" aria-pressed="false" aria-label="Schriftgröße erhöhen">A A</button>
-</div>
 <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
@@ -654,21 +646,6 @@
   // Year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // a11y toggles
-  (function(){
-    const hcBtn = document.getElementById('toggle-contrast');
-    const fsBtn = document.getElementById('toggle-font');
-    if(hcBtn){ hcBtn.addEventListener('click',()=>{
-      const on = document.body.classList.toggle('hc');
-      hcBtn.setAttribute('aria-pressed', on? 'true':'false');
-      try{ localStorage.setItem('kiuly_hc', on? '1':'0'); }catch(e){}
-    }); }
-    if(fsBtn){ fsBtn.addEventListener('click',()=>{
-      const on = document.body.classList.toggle('fs-lg');
-      fsBtn.setAttribute('aria-pressed', on? 'true':'false');
-      try{ localStorage.setItem('kiuly_fs', on? '1':'0'); }catch(e){}
-    }); }
-  })();
 
   // Scroll progress bar
   (function(){
