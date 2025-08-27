@@ -254,6 +254,39 @@
     /* Collapsible teaser (3 lines) */
     .clamp-3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
     .more-btn{margin-top:.5rem;font-size:.875rem;color:#f5d0fe;text-decoration:underline}
+    /* Hero brand stamp */
+    .stamp{
+      display:inline-block;
+      font-weight:900;
+      letter-spacing:.08em;
+      font-size:.78rem;
+      text-transform:uppercase;
+      padding:.55rem .9rem;
+      border:3px solid #f0abfc;
+      border-radius:.6rem;
+      color:#fce7f3;
+      background:rgba(124,58,237,.12);
+      box-shadow:0 8px 28px #a21caf55,
+                  inset 0 0 0 2px rgba(255,255,255,.12);
+      transform:rotate(-2deg);
+      position:relative;
+    }
+    .stamp::after{
+      content:"";
+      position:absolute;
+      inset:-6px;
+      border:2px dashed rgba(240,171,252,.55);
+      border-radius:.9rem;
+      pointer-events:none;
+    }
+    .stamp:focus-visible{
+      outline:3px solid #fff;
+      outline-offset:3px;
+      border-color:#fff;
+    }
+    @media (max-width:420px){
+      .stamp{font-size:.72rem;transform:rotate(-1.5deg)}
+    }
   </style>
 </head>
 
@@ -291,9 +324,11 @@
     <p class="mt-6 text-lg md:text-2xl text-fuchsia-50/90">
       Komplette Unterrichtsvorhaben (Reihen) – lehrplankonform, differenziert, inklusiv, DSGVO‑konform.
     </p>
-    <div class="mt-4">
-      <span class="tag">Von Lehrer*innen für Lehrer*innen</span>
-    </div>
+    <div class="mt-5">
+  <span class="stamp" aria-label="Von Lehrer*innen für Lehrer*innen">
+    VON LEHRER*INNEN FÜR LEHRER*INNEN
+  </span>
+</div>
 
     <p class="mt-6 text-base md:text-lg font-semibold text-fuchsia-100/90"><span class="font-extrabold">0,99 €/Monat</span> · monatlich kündbar</p>
     <nav class="mt-6 flex flex-wrap items-center justify-center gap-2 text-sm" aria-label="Schnellzugriff">
