@@ -161,8 +161,7 @@
 
     /* ── Animated gradient border helper ──────────────────────── */
     .ag-border{position:relative}
-    .ag-border::before{content:"";position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:conic-gradient(from 0deg,#a78bfa,#f472b6,#c084fc,#7c3aed,#a78bfa);-webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 6s linear infinite}
-    @keyframes spin{to{transform:rotate(1turn)}}
+    .ag-border::before{content:"";position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:conic-gradient(from 0deg,#a78bfa,#f472b6,#c084fc,#7c3aed,#a78bfa);-webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
     :root{
       --brand-dark:#13141B;
       --brand-primary:#7c3aed;
@@ -327,12 +326,9 @@
       <div><span class="text-4xl font-extrabold">100+</span>&nbsp;Downloads</div>
     </div>
 
-    <!-- Lottie Animation (dezent) -->
+    <!-- (Animation entfernt) Ruhiges Branding-Icon -->
     <div class="mt-14 flex justify-center">
-      <dotlottie-wc
-        src="https://lottie.host/e130a8e2-1b60-4866-bc27-ab9d40edfa84/24Vmsroocx.lottie"
-        style="width:168px;height:168px" autoplay loop>
-      </dotlottie-wc>
+      <img src="icon.png" alt="KIULY" width="120" height="120" class="h-20 w-20 opacity-80" />
     </div>
   </div>
 </section>
