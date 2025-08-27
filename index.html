@@ -134,6 +134,31 @@
 
   <!-- Styles -->
   <style>
+    /* Reduce effects on touch devices (no hover) */
+    @media (hover:none){
+      .tilt{transform:none !important; box-shadow:none !important}
+      .tilt:hover{box-shadow:none}
+      .magnet-area .magnet-target{transform:none !important}
+    }
+    /* Respect prefers-reduced-motion: minimize animations */
+    @media (prefers-reduced-motion: reduce){
+      .bg-anim{animation:none}
+      .fx-blobs{display:none}
+      .btn{animation:none}
+      .ag-border::before{animation:none}
+    }
+    /* On very small screens, hide decorative blobs */
+    @media (max-width: 380px){ .fx-blobs{display:none} }
+
+    html.fx-off .bg-anim{animation:none}
+    html.fx-off .fx-blobs{display:none}
+    html.fx-off .tilt, html.fx-off .tilt:hover{transform:none !important; box-shadow:none !important}
+    html.fx-off .magnet-area .magnet-target{transform:none !important}
+    html.fx-off .btn{animation:none}
+    html.fx-off .ag-border::before{animation:none}
+    /* Center fixes for very narrow viewports */
+    #hero .tag{display:inline-block}
+    #hero .ag-border{display:inline-block}
     /* ── Dynamic FX: scroll progress bar ───────────────────────── */
     #scroll-progress{position:fixed;top:0;left:0;right:0;height:4px;z-index:60;background:linear-gradient(90deg,transparent,transparent)}
     #scroll-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#a78bfa,#f472b6,#c084fc,#7c3aed);box-shadow:0 0 16px #c084fc66}
@@ -260,7 +285,7 @@
 <a href="#hero" class="skip-link">Zum Inhalt springen</a>
 <div id="scroll-progress" aria-hidden="true"><span></span></div>
 <!-- ────────── HEADER ────────── -->
-<header class="fixed inset-x-0 top-0 z-40 glass flex items-center justify-between px-6 py-3 mx-auto max-w-7xl" role="banner">
+<header class="fixed inset-x-0 top-0 z-40 glass flex items-center justify-between px-[max(1rem,env(safe-area-inset-left))] py-3 mx-auto max-w-7xl" role="banner">
   <a href="#hero" class="flex items-center gap-2" aria-label="KIULY Start">
     <img src="icon.png" alt="KIULY Logo" class="h-10 w-10 rounded-xl" />
     <span class="sr-only">KIULY</span>
@@ -277,17 +302,19 @@
 </header>
 
 <!-- ────────── HERO ────────── -->
-<section id="hero" class="pt-36 pb-24 text-center">
+<section id="hero" class="pt-36 pb-24 px-6 text-center">
   <div class="max-w-3xl mx-auto" data-aos="fade-up">
     <div class="fx-blobs" aria-hidden="true">
       <div class="blob b1"></div>
       <div class="blob b2"></div>
       <div class="blob b3"></div>
     </div>
-    <div class="ag-border rounded-2xl inline-block px-3 py-2">
+    <div class="ag-border rounded-2xl inline-block mx-auto px-3 py-2">
+      <div class="max-w-[92vw] mx-auto">
       <h1 class="text-4xl md:text-6xl font-black leading-tight drop-shadow-xl">
         Unterrichtsplanung<br /><span class="text-fuchsia-200">in Sekunden</span>
       </h1>
+      </div>
     </div>
     <p class="mt-6 text-lg md:text-2xl text-fuchsia-50/90">
       Lehrplankonforme Entwürfe & Materialien – differenziert, inklusiv, DSGVO-konform.
@@ -324,10 +351,7 @@
 
     <!-- Lottie Animation (dezent) -->
     <div class="mt-14 flex justify-center">
-      <dotlottie-wc
-        src="https://lottie.host/e130a8e2-1b60-4866-bc27-ab9d40edfa84/24Vmsroocx.lottie"
-        style="width:168px;height:168px" autoplay loop>
-      </dotlottie-wc>
+      <dotlottie-wc id="hero-lottie" data-src="https://lottie.host/e130a8e2-1b60-4866-bc27-ab9d40edfa84/24Vmsroocx.lottie" style="width:168px;height:168px"></dotlottie-wc>
     </div>
   </div>
 </section>
@@ -635,9 +659,10 @@
   AI lesson plan generator, standards-aligned unit plan, worksheet generator,
   differentiation & inclusion, teacher planning app, calendar integration.
 </div>
-<div class="a11y-tools" role="region" aria-label="Barrierefreiheit">
+<div class="a11y-tools" role="region" aria-label="Barrierefreiheit & Effekte">
   <button id="toggle-contrast" class="a11y-btn" type="button" aria-pressed="false" aria-label="Kontrast erhöhen">Kontrast +</button>
   <button id="toggle-font" class="a11y-btn" type="button" aria-pressed="false" aria-label="Schriftgröße erhöhen">A A</button>
+  <button id="toggle-fx" class="a11y-btn" type="button" aria-pressed="false" aria-label="Animationen/Effekte reduzieren">FX −</button>
 </div>
 <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -683,6 +708,37 @@
     }); }
   })();
 
+  // FX toggle & auto-downgrade for low-end devices
+  (function(){
+    const fxBtn = document.getElementById('toggle-fx');
+    const storeKey = 'kiuly_fx_off';
+    const lowEnd = (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) || /iPhone\s?6|7|8|SE/.test(navigator.userAgent);
+
+    const disableFX = () => {
+      document.documentElement.classList.add('fx-off');
+      try{ localStorage.setItem(storeKey, '1'); }catch(e){}
+    };
+    const enableFX = () => {
+      document.documentElement.classList.remove('fx-off');
+      try{ localStorage.setItem(storeKey, '0'); }catch(e){}
+    };
+
+    // apply stored or auto policy
+    try{
+      const stored = localStorage.getItem(storeKey);
+      if(stored === '1' || lowEnd || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        disableFX();
+        if(fxBtn) fxBtn.setAttribute('aria-pressed','true');
+      }
+    }catch(e){}
+
+    if(fxBtn){ fxBtn.addEventListener('click',()=>{
+      const off = !document.documentElement.classList.contains('fx-off');
+      if(off){ disableFX(); fxBtn.setAttribute('aria-pressed','true'); }
+      else   { enableFX();  fxBtn.setAttribute('aria-pressed','false'); }
+    }); }
+  })();
+
   // Scroll progress bar
   (function(){
     const bar = document.querySelector('#scroll-progress span');
@@ -700,6 +756,7 @@
   (function(){
     const MAX = 8; // degrees
     const els = document.querySelectorAll('.tilt');
+    if(document.documentElement.classList.contains('fx-off')) return;
     els.forEach(el=>{
       el.addEventListener('mousemove', (e)=>{
         const r = el.getBoundingClientRect();
@@ -714,6 +771,7 @@
   // Magnetic hover for .magnet-target inside .magnet-area
   (function(){
     const areas = document.querySelectorAll('.magnet-area');
+    if(document.documentElement.classList.contains('fx-off')) return;
     areas.forEach(area=>{
       const target = area.querySelector('.magnet-target');
       if(!target) return;
@@ -730,6 +788,7 @@
   // Confetti on App Store click (lightweight)
   (function(){
     const storeLinks = document.querySelectorAll('a[href*="apps.apple.com"]');
+    if(document.documentElement.classList.contains('fx-off')) return;
     const burst = (x,y)=>{
       for(let i=0;i<18;i++){
         const s=document.createElement('span');
@@ -749,6 +808,17 @@
         burst(x,y);
       });
     });
+  })();
+
+  // Lazy-load Lottie when in view
+  (function(){
+    const el = document.getElementById('hero-lottie');
+    if(!el) return;
+    const load = ()=>{ const src=el.getAttribute('data-src'); if(src){ el.setAttribute('src',src); el.setAttribute('autoplay',''); el.setAttribute('loop',''); el.removeAttribute('data-src'); } };
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ load(); io.disconnect(); } });
+    },{rootMargin:'100px'});
+    io.observe(el);
   })();
 </script>
 </body>
