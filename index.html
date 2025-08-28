@@ -256,7 +256,9 @@
     .price-highlight{position:relative;background:linear-gradient(180deg,rgba(124,58,237,.25),rgba(236,72,153,.18));border:2px solid rgba(255,255,255,.55);box-shadow:0 14px 42px #7c3aed55, 0 4px 14px #ec489966}
     .price-highlight h3{letter-spacing:.2px}
     .price-badge{position:absolute;top:-12px;right:12px;background:#16a34a;color:#fff;font-weight:900;font-size:.75rem;padding:.25rem .6rem;border-radius:.5rem;box-shadow:0 6px 18px #16a34a66}
-    .price-muted{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18)}
+    .price-muted{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);position:relative}
+    .cmp-badge{position:absolute;top:-12px;left:12px;background:#ef4444;color:#fff;font-weight:900;font-size:.75rem;padding:.25rem .6rem;border-radius:.5rem;box-shadow:0 6px 18px #ef444466}
+    .compare-subtitle{margin-top:.25rem;margin-bottom:.75rem;text-align:center;font-weight:700;opacity:.92}
     /* Collapsible teaser (3 lines) */
     .clamp-3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
     .more-btn{margin-top:.5rem;font-size:.875rem;color:#f5d0fe;text-decoration:underline}
@@ -307,7 +309,7 @@
   </a>
   <nav class="hidden lg:flex gap-9 text-sm font-semibold" aria-label="Hauptnavigation">
     <a href="#features" class="hover:text-fuchsia-300">Features</a>
-    <a href="#preise" class="hover:text-fuchsia-300">Preis</a>
+    <a href="#preise" class="hover:text-fuchsia-300">KIULY vs Alternativen</a>
     <a href="#app" class="hover:text-fuchsia-300">Screenshots</a>
     <a href="#calendar" class="hover:text-fuchsia-300">Kalender</a>
     <a href="#research" class="hover:text-fuchsia-300">Studie</a>
@@ -401,7 +403,10 @@
 <!-- ────────── PREISE & VERGLEICH ────────── -->
 <section id="preise" class="py-20 px-6">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-extrabold text-center mb-8" data-aos="fade-up">Preis</h2>
+    <h2 class="text-3xl font-extrabold text-center mb-1" data-aos="fade-up">KIULY vs Alternativen</h2>
+    <p class="compare-subtitle text-fuchsia-100/90" data-aos="fade-up" aria-label="Preisvergleich">
+      Bis zu <strong>95 % günstiger</strong> als gängige Alternativen – transparent, monatlich kündbar.
+    </p>
     <div class="glass p-6 md:p-8" data-aos="zoom-in">
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-sm leading-relaxed">
         <div id="price-kiuly" class="rounded-2xl p-4 tilt price-highlight" aria-label="KIULY – 0,99 €/Monat, monatlich kündbar">
@@ -411,6 +416,7 @@
           <p class="opacity-80">monatlich kündbar</p>
         </div>
         <div class="rounded-2xl p-4 tilt price-muted">
+          <span class="cmp-badge" aria-label="Vergleich zu KIULY">≈ 8–13× teurer</span>
           <h3 class="text-xl font-black mb-1">Teachino Pro</h3>
           <p>24 Monate: <strong>7,95 €/Monat</strong></p>
           <p>12 Monate: <strong>9,95 €/Monat</strong></p>
@@ -418,6 +424,7 @@
           <p class="mt-2 text-xs opacity-80"><a href="https://www.teachino.io/preise/" target="_blank" rel="noopener" class="underline">Quelle</a></p>
         </div>
         <div class="rounded-2xl p-4 tilt price-muted">
+          <span class="cmp-badge" aria-label="Vergleich zu KIULY">≈ 10–20× teurer</span>
           <h3 class="text-xl font-black mb-1">fobizz</h3>
           <p>Tools‑Flatrate: <strong>119 €/Jahr</strong> (~9,92 €/Monat)</p>
           <p>Kombi‑Flatrate: <strong>239 €/Jahr</strong> (~19,92 €/Monat)</p>
@@ -425,13 +432,14 @@
           <p class="mt-2 text-xs opacity-80"><a href="https://fobizz.com/de/preise/" target="_blank" rel="noopener" class="underline">Quelle</a></p>
         </div>
         <div class="rounded-2xl p-4 tilt price-muted">
+          <span class="cmp-badge" aria-label="Preis in US‑Dollar – Wechselkurs variiert">≈ 5–10× teurer*</span>
           <h3 class="text-xl font-black mb-1">to‑teach.ai</h3>
           <p>Starter: <strong>$5/Monat</strong> (jährlich abgerechnet)</p>
           <p>Pro: <strong>$10/Monat</strong> (jährlich abgerechnet)</p>
           <p class="mt-2 text-xs opacity-80"><a href="https://to-teach.ai/" target="_blank" rel="noopener" class="underline">Quelle</a></p>
         </div>
       </div>
-      <p class="mt-4 text-xs opacity-80">Stand: 27. August 2025. Angaben ohne Gewähr; Preise können sich ändern. Marken gehören den jeweiligen Anbietern.</p>
+      <p class="mt-4 text-xs opacity-80">Stand: 27. August 2025. Angaben ohne Gewähr; Preise können sich ändern. Marken gehören den jeweiligen Anbietern. Multiplikatoren „× teurer" berechnet im Vergleich zu KIULY 0,99 €/Monat (ohne Rabatte, Einzel‑Account). *to‑teach.ai in US‑Dollar, jährliche Abrechnung; Umrechnung abhängig vom Wechselkurs.</p>
       <div class="mt-8" aria-label="Warum ist der Preis so günstig?">
         <h3 class="text-xl font-extrabold mb-3">Wie ist 0,99 € möglich?</h3>
         <div class="grid md:grid-cols-3 gap-4 text-sm leading-relaxed">
@@ -607,7 +615,7 @@
   <p>Made in Essen · <span id="year"></span> · KIULY – DSGVO-konform</p>
   <nav class="space-x-4 mt-3">
     <a href="#features" class="underline">Features</a>
-    <a href="#preise" class="underline">Preis</a>
+    <a href="#preise" class="underline">KIULY vs Alternativen</a>
     <a href="#app" class="underline">Screenshots</a>
     <a href="#calendar" class="underline">Kalender</a>
     <a href="#research" class="underline">Studie</a>
