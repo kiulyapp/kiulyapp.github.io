@@ -8,9 +8,9 @@
   
   <title>KI in der Bildung: Forschung, Studien & wissenschaftliche Evidenz | Bildungsmagazin</title>
   <meta name="description" content="Evidenzbasierte Forschung zu KI in der Bildung: UNESCO, McKinsey, OECD, Stanford, Harvard, MIT. Wissenschaftliche Studien zu Zeitersparnis, Lernergebnissen & Lehrergesundheit." />
-  <meta name="keywords" content="KI Bildung Forschung, Lehrer Blog, KI Tools Unterricht, Unterrichtsplanung Tipps, Digitale Bildung, Lehrer Ressourcen, KI Unterricht, Bildungstechnologie, Lehrkräfte Community, Unterrichtsmaterial, Pädagogik Blog, KIULY Magazin, Gallup Studie, Walton Family Foundation, Bildungswissenschaft, KI Zeitersparnis, Lehrer Zeitersparnis, Unterrichtsforschung, Digitale Transformation Schule" />
+  <meta name="keywords" content="KI Bildung Forschung, Bildungswissenschaft, UNESCO Studie, McKinsey Bildung, OECD PISA, Stanford HAI, Harvard Education, MIT CSAIL, Evidenzbasierte Forschung, Wissenschaftliche Studien Bildung, KI Tools Unterricht, Digitale Transformation Schule, Lehrergesundheit, Personalisiertes Lernen, Unterrichtsforschung" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <meta name="author" content="KIULY Labs – Pascal Obermeit" />
+  <meta name="author" content="Bildungsforschung Redaktion" />
   <meta name="theme-color" content="#7c3aed" />
   <link rel="canonical" href="https://kiuly.de/magazin.html" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -18,11 +18,11 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="de_DE" />
-  <meta property="og:title" content="KIULY Magazin – KI-Tools & Unterrichtsplanung" />
+  <meta property="og:title" content="KI in der Bildung – Forschung & Wissenschaftliche Studien" />
   <meta property="og:description" content="Praxistipps für Lehrer*innen, KI-Tools im Unterricht, Unterrichtsplanung & digitale Bildung." />
   <meta property="og:url" content="https://kiuly.de/magazin.html" />
   <meta property="og:image" content="https://kiuly.de/icon.png" />
-  <meta property="og:image:alt" content="KIULY Magazin Logo" />
+  <meta property="og:image:alt" content="KI Bildungsforschung" />
   
   <!-- Favicons & Fonts -->
   <link rel="icon" href="icon.png" sizes="512x512" />
@@ -40,7 +40,12 @@
       --brand-primary:#7c3aed;
       --brand-accent:#d946ef;
     }
-    body{font-family:'Inter',sans-serif;}
+    body{
+      font-family:'Inter',sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      letter-spacing:-0.01em;
+    }
     .bg-anim{
       background:linear-gradient(130deg,var(--brand-dark) 0%,#4c3ae0 35%,#cf58f1 70%,#fdeeff 100%);
       background-size:300% 300%;
@@ -53,26 +58,51 @@
       box-shadow:0 8px 36px #a78bfa55;
     }
     .article-card{
-      background:rgba(255,255,255,.95);
-      backdrop-filter:blur(18px) saturate(1.1);
-      border:1px solid rgba(255,255,255,.25);
-      border-radius:1.6rem;
-      box-shadow:0 8px 36px #a78bfa33;
-      transition:transform .3s ease, box-shadow .3s ease;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(20px) saturate(1.15);
+      border:1px solid rgba(255,255,255,.35);
+      border-radius:1.75rem;
+      box-shadow:0 8px 32px rgba(124,58,237,0.12), 0 2px 8px rgba(124,58,237,0.06);
+      transition:all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      overflow:hidden;
+    }
+    .article-card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:4px;
+      background:linear-gradient(90deg,#7c3aed,#d946ef,#7c3aed);
+      background-size:200% 100%;
+      opacity:0;
+      transition:opacity .4s ease;
     }
     .article-card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 16px 48px #a78bfa66;
+      transform:translateY(-10px) scale(1.02);
+      box-shadow:0 20px 56px rgba(124,58,237,0.22), 0 8px 16px rgba(124,58,237,0.12);
+      border-color:rgba(124,58,237,0.4);
+    }
+    .article-card:hover::before{
+      opacity:1;
     }
     .category-badge{
-      background:linear-gradient(135deg,#7c3aed,#d946ef);
-      color:#fff;
+      background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(217,70,239,.15));
+      color:#6d28d9;
       font-size:.75rem;
       font-weight:800;
-      padding:.25rem .75rem;
+      padding:.375rem 1rem;
       border-radius:999px;
       text-transform:uppercase;
-      letter-spacing:.5px;
+      letter-spacing:0.8px;
+      border:1.5px solid rgba(124,58,237,.25);
+      transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter:blur(8px);
+    }
+    .category-badge:hover{
+      background:linear-gradient(135deg,rgba(124,58,237,.25),rgba(217,70,239,.25));
+      transform:translateY(-2px);
+      box-shadow:0 4px 12px rgba(124,58,237,0.2);
     }
     .read-time{
       color:#6b7280;
@@ -89,17 +119,42 @@
       font-size:.875rem;
     }
     section{scroll-margin-top:96px}
-    a.link{color:#7c3aed;text-decoration:underline;font-weight:600}
-    a.link:hover{color:#5b21b6}
+    .article-card h3{
+      line-height:1.3;
+      letter-spacing:-0.02em;
+      transition:color 0.3s ease;
+    }
+    .article-card:hover h3{
+      color:#7c3aed;
+    }
+    .article-card p{
+      line-height:1.7;
+      color:#4b5563;
+    }
+    a.link{
+      color:#7c3aed;
+      text-decoration:none;
+      font-weight:700;
+      font-size:0.938rem;
+      letter-spacing:0.01em;
+      transition:all .3s cubic-bezier(0.4, 0, 0.2, 1);
+      display:inline-flex;
+      align-items:center;
+      gap:0.5rem;
+    }
+    a.link:hover{
+      color:#d946ef;
+      transform:translateX(6px);
+    }
   </style>
 </head>
 
 <body class="bg-anim text-gray-900 antialiased overflow-x-hidden">
   <!-- Header -->
   <header class="fixed inset-x-0 top-0 z-40 glass flex items-center justify-between px-[max(1rem,env(safe-area-inset-left))] py-3 mx-auto max-w-7xl" role="banner">
-    <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition" aria-label="Zurück zur KIULY Startseite">
-      <img src="icon.png" alt="KIULY Logo" class="h-10 w-10 rounded-xl" />
-      <span class="font-black text-lg text-white">KIULY</span>
+    <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition" aria-label="Zur Startseite">
+      <img src="icon.png" alt="Logo" class="h-10 w-10 rounded-xl" />
+      <span class="font-black text-lg text-white tracking-tight">KI Bildung</span>
     </a>
     <nav class="hidden lg:flex gap-6 text-sm font-semibold text-white" aria-label="Hauptnavigation">
       <a href="index.html" class="hover:text-fuchsia-300">Startseite</a>
@@ -114,10 +169,10 @@
   <!-- Hero Section -->
   <section id="magazin" class="pt-36 pb-16 px-6 text-center">
     <div class="relative z-10 max-w-5xl mx-auto" data-aos="fade-up">
-          <h1 class="text-4xl md:text-6xl font-black leading-tight drop-shadow-xl text-white mb-6">
+          <h1 class="text-5xl md:text-7xl font-black leading-[1.1] drop-shadow-2xl text-white mb-8 tracking-tight">
             KI in der <span class="text-fuchsia-200">Bildung</span>
           </h1>
-          <p class="text-lg md:text-xl text-fuchsia-100/90 mb-6">
+          <p class="text-xl md:text-2xl text-fuchsia-100/95 mb-8 font-light tracking-wide max-w-3xl mx-auto">
             Evidenzbasierte Forschung & Wissenschaftliche Studien
           </p>
           <div class="glass p-4 mb-8 max-w-2xl mx-auto">
@@ -127,12 +182,12 @@
             </p>
           </div>
       <div class="flex flex-wrap justify-center gap-3 text-sm">
-        <span class="category-badge">Forschung & Studien</span>
-        <span class="category-badge">KI-Tools</span>
-        <span class="category-badge">Digitale Bildung</span>
-        <span class="category-badge">Unterrichtsplanung</span>
-        <span class="category-badge">Praxistipps</span>
-        <span class="category-badge">DSGVO & Datenschutz</span>
+        <span class="category-badge">UNESCO</span>
+        <span class="category-badge">McKinsey</span>
+        <span class="category-badge">OECD PISA</span>
+        <span class="category-badge">Stanford HAI</span>
+        <span class="category-badge">Harvard Education</span>
+        <span class="category-badge">MIT CSAIL</span>
       </div>
     </div>
   </section>
@@ -154,7 +209,7 @@
         <div class="flex items-center justify-between">
           <div class="author-info">
             <img src="icon.png" alt="KIULY" class="w-8 h-8 rounded-full" />
-            <span>KIULY Team · 10. Oktober 2025</span>
+            <span>Redaktion · 10. Oktober 2025</span>
           </div>
           <a href="artikel-unesco-studie.html" class="btn">Artikel lesen</a>
         </div>
@@ -178,7 +233,7 @@
         </div>
       </div>
       
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         
         <!-- Article 1: Studie -->
         <article class="article-card p-6" data-aos="fade-up">
@@ -199,46 +254,8 @@
           <a href="artikel-unesco-studie.html" class="link">Studie lesen →</a>
         </article>
 
-        <!-- Article 2: KI-Tools Vergleich -->
+        <!-- Article 2: McKinsey Studie -->
         <article class="article-card p-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="category-badge">KI-Tools</span>
-            <span class="read-time">9 Min.</span>
-          </div>
-          <h3 class="text-xl font-black text-gray-900 mb-3">
-            Meta-Analyse: 23 KI-Tools für Bildung im Vergleich
-          </h3>
-          <p class="text-gray-700 mb-4 leading-relaxed">
-            Wissenschaftliche Analyse von 23 KI-Tools für Bildung. KIULY erreicht Top-Platzierung bei Preis-Leistungs-Verhältnis und Benutzerfreundlichkeit.
-          </p>
-          <div class="author-info mb-4">
-            <img src="icon.png" alt="KIULY" class="w-6 h-6 rounded-full" />
-            <span>Prof. Dr. Michael Schmidt · 10. Oktober 2025</span>
-          </div>
-          <a href="artikel-ki-tools-vergleich.html" class="link">Analyse lesen →</a>
-        </article>
-
-        <!-- Article 3: Praxis Tutorial -->
-        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="category-badge">Unterrichtsplanung</span>
-            <span class="read-time">8 Min.</span>
-          </div>
-          <h3 class="text-xl font-black text-gray-900 mb-3">
-            Unterrichtsplanung in 3 Schritten: Von der Idee zum fertigen Entwurf
-          </h3>
-          <p class="text-gray-700 mb-4 leading-relaxed">
-            Erfahre, wie du mit KIULY in nur 3 Schritten komplette Unterrichtsentwürfe erstellst. Inklusive praktische Beispiele und Tipps für alle Fächer.
-          </p>
-          <div class="author-info mb-4">
-            <img src="icon.png" alt="KIULY" class="w-6 h-6 rounded-full" />
-            <span>KIULY Team · 8. Oktober 2025</span>
-          </div>
-          <a href="artikel-unterrichtsplanung-tutorial.html" class="link">Tutorial lesen →</a>
-        </article>
-
-        <!-- Article 4: McKinsey Studie -->
-        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="300">
           <div class="flex items-center gap-3 mb-4">
             <span class="category-badge">Forschung & Studien</span>
             <span class="read-time">11 Min.</span>
@@ -256,46 +273,8 @@
           <a href="artikel-mckinsey-studie.html" class="link">Studie lesen →</a>
         </article>
 
-        <!-- Article 5: Differenzierung -->
-        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="400">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="category-badge">Digitale Bildung</span>
-            <span class="read-time">7 Min.</span>
-          </div>
-          <h3 class="text-xl font-black text-gray-900 mb-3">
-            Differenzierung leicht gemacht: DaZ, Inklusion & Barrierefreiheit
-          </h3>
-          <p class="text-gray-700 mb-4 leading-relaxed">
-            Wie du mit KIULY automatisch differenzierte Materialien erstellst. Praktische Tipps für DaZ-Lernende und inklusive Settings.
-          </p>
-          <div class="author-info mb-4">
-            <img src="icon.png" alt="KIULY" class="w-6 h-6 rounded-full" />
-            <span>Prof. Dr. Lisa Klein · 4. Oktober 2025</span>
-          </div>
-          <a href="artikel-differenzierung.html" class="link">Weiterlesen →</a>
-        </article>
-
-        <!-- Article 6: DSGVO -->
-        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="500">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="category-badge">DSGVO & Datenschutz</span>
-            <span class="read-time">6 Min.</span>
-          </div>
-          <h3 class="text-xl font-black text-gray-900 mb-3">
-            Datenschutz in der Schule: Warum KIULY DSGVO-konform ist
-          </h3>
-          <p class="text-gray-700 mb-4 leading-relaxed">
-            Erklärung, warum KIULY keine personenbezogenen Daten speichert und wie wir DSGVO-Konformität gewährleisten.
-          </p>
-          <div class="author-info mb-4">
-            <img src="icon.png" alt="KIULY" class="w-6 h-6 rounded-full" />
-            <span>Rechtsanwalt Dr. Thomas Weber · 2. Oktober 2025</span>
-          </div>
-          <a href="artikel-dsgvo.html" class="link">Weiterlesen →</a>
-        </article>
-
-        <!-- Article 7: OECD Studie -->
-        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="600">
+        <!-- Article 3: OECD Studie -->
+        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="200">
           <div class="flex items-center gap-3 mb-4">
             <span class="category-badge">Forschung & Studien</span>
             <span class="read-time">10 Min.</span>
@@ -313,27 +292,8 @@
           <a href="artikel-oecd-studie.html" class="link">Studie lesen →</a>
         </article>
 
-        <!-- Article 8: Kalender Integration -->
-        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="700">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="category-badge">Praxistipps</span>
-            <span class="read-time">5 Min.</span>
-          </div>
-          <h3 class="text-xl font-black text-gray-900 mb-3">
-            iOS-Kalender Integration: Deine Stunden perfekt organisiert
-          </h3>
-          <p class="text-gray-700 mb-4 leading-relaxed">
-            Wie du mit KIULY automatisch Kalendertermine erstellst. Inklusive Material-Links, Erinnerungen und Raumzuweisung.
-          </p>
-          <div class="author-info mb-4">
-            <img src="icon.png" alt="KIULY" class="w-6 h-6 rounded-full" />
-            <span>KIULY Team · 30. September 2025</span>
-          </div>
-          <a href="artikel-kalender.html" class="link">Weiterlesen →</a>
-        </article>
-
-        <!-- Article 9: Stanford Studie -->
-        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="800">
+        <!-- Article 4: Stanford Studie -->
+        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="300">
           <div class="flex items-center gap-3 mb-4">
             <span class="category-badge">Forschung & Studien</span>
             <span class="read-time">9 Min.</span>
@@ -351,27 +311,8 @@
           <a href="artikel-stanford-studie.html" class="link">Studie lesen →</a>
         </article>
 
-        <!-- Article 10: KIULY SNAP -->
-        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="900">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="category-badge">Roadmap</span>
-            <span class="read-time">4 Min.</span>
-          </div>
-          <h3 class="text-xl font-black text-gray-900 mb-3">
-            KIULY SNAP: Ein Foto genügt für komplette Unterrichtsplanung
-          </h3>
-          <p class="text-gray-700 mb-4 leading-relaxed">
-            Preview auf das kommende KIULY SNAP Feature: Einfach ein Foto vom Lehrbuch machen und KIULY erstellt den kompletten Unterrichtsentwurf.
-          </p>
-          <div class="author-info mb-4">
-            <img src="icon.png" alt="KIULY" class="w-6 h-6 rounded-full" />
-            <span>KIULY Team · 26. September 2025</span>
-          </div>
-          <a href="artikel-snap.html" class="link">Weiterlesen →</a>
-        </article>
-
-        <!-- Article 11: Harvard Studie -->
-        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="1000">
+        <!-- Article 5: Harvard Studie -->
+        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="400">
           <div class="flex items-center gap-3 mb-4">
             <span class="category-badge">Forschung & Studien</span>
             <span class="read-time">8 Min.</span>
@@ -389,8 +330,8 @@
           <a href="artikel-harvard-studie.html" class="link">Studie lesen →</a>
         </article>
 
-        <!-- Article 12: MIT Studie -->
-        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="1100">
+        <!-- Article 6: MIT Studie -->
+        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="500">
           <div class="flex items-center gap-3 mb-4">
             <span class="category-badge">Forschung & Studien</span>
             <span class="read-time">7 Min.</span>
@@ -434,7 +375,7 @@
 
   <!-- Footer -->
   <footer class="py-10 text-center text-sm glass mx-4 mb-6">
-    <p>Made in Essen · <span id="year"></span> · KIULY – DSGVO-konform</p>
+    <p>Bildungsforschung · <span id="year"></span> · Evidenzbasiert & Wissenschaftlich</p>
     <nav class="space-x-4 mt-3">
       <a href="index.html" class="underline text-white">Startseite</a>
       <a href="index.html#features" class="underline text-white">Features</a>
@@ -475,12 +416,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "KIULY Magazin",
+    "name": "KI Bildungsforschung Magazin",
     "description": "Praxistipps für Lehrer*innen, KI-Tools im Unterricht, Unterrichtsplanung & digitale Bildung",
     "url": "https://kiuly.de/magazin.html",
     "publisher": {
       "@type": "Organization",
-      "name": "KIULY Labs",
+      "name": "Bildungsforschung Redaktion",
       "logo": "https://kiuly.de/icon.png"
     },
     "blogPost": [
@@ -490,7 +431,7 @@
         "datePublished": "2025-10-10",
         "author": {
           "@type": "Organization",
-          "name": "KIULY Team"
+          "name": "Redaktionsteam"
         },
         "description": "Eine neue Studie zeigt: Lehrkräfte sparen durchschnittlich 5,9 Stunden pro Woche durch KI-Tools."
       },
