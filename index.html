@@ -304,24 +304,38 @@
   
   <!-- Custom Beautiful Styles -->
   <style>
+    /* Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
     .glass-beautiful {
-      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
-      backdrop-filter: blur(20px) saturate(180%);
-      border: 1px solid rgba(255,255,255,0.2);
+      background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%);
+      backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255,255,255,0.18);
       border-radius: 2rem;
       box-shadow: 
-        0 8px 32px rgba(0,0,0,0.1),
-        inset 0 1px 0 rgba(255,255,255,0.2),
-        0 0 0 1px rgba(255,255,255,0.05);
+        0 4px 24px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.15);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .floating-animation {
-      animation: float 6s ease-in-out infinite;
+      animation: float 8s ease-in-out infinite;
     }
     
     @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(1deg); }
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
     }
     
     .sparkle {
@@ -336,32 +350,33 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.06), transparent);
       transform: rotate(45deg);
-      transition: all 0.6s;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       opacity: 0;
+      pointer-events: none;
     }
     
     .sparkle:hover::before {
-      animation: sparkle 0.6s ease-in-out;
+      animation: sparkle 0.8s ease-out;
     }
     
     @keyframes sparkle {
       0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
-      50% { opacity: 1; }
+      50% { opacity: 0.8; }
       100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
     }
     
     .beautiful-hover {
-      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .beautiful-hover:hover {
-      transform: translateY(-8px) scale(1.02);
+      transform: translateY(-4px) scale(1.01);
       box-shadow: 
-        0 20px 40px rgba(0,0,0,0.15),
-        0 0 0 1px rgba(255,255,255,0.1),
-        inset 0 1px 0 rgba(255,255,255,0.3);
+        0 12px 32px rgba(0,0,0,0.12),
+        0 0 0 1px rgba(255,255,255,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.2);
     }
     
     .pulse-glow {
