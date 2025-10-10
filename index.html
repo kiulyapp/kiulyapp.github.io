@@ -32,11 +32,23 @@
   <meta name="revisit-after" content="7 days" />
   <meta name="language" content="de" />
   <meta name="geo.country" content="DE" />
+  <!-- PWA Meta Tags -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="KIULY" />
   <meta name="msapplication-TileColor" content="#7c3aed" />
   <meta name="msapplication-config" content="/browserconfig.xml" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/icon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon.png" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -1357,6 +1369,33 @@
       });
     });
   })();
+
+  // PWA Service Worker Registration
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('KIULY Service Worker registered:', registration.scope);
+        })
+        .catch(error => {
+          console.log('KIULY Service Worker registration failed:', error);
+        });
+    });
+  }
+
+  // PWA Install Prompt
+  let deferredPrompt;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    // Show install button or banner
+    console.log('KIULY PWA install prompt available');
+  });
+
+  // PWA Install Handler
+  window.addEventListener('appinstalled', (evt) => {
+    console.log('KIULY PWA installed successfully');
+  });
 </script>
 </body>
 </html>
