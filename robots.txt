@@ -1,0 +1,36 @@
+# robots.txt für KIULY.de
+# Optimiert für Suchmaschinen-Crawler
+
+User-agent: *
+Allow: /
+
+# Explizit erlauben (wichtige Seiten)
+Allow: /index.html
+Allow: /impressum.html
+Allow: /datenschutz.html
+Allow: /nutzungsbedingungen.html
+
+# Medien für Indexierung erlauben
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.webp
+Allow: /*.svg
+Allow: /*.webm
+
+# Sitemap
+Sitemap: https://kiuly.de/sitemap.xml
+
+# Crawl-Delay (optional, höflich gegenüber Server)
+Crawl-delay: 1
+
+# Spezifische Bot-Regeln
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
