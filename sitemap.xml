@@ -136,5 +136,12 @@
     <priority>0.8</priority>
   </url>
   
+  <url>
+    <loc>https://kiuly.de/artikel-ki-tools-vergleich.html</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
 </urlset>
 
