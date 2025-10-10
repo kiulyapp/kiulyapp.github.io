@@ -18,6 +18,14 @@
     </image:image>
   </url>
   
+  <!-- Magazin -->
+  <url>
+    <loc>https://kiuly.de/magazin.html</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- Rechtliche Seiten -->
   <url>
     <loc>https://kiuly.de/impressum.html</loc>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark light" />
+  
+  <title>KIULY Magazin – KI-Tools & Unterrichtsplanung</title>
+  <meta name="description" content="KIULY Magazin: Praxistipps für Lehrer*innen, KI-Tools im Unterricht, Unterrichtsplanung & digitale Bildung. Von Experten für Experten." />
+  <meta name="keywords" content="Lehrer Blog, KI Tools Unterricht, Unterrichtsplanung Tipps, Digitale Bildung, Lehrer Ressourcen, KI Unterricht, Bildungstechnologie, Lehrkräfte Community, Unterrichtsmaterial, Pädagogik Blog, KIULY Magazin" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="KIULY Labs – Pascal Obermeit" />
+  <meta name="theme-color" content="#7c3aed" />
+  <link rel="canonical" href="https://kiuly.de/magazin.html" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="KIULY Magazin – KI-Tools & Unterrichtsplanung" />
+  <meta property="og:description" content="Praxistipps für Lehrer*innen, KI-Tools im Unterricht, Unterrichtsplanung & digitale Bildung." />
+  <meta property="og:url" content="https://kiuly.de/magazin.html" />
+  <meta property="og:image" content="https://kiuly.de/icon.png" />
+  <meta property="og:image:alt" content="KIULY Magazin Logo" />
+  
+  <!-- Favicons & Fonts -->
+  <link rel="icon" href="icon.png" sizes="512x512" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <noscript><style>[data-aos]{opacity:1!important;transform:none!important}</style></noscript>
+  
+  <style>
+    :root{
+      --brand-dark:#13141B;
+      --brand-primary:#7c3aed;
+      --brand-accent:#d946ef;
+    }
+    body{font-family:'Inter',sans-serif;}
+    .bg-anim{
+      background:linear-gradient(130deg,var(--brand-dark) 0%,#4c3ae0 35%,#cf58f1 70%,#fdeeff 100%);
+      background-size:300% 300%;
+    }
+    .glass{
+      background:rgba(255,255,255,.12);
+      backdrop-filter:blur(18px) saturate(1.1);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:1.6rem;
+      box-shadow:0 8px 36px #a78bfa55;
+    }
+    .article-card{
+      background:rgba(255,255,255,.95);
+      backdrop-filter:blur(18px) saturate(1.1);
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:1.6rem;
+      box-shadow:0 8px 36px #a78bfa33;
+      transition:transform .3s ease, box-shadow .3s ease;
+    }
+    .article-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 16px 48px #a78bfa66;
+    }
+    .category-badge{
+      background:linear-gradient(135deg,#7c3aed,#d946ef);
+      color:#fff;
+      font-size:.75rem;
+      font-weight:800;
+      padding:.25rem .75rem;
+      border-radius:999px;
+      text-transform:uppercase;
+      letter-spacing:.5px;
+    }
+    .read-time{
+      color:#6b7280;
+      font-size:.875rem;
+      display:flex;
+      align-items:center;
+      gap:.25rem;
+    }
+    .author-info{
+      display:flex;
+      align-items:center;
+      gap:.5rem;
+      color:#6b7280;
+      font-size:.875rem;
+    }
+    section{scroll-margin-top:96px}
+    a.link{color:#7c3aed;text-decoration:underline;font-weight:600}
+    a.link:hover{color:#5b21b6}
+  </style>
+</head>
+
+<body class="bg-anim text-gray-900 antialiased overflow-x-hidden">
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-40 glass flex items-center justify-between px-[max(1rem,env(safe-area-inset-left))] py-3 mx-auto max-w-7xl" role="banner">
+    <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition" aria-label="Zurück zur KIULY Startseite">
+      <img src="icon.png" alt="KIULY Logo" class="h-10 w-10 rounded-xl" />
+      <span class="font-black text-lg text-white">KIULY</span>
+    </a>
+    <nav class="hidden lg:flex gap-6 text-sm font-semibold text-white" aria-label="Hauptnavigation">
+      <a href="index.html" class="hover:text-fuchsia-300">Startseite</a>
+      <a href="index.html#features" class="hover:text-fuchsia-300">Features</a>
+      <a href="index.html#preise" class="hover:text-fuchsia-300">Preis</a>
+      <a href="#magazin" class="text-fuchsia-300 font-bold">Magazin</a>
+      <a href="index.html#kontakt" class="hover:text-fuchsia-300">Kontakt</a>
+    </nav>
+    <span class="magnet-area"><a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="btn text-sm magnet-target">App laden</a></span>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="magazin" class="pt-36 pb-16 px-6 text-center">
+    <div class="relative z-10 max-w-4xl mx-auto" data-aos="fade-up">
+      <h1 class="text-4xl md:text-6xl font-black leading-tight drop-shadow-xl text-white mb-6">
+        KIULY <span class="text-fuchsia-200">Magazin</span>
+      </h1>
+      <p class="text-lg md:text-xl text-fuchsia-100/90 mb-8">
+        Praxistipps, KI-Tools & Innovationen für die digitale Bildung
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 text-sm">
+        <span class="category-badge">KI-Tools</span>
+        <span class="category-badge">Unterrichtsplanung</span>
+        <span class="category-badge">Digitale Bildung</span>
+        <span class="category-badge">Praxistipps</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Article -->
+  <section class="py-12 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="article-card p-8 md:p-12" data-aos="zoom-in">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="category-badge">Featured</span>
+          <span class="read-time">8 Min. Lesezeit</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">
+          KI in der Bildung: 5,9 Stunden pro Woche Zeitersparnis durch KI-Tools
+        </h2>
+        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+          Eine neue Studie der Gallup & Walton Family Foundation zeigt: Lehrkräfte sparen durchschnittlich 5,9 Stunden pro Woche durch KI-Tools. Das entspricht mehr als 6 Arbeitswochen pro Jahr. Wir zeigen dir, wie auch du diese Zeitersparnis erzielen kannst.
+        </p>
+        <div class="flex items-center justify-between">
+          <div class="author-info">
+            <img src="icon.png" alt="KIULY" class="w-8 h-8 rounded-full" />
+            <span>KIULY Team · 10. Oktober 2025</span>
+          </div>
+          <a href="#article-1" class="btn">Artikel lesen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Grid -->
+  <section class="py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-extrabold text-center mb-12 text-white" data-aos="fade-up">Neueste Artikel</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Article 1 -->
+        <article class="article-card p-6" data-aos="fade-up">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="category-badge">Tutorial</span>
+            <span class="read-time">5 Min.</span>
+          </div>
+          <h3 class="text-xl font-black text-gray-900 mb-3">
+            Unterrichtsplanung in 3 Schritten: Von der Idee zum fertigen Entwurf
+          </h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Erfahre, wie du mit KIULY in nur 3 Schritten komplette Unterrichtsentwürfe erstellst. Inklusive praktische Beispiele und Tipps für alle Fächer.
+          </p>
+          <div class="author-info mb-4">
+            <img src="icon.png" alt="KIULY" class="w-6 h-6 rounded-full" />
+            <span>KIULY Team · 8. Oktober 2025</span>
+          </div>
+          <a href="#article-2" class="link">Weiterlesen →</a>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="category-badge">KI-Tools</span>
+            <span class="read-time">7 Min.</span>
+          </div>
+          <h3 class="text-xl font-black text-gray-900 mb-3">
+            KI-Tools im Vergleich: Was kosten Alternativen zu KIULY?
+          </h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Detaillierter Vergleich von KIULY mit Teachino, fobizz und to-teach.ai. Preise, Features und warum KIULY bis zu 95% günstiger ist.
+          </p>
+          <div class="author-info mb-4">
+            <img src="icon.png" alt="KIULY" class="w-6 h-6 rounded-full" />
+            <span>KIULY Team · 6. Oktober 2025</span>
+          </div>
+          <a href="#article-3" class="link">Weiterlesen →</a>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="category-badge">Praxis</span>
+            <span class="read-time">6 Min.</span>
+          </div>
+          <h3 class="text-xl font-black text-gray-900 mb-3">
+            Differenzierung leicht gemacht: DaZ, Inklusion & Barrierefreiheit
+          </h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Wie du mit KIULY automatisch differenzierte Materialien erstellst. Praktische Tipps für DaZ-Lernende und inklusive Settings.
+          </p>
+          <div class="author-info mb-4">
+            <img src="icon.png" alt="KIULY" class="w-6 h-6 rounded-full" />
+            <span>KIULY Team · 4. Oktober 2025</span>
+          </div>
+          <a href="#article-4" class="link">Weiterlesen →</a>
+        </article>
+
+        <!-- Article 4 -->
+        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="category-badge">DSGVO</span>
+            <span class="read-time">4 Min.</span>
+          </div>
+          <h3 class="text-xl font-black text-gray-900 mb-3">
+            Datenschutz in der Schule: Warum KIULY DSGVO-konform ist
+          </h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Erklärung, warum KIULY keine personenbezogenen Daten speichert und wie wir DSGVO-Konformität gewährleisten.
+          </p>
+          <div class="author-info mb-4">
+            <img src="icon.png" alt="KIULY" class="w-6 h-6 rounded-full" />
+            <span>KIULY Team · 2. Oktober 2025</span>
+          </div>
+          <a href="#article-5" class="link">Weiterlesen →</a>
+        </article>
+
+        <!-- Article 5 -->
+        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="category-badge">Tipps</span>
+            <span class="read-time">5 Min.</span>
+          </div>
+          <h3 class="text-xl font-black text-gray-900 mb-3">
+            iOS-Kalender Integration: Deine Stunden perfekt organisiert
+          </h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Wie du mit KIULY automatisch Kalendertermine erstellst. Inklusive Material-Links, Erinnerungen und Raumzuweisung.
+          </p>
+          <div class="author-info mb-4">
+            <img src="icon.png" alt="KIULY" class="w-6 h-6 rounded-full" />
+            <span>KIULY Team · 30. September 2025</span>
+          </div>
+          <a href="#article-6" class="link">Weiterlesen →</a>
+        </article>
+
+        <!-- Article 6 -->
+        <article class="article-card p-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="category-badge">Roadmap</span>
+            <span class="read-time">3 Min.</span>
+          </div>
+          <h3 class="text-xl font-black text-gray-900 mb-3">
+            KIULY SNAP: Ein Foto genügt für komplette Unterrichtsplanung
+          </h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Preview auf das kommende KIULY SNAP Feature: Einfach ein Foto vom Lehrbuch machen und KIULY erstellt den kompletten Unterrichtsentwurf.
+          </p>
+          <div class="author-info mb-4">
+            <img src="icon.png" alt="KIULY" class="w-6 h-6 rounded-full" />
+            <span>KIULY Team · 28. September 2025</span>
+          </div>
+          <a href="#article-7" class="link">Weiterlesen →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-16 px-6 bg-white/5 backdrop-blur-sm">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="glass p-8 md:p-12" data-aos="fade-up">
+        <h2 class="text-3xl font-extrabold text-white mb-4">Bleib auf dem Laufenden</h2>
+        <p class="text-lg text-fuchsia-100/90 mb-8">
+          Erhalte die neuesten Artikel, KI-Tool-Tipps und Updates direkt in dein Postfach
+        </p>
+        <div class="max-w-md mx-auto flex gap-3">
+          <input type="email" placeholder="Deine E-Mail-Adresse" 
+                 class="flex-1 px-4 py-3 rounded-xl bg-white/20 text-white placeholder-white/60 border border-white/30 focus:ring-2 focus:ring-fuchsia-300 focus:outline-none" />
+          <button class="btn px-6">Anmelden</button>
+        </div>
+        <p class="text-sm text-fuchsia-200/70 mt-4">
+          Kein Spam. Jederzeit abmeldbar. DSGVO-konform.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 text-center text-sm glass mx-4 mb-6">
+    <p>Made in Essen · <span id="year"></span> · KIULY – DSGVO-konform</p>
+    <nav class="space-x-4 mt-3">
+      <a href="index.html" class="underline text-white">Startseite</a>
+      <a href="index.html#features" class="underline text-white">Features</a>
+      <a href="index.html#preise" class="underline text-white">Preis</a>
+      <a href="#magazin" class="underline text-fuchsia-300 font-bold">Magazin</a>
+      <a href="index.html#kontakt" class="underline text-white">Kontakt</a>
+    </nav>
+    <nav class="space-x-4 mt-2">
+      <a href="impressum.html" rel="nofollow" class="underline text-white">Impressum</a>
+      <a href="datenschutz.html" rel="nofollow" class="underline text-white">Datenschutz</a>
+      <a href="nutzungsbedingungen.html" rel="nofollow" class="underline text-white">Nutzungs­bedingungen</a>
+    </nav>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // init AOS (robust; respect reduced motion)
+    (function(){
+      const start = () => {
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (window.AOS && typeof AOS.init === 'function') {
+          AOS.init({ once:true, duration: prefersReduced? 0 : 260, offset: 24 });
+        } else {
+          document.querySelectorAll('[data-aos]').forEach(el=>{ el.style.opacity='1'; el.style.transform='none'; });
+        }
+      };
+      if (document.readyState === 'complete') start();
+      else window.addEventListener('load', start);
+    })();
+  </script>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "KIULY Magazin",
+    "description": "Praxistipps für Lehrer*innen, KI-Tools im Unterricht, Unterrichtsplanung & digitale Bildung",
+    "url": "https://kiuly.de/magazin.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "KIULY Labs",
+      "logo": "https://kiuly.de/icon.png"
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "KI in der Bildung: 5,9 Stunden pro Woche Zeitersparnis durch KI-Tools",
+        "datePublished": "2025-10-10",
+        "author": {
+          "@type": "Organization",
+          "name": "KIULY Team"
+        },
+        "description": "Eine neue Studie zeigt: Lehrkräfte sparen durchschnittlich 5,9 Stunden pro Woche durch KI-Tools."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Unterrichtsplanung in 3 Schritten: Von der Idee zum fertigen Entwurf",
+        "datePublished": "2025-10-08",
+        "author": {
+          "@type": "Organization",
+          "name": "KIULY Team"
+        },
+        "description": "Erfahre, wie du mit KIULY in nur 3 Schritten komplette Unterrichtsentwürfe erstellst."
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
