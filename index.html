@@ -41,22 +41,24 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="de_DE" />
-  <meta property="og:site_name" content="KIULY" />
-  <meta property="og:title" content="KIULY – Unterrichtsentwürfe & Material in Sekunden" />
-  <meta property="og:description" content="Unterrichtsplanung & Material in Sekunden. 0,99 €/Monat – monatlich kündbar." />
+  <meta property="og:site_name" content="KIULY – KI Unterrichtsplanung" />
+  <meta property="og:title" content="KIULY – 5,9h Zeitersparnis/Woche (UNESCO) | KI Unterrichtsplanung 0,99€" />
+  <meta property="og:description" content="DSGVO-konforme KI. Wissenschaftlich validiert: UNESCO, McKinsey, Stanford, MIT. Lösungsblätter, KI-Timer, Differenzierung. 0,99€/Monat." />
   <meta property="og:url" content="https://kiuly.de/" />
   <meta property="og:image" content="https://kiuly.de/icon.png" />
-  <meta property="og:image:alt" content="KIULY App Logo" />
+  <meta property="og:image:alt" content="KIULY – KI Unterrichtsplanung mit 5,9h Zeitersparnis (UNESCO-Studie)" />
   <meta property="og:image:type" content="image/png" />
+  <meta property="article:publisher" content="https://kiuly.de" />
+  <meta property="article:author" content="KIULY Labs" />
   <meta property="og:image:width" content="512" />
   <meta property="og:image:height" content="512" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@kiuly_app" />
-  <meta name="twitter:creator" content="@kiuly_app" />
-  <meta name="twitter:title" content="KIULY – Unterrichtsentwürfe & Material in Sekunden" />
-  <meta name="twitter:description" content="Unterrichtsplanung & Material – 0,99 €/Monat. Differenziert, lehrplankonform, DSGVO‑konform." />
+  <meta name="twitter:description" content="Wissenschaftlich validiert (UNESCO, MIT). Lösungsblätter + KI-Stundentimer. DSGVO-konform. 0,99€/Monat." />
+  <meta name="twitter:title" content="KIULY – 5,9h Zeitersparnis (UNESCO-Studie) | KI Unterrichtsplanung" />
+  <meta name="twitter:description" content="Wissenschaftlich validiert. Lösungsblätter + KI-Stundentimer. DSGVO-konform. 0,99€/Monat." />
   <meta name="twitter:image" content="https://kiuly.de/icon.png" />
   <meta name="twitter:image:alt" content="KIULY App Logo" />
 
@@ -84,12 +86,32 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "KIULY",
+    "name": "KIULY Labs",
     "url": "https://kiuly.de/",
-    "logo": "icon.png",
-    "slogan": "Von Lehrer*innen für Lehrer*innen",
-    "inLanguage": "de-DE", "alternateName": ["Lehrerapp","Lehrer App","KI Lehrer App","Lehrer‑KI","Unterrichts‑KI","Unterrichtsvorbereitung App","Unterrichtsplanung App","Arbeitsblatt Generator App"],
-    "sameAs": ["https://x.com/kiuly_app","https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544"]
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://kiuly.de/icon.png",
+      "width": "512",
+      "height": "512"
+    },
+    "slogan": "Wissenschaftlich validiert: 5,9h Zeitersparnis pro Woche",
+    "inLanguage": "de-DE",
+    "alternateName": ["KIULY","Lehrerapp","Lehrer App","KI Lehrer App","Unterrichts-KI"],
+    "sameAs": ["https://x.com/kiuly_app","https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Essen",
+      "addressRegion": "NRW",
+      "addressCountry": "DE"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "support@kiuly.de",
+      "availableLanguage": ["German"]
+    },
+    "foundingDate": "2025",
+    "knowsAbout": ["Artificial Intelligence in Education", "Teacher Productivity", "Lesson Planning", "UNESCO Education Research", "McKinsey Education Studies"]
   }
   </script>
   <script type="application/ld+json">
@@ -270,10 +292,12 @@
   
   <!-- Performance Optimizations -->
   <link rel="preload" href="icon.png" as="image" />
-  <link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script" crossorigin />
   <link rel="dns-prefetch" href="//unpkg.com" />
   <link rel="dns-prefetch" href="//fonts.googleapis.com" />
   <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="//apps.apple.com" />
+  <link rel="preconnect" href="https://apps.apple.com" crossorigin />
 
   <!-- Tailwind & Animation Libs -->
   <script src="https://cdn.tailwindcss.com"></script>
