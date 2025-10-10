@@ -1,56 +1,82 @@
-const CACHE_NAME = 'kiuly-v1.0.0';
+const CACHE_NAME = 'kiuly-v1.1.0';
+const STATIC_CACHE = 'kiuly-static-v1.1.0';
+const DYNAMIC_CACHE = 'kiuly-dynamic-v1.1.0';
+
 const urlsToCache = [
   '/',
   '/index.html',
-  '/magazin.html',
-  '/faq.html',
-  '/impressum.html',
-  '/datenschutz.html',
-  '/nutzungsbedingungen.html',
   '/icon.png',
-  '/kiuly-logo.png',
-  '/app-store-logo.png',
   '/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg',
-  '/sitemap.xml',
-  '/robots.txt',
   '/manifest.json',
-  '/browserconfig.xml',
-  '/404.html',
-  'https://cdn.tailwindcss.com',
-  'https://unpkg.com/aos@2.3.4/dist/aos.css',
-  'https://unpkg.com/aos@2.3.4/dist/aos.js',
-  'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap',
-  'https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js'
+  '/sw.js'
 ];
 
-// Install event - cache resources
+const criticalResources = [
+  'https://cdn.tailwindcss.com',
+  'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap'
+];
+
+// Install event - cache critical resources only
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
+    caches.open(STATIC_CACHE)
       .then(cache => {
-        console.log('KIULY Service Worker: Caching files');
-        return cache.addAll(urlsToCache);
+        console.log('KIULY Service Worker: Caching critical files');
+        return Promise.all([
+          cache.addAll(urlsToCache),
+          caches.open(DYNAMIC_CACHE).then(cache => cache.addAll(criticalResources))
+        ]);
       })
       .catch(error => {
         console.log('KIULY Service Worker: Cache failed', error);
       })
   );
+  self.skipWaiting();
 });
 
-// Fetch event - serve from cache
+// Fetch event - optimized caching strategy
 self.addEventListener('fetch', event => {
+  // Skip non-GET requests
+  if (event.request.method !== 'GET') return;
+  
   event.respondWith(
     caches.match(event.request)
       .then(response => {
-        // Return cached version or fetch from network
-        return response || fetch(event.request);
-      })
-      .catch(error => {
-        console.log('KIULY Service Worker: Fetch failed', error);
-        // Return offline page for navigation requests
-        if (event.request.mode === 'navigate') {
-          return caches.match('/404.html');
+        if (response) {
+          return response;
         }
+        
+        // Network first for critical resources
+        if (criticalResources.includes(event.request.url)) {
+          return fetch(event.request).then(fetchResponse => {
+            const responseClone = fetchResponse.clone();
+            caches.open(DYNAMIC_CACHE).then(cache => {
+              cache.put(event.request, responseClone);
+            });
+            return fetchResponse;
+          }).catch(() => {
+            return new Response('Offline', { status: 503 });
+          });
+        }
+        
+        // Cache first for other resources
+        return fetch(event.request).then(fetchResponse => {
+          if (!fetchResponse || fetchResponse.status !== 200) {
+            return fetchResponse;
+          }
+          
+          const responseClone = fetchResponse.clone();
+          caches.open(DYNAMIC_CACHE).then(cache => {
+            cache.put(event.request, responseClone);
+          });
+          
+          return fetchResponse;
+        }).catch(error => {
+          console.log('KIULY Service Worker: Fetch failed', error);
+          if (event.request.mode === 'navigate') {
+            return caches.match('/404.html');
+          }
+        });
       })
   );
 });

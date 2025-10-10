@@ -405,12 +405,38 @@
   <link rel="dns-prefetch" href="//fonts.gstatic.com" />
   <link rel="dns-prefetch" href="//apps.apple.com" />
   <link rel="preconnect" href="https://apps.apple.com" crossorigin />
+  
+  <!-- Critical CSS Inline -->
+  <style>
+    /* Critical CSS for above-the-fold content */
+    body{font-family:'Inter',sans-serif;margin:0;padding:0;background:#0a0a0f;color:#fff;font-display:swap}
+    .glass{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);will-change:transform}
+    header{position:fixed;top:0;left:0;right:0;z-index:40;padding:12px;display:flex;align-items:center;justify-content:space-between;contain:layout}
+    #hero{padding-top:144px;padding-bottom:96px;text-align:center;position:relative;contain:layout}
+    .text-4xl{font-size:2.25rem;line-height:2.5rem;font-display:swap}
+    .text-6xl{font-size:3.75rem;line-height:1;font-display:swap}
+    .font-black{font-weight:900;font-display:swap}
+    .mb-8{margin-bottom:2rem}
+    .max-w-3xl{max-width:48rem}
+    .mx-auto{margin-left:auto;margin-right:auto}
+    .flex{display:flex}
+    .flex-col{flex-direction:column}
+    .items-center{align-items:center}
+    .hidden{display:none}
+    .classroom-illustration{contain:layout;will-change:transform}
+    @media (min-width:1024px){.lg\\:flex{display:flex}}
+  </style>
 
-  <!-- Tailwind & Animation Libs -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <noscript><style>[data-aos]{opacity:1!important;transform:none!important}</style></noscript>
-  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+  <!-- Non-Critical CSS (Load after critical) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" /></noscript>
+  
+  <!-- Critical JavaScript -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  
+  <!-- Non-Critical JavaScript (Load after page) -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module" defer></script>
 
   <!-- Styles -->
   <style>
@@ -583,7 +609,7 @@
 <!-- ────────── HEADER ────────── -->
 <header class="fixed inset-x-0 top-0 z-40 glass flex items-center justify-between px-[max(1rem,env(safe-area-inset-left))] py-3 mx-auto max-w-7xl" role="banner">
   <a href="#hero" class="flex items-center gap-2 hover:scale-105 transition-transform" aria-label="KIULY Start">
-    <img src="icon.png" alt="KIULY – KI Unterrichtsplanung App Logo" class="h-10 w-10 rounded-xl" width="40" height="40" loading="eager" />
+    <img src="icon.png" alt="KIULY – KI Unterrichtsplanung App Logo" class="h-10 w-10 rounded-xl" width="40" height="40" loading="eager" fetchpriority="high" />
     <span class="sr-only">KIULY</span>
   </a>
   <nav class="hidden lg:flex gap-6 text-sm font-semibold" aria-label="Hauptnavigation">
@@ -608,7 +634,7 @@
       <div class="blob b3"></div>
     </div>
     <!-- Beautiful Classroom Illustration -->
-    <div class="classroom-illustration glass-beautiful floating-animation mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+    <div class="classroom-illustration glass-beautiful floating-animation mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200" style="aspect-ratio: 16/9; min-height: 200px;">
       <div class="relative z-10 text-center">
         <div class="text-6xl mb-4">🎓</div>
         <h2 class="text-2xl font-bold text-white mb-2">Klassenraum der Zukunft</h2>
@@ -655,7 +681,7 @@
     <!-- App Store Badge -->
     <span class="magnet-area">
       <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="inline-block mt-10 magnet-target" aria-label="Im App Store laden" rel="noopener noreferrer">
-        <img src="Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="KIULY im App Store laden - KI Unterrichtsplanung App" class="h-10 md:h-12" width="120" height="40" loading="eager" />
+        <img src="Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="KIULY im App Store laden - KI Unterrichtsplanung App" class="h-10 md:h-12" width="120" height="40" loading="lazy" />
       </a>
     </span>
 
