@@ -5,7 +5,7 @@
   <!-- Hauptseite -->
   <url>
     <loc>https://kiuly.de/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -21,7 +21,7 @@
   <!-- Magazin -->
   <url>
     <loc>https://kiuly.de/magazin.html</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -29,21 +29,21 @@
   <!-- Rechtliche Seiten -->
   <url>
     <loc>https://kiuly.de/impressum.html</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
     <loc>https://kiuly.de/datenschutz.html</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
     <loc>https://kiuly.de/nutzungsbedingungen.html</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -51,35 +51,35 @@
   <!-- Wichtige Sektionen (als Anker-Links) -->
   <url>
     <loc>https://kiuly.de/#how-it-works</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://kiuly.de/#features</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://kiuly.de/#preise</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://kiuly.de/#roadmap</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://kiuly.de/#faq</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -87,14 +87,14 @@
   <!-- Magazine Articles -->
   <url>
     <loc>https://kiuly.de/artikel-unesco-studie.html</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://kiuly.de/artikel-mckinsey-studie.html</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -102,7 +102,7 @@
   <!-- FAQ Page -->
   <url>
     <loc>https://kiuly.de/faq.html</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -110,28 +110,28 @@
   <!-- Additional Magazine Articles -->
   <url>
     <loc>https://kiuly.de/artikel-oecd-studie.html</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://kiuly.de/artikel-stanford-studie.html</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://kiuly.de/artikel-harvard-studie.html</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://kiuly.de/artikel-mit-studie.html</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2024-12-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
