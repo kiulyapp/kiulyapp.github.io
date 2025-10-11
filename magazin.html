@@ -42,6 +42,10 @@
   <link rel="dns-prefetch" href="https://apps.apple.com" />
   <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
   <link rel="dns-prefetch" href="https://unpkg.com" />
+  <link rel="dns-prefetch" href="https://cloud.umami.is" />
+  
+  <!-- Umami Analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="cbb1d1f2-1d9c-41d4-b235-760f8ea846c9"></script>
   
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
@@ -502,6 +506,14 @@
           if (response.ok) {
             messagesDiv.innerHTML = '<p class="text-green-300 text-sm font-semibold">✅ Danke! Du hast dich erfolgreich angemeldet.</p>';
             form.reset();
+            
+            // Track newsletter signup with Umami
+            if (window.umami) {
+              window.umami.track('newsletter-signup', {
+                location: 'magazin-page',
+                timestamp: new Date().toISOString()
+              });
+            }
           } else {
             throw new Error('Fehler beim Senden');
           }

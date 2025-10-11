@@ -148,6 +148,10 @@
   <link rel="dns-prefetch" href="https://apps.apple.com" />
   <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
   <link rel="dns-prefetch" href="https://unpkg.com" />
+  <link rel="dns-prefetch" href="https://cloud.umami.is" />
+
+  <!-- Umami Analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="cbb1d1f2-1d9c-41d4-b235-760f8ea846c9"></script>
 
   <!-- Tailwind & Animation Libs -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -349,7 +353,7 @@
     <a href="magazin.html" class="relative px-3 py-1 rounded-lg bg-gradient-to-r from-purple-600/20 to-fuchsia-600/20 border border-fuchsia-300/40 hover:border-fuchsia-300 hover:from-purple-600/30 hover:to-fuchsia-600/30 transition-all">Magazin</a>
     <a href="#kontakt" class="hover:text-fuchsia-300">Kontakt</a>
   </nav>
-  <span class="magnet-area"><a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="btn text-sm magnet-target">App laden</a></span>
+  <span class="magnet-area"><a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="btn text-sm magnet-target" onclick="if(window.umami) window.umami.track('app-download', {location: 'header', timestamp: new Date().toISOString()});">App laden</a></span>
 </header>
 
 <!-- ────────── HERO ────────── -->
@@ -385,7 +389,7 @@
 
     <!-- App Store Badge -->
     <span class="magnet-area">
-      <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="inline-block mt-10 magnet-target" aria-label="Im App Store laden" rel="noopener noreferrer">
+      <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="inline-block mt-10 magnet-target" aria-label="Im App Store laden" rel="noopener noreferrer" onclick="if(window.umami) window.umami.track('app-download', {location: 'hero', timestamp: new Date().toISOString()});">
         <img src="Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Laden im App Store" class="h-10 md:h-12" />
       </a>
     </span>
