@@ -197,6 +197,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" /></noscript>
   <link rel="preload" href="icon.png" as="image" />
+  <link rel="preload" href="hero.webp" as="image" type="image/webp" />
   <!-- Removed heavy preload to improve LCP on slow networks -->
   <link rel="dns-prefetch" href="https://apps.apple.com" />
   <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
@@ -322,6 +323,7 @@
     .carousel .slides{display:flex;transition:transform .3s ease;will-change:transform}
     .carousel .slide{flex:0 0 100%;display:none;margin:0 auto;border-radius:1.25rem}
     .carousel .slide.active{display:block}
+    .carousel .slide img{display:block;width:100%;height:auto;border-radius:1.25rem;box-shadow:0 6px 24px #00000040;border:1px solid rgba(255,255,255,.25)}
     .car-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:.75rem;width:38px;height:38px;display:grid;place-items:center;backdrop-filter:blur(6px)}
     .car-btn:hover{background:rgba(0,0,0,.5)}
     .car-btn.prev{left:.5rem}
@@ -587,11 +589,14 @@
   <div class="max-w-6xl mx-auto grid md:grid-cols-1 gap-10 items-start">
     <!-- Planer Screenshot -->
     <figure class="glass p-4 tilt" data-aos="fade-right">
-      <img
-        src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 18.41.29.png"
-        width="600" height="860"
-        alt="KIULY – Planung: Eingaben & Optionen"
-        class="rounded-3xl ring-4 ring-fuchsia-200/70 shadow-2xl w-full h-auto" loading="lazy" decoding="async" fetchpriority="low" />
+      <picture>
+        <source srcset="hero.webp" type="image/webp">
+        <img
+          src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 18.41.29.png"
+          width="600" height="860"
+          alt="KIULY – Planung: Eingaben & Optionen"
+          class="rounded-3xl ring-4 ring-fuchsia-200/70 shadow-2xl w-full h-auto" loading="eager" decoding="async" fetchpriority="high" />
+      </picture>
     </figure>
   </div>
 
@@ -599,9 +604,18 @@
   <div class="mt-12" data-aos="fade-up">
     <div class="carousel glass p-4" role="region" aria-label="Screenshot‑Diashow">
       <div class="slides">
-        <img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 18.42.16.png" width="269" height="390" alt="Screenshot 18:42:16" class="slide active" loading="lazy" decoding="async" fetchpriority="low" />
-        <img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 19.10.42.png" width="269" height="390" alt="Screenshot 19:10:42" class="slide" loading="lazy" decoding="async" fetchpriority="low" />
-        <img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 19.14.28.png" width="269" height="390" alt="Screenshot 19:14:28" class="slide" loading="lazy" decoding="async" fetchpriority="low" />
+        <picture class="slide active">
+          <source srcset="screenshot1.webp" type="image/webp">
+          <img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 18.42.16.png" width="269" height="390" alt="Screenshot 18:42:16" loading="lazy" decoding="async" fetchpriority="low" />
+        </picture>
+        <picture class="slide">
+          <source srcset="screenshot2.webp" type="image/webp">
+          <img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 19.10.42.png" width="269" height="390" alt="Screenshot 19:10:42" loading="lazy" decoding="async" fetchpriority="low" />
+        </picture>
+        <picture class="slide">
+          <source srcset="screenshot3.webp" type="image/webp">
+          <img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 19.14.28.png" width="269" height="390" alt="Screenshot 19:14:28" loading="lazy" decoding="async" fetchpriority="low" />
+        </picture>
       </div>
       <button class="car-btn prev" aria-label="Vorheriges Bild">‹</button>
       <button class="car-btn next" aria-label="Nächstes Bild">›</button>
@@ -952,7 +966,7 @@
     });
   })();
 
-  // Minimal accessible carousel
+  // Minimal accessible carousel with lazy loading
   (function(){
     const carousel = document.querySelector('.carousel');
     if(!carousel) return;
@@ -962,7 +976,14 @@
     let i = 0;
     const show = (n)=>{
       i = (n+slides.length)%slides.length;
-      slides.forEach((s,idx)=>{ s.classList.toggle('active', idx===i); });
+      slides.forEach((s,idx)=>{ 
+        s.classList.toggle('active', idx===i); 
+        // Lazy load images when slide becomes active
+        if(idx===i) {
+          const img = s.querySelector('img');
+          if(img && !img.src) img.src = img.getAttribute('data-src') || img.src;
+        }
+      });
     };
     prev.addEventListener('click', ()=> show(i-1));
     next.addEventListener('click', ()=> show(i+1));
