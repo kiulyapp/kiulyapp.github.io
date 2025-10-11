@@ -317,6 +317,15 @@
     .shot-card img{display:block;width:100%;height:auto;border-radius:1.25rem;box-shadow:0 6px 24px #00000040;border:1px solid rgba(255,255,255,.25)}
     /* Overlay captions for screenshot gallery */
     .shot-card{position:relative}
+    /* Lightweight carousel */
+    .carousel{position:relative;overflow:hidden;border-radius:1.25rem}
+    .carousel .slides{display:flex;transition:transform .3s ease;will-change:transform}
+    .carousel .slide{flex:0 0 100%;display:none;margin:0 auto;border-radius:1.25rem}
+    .carousel .slide.active{display:block}
+    .car-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:.75rem;width:38px;height:38px;display:grid;place-items:center;backdrop-filter:blur(6px)}
+    .car-btn:hover{background:rgba(0,0,0,.5)}
+    .car-btn.prev{left:.5rem}
+    .car-btn.next{right:.5rem}
     /* ── Accessibility & Contrast ───────────────────────────────── */
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip-link:focus{position:fixed;left:1rem;top:1rem;width:auto;height:auto;padding:.5rem .75rem;background:#111;color:#fff;border:2px solid #fff;border-radius:.5rem;z-index:9999}
@@ -586,12 +595,16 @@
     </figure>
   </div>
 
-  <!-- Weitere Screenshots (Scroll-Galerie) -->
+  <!-- Weitere Screenshots (Carousel) -->
   <div class="mt-12" data-aos="fade-up">
-    <div class="shot-strip" role="region" aria-label="Screenshot-Galerie">
-      <figure class="shot-card tilt"><img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 18.42.16.png" width="269" height="390" alt="Screenshot 18:42:16" loading="lazy" decoding="async" fetchpriority="low" /></figure>
-      <figure class="shot-card tilt"><img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 19.10.42.png" width="269" height="390" alt="Screenshot 19:10:42" loading="lazy" decoding="async" fetchpriority="low" /></figure>
-      <figure class="shot-card tilt"><img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 19.14.28.png" width="269" height="390" alt="Screenshot 19:14:28" loading="lazy" decoding="async" fetchpriority="low" /></figure>
+    <div class="carousel glass p-4" role="region" aria-label="Screenshot‑Diashow">
+      <div class="slides">
+        <img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 18.42.16.png" width="269" height="390" alt="Screenshot 18:42:16" class="slide active" loading="lazy" decoding="async" fetchpriority="low" />
+        <img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 19.10.42.png" width="269" height="390" alt="Screenshot 19:10:42" class="slide" loading="lazy" decoding="async" fetchpriority="low" />
+        <img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 19.14.28.png" width="269" height="390" alt="Screenshot 19:14:28" class="slide" loading="lazy" decoding="async" fetchpriority="low" />
+      </div>
+      <button class="car-btn prev" aria-label="Vorheriges Bild">‹</button>
+      <button class="car-btn next" aria-label="Nächstes Bild">›</button>
     </div>
   </div>
 
@@ -937,6 +950,27 @@
         burst(x,y);
       });
     });
+  })();
+
+  // Minimal accessible carousel
+  (function(){
+    const carousel = document.querySelector('.carousel');
+    if(!carousel) return;
+    const slides = [...carousel.querySelectorAll('.slide')];
+    const prev = carousel.querySelector('.prev');
+    const next = carousel.querySelector('.next');
+    let i = 0;
+    const show = (n)=>{
+      i = (n+slides.length)%slides.length;
+      slides.forEach((s,idx)=>{ s.classList.toggle('active', idx===i); });
+    };
+    prev.addEventListener('click', ()=> show(i-1));
+    next.addEventListener('click', ()=> show(i+1));
+    carousel.addEventListener('keydown', (e)=>{
+      if(e.key==='ArrowLeft') show(i-1);
+      if(e.key==='ArrowRight') show(i+1);
+    });
+    carousel.tabIndex = 0; // focusable for arrow keys
   })();
 </script>
 </body>
