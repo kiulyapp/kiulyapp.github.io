@@ -1,79 +1,26 @@
 {
-  "name": "KIULY – KI Unterrichtsplanung",
+  "name": "KIULY - Unterrichtsplanung mit KI",
   "short_name": "KIULY",
-  "description": "DSGVO-konforme KI für Unterrichtsplanung. Offline nutzbar mit lokaler Speicherung! 7 Tage kostenlos testen. 5,9h Zeitersparnis/Woche (UNESCO-Studie 2024).",
+  "description": "KIULY - Die beste iOS App für Lehrer in Deutschland mit iPad und iPhone. Automatische Unterrichtsplanung mit KI.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#13141B",
   "theme_color": "#7c3aed",
   "orientation": "portrait-primary",
-  "scope": "/",
-  "lang": "de",
-  "dir": "ltr",
-  "categories": ["education", "productivity", "utilities"],
   "icons": [
     {
-      "src": "icon.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icon.png",
-      "sizes": "192x192",
+      "src": "https://kiuly.de/icon.png",
+      "sizes": "256x256",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icon.png",
-      "sizes": "512x512",
+      "src": "https://kiuly.de/icon.png", 
+      "sizes": "256x256",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "maskable"
     }
   ],
-  "screenshots": [
-    {
-      "src": "IMG_8101.webp",
-      "sizes": "1170x2532",
-      "type": "image/webp",
-      "form_factor": "narrow",
-      "label": "KIULY App Screenshot"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Magazin",
-      "short_name": "Magazin",
-      "description": "Wissenschaftliche Studien zu KI in der Bildung",
-      "url": "/magazin.html",
-      "icons": [
-        {
-          "src": "icon.png",
-          "sizes": "192x192"
-        }
-      ]
-    },
-    {
-      "name": "FAQ",
-      "short_name": "FAQ",
-      "description": "Häufig gestellte Fragen",
-      "url": "/faq.html",
-      "icons": [
-        {
-          "src": "icon.png",
-          "sizes": "192x192"
-        }
-      ]
-    }
-  ],
-  "related_applications": [
-    {
-      "platform": "itunes",
-      "url": "https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544",
-      "id": "6747030544"
-    }
-  ],
-  "prefer_related_applications": false
+  "categories": ["education", "productivity"],
+  "lang": "de-DE"
 }
-
-
