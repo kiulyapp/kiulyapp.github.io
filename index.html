@@ -56,6 +56,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="KIULY" />
   <meta name="format-detection" content="telephone=no" />
+  <meta name="theme-color" content="#7c3aed" />
   <link rel="apple-touch-icon" href="icon.png" />
   <link rel="apple-touch-startup-image" href="icon.png" />
 
@@ -431,7 +432,10 @@
 <!-- ────────── HEADER ────────── -->
 <header class="fixed inset-x-0 top-0 z-40 glass flex items-center justify-between px-[max(1rem,env(safe-area-inset-left))] py-3 mx-auto max-w-7xl" role="banner">
   <a href="#hero" class="flex items-center gap-2" aria-label="KIULY Start">
-    <img src="icon.png" alt="KIULY Logo" class="h-10 w-10 rounded-xl" width="40" height="40" decoding="async" loading="eager" />
+    <picture>
+      <source srcset="icon.webp" type="image/webp">
+      <img src="icon.png" alt="KIULY Logo" class="h-10 w-10 rounded-xl" width="40" height="40" decoding="async" loading="eager" />
+    </picture>
     <span class="sr-only">KIULY</span>
   </a>
   <nav class="hidden lg:flex gap-9 text-sm font-semibold" aria-label="Hauptnavigation">
@@ -476,6 +480,14 @@
       <a href="#faq" class="tag">FAQ</a>
       <a href="#kontakt" class="tag">Kontakt</a>
     </nav>
+
+    <!-- Hero Screenshot -->
+    <div class="mt-12 max-w-sm mx-auto">
+      <picture>
+        <source srcset="hero.webp" type="image/webp">
+        <img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 18.41.29.png" alt="KIULY – Planung: Eingaben & Optionen" width="600" height="860" class="rounded-3xl ring-4 ring-fuchsia-200/70 shadow-2xl w-full h-auto" loading="eager" fetchpriority="high" decoding="async" />
+      </picture>
+    </div>
 
     <!-- App Store Badge -->
     <span class="magnet-area">
