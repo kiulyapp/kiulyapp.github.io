@@ -196,7 +196,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" as="style" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" />
   <link rel="preload" href="icon.png" as="image" />
-  <link rel="preload" href="IMG_8101.webp" as="image" />
+  <!-- Removed heavy preload to improve LCP on slow networks -->
   <link rel="dns-prefetch" href="https://apps.apple.com" />
   <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
   <link rel="dns-prefetch" href="https://unpkg.com" />
@@ -209,7 +209,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <noscript><style>[data-aos]{opacity:1!important;transform:none!important}</style></noscript>
-  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+  <!-- Removed unused Lottie script to cut JS cost -->
 
   <!-- Styles -->
   <style>
@@ -393,7 +393,7 @@
 <!-- ────────── HEADER ────────── -->
 <header class="fixed inset-x-0 top-0 z-40 glass flex items-center justify-between px-[max(1rem,env(safe-area-inset-left))] py-3 mx-auto max-w-7xl" role="banner">
   <a href="#hero" class="flex items-center gap-2" aria-label="KIULY Start">
-    <img src="icon.png" alt="KIULY Logo" class="h-10 w-10 rounded-xl" />
+    <img src="icon.png" alt="KIULY Logo" class="h-10 w-10 rounded-xl" width="40" height="40" decoding="async" loading="eager" />
     <span class="sr-only">KIULY</span>
   </a>
   <nav class="hidden lg:flex gap-9 text-sm font-semibold" aria-label="Hauptnavigation">
@@ -442,7 +442,7 @@
     <!-- App Store Badge -->
     <span class="magnet-area">
       <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="inline-block mt-10 magnet-target" aria-label="Im App Store laden" rel="noopener noreferrer" onclick="if(window.umami) window.umami.track('app-download', {location: 'hero', timestamp: new Date().toISOString()});">
-        <img src="Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Laden im App Store" class="h-10 md:h-12" />
+        <img src="Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" alt="Laden im App Store" class="h-10 md:h-12" width="180" height="60" decoding="async" loading="lazy" />
       </a>
     </span>
 
@@ -558,21 +558,21 @@
 
   <div class="max-w-6xl mx-auto grid md:grid-cols-1 gap-10 items-start">
     <!-- Planer Screenshot -->
-    <figure class="glass p-4 tilt" data-aos="fade-right">
+      <figure class="glass p-4 tilt" data-aos="fade-right">
       <img
         src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 18.41.29.png"
         width="834" height="1194"
         alt="KIULY – Planung: Eingaben & Optionen"
-        class="rounded-3xl ring-4 ring-fuchsia-200/70 shadow-2xl w-full h-auto" loading="eager" fetchpriority="high" />
+        class="rounded-3xl ring-4 ring-fuchsia-200/70 shadow-2xl w-full h-auto" loading="lazy" decoding="async" />
     </figure>
   </div>
 
   <!-- Weitere Screenshots (Scroll-Galerie) -->
   <div class="mt-12" data-aos="fade-up">
     <div class="shot-strip" role="region" aria-label="Screenshot-Galerie">
-      <figure class="shot-card tilt"><img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 18.42.16.png" alt="Screenshot 18:42:16" loading="lazy" decoding="async"></figure>
-      <figure class="shot-card tilt"><img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 19.10.42.png" alt="Screenshot 19:10:42" loading="lazy" decoding="async"></figure>
-      <figure class="shot-card tilt"><img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 19.14.28.png" alt="Screenshot 19:14:28" loading="lazy" decoding="async"></figure>
+      <figure class="shot-card tilt"><img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 18.42.16.png" width="390" height="844" alt="Screenshot 18:42:16" loading="lazy" decoding="async"></figure>
+      <figure class="shot-card tilt"><img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 19.10.42.png" width="390" height="844" alt="Screenshot 19:10:42" loading="lazy" decoding="async"></figure>
+      <figure class="shot-card tilt"><img src="Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-08-24 at 19.14.28.png" width="390" height="844" alt="Screenshot 19:14:28" loading="lazy" decoding="async"></figure>
     </div>
   </div>
 
