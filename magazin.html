@@ -51,13 +51,10 @@
   <link rel="preload" href="icon.png" as="image" />
   <link rel="dns-prefetch" href="https://apps.apple.com" />
   <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
-  <link rel="dns-prefetch" href="https://unpkg.com" />
   <link rel="dns-prefetch" href="https://cloud.umami.is" />
   
   <!-- Preconnect für kritische Origins -->
   <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
-  <link rel="preconnect" href="https://unpkg.com" crossorigin />
-  <link rel="modulepreload" href="https://unpkg.com/aos@2.3.4/dist/aos.js" />
   
   <!-- Umami Analytics -->
   <script defer src="https://cloud.umami.is/script.js" data-website-id="cbb1d1f2-1d9c-41d4-b235-760f8ea846c9"></script>
@@ -76,8 +73,8 @@
   </style>
   
   <script src="https://cdn.tailwindcss.com" defer></script>
-  <link rel="preload" href="https://unpkg.com/aos@2.3.4/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" /><style>[data-aos]{opacity:1!important;transform:none!important}</style></noscript>
+  <!-- AOS disabled for instant content load -->
+  <style>[data-aos]{opacity:1!important;transform:none!important}</style>
   
   <style>
     :root{
@@ -414,23 +411,18 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // init AOS (robust; respect reduced motion)
+    // Remove AOS attributes for instant content display
     (function(){
-      const start = () => {
-        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (window.AOS && typeof AOS.init === 'function') {
-          AOS.init({ once:true, duration: prefersReduced? 0 : 260, offset: 24 });
-        } else {
-          document.querySelectorAll('[data-aos]').forEach(el=>{ el.style.opacity='1'; el.style.transform='none'; });
-        }
-      };
-      if (document.readyState === 'complete') start();
-      else window.addEventListener('load', start);
+      document.querySelectorAll('[data-aos]').forEach(el=>{ 
+        el.style.opacity='1'; 
+        el.style.transform='none';
+        el.removeAttribute('data-aos');
+        el.removeAttribute('data-aos-delay');
+      });
     })();
 
     // Newsletter Form Handler (Formspree)
