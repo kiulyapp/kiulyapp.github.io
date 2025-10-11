@@ -1,0 +1,24 @@
+# robots.txt für KIULY
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kiuly.de/sitemap.xml
+
+# Crawl-Delay für höfliche Bots
+Crawl-delay: 0.5
+
+# Wichtige Seiten priorisieren
+Allow: /index.html
+Allow: /magazin.html
+Allow: /artikel-*.html
+Allow: /faq.html
+
+# Screenshots nicht indexieren (zu viele)
+Disallow: /Simulator*
+
+# App Store Assets
+Allow: /icon.png
+Allow: /*.webp
+Allow: /*.svg
+
