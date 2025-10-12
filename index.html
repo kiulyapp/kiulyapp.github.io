@@ -925,16 +925,36 @@
 
   // init AOS (robust; respect reduced motion)
   (function(){
-    const start = () => {
+    const revealFallback = () => {
+      document.querySelectorAll('[data-aos]').forEach(el=>{
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+    };
+    const init = () => {
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (window.AOS && typeof AOS.init === 'function') {
-        AOS.init({ once:true, duration: prefersReduced? 0 : 260, offset: 24 });
+        AOS.init({ once: true, duration: prefersReduced ? 0 : 260, offset: 24 });
+        if (typeof AOS.refreshHard === 'function') AOS.refreshHard();
       } else {
-        document.querySelectorAll('[data-aos]').forEach(el=>{ el.style.opacity='1'; el.style.transform='none'; });
+        revealFallback();
       }
     };
-    if (document.readyState === 'complete') start();
-    else window.addEventListener('load', start);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init, { once: true });
+    } else {
+      init();
+    }
+    // After all assets load, ensure positions are recalculated
+    window.addEventListener('load', () => {
+      if (window.AOS && typeof AOS.refreshHard === 'function') AOS.refreshHard();
+    }, { once: true });
+    // Safety: if AOS failed to initialize quickly, unhide content
+    setTimeout(() => {
+      if (!window.AOS || !document.querySelector('.aos-init, [data-aos].aos-animate')) {
+        revealFallback();
+      }
+    }, 1200);
   })();
 
   // Year
