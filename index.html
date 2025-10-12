@@ -213,10 +213,13 @@
   <link rel="preload" href="https://kiuly.de/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" as="image" />
   <link rel="dns-prefetch" href="https://apps.apple.com" />
   <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+  <link rel="dns-prefetch" href="https://unpkg.com" />
   <link rel="dns-prefetch" href="https://cloud.umami.is" />
   
   <!-- Preconnect für kritische Origins -->
   <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link rel="modulepreload" href="https://unpkg.com/aos@2.3.4/dist/aos.js" />
 
   <!-- Umami Analytics -->
   <script defer src="https://cloud.umami.is/script.js" data-website-id="cbb1d1f2-1d9c-41d4-b235-760f8ea846c9"></script>
@@ -236,8 +239,8 @@
   
   <!-- Tailwind & Animation Libs -->
   <script src="https://cdn.tailwindcss.com" defer></script>
-  <!-- AOS disabled for instant content load -->
-  <style>[data-aos]{opacity:1!important;transform:none!important}</style>
+  <link rel="preload" href="https://unpkg.com/aos@2.3.4/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" /><style>[data-aos]{opacity:1!important;transform:none!important}</style></noscript>
   <!-- Removed unused Lottie script to cut JS cost -->
 
   <!-- Styles -->
@@ -279,7 +282,7 @@
 
     /* ── Animated gradient border helper ──────────────────────── */
     .ag-border{position:relative}
-    .ag-border::before{content:"";position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:conic-gradient(from 0deg,#a78bfa,#f472b6,#c084fc,#7c3aed,#a78bfa);-webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);mask-composite:exclude}
+    .ag-border::before{content:"";position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:conic-gradient(from 0deg,#a78bfa,#f472b6,#c084fc,#7c3aed,#a78bfa);-webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
     :root{
       --brand-dark:#13141B;
       --brand-primary:#7c3aed;
@@ -388,7 +391,7 @@
     .cmp-badge{position:absolute;top:-12px;left:12px;background:#ef4444;color:#fff;font-weight:900;font-size:.75rem;padding:.25rem .6rem;border-radius:.5rem;box-shadow:0 6px 18px #ef444466}
     .compare-subtitle{margin-top:.25rem;margin-bottom:.75rem;text-align:center;font-weight:700;opacity:.92}
     /* Collapsible teaser (3 lines) */
-    .clamp-3{display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .clamp-3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
     .more-btn{margin-top:.5rem;font-size:.875rem;color:#f5d0fe;text-decoration:underline}
     /* Hero brand stamp */
     .stamp{
@@ -910,6 +913,7 @@
   </p>
 </div>
 <!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   // restore prefs
   (function(){
@@ -919,14 +923,18 @@
     }catch(e){}
   })();
 
-  // Remove AOS attributes for instant content display
+  // init AOS (robust; respect reduced motion)
   (function(){
-    document.querySelectorAll('[data-aos]').forEach(el=>{ 
-      el.style.opacity='1'; 
-      el.style.transform='none';
-      el.removeAttribute('data-aos');
-      el.removeAttribute('data-aos-delay');
-    });
+    const start = () => {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (window.AOS && typeof AOS.init === 'function') {
+        AOS.init({ once:true, duration: prefersReduced? 0 : 260, offset: 24 });
+      } else {
+        document.querySelectorAll('[data-aos]').forEach(el=>{ el.style.opacity='1'; el.style.transform='none'; });
+      }
+    };
+    if (document.readyState === 'complete') start();
+    else window.addEventListener('load', start);
   })();
 
   // Year
