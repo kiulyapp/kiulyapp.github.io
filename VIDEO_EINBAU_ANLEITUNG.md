@@ -1,9 +1,10 @@
-# Videos in KIULY Website einbauen
+# Videos direkt bei KIULY hosten
 
-## 🎬 3 Varianten für Video-Einbau
+## 🎯 **Empfohlen: Selbst-gehostete Videos (DSGVO-perfekt)**
 
-### **Variante 1: Natives HTML5 `<video>` (empfohlen für selbst gehostete Videos)**
-Für `.mp4`, `.webm` oder `.mov` Dateien, die im Repo liegen.
+Videos liegen direkt bei `kiuly.de` – volle Kontrolle, kein Tracking, keine externen Dienste.
+
+## 🎬 Video-Einbau (HTML5 `<video>`)
 
 ```html
 <!-- Beispiel: Zwischen den Screenshot-Sektionen einfügen -->
@@ -27,13 +28,15 @@ Für `.mp4`, `.webm` oder `.mov` Dateien, die im Repo liegen.
 ```
 
 **Vorteile:**
-- ✅ Volle Kontrolle über Design & Verhalten
-- ✅ Keine externen Dienste (DSGVO-freundlich)
-- ✅ Funktioniert offline
+- ✅ 100% DSGVO-konform (keine externen Tracker)
+- ✅ Volle Design-Kontrolle
+- ✅ Kein Branding, keine Werbung
+- ✅ Funktioniert perfekt mit kiuly.de
 
-**Nachteile:**
-- ❌ Große Dateien (100+ MB) verlangsamen Ladezeiten
-- ❌ GitHub Pages hat 1 GB Limit
+**Wichtig:**
+- ⚠️ GitHub Pages Repo-Limit: **1 GB total**
+- ⚠️ Empfohlene Video-Größe: **< 50 MB** pro Video
+- ✅ Mit Kompression (siehe unten) sind 2-5 Minuten Videos easy machbar
 
 ---
 
