@@ -488,11 +488,21 @@
     /* Overlay captions for screenshot gallery */
     .shot-card{position:relative}
     /* Auto-scrolling carousel */
-    .auto-carousel-container{overflow:hidden;border-radius:1.25rem;position:relative}
-    .auto-carousel-track{display:flex;animation:scroll-horizontal 15s linear infinite;gap:1.5rem}
-    .auto-carousel-track img{flex:0 0 auto;width:300px;height:650px;object-fit:cover;border-radius:1.25rem;box-shadow:0 8px 32px rgba(0,0,0,.3);border:2px solid rgba(255,255,255,.2);transition:transform .3s ease}
-    .auto-carousel-track:hover{animation-play-state:paused}
-    .auto-carousel-track:hover img{transform:scale(1.05)}
+    /* Screenshot Grid Animations */
+    .screenshot-card {
+      transform: translateY(50px);
+      opacity: 0;
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .screenshot-card.animate-in {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .screenshot-card:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
     @keyframes scroll-horizontal{0%{transform:translateX(0)}100%{transform:translateX(calc(-100% - 1.5rem))}}
     
     /* Lightweight carousel */
@@ -848,26 +858,110 @@
 <section id="app" class="py-24 px-6">
   <h2 class="text-3xl font-extrabold text-center mb-10" data-aos="zoom-in">So sieht's aus</h2>
 
-  <div class="max-w-6xl mx-auto">
-    <!-- App Screenshots - Auto Scrolling Carousel -->
+  <div class="max-w-7xl mx-auto">
+    <!-- App Screenshots - Dynamic Scroll Reveal -->
     <div class="glass p-6 mb-8" data-aos="zoom-in">
       <h3 class="text-2xl font-extrabold text-center mb-6 text-white">Für iPad, iPhone & MacBook optimiert</h3>
-      <p class="text-center text-fuchsia-100/90 mb-6 max-w-2xl mx-auto">
+      <p class="text-center text-fuchsia-100/90 mb-8 max-w-2xl mx-auto">
         KIULY funktioniert perfekt auf allen Apple-Geräten – ob iPad Pro, iPad Air, iPad mini, iPhone oder MacBook.
       </p>
-      <div class="auto-carousel-container">
-        <div class="auto-carousel-track">
-          <img src="Simulator Screenshot - iPhone 16 - 2025-10-11 at 22.41.29.webp" width="370" height="800" alt="KIULY Screenshot 1 - Unterrichtsplanung auf iPhone" loading="eager" decoding="async" fetchpriority="high" />
-          <img src="Simulator Screenshot - iPhone 16 - 2025-10-11 at 22.41.37.webp" width="370" height="800" alt="KIULY Screenshot 2 - Material-Generator auf iPhone" loading="eager" decoding="async" fetchpriority="high" />
-          <img src="Simulator Screenshot - iPhone 16 - 2025-10-11 at 22.41.46.webp" width="370" height="800" alt="KIULY Screenshot 3 - Kalender-Integration auf iPhone" loading="eager" decoding="async" fetchpriority="high" />
-          <img src="Simulator Screenshot - iPhone 16 - 2025-10-11 at 22.41.58.webp" width="370" height="800" alt="KIULY Screenshot 4" loading="eager" decoding="async" fetchpriority="high" />
-          <img src="Simulator Screenshot - iPhone 16 - 2025-10-11 at 22.42.05.webp" width="370" height="800" alt="KIULY Screenshot 5" loading="eager" decoding="async" fetchpriority="high" />
-          <img src="Simulator Screenshot - iPhone 16 - 2025-10-11 at 22.42.13.webp" width="370" height="800" alt="KIULY Screenshot 6" loading="eager" decoding="async" fetchpriority="high" />
-          <img src="Simulator Screenshot - iPhone 16 - 2025-10-11 at 22.42.19.webp" width="370" height="800" alt="KIULY Screenshot 7" loading="eager" decoding="async" fetchpriority="high" />
-          <!-- Duplikate für nahtlosen Loop -->
-          <img src="Simulator Screenshot - iPhone 16 - 2025-10-11 at 22.41.29.webp" width="370" height="800" alt="KIULY Screenshot 1 - Unterrichtsplanung auf iPhone" loading="eager" decoding="async" fetchpriority="high" />
-          <img src="Simulator Screenshot - iPhone 16 - 2025-10-11 at 22.41.37.webp" width="370" height="800" alt="KIULY Screenshot 2 - Material-Generator auf iPhone" loading="eager" decoding="async" fetchpriority="high" />
-          <img src="Simulator Screenshot - iPhone 16 - 2025-10-11 at 22.41.46.webp" width="370" height="800" alt="KIULY Screenshot 3 - Kalender-Integration auf iPhone" loading="eager" decoding="async" fetchpriority="high" />
+      
+      <!-- Elegant Screenshot Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Screenshot 1: Unterrichtsplanung -->
+        <div class="screenshot-card group" data-aos="fade-up" data-aos-delay="0">
+          <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-900/20 to-fuchsia-900/20 p-4 backdrop-blur-sm border border-fuchsia-300/20 hover:border-fuchsia-300/40 transition-all duration-500 hover:scale-105">
+            <img src="Simulator Screenshot - iPhone 16 - 2025-10-11 at 22.41.29.webp" 
+                 width="370" height="800" 
+                 alt="KIULY Screenshot 1 - Unterrichtsplanung auf iPhone" 
+                 loading="lazy" decoding="async"
+                 class="w-full h-auto rounded-xl shadow-2xl group-hover:shadow-fuchsia-500/25 transition-all duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+            <div class="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+              <h4 class="text-lg font-bold text-white mb-2">📚 Unterrichtsplanung</h4>
+              <p class="text-sm text-fuchsia-100/90">Erstelle detaillierte Unterrichtsentwürfe in Sekunden. KIULY generiert Lernziele, Methoden und Differenzierung automatisch.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Screenshot 2: Material-Generator -->
+        <div class="screenshot-card group" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-900/20 to-cyan-900/20 p-4 backdrop-blur-sm border border-blue-300/20 hover:border-blue-300/40 transition-all duration-500 hover:scale-105">
+            <img src="Simulator Screenshot - iPhone 16 - 2025-10-11 at 22.41.37.webp" 
+                 width="370" height="800" 
+                 alt="KIULY Screenshot 2 - Material-Generator auf iPhone" 
+                 loading="lazy" decoding="async"
+                 class="w-full h-auto rounded-xl shadow-2xl group-hover:shadow-blue-500/25 transition-all duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+            <div class="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+              <h4 class="text-lg font-bold text-white mb-2">📝 Material-Generator</h4>
+              <p class="text-sm text-blue-100/90">Arbeitsblätter, Aufgaben und Lösungen werden automatisch erstellt. Perfekt auf deinen Unterricht abgestimmt.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Screenshot 3: Kalender-Integration -->
+        <div class="screenshot-card group" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-900/20 to-emerald-900/20 p-4 backdrop-blur-sm border border-green-300/20 hover:border-green-300/40 transition-all duration-500 hover:scale-105">
+            <img src="Simulator Screenshot - iPhone 16 - 2025-10-11 at 22.41.46.webp" 
+                 width="370" height="800" 
+                 alt="KIULY Screenshot 3 - Kalender-Integration auf iPhone" 
+                 loading="lazy" decoding="async"
+                 class="w-full h-auto rounded-xl shadow-2xl group-hover:shadow-green-500/25 transition-all duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+            <div class="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+              <h4 class="text-lg font-bold text-white mb-2">📅 Kalender-Integration</h4>
+              <p class="text-sm text-green-100/90">Automatische Termine im iOS-Kalender mit allen Details. Nie wieder vergessen, was geplant ist.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Screenshot 4: Fächer-Auswahl -->
+        <div class="screenshot-card group" data-aos="fade-up" data-aos-delay="300">
+          <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-orange-900/20 to-red-900/20 p-4 backdrop-blur-sm border border-orange-300/20 hover:border-orange-300/40 transition-all duration-500 hover:scale-105">
+            <img src="Simulator Screenshot - iPhone 16 - 2025-10-11 at 22.41.58.webp" 
+                 width="370" height="800" 
+                 alt="KIULY Screenshot 4 - Fächer-Auswahl auf iPhone" 
+                 loading="lazy" decoding="async"
+                 class="w-full h-auto rounded-xl shadow-2xl group-hover:shadow-orange-500/25 transition-all duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+            <div class="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+              <h4 class="text-lg font-bold text-white mb-2">🎯 Fächer-Auswahl</h4>
+              <p class="text-sm text-orange-100/90">Über 20 Fächer verfügbar. Von Deutsch über Mathe bis hin zu speziellen Fächern wie Informatik und Ethik.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Screenshot 5: Differenzierung -->
+        <div class="screenshot-card group" data-aos="fade-up" data-aos-delay="400">
+          <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-pink-900/20 to-rose-900/20 p-4 backdrop-blur-sm border border-pink-300/20 hover:border-pink-300/40 transition-all duration-500 hover:scale-105">
+            <img src="Simulator Screenshot - iPhone 16 - 2025-10-11 at 22.42.05.webp" 
+                 width="370" height="800" 
+                 alt="KIULY Screenshot 5 - Differenzierung auf iPhone" 
+                 loading="lazy" decoding="async"
+                 class="w-full h-auto rounded-xl shadow-2xl group-hover:shadow-pink-500/25 transition-all duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+            <div class="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+              <h4 class="text-lg font-bold text-white mb-2">🎨 Differenzierung</h4>
+              <p class="text-sm text-pink-100/90">Automatische Differenzierung für verschiedene Leistungsniveaus. Jeder Schüler wird optimal gefördert.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Screenshot 6: Unterrichtsreihen -->
+        <div class="screenshot-card group" data-aos="fade-up" data-aos-delay="500">
+          <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-900/20 to-purple-900/20 p-4 backdrop-blur-sm border border-indigo-300/20 hover:border-indigo-300/40 transition-all duration-500 hover:scale-105">
+            <img src="Simulator Screenshot - iPhone 16 - 2025-10-11 at 22.42.13.webp" 
+                 width="370" height="800" 
+                 alt="KIULY Screenshot 6 - Unterrichtsreihen auf iPhone" 
+                 loading="lazy" decoding="async"
+                 class="w-full h-auto rounded-xl shadow-2xl group-hover:shadow-indigo-500/25 transition-all duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+            <div class="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+              <h4 class="text-lg font-bold text-white mb-2">📋 Unterrichtsreihen</h4>
+              <p class="text-sm text-indigo-100/90">Plane ganze Unterrichtsreihen mit logischem Aufbau. Von der Einführung bis zur Abschlussstunde.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1561,6 +1655,31 @@
     // Initialize
     updateCarousel();
     carousel.tabIndex = 0; // Make focusable for keyboard navigation
+  })();
+
+  // Screenshot Scroll Animation
+  (function() {
+    const screenshotCards = document.querySelectorAll('.screenshot-card');
+    
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.getAttribute('data-aos-delay') || 0;
+          setTimeout(() => {
+            entry.target.classList.add('animate-in');
+          }, parseInt(delay));
+        }
+      });
+    }, observerOptions);
+    
+    screenshotCards.forEach((card) => {
+      observer.observe(card);
+    });
   })();
 
   // KIULY Deal Functions
