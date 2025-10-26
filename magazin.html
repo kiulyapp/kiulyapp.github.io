@@ -78,58 +78,83 @@
     .kiuly-violet{color:#8b5cf6;font-weight:900;text-shadow:0 0 20px rgba(139,92,246,0.5)}
     .kiuly-violet:hover{color:#a78bfa;text-shadow:0 0 25px rgba(167,139,250,0.7)}
     
-    /* ── Studies Carousel Styling ───────────────────────────── */
-    .studies-grid {
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    
-    .studies-grid::-webkit-scrollbar {
-      display: none;
-    }
-    
-    .study-card {
-      min-width: 350px;
-      transition: all 0.3s ease;
-    }
-    
-    .carousel-nav {
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-    }
-    
-    .carousel-nav:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
-    }
-    
-    .filter-btn {
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .filter-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-      transition: left 0.5s;
-    }
-    
-    .filter-btn:hover::before {
-      left: 100%;
-    }
-    
-    .filter-btn.active {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
-    }
+        /* ── Studies Carousel Styling ───────────────────────────── */
+        .studies-grid {
+          overflow-x: auto;
+          scroll-behavior: smooth;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          -webkit-overflow-scrolling: touch;
+        }
+        
+        .studies-grid::-webkit-scrollbar {
+          display: none;
+        }
+        
+        .study-card {
+          min-width: 350px;
+          transition: all 0.3s ease;
+        }
+        
+        /* Mobile Touch Optimization */
+        @media (max-width: 640px) {
+          .study-card {
+            min-width: 100%;
+            width: 100%;
+          }
+          
+          .studies-grid {
+            overflow-x: visible;
+            display: block;
+          }
+          
+          .studies-grid > * {
+            margin-bottom: 1rem;
+          }
+        }
+        
+        .carousel-nav {
+          backdrop-filter: blur(10px);
+          transition: all 0.3s ease;
+        }
+        
+        .carousel-nav:hover {
+          transform: scale(1.1);
+          box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+        }
+        
+        .filter-btn {
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+          -webkit-tap-highlight-color: transparent;
+        }
+        
+        .filter-btn::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+          transition: left 0.5s;
+        }
+        
+        .filter-btn:hover::before {
+          left: 100%;
+        }
+        
+        .filter-btn.active {
+          transform: scale(1.05);
+          box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        }
+        
+        /* Touch Optimization */
+        .touch-manipulation {
+          touch-action: manipulation;
+          -webkit-tap-highlight-color: transparent;
+        }
     
     @keyframes fadeInUp {
       from {
@@ -314,6 +339,8 @@
       <img src="icon.png" alt="KIULY – KI Unterrichtsplanung App Logo" class="h-10 w-10 rounded-2xl" width="40" height="40" loading="eager" fetchpriority="low" decoding="async" />
       <span class="sr-only">KIULY</span>
     </a>
+    
+    <!-- Desktop Navigation -->
     <nav class="hidden lg:flex gap-6 text-sm font-semibold items-center" aria-label="Hauptnavigation">
       <a href="index.html" class="text-white hover:text-fuchsia-300 transition-all duration-300">Hauptseite</a>
       <a href="index.html#features" class="text-white hover:text-fuchsia-300 transition-all duration-300">Features</a>
@@ -323,31 +350,38 @@
       <a href="index.html#research" class="text-white hover:text-fuchsia-300 transition-all duration-300">Studie</a>
       <a href="#magazin" class="relative px-3 py-1 rounded-lg bg-gradient-to-r from-purple-600/20 to-fuchsia-600/20 border border-fuchsia-300/40 hover:border-fuchsia-300 hover:from-purple-600/30 hover:to-fuchsia-600/30 transition-all text-white">EDU INSIGHTS</a>
     </nav>
+    
+    <!-- Mobile Navigation -->
+    <div class="lg:hidden flex items-center gap-3">
+      <a href="index.html" class="text-white text-sm font-semibold px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all">🏠</a>
+      <a href="#magazin" class="text-white text-xs font-bold px-2 py-1 rounded-lg bg-gradient-to-r from-purple-600/30 to-fuchsia-600/30 border border-fuchsia-300/50">EDU</a>
+    </div>
+    
     <span class="magnet-area"><a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="btn text-sm magnet-target hover:scale-105 transition-all">App laden</a></span>
   </header>
 
   <!-- Hero Section -->
-  <section id="magazin" class="pt-36 pb-16 px-6 text-center">
+  <section id="magazin" class="pt-32 pb-12 px-4 text-center">
     <div class="max-w-6xl mx-auto">
-      <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight text-white drop-shadow-2xl">
+      <h1 class="text-3xl sm:text-4xl md:text-6xl font-black mb-4 sm:mb-6 leading-tight text-white drop-shadow-2xl">
         <span class="bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent animate-pulse">EDU INSIGHTS</span>
       </h1>
-      <p class="text-xl md:text-2xl text-fuchsia-100 mb-8 leading-relaxed drop-shadow-lg">
+      <p class="text-lg sm:text-xl md:text-2xl text-fuchsia-100 mb-6 sm:mb-8 leading-relaxed drop-shadow-lg px-2">
         Evidenzbasierte Forschung & Wissenschaftliche Studien
       </p>
       
       <!-- Filter Navigation -->
-      <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up">
-        <button onclick="filterStudies('all')" class="filter-btn active px-6 py-3 bg-gradient-to-r from-purple-600/30 to-fuchsia-600/30 hover:from-purple-600/50 hover:to-fuchsia-600/50 text-white rounded-xl transition-all duration-300 hover:scale-105 border border-purple-400/50 font-semibold">
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 px-2" data-aos="fade-up">
+        <button onclick="filterStudies('all')" class="filter-btn active px-4 py-3 sm:px-6 bg-gradient-to-r from-purple-600/30 to-fuchsia-600/30 hover:from-purple-600/50 hover:to-fuchsia-600/50 text-white rounded-xl transition-all duration-300 hover:scale-105 border border-purple-400/50 font-semibold text-sm sm:text-base min-h-[48px] touch-manipulation">
           Alle Studien
         </button>
-        <button onclick="filterStudies('international')" class="filter-btn px-6 py-3 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 hover:from-blue-600/40 hover:to-cyan-600/40 text-blue-300 rounded-xl transition-all duration-300 hover:scale-105 border border-blue-400/30 font-semibold">
+        <button onclick="filterStudies('international')" class="filter-btn px-4 py-3 sm:px-6 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 hover:from-blue-600/40 hover:to-cyan-600/40 text-blue-300 rounded-xl transition-all duration-300 hover:scale-105 border border-blue-400/30 font-semibold text-sm sm:text-base min-h-[48px] touch-manipulation">
           International
         </button>
-        <button onclick="filterStudies('german')" class="filter-btn px-6 py-3 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 hover:from-emerald-600/40 hover:to-teal-600/40 text-emerald-300 rounded-xl transition-all duration-300 hover:scale-105 border border-emerald-400/30 font-semibold">
+        <button onclick="filterStudies('german')" class="filter-btn px-4 py-3 sm:px-6 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 hover:from-emerald-600/40 hover:to-teal-600/40 text-emerald-300 rounded-xl transition-all duration-300 hover:scale-105 border border-emerald-400/30 font-semibold text-sm sm:text-base min-h-[48px] touch-manipulation">
           Deutschland
         </button>
-        <button onclick="filterStudies('kiuly')" class="filter-btn px-6 py-3 bg-gradient-to-r from-fuchsia-600/20 to-pink-600/20 hover:from-fuchsia-600/40 hover:to-pink-600/40 text-fuchsia-300 rounded-xl transition-all duration-300 hover:scale-105 border border-fuchsia-400/30 font-semibold">
+        <button onclick="filterStudies('kiuly')" class="filter-btn px-4 py-3 sm:px-6 bg-gradient-to-r from-fuchsia-600/20 to-pink-600/20 hover:from-fuchsia-600/40 hover:to-pink-600/40 text-fuchsia-300 rounded-xl transition-all duration-300 hover:scale-105 border border-fuchsia-400/30 font-semibold text-sm sm:text-base min-h-[48px] touch-manipulation">
           <span class="kiuly-violet">KIULY</span> Forschung
         </button>
       </div>
@@ -355,29 +389,29 @@
   </section>
 
   <!-- Studies Carousel -->
-  <section class="py-12 px-6">
+  <section class="py-8 sm:py-12 px-4 sm:px-6">
     <div class="max-w-7xl mx-auto">
       <!-- Carousel Container -->
       <div class="studies-carousel-container relative">
-        <!-- Navigation Arrows -->
-        <button onclick="scrollCarousel('left')" class="carousel-nav carousel-nav-left absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border border-white/20">
+        <!-- Navigation Arrows - Hidden on Mobile -->
+        <button onclick="scrollCarousel('left')" class="carousel-nav carousel-nav-left hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full items-center justify-center transition-all duration-300 hover:scale-110 border border-white/20">
           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
           </svg>
         </button>
         
-        <button onclick="scrollCarousel('right')" class="carousel-nav carousel-nav-right absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border border-white/20">
+        <button onclick="scrollCarousel('right')" class="carousel-nav carousel-nav-right hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full items-center justify-center transition-all duration-300 hover:scale-110 border border-white/20">
           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
           </svg>
         </button>
 
-        <!-- Studies Grid -->
-        <div class="studies-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-16" id="studies-container">
+        <!-- Studies Grid - Mobile Optimized -->
+        <div class="studies-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-0 sm:px-16" id="studies-container">
           
           <!-- Study 1: Gallup & Walton Family Foundation -->
           <div class="study-card group" data-category="international" data-aos="fade-up" data-aos-delay="0">
-            <div class="glass p-8 h-full rounded-2xl transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 border border-blue-300/20 hover:border-blue-300/40 cursor-pointer" onclick="openStudyModal('gallup')">
+            <div class="glass p-4 sm:p-6 lg:p-8 h-full rounded-2xl transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 border border-blue-300/20 hover:border-blue-300/40 cursor-pointer touch-manipulation min-h-[280px] sm:min-h-[320px]" onclick="openStudyModal('gallup')">
               <div class="flex items-center gap-4 mb-6">
                 <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <span class="text-white font-bold text-2xl">G</span>
@@ -1330,19 +1364,66 @@
       }
     }
 
-    // Initialize carousel
-    document.addEventListener('DOMContentLoaded', function() {
-      updateCarouselNavigation();
-      
-      // Add scroll event listener
-      const container = document.querySelector('.studies-grid');
-      if (container) {
-        container.addEventListener('scroll', function() {
-          currentScrollPosition = container.scrollLeft;
-          updateCarouselNavigation();
-        });
-      }
-    });
+            // Touch Gestures for Mobile
+            function addTouchGestures() {
+              const container = document.querySelector('.studies-grid');
+              if (!container) return;
+              
+              let startX = 0;
+              let startY = 0;
+              let isScrolling = false;
+              
+              container.addEventListener('touchstart', function(e) {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+                isScrolling = false;
+              }, { passive: true });
+              
+              container.addEventListener('touchmove', function(e) {
+                if (!startX || !startY) return;
+                
+                const diffX = Math.abs(e.touches[0].clientX - startX);
+                const diffY = Math.abs(e.touches[0].clientY - startY);
+                
+                if (diffX > diffY) {
+                  isScrolling = true;
+                }
+              }, { passive: true });
+              
+              container.addEventListener('touchend', function(e) {
+                if (!isScrolling || !startX) return;
+                
+                const endX = e.changedTouches[0].clientX;
+                const diffX = startX - endX;
+                
+                if (Math.abs(diffX) > 50) {
+                  if (diffX > 0) {
+                    scrollCarousel('right');
+                  } else {
+                    scrollCarousel('left');
+                  }
+                }
+                
+                startX = 0;
+                startY = 0;
+                isScrolling = false;
+              }, { passive: true });
+            }
+
+            // Initialize carousel
+            document.addEventListener('DOMContentLoaded', function() {
+              updateCarouselNavigation();
+              addTouchGestures();
+              
+              // Add scroll event listener
+              const container = document.querySelector('.studies-grid');
+              if (container) {
+                container.addEventListener('scroll', function() {
+                  currentScrollPosition = container.scrollLeft;
+                  updateCarouselNavigation();
+                });
+              }
+            });
 
     // init AOS (robust; respect reduced motion)
     (function(){
