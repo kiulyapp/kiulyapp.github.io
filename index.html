@@ -697,6 +697,68 @@
   </div>
 </header>
 
+<!-- Auto-Popup KIULY Deal Modal -->
+<div id="auto-deal-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden" onclick="closeAutoDealModal()">
+  <div class="flex items-center justify-center min-h-screen p-4" onclick="event.stopPropagation()">
+    <div class="bg-gradient-to-br from-purple-900/95 to-fuchsia-900/95 backdrop-blur-xl rounded-3xl border border-fuchsia-300/20 p-8 max-w-md w-full text-center relative overflow-hidden">
+      <!-- Close Button -->
+      <button onclick="closeAutoDealModal()" class="absolute top-4 right-4 text-white/60 hover:text-white transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      
+      <!-- Content -->
+      <div class="space-y-6">
+        <!-- Icon -->
+        <div class="mx-auto w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center text-4xl">
+          🎁
+        </div>
+        
+        <!-- Title -->
+        <h2 class="text-3xl font-black text-white">
+          <span class="kiuly-violet">KIULY</span> Deal
+        </h2>
+        
+        <!-- Description -->
+        <p class="text-lg text-gray-200 leading-relaxed">
+          <strong class="text-green-300">6 Monate GRATIS</strong> für alle neuen Nutzer!
+        </p>
+        
+        <!-- Features -->
+        <div class="space-y-3 text-left">
+          <div class="flex items-center gap-3 text-gray-200">
+            <span class="text-green-400">✓</span>
+            <span>Unbegrenzte Unterrichtsplanung</span>
+          </div>
+          <div class="flex items-center gap-3 text-gray-200">
+            <span class="text-green-400">✓</span>
+            <span>Alle Premium-Features</span>
+          </div>
+          <div class="flex items-center gap-3 text-gray-200">
+            <span class="text-green-400">✓</span>
+            <span>DSGVO-konform & sicher</span>
+          </div>
+          <div class="flex items-center gap-3 text-gray-200">
+            <span class="text-green-400">✓</span>
+            <span>Jederzeit kündbar</span>
+          </div>
+        </div>
+        
+        <!-- CTA Button -->
+        <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" onclick="if(window.umami) window.umami.track('auto-deal-click', {timestamp: new Date().toISOString()});" class="block w-full btn text-lg py-4 font-bold">
+          Jetzt 6 Monate GRATIS sichern
+        </a>
+        
+        <!-- Small Print -->
+        <p class="text-xs text-gray-400">
+          *Gilt für neue Nutzer. Nach 6 Monaten 0,99€/Monat.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Mobile Menu -->
 <div id="mobile-menu" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden lg:hidden" onclick="closeMobileMenu()">
   <div class="absolute top-0 right-0 w-72 h-full bg-gradient-to-b from-purple-900/95 to-fuchsia-900/95 backdrop-blur-xl border-l border-fuchsia-300/20" onclick="event.stopPropagation()">
@@ -2046,6 +2108,43 @@ Empfehle KIULY weiter und erhalte 6 Monate kostenlos!
     `;
   }
 
+  // Auto-Popup KIULY Deal Functions
+  function showAutoDealModal() {
+    const modal = document.getElementById('auto-deal-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    
+    // Track modal view
+    if (window.umami) {
+      window.umami.track('auto-deal-modal-view', {timestamp: new Date().toISOString()});
+    }
+  }
+
+  function closeAutoDealModal() {
+    const modal = document.getElementById('auto-deal-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+    
+    // Set cookie to not show again for 24 hours
+    const expires = new Date();
+    expires.setTime(expires.getTime() + (24 * 60 * 60 * 1000));
+    document.cookie = "kiuly-deal-modal-closed=true; expires=" + expires.toUTCString() + "; path=/";
+  }
+
+  function shouldShowAutoDealModal() {
+    // Check if modal was closed in last 24 hours
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+      const [name, value] = cookie.trim().split('=');
+      if (name === 'kiuly-deal-modal-closed') {
+        return false;
+      }
+    }
+    return true;
+  }
+
   function openDealModal() {
     const modal = document.getElementById('deal-modal');
     const content = document.getElementById('modal-content');
@@ -2132,6 +2231,13 @@ Empfehle KIULY weiter und erhalte 6 Monate kostenlos!
       closeTestModal();
     }
   });
+
+  // Auto-Popup KIULY Deal - Show after 2 seconds
+  setTimeout(() => {
+    if (shouldShowAutoDealModal()) {
+      showAutoDealModal();
+    }
+  }, 2000);
 </script>
 </body>
 </html>
