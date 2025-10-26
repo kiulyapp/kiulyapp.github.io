@@ -108,7 +108,7 @@
     "contentLocation":{"@type":"Country","name":"Deutschland"},
     "availableOnDevice":["iPad","iPhone","MacBook","iPadOS","iOS","macOS"],
     "alternateName":["iPad Lehrer App","iPhone Lehrer App","MacBook Lehrer App","iOS Lehrerapp","macOS Lehrerapp","Tablet Unterricht App","iPad Klasse App","Schul-iPad App","Lehrer App iOS","Lehrer App macOS","iPad Unterrichtsplanung","MacBook Unterrichtsplanung","iOS Unterricht App","macOS Unterricht App","KI Unterrichtsplaner","AI Lesson Planner Germany","Deutsche Lehrer KI App","DSGVO Lehrer App","ChatGPT Alternative Lehrer","fobizz Alternative günstig","Padlet Alternative Deutschland"],
-    "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","bestRating":"5","worstRating":"1","ratingCount":"6","reviewCount":"6"},
+    "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.5","bestRating":"5","worstRating":"1","ratingCount":"8","reviewCount":"8"},
     "offers":{
       "@type":"Offer",
       "price":"0.99",
@@ -155,6 +155,46 @@
     "about": ["Unterrichtsplanung","Arbeitsblatt‑Generator","iPad","iPhone","iOS","Lehrkräfte"]
   }
   </script>
+  
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "KIULY",
+    "url": "https://kiuly.de",
+    "logo": "https://kiuly.de/icon.png",
+    "description": "Von Lehrkräfte für Lehrkräfte - Die beste KI-App für Unterrichtsplanung in Deutschland",
+    "foundingDate": "2024",
+    "founder": {"@type":"Person","name":"KIULY Team"},
+    "address": {"@type":"PostalAddress","addressCountry":"DE"},
+    "contactPoint": {"@type":"ContactPoint","email":"help@kiuly.de","contactType":"customer service"},
+    "sameAs": ["https://x.com/kiuly_app","https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544"],
+    "knowsAbout": ["Unterrichtsplanung","KI in der Bildung","iPad Apps","iOS Entwicklung","DSGVO","Lehrkräfte","Schule","Bildung"]
+  }
+  </script>
+  
+  <!-- SoftwareApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "KIULY",
+    "operatingSystem": "iOS, macOS",
+    "applicationCategory": "EducationApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.99",
+      "priceCurrency": "EUR"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "ratingCount": "8"
+    }
+  }
+  </script>
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -626,6 +666,7 @@
     </picture>
     <span class="sr-only">KIULY</span>
   </a>
+  <!-- Desktop Navigation -->
   <nav class="hidden lg:flex gap-9 text-sm font-semibold" aria-label="Hauptnavigation">
     <a href="index.html" class="text-white hover:text-fuchsia-300 transition-colors">Hauptseite</a>
     <a href="features.html" class="text-white hover:text-fuchsia-300 transition-colors">Features</a>
@@ -636,24 +677,95 @@
     <a href="index.html#research" class="text-white hover:text-fuchsia-300 transition-colors">Studie</a>
     <a href="magazin.html" class="relative px-3 py-1 rounded-lg bg-gradient-to-r from-purple-600/20 to-fuchsia-600/20 border border-fuchsia-300/40 hover:border-fuchsia-300 hover:from-purple-600/30 hover:to-fuchsia-600/30 transition-all text-white font-bold">EDU INSIGHTS</a>
   </nav>
-  <div class="flex items-center gap-1.5">
-    <button onclick="openDealModal()" class="bg-green-600/10 hover:bg-green-600/20 text-xs px-3 py-1.5 font-medium text-green-300 rounded-full border border-green-500/30 hover:border-green-400/50 transition-all duration-300 hover:scale-105 backdrop-blur-sm">
-      <span class="flex items-center gap-1.5">
-        <span class="text-xs">🎁</span>
-        <span class="hidden sm:inline"><span class="kiuly-violet">KIULY</span> Deal</span>
-        <span class="sm:hidden">6M gratis</span>
-      </span>
+  
+  <!-- Mobile Navigation -->
+  <div class="lg:hidden flex items-center gap-2">
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="text-white hover:text-fuchsia-300 transition-colors p-2" onclick="toggleMobileMenu()" aria-label="Menü öffnen">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
     </button>
-    <button onclick="openTestModal()" class="bg-blue-600/10 hover:bg-blue-600/20 text-xs px-3 py-1.5 font-medium text-blue-300 rounded-full border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 hover:scale-105 backdrop-blur-sm">
-      <span class="flex items-center gap-1.5">
-        <span class="text-xs">📱</span>
-        <span class="hidden sm:inline">Teste täglich</span>
-        <span class="sm:hidden">Test</span>
-      </span>
-    </button>
-    <span class="magnet-area"><a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="btn text-xs sm:text-sm magnet-target px-2 py-1" onclick="if(window.umami) window.umami.track('app-download', {location: 'header', timestamp: new Date().toISOString()});">App laden</a></span>
+  </div>
+  
+  <div class="flex items-center gap-2">
+    <!-- Desktop: Nur App laden Button -->
+    <span class="magnet-area hidden sm:block"><a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="btn text-sm magnet-target px-4 py-2" onclick="if(window.umami) window.umami.track('app-download', {location: 'header', timestamp: new Date().toISOString()});">App laden</a></span>
+    
+    <!-- Mobile: Kompakter App laden Button -->
+    <span class="magnet-area sm:hidden"><a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="btn text-xs magnet-target px-3 py-1.5" onclick="if(window.umami) window.umami.track('app-download', {location: 'header', timestamp: new Date().toISOString()});">App</a></span>
   </div>
 </header>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden lg:hidden" onclick="closeMobileMenu()">
+  <div class="absolute top-0 right-0 w-72 h-full bg-gradient-to-b from-purple-900/95 to-fuchsia-900/95 backdrop-blur-xl border-l border-fuchsia-300/20" onclick="event.stopPropagation()">
+    <!-- Mobile Menu Header -->
+    <div class="flex items-center justify-between p-4 border-b border-fuchsia-300/20">
+      <h2 class="text-lg font-bold text-white">Menü</h2>
+      <button onclick="closeMobileMenu()" class="text-white hover:text-fuchsia-300 transition-colors p-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu Links -->
+    <nav class="p-4 space-y-2">
+      <a href="index.html" class="flex items-center gap-3 text-white hover:text-fuchsia-300 transition-colors py-2 px-3 rounded-lg hover:bg-fuchsia-500/10 text-sm">
+        <span class="text-base">🏠</span>
+        <span>Hauptseite</span>
+      </a>
+      <a href="features.html" class="flex items-center gap-3 text-white hover:text-fuchsia-300 transition-colors py-2 px-3 rounded-lg hover:bg-fuchsia-500/10 text-sm">
+        <span class="text-base">⚡</span>
+        <span>Features</span>
+      </a>
+      <a href="preise.html" class="flex items-center gap-3 text-white hover:text-fuchsia-300 transition-colors py-2 px-3 rounded-lg hover:bg-fuchsia-500/10 text-sm">
+        <span class="text-base">💰</span>
+        <span><span class="kiuly-violet">KIULY</span> vs Alternativen</span>
+      </a>
+      <a href="screenshots.html" class="flex items-center gap-3 text-white hover:text-fuchsia-300 transition-colors py-2 px-3 rounded-lg hover:bg-fuchsia-500/10 text-sm">
+        <span class="text-base">📱</span>
+        <span>Screenshots</span>
+      </a>
+      <a href="testimonials.html" class="flex items-center gap-3 text-white hover:text-fuchsia-300 transition-colors py-2 px-3 rounded-lg hover:bg-fuchsia-500/10 text-sm">
+        <span class="text-base">⭐</span>
+        <span>Bewertungen</span>
+      </a>
+      <a href="index.html#calendar" class="flex items-center gap-3 text-white hover:text-fuchsia-300 transition-colors py-2 px-3 rounded-lg hover:bg-fuchsia-500/10 text-sm">
+        <span class="text-base">📅</span>
+        <span>Kalender</span>
+      </a>
+      <a href="index.html#research" class="flex items-center gap-3 text-white hover:text-fuchsia-300 transition-colors py-2 px-3 rounded-lg hover:bg-fuchsia-500/10 text-sm">
+        <span class="text-base">🔬</span>
+        <span>Studie</span>
+      </a>
+      <a href="magazin.html" class="flex items-center gap-3 text-white hover:text-fuchsia-300 transition-colors py-2 px-3 rounded-lg bg-gradient-to-r from-purple-600/20 to-fuchsia-600/20 border border-fuchsia-300/40 text-sm">
+        <span class="text-base">📚</span>
+        <span class="font-bold">EDU INSIGHTS</span>
+      </a>
+    </nav>
+    
+    <!-- Mobile Menu Actions -->
+    <div class="p-4 border-t border-fuchsia-300/20 space-y-2">
+      <button onclick="openDealModal(); closeMobileMenu();" class="w-full bg-green-600/10 hover:bg-green-600/20 text-green-300 px-3 py-2 font-medium rounded-lg border border-green-500/30 hover:border-green-400/50 transition-all duration-300 text-sm">
+        <span class="flex items-center justify-center gap-2">
+          <span>🎁</span>
+          <span><span class="kiuly-violet">KIULY</span> Deal</span>
+        </span>
+      </button>
+      <button onclick="openTestModal(); closeMobileMenu();" class="w-full bg-blue-600/10 hover:bg-blue-600/20 text-blue-300 px-3 py-2 font-medium rounded-lg border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 text-sm">
+        <span class="flex items-center justify-center gap-2">
+          <span>📱</span>
+          <span>Teste täglich</span>
+        </span>
+      </button>
+      <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" onclick="if(window.umami) window.umami.track('app-download', {location: 'mobile-menu', timestamp: new Date().toISOString()});" class="w-full btn text-center block text-sm">
+        App laden
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- ────────── CREDIBILITY BANNER ────────── -->
 <div class="fixed top-20 left-0 right-0 z-30 bg-green-600/5 backdrop-blur-sm border-b border-green-500/20">
@@ -1901,6 +2013,39 @@ Empfehle KIULY weiter und erhalte 6 Monate kostenlos!
   }
 
   // Deal Modal Functions
+  // Mobile Menu Functions
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('mobile-menu-btn');
+    
+    if (menu.classList.contains('hidden')) {
+      menu.classList.remove('hidden');
+      menu.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      btn.innerHTML = `
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      `;
+    } else {
+      closeMobileMenu();
+    }
+  }
+
+  function closeMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('mobile-menu-btn');
+    
+    menu.classList.add('hidden');
+    menu.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+    btn.innerHTML = `
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    `;
+  }
+
   function openDealModal() {
     const modal = document.getElementById('deal-modal');
     const content = document.getElementById('modal-content');
