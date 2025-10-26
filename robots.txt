@@ -1,24 +1,53 @@
-# robots.txt für KIULY
+# robots.txt für KIULY - KI Unterrichtsplanung App
+# Optimiert für maximale SEO-Performance
+
 User-agent: *
 Allow: /
+Allow: /index.html
+Allow: /magazin.html
+Allow: /*.webp$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.svg$
 
 # Sitemap
 Sitemap: https://kiuly.de/sitemap.xml
 
-# Crawl-Delay für höfliche Bots
-Crawl-delay: 0.5
+# Crawl-Delay für optimale Performance
+Crawl-delay: 0
 
-# Wichtige Seiten priorisieren
-Allow: /index.html
-Allow: /magazin.html
-Allow: /artikel-*.html
-Allow: /faq.html
+# Spezifische Bots optimieren
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
 
-# Screenshots nicht indexieren (zu viele)
-Disallow: /Simulator*
+User-agent: Googlebot-Image
+Allow: /
 
-# App Store Assets
-Allow: /icon.png
-Allow: /*.webp
-Allow: /*.svg
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
 
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Sogou
+Allow: /
+
+User-agent: Exabot
+Allow: /
+
+User-agent: facebot
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
