@@ -105,6 +105,26 @@
     .kiuly-violet {
       color: #7c3aed;
     }
+    .btn {
+      background: linear-gradient(90deg, #a5b4fc, #f472b6, #c084fc, #7c3aed);
+      color: #fff;
+      font-weight: 800;
+      padding: 0.9em 2em;
+      border-radius: 1.2em;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.15s;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+    .magnet-area {
+      position: relative;
+      display: inline-block;
+    }
+    .magnet-target {
+      transition: transform 0.08s ease;
+    }
   </style>
 </head>
 
@@ -112,21 +132,24 @@
   <!-- ────────── HEADER ────────── -->
   <header class="fixed inset-x-0 top-0 z-40 glass flex items-center justify-between px-[max(1rem,env(safe-area-inset-left))] py-3 mx-auto max-w-7xl" role="banner">
     <a href="index.html" class="flex items-center gap-2" aria-label="KIULY Start">
-      <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-fuchsia-600 rounded-lg flex items-center justify-center">
-        <span class="text-white font-bold text-sm">K</span>
-      </div>
-      <span class="font-black text-xl kiuly-violet">KIULY</span>
+      <picture>
+        <source srcset="icon.webp" type="image/webp">
+        <img src="icon.png" alt="KIULY Logo" class="h-10 w-10 rounded-xl" width="40" height="40" decoding="async" loading="eager" />
+      </picture>
+      <span class="sr-only">KIULY</span>
     </a>
-    <nav class="hidden lg:flex gap-6 text-sm font-semibold items-center" aria-label="Hauptnavigation">
+    <nav class="hidden lg:flex gap-9 text-sm font-semibold" aria-label="Hauptnavigation">
       <a href="index.html" class="text-white hover:text-fuchsia-300 transition-colors">Hauptseite</a>
       <a href="features.html" class="text-white hover:text-fuchsia-300 transition-colors">Features</a>
-      <a href="preise.html" class="text-white hover:text-fuchsia-300 transition-colors">Preise</a>
+      <a href="preise.html" class="text-white hover:text-fuchsia-300 transition-colors"><span class="kiuly-violet">KIULY</span> vs Alternativen</a>
       <a href="screenshots.html" class="text-white hover:text-fuchsia-300 transition-colors">Screenshots</a>
       <a href="testimonials.html" class="relative px-3 py-1 rounded-lg bg-gradient-to-r from-purple-600/20 to-fuchsia-600/20 border border-fuchsia-300/40 hover:border-fuchsia-300 hover:from-purple-600/30 hover:to-fuchsia-600/30 transition-all text-white">Bewertungen</a>
-      <a href="magazin.html" class="text-white hover:text-fuchsia-300 transition-colors">EDU INSIGHTS</a>
+      <a href="index.html#calendar" class="text-white hover:text-fuchsia-300 transition-colors">Kalender</a>
+      <a href="index.html#research" class="text-white hover:text-fuchsia-300 transition-colors">Studie</a>
+      <a href="magazin.html" class="relative px-3 py-1 rounded-lg bg-gradient-to-r from-purple-600/20 to-fuchsia-600/20 border border-fuchsia-300/40 hover:border-fuchsia-300 hover:from-purple-600/30 hover:to-fuchsia-600/30 transition-all text-white font-bold">EDU INSIGHTS</a>
     </nav>
     <div class="flex items-center gap-1.5">
-      <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="btn text-xs sm:text-sm px-2 py-1" onclick="if(window.umami) window.umami.track('app-download', {location: 'header', timestamp: new Date().toISOString()});">App laden</a>
+      <span class="magnet-area"><a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="btn text-xs sm:text-sm magnet-target px-2 py-1" onclick="if(window.umami) window.umami.track('app-download', {location: 'header', timestamp: new Date().toISOString()});">App laden</a></span>
     </div>
   </header>
 
