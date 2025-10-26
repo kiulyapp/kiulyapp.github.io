@@ -611,7 +611,6 @@
     <a href="#preise" class="hover:text-fuchsia-300">KIULY vs Alternativen</a>
     <a href="#app" class="hover:text-fuchsia-300">Screenshots</a>
     <a href="#testimonials" class="hover:text-fuchsia-300">Bewertungen</a>
-    <a href="#kiuly-deal" class="hover:text-fuchsia-300">6 Monate gratis</a>
     <a href="#calendar" class="hover:text-fuchsia-300">Kalender</a>
     <a href="#research" class="hover:text-fuchsia-300">Studie</a>
     <a href="magazin.html" class="relative px-3 py-1 rounded-lg bg-gradient-to-r from-purple-600/20 to-fuchsia-600/20 border border-fuchsia-300/40 hover:border-fuchsia-300 hover:from-purple-600/30 hover:to-fuchsia-600/30 transition-all">Magazin</a>
@@ -1064,7 +1063,6 @@
             <h3 class="text-2xl font-extrabold mb-4 text-purple-600">Clean & Intuitiv</h3>
             <p class="text-gray-800 text-xl mb-6 italic leading-relaxed">„Der Aufbau des Tools ist wahnsinnig clean und intuitiv. Die minimalistische Darstellung ist wesentlich und effizient – besser als alles andere, was sonst angeboten wird."</p>
             <div class="text-yellow-500 text-2xl mb-4">★★★★★</div>
-            <p class="text-sm text-gray-600">Forschung & Entwicklung</p>
           </blockquote>
         </div>
 
@@ -1075,7 +1073,6 @@
             <h3 class="text-2xl font-extrabold mb-4 text-blue-600">Effektiver als andere</h3>
             <p class="text-gray-800 text-xl mb-6 italic leading-relaxed">„Es funktioniert super und ist auch viel effektiver als anderweitige KI-Programme. Die Vorgehensweise wird sehr detailreich genannt – also sowas wie welche Fragen man der Klasse stellen soll."</p>
             <div class="text-yellow-500 text-2xl mb-4">★★★★★</div>
-            <p class="text-sm text-gray-600">Sekundarstufe</p>
           </blockquote>
         </div>
 
@@ -1086,7 +1083,6 @@
             <h3 class="text-2xl font-extrabold mb-4 text-green-600">Arbeitsblatt-Generator</h3>
             <p class="text-gray-800 text-xl mb-6 italic leading-relaxed">„Das mit den Lösungen für die Arbeitsblätter finde ich auch Klasse! Der Generator ist sehr simple gehalten. Ansonsten bin ich echt begeistert."</p>
             <div class="text-yellow-500 text-2xl mb-4">★★★★★</div>
-            <p class="text-sm text-gray-600">Primarstufe</p>
           </blockquote>
         </div>
 
@@ -1097,7 +1093,6 @@
             <h3 class="text-2xl font-extrabold mb-4 text-orange-600">Einfachheit und Effizienz</h3>
             <p class="text-gray-800 text-xl mb-6 italic leading-relaxed">„Von all den Tools, die ich austeste, besticht KIULY durch seine Einfachheit und Effizienz. Ich brauche keine 80 KI-Tools für was auch immer."</p>
             <div class="text-yellow-500 text-2xl mb-4">★★★★★</div>
-            <p class="text-sm text-gray-600">Berufsbildung</p>
           </blockquote>
         </div>
 
@@ -1108,7 +1103,6 @@
             <h3 class="text-2xl font-extrabold mb-4 text-pink-600">Didaktische Hinweise</h3>
             <p class="text-gray-800 text-xl mb-6 italic leading-relaxed">„Die didaktischen Hinweise sind sehr gelungen. Es ist weder zu unspezifisch noch hemmungslos überfrachtet – genau richtig für den Schulalltag."</p>
             <div class="text-yellow-500 text-2xl mb-4">★★★★★</div>
-            <p class="text-sm text-gray-600">Mittlere Reife</p>
           </blockquote>
         </div>
 
@@ -1119,7 +1113,6 @@
             <h3 class="text-2xl font-extrabold mb-4 text-indigo-600">Beste Alternative</h3>
             <p class="text-gray-800 text-xl mb-6 italic leading-relaxed">„Ich vergleiche KIULY mit fobizz, to-teach und MagicSchool. KIULY ist die beste Alternative – speziell für deutsche Lehrkräfte entwickelt."</p>
             <div class="text-yellow-500 text-2xl mb-4">★★★★★</div>
-            <p class="text-sm text-gray-600">Integrierte Schulform</p>
           </blockquote>
         </div>
 
@@ -1159,133 +1152,50 @@
   </div>
 </section>
 
-<!-- ────────── KIULY DEAL EMPFEHLUNGSAKTION ────────── -->
-<section id="kiuly-deal" class="py-24 px-6 bg-gradient-to-br from-green-900/30 to-emerald-900/20">
-  <div class="max-w-5xl mx-auto">
-    <div class="glass p-10 md:p-14 tilt text-center" data-aos="zoom-in">
+<!-- Minimalistischer Deal Button -->
+<div class="text-center py-8">
+  <button onclick="openDealModal()" class="btn bg-green-600 hover:bg-green-700 text-lg px-6 py-3">
+    🎁 6 Monate gratis
+  </button>
+</div>
+
+<!-- Deal Modal -->
+<div id="deal-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+  <div class="glass p-8 max-w-md w-full rounded-2xl">
+    <div class="text-center">
+      <h3 class="text-2xl font-extrabold mb-4">🎁 6 Monate gratis</h3>
+      <p class="text-gray-300 mb-6">Empfehle KIULY weiter und erhalte 6 Monate kostenlos!</p>
       
-      <!-- Header -->
-      <div class="mb-8">
-        <div class="inline-flex items-center gap-3 mb-4">
-          <span class="text-5xl">🎁</span>
-          <h2 class="text-3xl md:text-4xl font-extrabold">KIULY Deal</h2>
-          <span class="tag bg-green-500/20 text-green-200 border-green-400/40">6 Monate gratis</span>
+      <div class="space-y-4 mb-6">
+        <div class="flex items-center gap-3 text-left">
+          <span class="text-2xl">📱</span>
+          <span class="text-sm">Teile KIULY mit anderen</span>
         </div>
-        <p class="text-xl md:text-2xl font-medium text-fuchsia-100/95">
-          Empfehle KIULY weiter und erhalte <strong>6 Monate kostenlos</strong>!
-        </p>
-      </div>
-
-      <!-- Deal Details -->
-      <div class="grid md:grid-cols-3 gap-6 mb-10">
-        <div class="glass p-6 rounded-2xl">
-          <div class="text-4xl mb-3">📱</div>
-          <h3 class="text-xl font-black mb-2">1. Empfehlen</h3>
-          <p class="text-fuchsia-50/90">Teile KIULY mit Kolleg*innen, Freunden oder in sozialen Medien</p>
+        <div class="flex items-center gap-3 text-left">
+          <span class="text-2xl">📸</span>
+          <span class="text-sm">Screenshot der Weiterleitung</span>
         </div>
-        <div class="glass p-6 rounded-2xl">
-          <div class="text-4xl mb-3">📸</div>
-          <h3 class="text-xl font-black mb-2">2. Screenshot</h3>
-          <p class="text-fuchsia-50/90">Mache einen Screenshot von deiner Weiterleitung</p>
-        </div>
-        <div class="glass p-6 rounded-2xl">
-          <div class="text-4xl mb-3">📧</div>
-          <h3 class="text-xl font-black mb-2">3. E-Mail senden</h3>
-          <p class="text-fuchsia-50/90">Sende den Screenshot an <strong>help@kiuly.de</strong></p>
+        <div class="flex items-center gap-3 text-left">
+          <span class="text-2xl">📧</span>
+          <span class="text-sm">E-Mail an help@kiuly.de</span>
         </div>
       </div>
-
-      <!-- What You Get -->
-      <div class="glass p-8 rounded-2xl mb-8" data-aos="fade-up">
-        <h3 class="text-2xl font-extrabold mb-4">Was du erhältst:</h3>
-        <div class="grid md:grid-cols-2 gap-6 text-left">
-          <div class="flex items-start gap-3">
-            <span class="text-2xl">✅</span>
-            <div>
-              <p class="font-bold">6 Monate KIULY Pro</p>
-              <p class="text-sm text-fuchsia-50/80">Vollzugriff auf alle Features</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3">
-            <span class="text-2xl">✅</span>
-            <div>
-              <p class="font-bold">Unbegrenzte Nutzung</p>
-              <p class="text-sm text-fuchsia-50/80">Keine Limits bei der Erstellung</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3">
-            <span class="text-2xl">✅</span>
-            <div>
-              <p class="font-bold">Alle Updates</p>
-              <p class="text-sm text-fuchsia-50/80">Neueste Features inklusive</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3">
-            <span class="text-2xl">✅</span>
-            <div>
-              <p class="font-bold">Premium Support</p>
-              <p class="text-sm text-fuchsia-50/80">Direkter Kontakt zum Team</p>
-            </div>
-          </div>
-        </div>
+      
+      <div class="flex gap-3">
+        <button onclick="copyToClipboard('https://kiuly.de')" class="flex-1 btn text-sm py-2">
+          Link kopieren
+        </button>
+        <a href="mailto:help@kiuly.de?subject=KIULY%20Deal&body=Screenshot%20der%20Weiterleitung" class="flex-1 btn bg-green-600 hover:bg-green-700 text-sm py-2">
+          E-Mail senden
+        </a>
       </div>
-
-      <!-- How to Share -->
-      <div class="glass p-8 rounded-2xl mb-8" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="text-2xl font-extrabold mb-6">So teilst du KIULY:</h3>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="glass p-4 rounded-xl hover:bg-white/20 transition-all text-center" target="_blank" rel="noopener">
-            <div class="text-3xl mb-2">📱</div>
-            <p class="font-bold text-sm">App Store Link</p>
-          </a>
-          <a href="https://kiuly.de" class="glass p-4 rounded-xl hover:bg-white/20 transition-all text-center" target="_blank" rel="noopener">
-            <div class="text-3xl mb-2">🌐</div>
-            <p class="font-bold text-sm">Website teilen</p>
-          </a>
-          <button onclick="copyToClipboard('https://kiuly.de')" class="glass p-4 rounded-xl hover:bg-white/20 transition-all text-center">
-            <div class="text-3xl mb-2">📋</div>
-            <p class="font-bold text-sm">Link kopieren</p>
-          </button>
-          <button onclick="shareKIULY()" class="glass p-4 rounded-xl hover:bg-white/20 transition-all text-center">
-            <div class="text-3xl mb-2">📤</div>
-            <p class="font-bold text-sm">Native Share</p>
-          </button>
-        </div>
-      </div>
-
-      <!-- Email Instructions -->
-      <div class="glass p-8 rounded-2xl mb-8" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="text-2xl font-extrabold mb-4">E-Mail an help@kiuly.de</h3>
-        <div class="bg-gray-900/50 p-6 rounded-xl text-left">
-          <p class="text-sm text-gray-300 mb-2"><strong>Betreff:</strong> KIULY Deal - Empfehlung</p>
-          <p class="text-sm text-gray-300 mb-4"><strong>Anhang:</strong> Screenshot deiner Weiterleitung</p>
-          <p class="text-sm text-gray-300"><strong>Text:</strong> "Hallo! Ich habe KIULY weiterempfohlen. Hier ist der Screenshot als Nachweis. Bitte aktiviert meine 6 Monate kostenlos. Vielen Dank!"</p>
-        </div>
-      </div>
-
-      <!-- Call to Action -->
-      <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-        <p class="text-lg font-medium mb-6 text-fuchsia-100/90">
-          Bereit für 6 Monate kostenlos? Starte jetzt mit deiner Empfehlung!
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="btn text-lg px-8 py-4" target="_blank" rel="noopener">
-            App Store öffnen →
-          </a>
-          <a href="mailto:help@kiuly.de?subject=KIULY%20Deal%20-%20Empfehlung&body=Hallo!%20Ich%20habe%20KIULY%20weiterempfohlen.%20Hier%20ist%20der%20Screenshot%20als%20Nachweis.%20Bitte%20aktiviert%20meine%206%20Monate%20kostenlos.%20Vielen%20Dank!" class="btn text-lg px-8 py-4 bg-green-600 hover:bg-green-700" target="_blank" rel="noopener">
-            E-Mail senden →
-          </a>
-        </div>
-      </div>
-
-      <!-- Terms -->
-      <div class="mt-8 text-sm text-fuchsia-200/70">
-        <p>* Gültig für neue Empfehlungen. Screenshot muss die Weiterleitung zeigen. Einmal pro Person. Gültig bis auf Widerruf.</p>
-      </div>
-
+      
+      <button onclick="closeDealModal()" class="mt-4 text-gray-400 hover:text-white text-sm">
+        Schließen
+      </button>
     </div>
   </div>
-</section>
+</div>
 
 <!-- ────────── MAGAZIN TEASER ────────── -->
 <section id="magazin-teaser" class="py-24 px-6 relative overflow-hidden">
@@ -1736,6 +1646,35 @@
       }, 300);
     }, 3000);
   }
+
+  // Deal Modal Functions
+  function openDealModal() {
+    const modal = document.getElementById('deal-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDealModal() {
+    const modal = document.getElementById('deal-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Close modal when clicking outside
+  document.getElementById('deal-modal').addEventListener('click', (e) => {
+    if (e.target.id === 'deal-modal') {
+      closeDealModal();
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeDealModal();
+    }
+  });
 </script>
 </body>
 </html>
