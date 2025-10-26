@@ -1222,7 +1222,7 @@
 <div id="deal-modal" class="fixed inset-0 bg-black/60 backdrop-blur-md z-50 hidden items-center justify-center p-4 transition-opacity duration-300">
   <div class="glass p-8 max-w-md w-full rounded-2xl transform transition-all duration-300 scale-95 opacity-0" id="modal-content">
     <div class="text-center">
-      <h3 class="text-3xl font-extrabold mb-4 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 bg-clip-text text-transparent">🎁 KIULY Deal</h3>
+      <h3 class="text-3xl font-extrabold mb-4 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 bg-clip-text text-transparent">🎁 6 Monate gratis</h3>
       <p class="text-gray-300 mb-6 leading-relaxed">Empfehle KIULY weiter und erhalte 6 Monate kostenlos!</p>
       
       <div class="space-y-4 mb-6">
@@ -1240,13 +1240,18 @@
         </div>
       </div>
       
-      <div class="flex gap-3 mb-4">
-        <button onclick="copyToClipboard('https://kiuly.de')" class="flex-1 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-sm py-3 font-semibold text-white rounded-xl transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-gray-500/25">
-          📋 Link kopieren
+      <div class="grid grid-cols-1 gap-3 mb-4">
+        <button onclick="shareToWhatsApp()" class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-sm py-3 font-semibold text-white rounded-xl transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-green-500/25 flex items-center justify-center gap-2">
+          💬 WhatsApp teilen
         </button>
-        <a href="mailto:help@kiuly.de?subject=KIULY%20Deal&body=Screenshot%20der%20Weiterleitung" class="flex-1 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-sm py-3 font-semibold text-white rounded-xl transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-green-500/25">
-          📧 E-Mail senden
-        </a>
+        <div class="grid grid-cols-2 gap-3">
+          <button onclick="copyToClipboard('https://kiuly.de')" class="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-sm py-3 font-semibold text-white rounded-xl transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-gray-500/25">
+            📋 Link kopieren
+          </button>
+          <a href="mailto:help@kiuly.de?subject=KIULY%20Deal&body=Screenshot%20der%20Weiterleitung" class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-sm py-3 font-semibold text-white rounded-xl transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-blue-500/25 text-center flex items-center justify-center">
+            📧 E-Mail senden
+          </a>
+        </div>
       </div>
       
       <button onclick="closeDealModal()" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">
@@ -1653,6 +1658,44 @@
   })();
 
   // KIULY Deal Functions
+  function shareToWhatsApp() {
+    const message = `🎁 KIULY Deal: 6 Monate gratis!
+
+📚 Die beste KI-App für Lehrer in Deutschland
+✅ Unterrichtsplanung in Sekunden
+✅ Material-Generator mit Lösungen
+✅ DSGVO-konform & lehrplankonform
+✅ Für iPad, iPhone & MacBook
+
+Empfehle KIULY weiter und erhalte 6 Monate kostenlos!
+
+📱 App laden: https://kiuly.de
+📧 Screenshot der Weiterleitung an: help@kiuly.de
+
+#KIULY #Lehrer #Unterrichtsplanung #KI #Bildung`;
+
+    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    
+    // Prüfe ob auf Mobile oder Desktop
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      // Mobile: Direkt WhatsApp öffnen
+      window.open(whatsappUrl, '_blank');
+    } else {
+      // Desktop: WhatsApp Web öffnen
+      window.open(whatsappUrl, '_blank');
+    }
+    
+    // Analytics Tracking
+    if (window.umami) {
+      window.umami.track('whatsapp-share', {
+        location: 'deal-modal',
+        timestamp: new Date().toISOString()
+      });
+    }
+    
+    showNotification('WhatsApp wird geöffnet... 💬');
+  }
+
   function copyToClipboard(text) {
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(text).then(() => {
