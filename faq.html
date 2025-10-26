@@ -119,13 +119,19 @@
       <img src="icon.png" alt="KIULY Logo" class="h-10 w-10 rounded-xl" />
       <span class="font-black text-lg text-white">KIULY</span>
     </a>
-    <nav class="hidden lg:flex gap-6 text-sm font-semibold text-white" aria-label="Hauptnavigation">
-      <a href="index.html" class="hover:text-fuchsia-300">Startseite</a>
-      <a href="index.html#features" class="hover:text-fuchsia-300">Features</a>
-      <a href="magazin.html" class="bg-gradient-to-r from-purple-600 to-fuchsia-600 px-4 py-2 rounded-full text-white font-bold hover:from-purple-700 hover:to-fuchsia-700 transition-all shadow-lg">Magazin</a>
-      <a href="index.html#kontakt" class="hover:text-fuchsia-300">Kontakt</a>
+    <nav class="hidden lg:flex gap-9 text-sm font-semibold" aria-label="Hauptnavigation">
+      <a href="index.html" class="text-white hover:text-fuchsia-300 transition-colors">Hauptseite</a>
+      <a href="features.html" class="text-white hover:text-fuchsia-300 transition-colors">Features</a>
+      <a href="preise.html" class="text-white hover:text-fuchsia-300 transition-colors"><span class="kiuly-violet">KIULY</span> vs Alternativen</a>
+      <a href="screenshots.html" class="text-white hover:text-fuchsia-300 transition-colors">Screenshots</a>
+      <a href="testimonials.html" class="text-white hover:text-fuchsia-300 transition-colors">Bewertungen</a>
+      <a href="index.html#calendar" class="text-white hover:text-fuchsia-300 transition-colors">Kalender</a>
+      <a href="index.html#research" class="text-white hover:text-fuchsia-300 transition-colors">Studie</a>
+      <a href="magazin.html" class="relative px-3 py-1 rounded-lg bg-gradient-to-r from-purple-600/20 to-fuchsia-600/20 border border-fuchsia-300/40 hover:border-fuchsia-300 hover:from-purple-600/30 hover:to-fuchsia-600/30 transition-all text-white font-bold">EDU INSIGHTS</a>
     </nav>
-    <span class="magnet-area"><a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="btn text-sm magnet-target">App laden</a></span>
+    <div class="flex items-center gap-1.5">
+      <span class="magnet-area"><a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="btn text-xs sm:text-sm magnet-target px-2 py-1" onclick="if(window.umami) window.umami.track('app-download', {location: 'header', timestamp: new Date().toISOString()});">App laden</a></span>
+    </div>
   </header>
 
   <!-- Breadcrumbs -->
