@@ -1321,6 +1321,108 @@
   </div>
 </section>
 
+<!-- ────────── KONTAKTFORMULAR ────────── -->
+<section class="py-16 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="glass p-8 rounded-2xl border border-fuchsia-300/20" data-aos="fade-up">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-black mb-4 text-white">
+          <span class="bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">Kontakt</span>
+        </h2>
+        <p class="text-fuchsia-100/90 text-lg">Hast du Fragen? Wir helfen gerne!</p>
+      </div>
+      
+      <form id="contact-form" class="space-y-6" onsubmit="handleContactForm(event)">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block text-sm font-semibold text-fuchsia-200 mb-2">Name *</label>
+            <input type="text" id="name" name="name" required 
+                   class="w-full px-4 py-3 bg-white/10 border border-fuchsia-300/30 rounded-xl text-white placeholder-fuchsia-300/60 focus:border-fuchsia-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-300/20 transition-all"
+                   placeholder="Dein Name">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold text-fuchsia-200 mb-2">E-Mail *</label>
+            <input type="email" id="email" name="email" required 
+                   class="w-full px-4 py-3 bg-white/10 border border-fuchsia-300/30 rounded-xl text-white placeholder-fuchsia-300/60 focus:border-fuchsia-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-300/20 transition-all"
+                   placeholder="deine@email.de">
+          </div>
+        </div>
+        
+        <div>
+          <label for="subject" class="block text-sm font-semibold text-fuchsia-200 mb-2">Betreff</label>
+          <select id="subject" name="subject" 
+                  class="w-full px-4 py-3 bg-white/10 border border-fuchsia-300/30 rounded-xl text-white focus:border-fuchsia-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-300/20 transition-all">
+            <option value="allgemein">Allgemeine Frage</option>
+            <option value="technisch">Technischer Support</option>
+            <option value="preis">Preis & Abo</option>
+            <option value="feature">Feature-Wunsch</option>
+            <option value="bug">Bug-Report</option>
+            <option value="feedback">Feedback</option>
+            <option value="kooperation">Kooperation</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="message" class="block text-sm font-semibold text-fuchsia-200 mb-2">Nachricht *</label>
+          <textarea id="message" name="message" rows="5" required 
+                    class="w-full px-4 py-3 bg-white/10 border border-fuchsia-300/30 rounded-xl text-white placeholder-fuchsia-300/60 focus:border-fuchsia-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-300/20 transition-all resize-none"
+                    placeholder="Beschreibe dein Anliegen..."></textarea>
+        </div>
+        
+        <div>
+          <label for="screenshot" class="block text-sm font-semibold text-fuchsia-200 mb-2">📸 Screenshot anhängen (optional)</label>
+          <div class="relative">
+            <input type="file" id="screenshot" name="screenshot" accept="image/*" 
+                   class="w-full px-4 py-3 bg-white/10 border border-fuchsia-300/30 rounded-xl text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-fuchsia-600 file:text-white hover:file:bg-fuchsia-700 focus:border-fuchsia-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-300/20 transition-all"
+                   onchange="handleFileUpload(event)">
+            <div id="file-preview" class="mt-3 hidden">
+              <div class="flex items-center gap-3 p-3 bg-fuchsia-600/20 rounded-lg border border-fuchsia-300/30">
+                <span class="text-2xl">📸</span>
+                <div class="flex-1">
+                  <p class="text-sm font-semibold text-fuchsia-200" id="file-name"></p>
+                  <p class="text-xs text-fuchsia-300/80" id="file-size"></p>
+                </div>
+                <button type="button" onclick="removeFile()" class="text-fuchsia-400 hover:text-fuchsia-300 transition-colors">
+                  ✕
+                </button>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-fuchsia-300/70 mt-2">PNG, JPG, GIF bis 10MB. Screenshots helfen uns beim Support!</p>
+        </div>
+        
+        <div class="flex items-center gap-3">
+          <input type="checkbox" id="privacy" name="privacy" required 
+                 class="w-4 h-4 text-fuchsia-600 bg-white/10 border-fuchsia-300/30 rounded focus:ring-fuchsia-300/20 focus:ring-2">
+          <label for="privacy" class="text-sm text-fuchsia-200/90">
+            Ich stimme der <a href="#" class="text-fuchsia-300 hover:text-fuchsia-200 underline">Datenschutzerklärung</a> zu *
+          </label>
+        </div>
+        
+        <div class="text-center">
+          <button type="submit" 
+                  class="btn text-lg px-8 py-4 hover:scale-105 transition-all duration-300 bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 shadow-lg hover:shadow-fuchsia-500/25">
+            📧 Nachricht senden
+          </button>
+        </div>
+      </form>
+      
+      <div class="mt-8 pt-6 border-t border-fuchsia-300/20">
+        <div class="grid md:grid-cols-2 gap-6 text-center">
+          <div>
+            <h3 class="font-bold text-fuchsia-200 mb-2">📧 E-Mail</h3>
+            <a href="mailto:help@kiuly.de" class="text-fuchsia-300 hover:text-fuchsia-200 transition-colors">help@kiuly.de</a>
+          </div>
+          <div>
+            <h3 class="font-bold text-fuchsia-200 mb-2">⚡ Antwortzeit</h3>
+            <p class="text-fuchsia-300">Meist innerhalb von 24h</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ────────── FOOTER ────────── -->
 <footer class="py-10 text-center text-sm glass mx-4 mb-6">
   <p>Made in Essen · <span id="year"></span> · <span class="kiuly-violet">KIULY</span> – DSGVO-konform</p>
@@ -1405,6 +1507,118 @@
       if(localStorage.getItem('kiuly_fs')==='1') document.body.classList.add('fs-lg');
     }catch(e){}
   })();
+
+  // Kontaktformular mit Screenshot-Upload
+  let uploadedFile = null;
+  
+  function handleFileUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    // Dateigröße prüfen (10MB Limit)
+    const maxSize = 10 * 1024 * 1024; // 10MB
+    if (file.size > maxSize) {
+      alert('Datei ist zu groß! Maximum: 10MB');
+      event.target.value = '';
+      return;
+    }
+    
+    // Dateityp prüfen
+    if (!file.type.startsWith('image/')) {
+      alert('Bitte nur Bilddateien hochladen!');
+      event.target.value = '';
+      return;
+    }
+    
+    uploadedFile = file;
+    
+    // Preview anzeigen
+    const preview = document.getElementById('file-preview');
+    const fileName = document.getElementById('file-name');
+    const fileSize = document.getElementById('file-size');
+    
+    fileName.textContent = file.name;
+    fileSize.textContent = formatFileSize(file.size);
+    preview.classList.remove('hidden');
+    
+    // Analytics
+    if (window.umami) {
+      window.umami.track('screenshot-upload', {
+        fileType: file.type,
+        fileSize: file.size,
+        timestamp: new Date().toISOString()
+      });
+    }
+  }
+  
+  function removeFile() {
+    uploadedFile = null;
+    document.getElementById('screenshot').value = '';
+    document.getElementById('file-preview').classList.add('hidden');
+  }
+  
+  function formatFileSize(bytes) {
+    if (bytes === 0) return '0 Bytes';
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+  }
+  
+  function handleContactForm(event) {
+    event.preventDefault();
+    
+    const formData = new FormData(event.target);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const subject = formData.get('subject');
+    const message = formData.get('message');
+    
+    // E-Mail Body zusammenstellen
+    let emailBody = `Hallo KIULY Team,
+
+Name: ${name}
+E-Mail: ${email}
+Betreff: ${subject}
+
+Nachricht:
+${message}
+
+---
+Gesendet über das KIULY Kontaktformular
+Zeitstempel: ${new Date().toLocaleString('de-DE')}`;
+    
+    // Screenshot hinzufügen falls vorhanden
+    if (uploadedFile) {
+      emailBody += `\n\nScreenshot: ${uploadedFile.name} (${formatFileSize(uploadedFile.size)})`;
+    }
+    
+    // mailto Link erstellen
+    const subjectEncoded = encodeURIComponent(`KIULY Support: ${subject}`);
+    const bodyEncoded = encodeURIComponent(emailBody);
+    const mailtoLink = `mailto:help@kiuly.de?subject=${subjectEncoded}&body=${bodyEncoded}`;
+    
+    // E-Mail Client öffnen
+    window.location.href = mailtoLink;
+    
+    // Success Message
+    showNotification('📧 E-Mail-Client wird geöffnet...');
+    
+    // Analytics
+    if (window.umami) {
+      window.umami.track('contact-form-submit', {
+        subject: subject,
+        hasScreenshot: !!uploadedFile,
+        timestamp: new Date().toISOString()
+      });
+    }
+    
+    // Form zurücksetzen
+    setTimeout(() => {
+      event.target.reset();
+      removeFile();
+    }, 1000);
+  }
 
   // init AOS (robust; respect reduced motion)
   (function(){
