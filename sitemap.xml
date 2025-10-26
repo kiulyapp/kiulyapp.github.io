@@ -26,6 +26,30 @@
     <priority>0.9</priority>
   </url>
   
+  <!-- Features -->
+  <url>
+    <loc>https://kiuly.de/features.html</loc>
+    <lastmod>2025-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Preise -->
+  <url>
+    <loc>https://kiuly.de/preise.html</loc>
+    <lastmod>2025-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Screenshots -->
+  <url>
+    <loc>https://kiuly.de/screenshots.html</loc>
+    <lastmod>2025-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- Rechtliche Seiten -->
   <url>
     <loc>https://kiuly.de/impressum.html</loc>
