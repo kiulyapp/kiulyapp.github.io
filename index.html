@@ -411,6 +411,10 @@
     /* Fix tap targets for mobile - minimum 48x48px */
     .tag{min-height:48px;min-width:48px;padding:12px 16px;display:inline-flex;align-items:center;justify-content:center}
     .underline{min-height:48px;min-width:48px;padding:12px 8px;display:inline-flex;align-items:center;justify-content:center}
+    
+    /* ── KIULY Violet Styling ───────────────────────────────── */
+    .kiuly-violet{color:#8b5cf6;font-weight:900;text-shadow:0 0 20px rgba(139,92,246,0.5)}
+    .kiuly-violet:hover{color:#a78bfa;text-shadow:0 0 25px rgba(167,139,250,0.7)}
     /* ── Dynamic FX: scroll progress bar ───────────────────────── */
     #scroll-progress{position:fixed;top:0;left:0;right:0;height:4px;z-index:60;background:linear-gradient(90deg,transparent,transparent)}
     #scroll-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#a78bfa,#f472b6,#c084fc,#7c3aed);box-shadow:0 0 16px #c084fc66}
@@ -618,7 +622,7 @@
   </a>
   <nav class="hidden lg:flex gap-9 text-sm font-semibold" aria-label="Hauptnavigation">
     <a href="#features" class="hover:text-fuchsia-300">Features</a>
-    <a href="#preise" class="hover:text-fuchsia-300">KIULY vs Alternativen</a>
+    <a href="#preise" class="hover:text-fuchsia-300"><span class="kiuly-violet">KIULY</span> vs Alternativen</a>
     <a href="#app" class="hover:text-fuchsia-300">Screenshots</a>
     <a href="#testimonials" class="hover:text-fuchsia-300">Bewertungen</a>
     <a href="#calendar" class="hover:text-fuchsia-300">Kalender</a>
@@ -629,7 +633,7 @@
     <button onclick="openDealModal()" class="bg-green-600/10 hover:bg-green-600/20 text-xs px-3 py-1.5 font-medium text-green-300 rounded-full border border-green-500/30 hover:border-green-400/50 transition-all duration-300 hover:scale-105 backdrop-blur-sm">
       <span class="flex items-center gap-1.5">
         <span class="text-xs">🎁</span>
-        <span class="hidden sm:inline">6 Monate gratis</span>
+        <span class="hidden sm:inline"><span class="kiuly-violet">KIULY</span> Deal</span>
         <span class="sm:hidden">6M gratis</span>
       </span>
     </button>
@@ -657,10 +661,10 @@
       <div class="blob b3"></div>
     </div>
     <h1 class="text-3xl sm:text-4xl md:text-6xl font-black leading-tight drop-shadow-xl max-w-[95vw] mx-auto">
-      KI Unterrichtsplanung<br /><span class="text-fuchsia-200">für iPad, iPhone & MacBook</span>
+      <span class="kiuly-violet">KIULY</span> Unterrichtsplanung<br /><span class="text-fuchsia-200">für iPad, iPhone & MacBook</span>
     </h1>
     <p class="mt-6 text-base sm:text-lg md:text-2xl text-fuchsia-50/90 leading-relaxed px-4">
-      Die beste KI-App für Lehrer in Deutschland. Unterrichtsplanung & Material in Sekunden – lehrplankonform, differenziert, DSGVO‑konform. Mit integriertem Timer für optimale Zeiterfassung.
+      <span class="kiuly-violet">KIULY</span> ist die beste KI-App für Lehrer in Deutschland. Unterrichtsplanung & Material in Sekunden – lehrplankonform, differenziert, DSGVO‑konform. Mit integriertem Timer für optimale Zeiterfassung.
     </p>
     <div class="mt-4 flex flex-wrap justify-center gap-1.5 text-sm px-4">
       <span class="px-2 py-1 bg-green-600/5 text-green-400 rounded-full text-xs border border-green-500/20">✓ DSGVO</span>
@@ -795,7 +799,7 @@
 
 <!-- ────────── FEATURES ────────── -->
 <section id="features" class="py-20 px-6">
-  <h2 class="text-3xl font-extrabold text-center mb-14" data-aos="fade-up">Warum KIULY?</h2>
+  <h2 class="text-3xl font-extrabold text-center mb-14" data-aos="fade-up">Warum <span class="kiuly-violet">KIULY</span>?</h2>
   <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
     <!-- Feature 1 -->
     <div class="glass p-6 tilt" data-aos="fade-up">
@@ -826,7 +830,7 @@
 <!-- ────────── WARUM LEHRKRÄFTE KIULY LIEBEN ────────── -->
 <section id="why-teachers-love" class="py-20 px-6 bg-gradient-to-br from-purple-900/20 to-fuchsia-900/20">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-extrabold text-center mb-12" data-aos="fade-up">Warum Lehrkräfte KIULY lieben</h2>
+    <h2 class="text-3xl font-extrabold text-center mb-12" data-aos="fade-up">Warum Lehrkräfte <span class="kiuly-violet">KIULY</span> lieben</h2>
     
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       
@@ -880,7 +884,7 @@
 <!-- ────────── PREISE & VERGLEICH ────────── -->
 <section id="preise" class="py-20 px-6">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-extrabold text-center mb-1" data-aos="fade-up">KIULY vs Alternativen</h2>
+    <h2 class="text-3xl font-extrabold text-center mb-1" data-aos="fade-up"><span class="kiuly-violet">KIULY</span> vs Alternativen</h2>
     <p class="compare-subtitle text-fuchsia-100/90" data-aos="fade-up" aria-label="Preisvergleich">
       Bis zu <strong>95 % günstiger</strong> als gängige Alternativen – transparent, monatlich kündbar.
     </p>
@@ -1199,7 +1203,7 @@
 
   <!-- Call-to-Action -->
   <div class="text-center mt-12" data-aos="fade-up">
-    <p class="text-lg font-medium mb-6 text-gray-800">Überzeugt? Teste KIULY täglich kostenlos!</p>
+    <p class="text-lg font-medium mb-6 text-gray-800">Überzeugt? Teste <span class="kiuly-violet">KIULY</span> täglich kostenlos!</p>
     <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" class="inline-block btn text-lg px-8 py-4" rel="noopener" target="_blank">
       Jetzt testen →
     </a>
@@ -1211,7 +1215,7 @@
   <button onclick="openDealModal()" class="relative bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-lg px-8 py-4 font-bold text-white rounded-2xl transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-green-500/50 border border-green-400/30 hover:border-green-300/50 overflow-hidden group animate-pulse hover:animate-none">
     <span class="relative z-10 flex items-center justify-center gap-2">
       <span class="text-xl">🎁</span>
-      <span>6 Monate gratis</span>
+      <span><span class="kiuly-violet">KIULY</span> Deal</span>
     </span>
     <div class="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -1222,8 +1226,8 @@
 <div id="deal-modal" class="fixed inset-0 bg-black/60 backdrop-blur-md z-50 hidden items-center justify-center p-4 transition-opacity duration-300">
   <div class="glass p-8 max-w-md w-full rounded-2xl transform transition-all duration-300 scale-95 opacity-0" id="modal-content">
     <div class="text-center">
-      <h3 class="text-3xl font-extrabold mb-4 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 bg-clip-text text-transparent">🎁 6 Monate gratis</h3>
-      <p class="text-gray-300 mb-6 leading-relaxed">Empfehle KIULY weiter und erhalte 6 Monate kostenlos!</p>
+      <h3 class="text-3xl font-extrabold mb-4 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 bg-clip-text text-transparent">🎁 <span class="kiuly-violet">KIULY</span> Deal</h3>
+      <p class="text-gray-300 mb-6 leading-relaxed">Empfehle <span class="kiuly-violet">KIULY</span> weiter und erhalte 6 Monate kostenlos!</p>
       
       <div class="space-y-4 mb-6">
         <div class="flex items-center gap-3 text-left p-3 rounded-lg bg-white/5">
@@ -1301,10 +1305,10 @@
 
 <!-- ────────── FOOTER ────────── -->
 <footer class="py-10 text-center text-sm glass mx-4 mb-6">
-  <p>Made in Essen · <span id="year"></span> · KIULY – DSGVO-konform</p>
+  <p>Made in Essen · <span id="year"></span> · <span class="kiuly-violet">KIULY</span> – DSGVO-konform</p>
   <nav class="space-x-4 mt-3">
     <a href="#features" class="underline">Features</a>
-    <a href="#preise" class="underline">KIULY vs Alternativen</a>
+    <a href="#preise" class="underline"><span class="kiuly-violet">KIULY</span> vs Alternativen</a>
     <a href="#app" class="underline">Screenshots</a>
     <a href="#testimonials" class="underline">Bewertungen</a>
     <a href="#kiuly-deal" class="underline">6 Monate gratis</a>
@@ -1659,7 +1663,7 @@
 
   // KIULY Deal Functions
   function shareToWhatsApp() {
-    const message = `🎁 KIULY Deal: 6 Monate gratis!
+    const message = `🎁 <span class="kiuly-violet">KIULY</span> Deal: 6 Monate gratis!
 
 📚 Die beste KI-App für Lehrer in Deutschland
 ✅ Unterrichtsplanung in Sekunden
