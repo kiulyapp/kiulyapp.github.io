@@ -9,13 +9,13 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "https://kiuly.de/icon.png",
+      "src": "icon.png",
       "sizes": "256x256",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://kiuly.de/icon.png", 
+      "src": "icon.png", 
       "sizes": "256x256",
       "type": "image/png",
       "purpose": "maskable"
