@@ -258,59 +258,82 @@
           <span class="kiuly-violet">KIULY</span> Deal
         </h1>
         
-        <!-- Subtitle -->
-        <p class="text-2xl md:text-3xl text-gray-200 mb-8">
-          <strong class="text-green-300">6 Monate GRATIS</strong> nur bei Teilen & Screenshot!
-        </p>
-        
-        <!-- Description -->
-        <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-          Sichere dir <strong class="text-green-300">6 Monate kostenlosen Zugang</strong> zu allen Premium-Features von KIULY - aber nur wenn du diese Seite teilst oder einen Screenshot machst!
-        </p>
-        
-        <!-- Deal Aktivierung -->
-        <div class="bg-gradient-to-r from-blue-600/10 to-purple-600/10 border border-blue-500/30 rounded-lg p-8 mb-8 max-w-3xl mx-auto">
+        <!-- Empfehlungs-Deal -->
+        <div class="bg-white rounded-3xl p-8 mb-8 max-w-2xl mx-auto shadow-2xl">
           <div class="text-center">
-            <div class="text-4xl mb-6">🎁📱📸</div>
-            <h3 class="text-2xl font-bold text-white mb-4">So aktivierst du den Deal:</h3>
+            <!-- Deal Title -->
+            <div class="text-4xl mb-4">🎁</div>
+            <h2 class="text-3xl font-bold text-purple-600 mb-6">KIULY Deal</h2>
             
-            <div class="grid md:grid-cols-3 gap-6 mb-8">
-              <div class="space-y-3">
-                <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto">1</div>
-                <h4 class="font-bold text-blue-300">App downloaden</h4>
-                <p class="text-sm text-gray-300">Lade KIULY kostenlos aus dem App Store herunter</p>
+            <!-- Main Offer -->
+            <p class="text-xl text-gray-800 mb-8">
+              Empfehle KIULY an eine Lehrkraft und erhalte <strong class="text-green-600">6 Monate kostenlos!</strong>
+            </p>
+            
+            <!-- So geht's Section -->
+            <div class="bg-yellow-100 rounded-2xl p-6 mb-6">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-2xl">📸</span>
+                <h3 class="text-lg font-bold text-gray-800">So geht's:</h3>
               </div>
               
-              <div class="space-y-3">
-                <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto">2</div>
-                <h4 class="font-bold text-purple-300">Link teilen</h4>
-                <p class="text-sm text-gray-300">Teile diese Deal-Seite mit Kollegen oder in sozialen Medien</p>
-              </div>
-              
-              <div class="space-y-3">
-                <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto">3</div>
-                <h4 class="font-bold text-green-300">Screenshot senden</h4>
-                <p class="text-sm text-gray-300">Mache einen Screenshot und sende ihn an help@kiuly.de</p>
+              <div class="space-y-3 text-left">
+                <div class="flex items-start gap-3">
+                  <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">1</span>
+                  <p class="text-gray-700 text-sm">Empfehle die App einer Lehrkraft (z. B. per WhatsApp/E-Mail)</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">2</span>
+                  <p class="text-gray-700 text-sm">Mache einen Screenshot von der Empfehlung</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">3</span>
+                  <p class="text-gray-700 text-sm">Sende den Screenshot an help@kiuly.de</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">4</span>
+                  <p class="text-gray-700 text-sm">Erhalte den Aktionscode zum Aktivieren zurück</p>
+                </div>
               </div>
             </div>
             
-            <div class="bg-green-600/20 border border-green-500/40 rounded-lg p-4 mb-6">
-              <p class="text-green-300 font-semibold">
-                ✅ Nach dem Screenshot an help@kiuly.de erhältst du sofort 6 Monate GRATIS!
-              </p>
+            <!-- E-Mail Section -->
+            <div class="bg-gray-100 rounded-2xl p-4 mb-6">
+              <p class="text-sm text-gray-600 mb-2">E-Mail-Adresse:</p>
+              <p class="text-2xl font-bold text-purple-600 mb-2">help@kiuly.de</p>
+              <p class="text-xs text-gray-500">Du erhältst den Aktionscode per E-Mail zurück</p>
             </div>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544" 
-                 class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold transition-colors text-center"
-                 onclick="if(window.umami) window.umami.track('deal-download', {timestamp: new Date().toISOString()});">
-                📱 App downloaden
-              </a>
-              <button onclick="sharePage()" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-bold transition-colors">
-                🔗 Link teilen
+            <!-- Action Buttons -->
+            <div class="space-y-3">
+              <button onclick="openWhatsApp()" class="w-full bg-green-500 hover:bg-green-600 text-white py-4 px-6 rounded-xl font-bold transition-colors flex items-center justify-center gap-3">
+                <span class="text-xl">💬</span>
+                WhatsApp öffnen
               </button>
-              <button onclick="showScreenshotTip()" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold transition-colors">
-                📸 Screenshot machen
+              
+              <button onclick="sendScreenshot()" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-4 px-6 rounded-xl font-bold transition-colors flex items-center justify-center gap-3">
+                <span class="text-xl">📧</span>
+                Screenshot senden
+              </button>
+              
+              <button onclick="copyEmail()" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-4 px-6 rounded-xl font-bold transition-colors flex items-center justify-center gap-3">
+                <span class="text-xl">📋</span>
+                E-Mail kopieren
+              </button>
+              
+              <button onclick="copyAppLink()" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-4 px-6 rounded-xl font-bold transition-colors flex items-center justify-center gap-3">
+                <span class="text-xl">🔗</span>
+                App-Link kopieren
+              </button>
+            </div>
+            
+            <!-- Bottom Buttons -->
+            <div class="flex gap-4 mt-6">
+              <button onclick="closeDeal()" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 py-3 px-6 rounded-xl font-medium transition-colors">
+                Später
+              </button>
+              <button onclick="closeDeal()" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 py-3 px-6 rounded-xl font-medium transition-colors">
+                Nein, danke
               </button>
             </div>
           </div>
@@ -653,6 +676,67 @@
           document.body.removeChild(toast);
         }
       }, 5000);
+    }
+
+    // New Empfehlungs-Deal Functions
+    function openWhatsApp() {
+      const text = "🎓 Empfehle dir KIULY - die beste KI-App für Lehrkräfte! Unterrichtsplanung in Sekunden, lehrplankonform, DSGVO-konform. Nur 0,99€/Monat. Jetzt testen: https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544";
+      const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+      
+      if (window.umami) {
+        window.umami.track('whatsapp-empfehlung', {timestamp: new Date().toISOString()});
+      }
+    }
+
+    function sendScreenshot() {
+      const subject = "KIULY Empfehlung - Screenshot";
+      const body = "Hallo,\n\nhier ist mein Screenshot der KIULY Empfehlung für den 6-Monate-GRATIS Deal.\n\nVielen Dank!";
+      const url = `mailto:help@kiuly.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = url;
+      
+      if (window.umami) {
+        window.umami.track('screenshot-email', {timestamp: new Date().toISOString()});
+      }
+    }
+
+    function copyEmail() {
+      navigator.clipboard.writeText('help@kiuly.de').then(() => {
+        showToast('E-Mail-Adresse kopiert!');
+      });
+      
+      if (window.umami) {
+        window.umami.track('email-copy', {timestamp: new Date().toISOString()});
+      }
+    }
+
+    function copyAppLink() {
+      const link = 'https://apps.apple.com/de/app/kiuly-unterrichts-ki/id6747030544';
+      navigator.clipboard.writeText(link).then(() => {
+        showToast('App-Link kopiert!');
+      });
+      
+      if (window.umami) {
+        window.umami.track('app-link-copy', {timestamp: new Date().toISOString()});
+      }
+    }
+
+    function closeDeal() {
+      // Close the deal modal or redirect
+      window.location.href = 'index.html';
+    }
+
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.className = 'fixed top-20 right-4 bg-green-600 text-white px-4 py-2 rounded-lg z-50';
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      
+      setTimeout(() => {
+        if (toast.parentNode) {
+          document.body.removeChild(toast);
+        }
+      }, 3000);
     }
   </script>
 </body>
